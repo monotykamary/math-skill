@@ -8,8 +8,8 @@ A research-partner skill for deriving mathematics. The partner has the user stat
 # from a local checkout
 npx skills add ./math-skill
 
-# once pushed to GitHub
-npx skills add <owner>/math-skill
+# from GitHub
+npx skills add monotykamary/math-skill
 ```
 
 ## What's inside
