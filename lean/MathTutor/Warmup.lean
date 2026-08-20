@@ -27,7 +27,7 @@ theorem heat_closed (s ρ : ℚ) (n : ℕ) : heat s ρ n = s * (1 - ρ ^ n) := b
       ring
 
 /-- Fixture from the production documentation: at `ρ = 1/2`, `s = 1`,
-heat after four continuous turns is `15/16 = 0.9375`. /
+heat after four continuous turns is `15/16 = 0.9375`. -/
 theorem heat_fixture_four : heat 1 (1/2 : ℚ) 4 = 15/16 := by
   norm_num [heat_closed]
 
