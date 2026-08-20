@@ -1,9 +1,9 @@
 # math-skill — `math-schema`
 
-A tutor skill for learning mathematics like a physicist: conjecture first,
-never skip a proof step, keep a falsifiable journal, and let Lean 4 be the
-incorruptible verifier. Built for learners who are tired of chatbots that
-hand over the punchline.
+A mentorship skill for proving mathematics like a working researcher:
+conjecture first, never skip a proof step, keep a falsifiable journal, and
+let Lean 4 be the incorruptible verifier. Built for people who intend to
+reach the frontier, not people who want the punchline handed to them.
 
 ## Install the skill
 
@@ -37,8 +37,8 @@ npx skills add <owner>/math-skill
 Curriculum order: ewma → kelly → large-deviations → heat-kernel →
 max-principle → black-scholes → kolmogorov.
 - `lean/` — a Lean 4 sandbox pinning `leanprover/lean4:v4.33.0` with
-  Mathlib, containing the same case as machine-checked proofs plus
-  `sorry`-marked exercises.
+  Mathlib: `Frontier/Proven.lean` seals the EWMA case's results as checked
+  theorems; `Frontier/Conjectures.lean` holds six `sorry`-marked conjectures.
 
 ## Lean setup (macOS)
 
@@ -50,12 +50,12 @@ export PATH="$HOME/.elan/bin:$PATH"
 cd lean
 lake update          # resolves Mathlib at the pinned toolchain tag
 lake exe cache get   # downloads precompiled Mathlib (one-time, large)
-lake build           # verifies MathTutor/ — must stay green, no sorry
+lake build           # verifies Frontier/ — must stay green, no sorry
 ```
 
 ## The loop in one paragraph
 
-Diagnose what the learner owns. Frame a target without spoilers. He
+Diagnose what the researcher owns. Frame a target without spoilers. He
 hypothesizes in falsifiable form; small computations promote the conjecture
 to SUPPORTED; a complete derivation or a green `lake build` promotes it to
 PROVEN and it lands in `math-journal.md`. Intuition is quoted in his words

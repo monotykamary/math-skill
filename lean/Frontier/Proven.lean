@@ -1,14 +1,14 @@
 import Mathlib
 
 /-!
-# Warmup, fully proven
+# Proven — certified results
 
 These theorems seal the hand proofs of `references/case-ewma.md` in Lean.
 Read them as the standard for a COMMITTED entry: statement first, complete
 proof, fixture checked by computation. No `sorry` lives here.
 -/
 
-namespace MathTutor
+namespace Frontier
 
 /-- The heat accumulator from case-ewma.md §1:
 `W₀ = 0` and `W_{n+1} = (1-ρ)·s + ρ·W_n` for constant input `s`. -/
@@ -45,4 +45,4 @@ theorem heat_capped_lane_below_one (k : ℕ) : heat 1 (1/2 : ℚ) k < 1 := by
   have h : (0 : ℚ) < (1/2 : ℚ) ^ k := by positivity
   linarith
 
-end MathTutor
+end Frontier

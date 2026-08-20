@@ -165,5 +165,5 @@ identify the load-bearing premise, compute, keep or kill.
 - One measured number ($6\times10^{-9}$) standing in for a theorem until
   the theorem is committed.
 
-Exercises tied to this case live in `lean/MathTutor/Exercises.lean`
+Conjectures tied to this case live in `lean/Frontier/Conjectures.lean`
 (the parts provable with undergraduate tools; deeper parts stay GAP-tagged).

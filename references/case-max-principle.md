@@ -79,7 +79,7 @@ $$
 
 One line: a convex combination of numbers cannot exceed the largest of
 them; $W_{ij} = 0$ terms contribute nothing; done. $\blacksquare$
-This is exercise 6 in `lean/MathTutor/Exercises.lean` — Lean checks what
+This is conjecture 6 in `lean/Frontier/Conjectures.lean` — Lean checks what
 calculus cannot even see, because the statement needs no smoothness.
 
 ## 5. What the principle is for

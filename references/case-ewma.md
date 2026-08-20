@@ -142,4 +142,4 @@ is**: unroll it, telescope it, or transform it (z-transform is the
 systematic version; the generating function $G(z) = \sum_k W_k z^k$ turns the
 recursion into algebra: try it as an exercise).
 
-Exercises tied to this case live in `lean/MathTutor/Exercises.lean`.
+Conjectures tied to this case live in `lean/Frontier/Conjectures.lean`.
