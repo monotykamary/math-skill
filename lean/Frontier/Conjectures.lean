@@ -21,7 +21,7 @@ theorem geom_sum (ρ : ℚ) (k : ℕ) :
 
 /-- Conjecture 2: the one-step increment, case-ewma.md §3.
 `W_{n+1} - W_n = s(1-ρ)ρ^n`. Recommended path: two rewrites by `heat_closed`,
-then algebra — this is the 'closed form makes it trivial' lesson. -/
+then algebra. This is the 'closed form makes it trivial' lesson. -/
 theorem heat_step_increment (s ρ : ℚ) (n : ℕ) :
     heat s ρ (n + 1) - heat s ρ n = s * (1 - ρ) * ρ ^ n := by
   sorry
@@ -38,7 +38,7 @@ theorem cool_contracts_deficit (s ρ w : ℚ) : cool ρ w - s = ρ * (w - s) := 
 /-- Conjecture 4: first contact with the Chebyshev side of case-heat-kernel.md.
 Define the scalar Chebyshev polynomials by the three-term recurrence and
 verify the first two nontrivial ones. `ring` closes goals built from the
-unfolded definitions — the skill is naming what the goal looks like before
+unfolded definitions. The skill is naming what the goal looks like before
 and after each move. -/
 def cheb₁ (x : ℚ) : ℚ := 2 * x ^ 2 - 1
 
@@ -56,7 +56,7 @@ theorem markov_finset {ι : Type*} [DecidableEq ι] (s : Finset ι) (w X : ι �
   sorry
 
 /-- Conjecture 6 (case-max-principle.md §4, discrete maximum principle): a
-convex average never exceeds the sample max — the fact behind 'heat cannot
+convex average never exceeds the sample max, the fact behind 'heat cannot
 create hot spots' on a graph. Moves: bound each product `w i * v i` by
 `w i` times the image max (weights are nonneg), sum, close with the
 normalization `hsum`. -/

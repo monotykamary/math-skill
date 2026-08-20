@@ -1,7 +1,7 @@
 import Mathlib
 
 /-!
-# Proven — certified results
+# Proven: certified results
 
 These theorems seal the hand proofs of `references/case-ewma.md` in Lean.
 Read them as the standard for a COMMITTED entry: statement first, complete
@@ -32,7 +32,7 @@ theorem heat_fixture_four : heat 1 (1/2 : ℚ) 4 = 15/16 := by
   norm_num [heat_closed]
 
 /-- Crossing fixture (case-ewma.md §4): at `ρ = 1/2`, `s = 3/2`, `θ = 9/10`
-turn 1 is below threshold and turn 2 fires — the predicted `k_fire = 2`. -/
+turn 1 is below threshold and turn 2 fires, the predicted `k_fire = 2`. -/
 theorem heat_crossing_fixture :
     heat (3/2 : ℚ) (1/2) 1 < 9/10 ∧ 9/10 ≤ heat (3/2) (1/2) 2 := by
   constructor <;> norm_num [heat_closed]
