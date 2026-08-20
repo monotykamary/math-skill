@@ -162,17 +162,29 @@ case studies.
 
 ## Reference material
 
-- `references/case-ewma.md` — a complete, no-steps-skipped treatment of
-  exponential accumulation (the math behind a production "heat scoring"
-  system): closed form, fixed point, crossing time, feedback-adjusted
-  threshold, all checked numerically. This is the caliber of completeness
-  the covenant demands.
-- `references/case-heat-kernel.md` — a complete derivation of graph heat
-  diffusion: averaging → graph Laplacian → heat equation → e^{-tL} →
-  Chebyshev evaluation, including a conjecture that was *refuted by
-  computation* (damping windows). This is the caliber of falsifiability
-  the covenant demands.
+Seven case files, each complete to the covenant's standard — every equality
+justified, every numeric fixture recomputed, every gap labeled PROVEN /
+SUPPORTED / GAP with the proving machinery named:
+
+| File | Domain | Core content |
+|---|---|---|
+| `references/case-ewma.md` | accumulation | EWMA closed form, fixed point, crossing time, feedback lockout |
+| `references/case-kelly.md` | quant | multiplicative → additive representation, log-optimal fraction, edge = information |
+| `references/case-large-deviations.md` | probability | Chernoff/Cramér upper bound, Legendre rate, exponential vs polynomial tails |
+| `references/case-heat-kernel.md` | diffusion | graph Laplacian → heat equation → e^{-tL} → Chebyshev; a computation-refuted conjecture |
+| `references/case-max-principle.md` | PDE rigor | parabolic maximum principle via strictification; uniqueness, comparison, positivity |
+| `references/case-black-scholes.md` | finance | random walk → Itô → hedging → the pricing PDE *is* a heat equation → the formula |
+| `references/case-kolmogorov.md` | frontier physics | K41 from units alone; the 4/5 law; intermittency and the C^{1/3} threshold |
+
 - `lean/` — the Lean 4 sandbox described above.
+
+Suggested curriculum order: ewma → kelly → large-deviations → heat-kernel →
+max-principle → black-scholes → kolmogorov. The first three build the
+computational/log-transform toolkit over ℚ; the middle two lift it to the
+continuous world; Black–Scholes spends both toolkits at once (hence
+"capstone"); Kolmogorov closes with the physics loop the whole skill is
+named after. If the student's level is already diagnosed, jump to the file
+whose prerequisites the journal shows as COMMITTED.
 
 Use the case studies as tone-setters: when you present a finished derivation,
 match their density of justification. When he claims something, make him test

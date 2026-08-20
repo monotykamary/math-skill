@@ -20,9 +20,22 @@ npx skills add <owner>/math-skill
 - `SKILL.md` — the tutor covenant, session loop, journal format, Lean loop.
 - `references/case-ewma.md` — exponential accumulation, proved completely
   (closed form, fixed point, crossing time, threshold feedback).
+- `references/case-kelly.md` — the Kelly criterion: log-optimal growth,
+  edge = information (quant).
+- `references/case-large-deviations.md` — Chernoff/Cramér: thresholds
+  decay exponentially; rate = Legendre transform (probability, risk).
 - `references/case-heat-kernel.md` — graph heat diffusion, derived
   completely (averaging → Laplacian → heat equation → Chebyshev evaluation,
   including a conjecture refuted by computation).
+- `references/case-max-principle.md` — the parabolic maximum principle:
+  heat cannot create hot spots, as a theorem (PDE rigor).
+- `references/case-black-scholes.md` — Black–Scholes from Brownian motion;
+  the pricing PDE is the heat equation (finance capstone).
+- `references/case-kolmogorov.md` — K41 turbulence from units alone; the
+  4/5 law; intermittency and the C^{1/3} threshold (physics frontier).
+
+Curriculum order: ewma → kelly → large-deviations → heat-kernel →
+max-principle → black-scholes → kolmogorov.
 - `lean/` — a Lean 4 sandbox pinning `leanprover/lean4:v4.33.0` with
   Mathlib, containing the same case as machine-checked proofs plus
   `sorry`-marked exercises.

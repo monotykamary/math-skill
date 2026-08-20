@@ -45,4 +45,24 @@ def cheb₁ (x : ℚ) : ℚ := 2 * x ^ 2 - 1
 theorem cheb₂_of_recurrence (x : ℚ) : cheb₁ x = 2 * x * x - 1 := by
   sorry
 
+/-- Exercise 5 (case-large-deviations.md §1): Markov's inequality on a
+finite probability space with ℚ-valued weights. The indicator trick is the
+whole engine: on the threshold-filtered part, replace `X i` by `a`.
+Moves: monotonicity of `Finset.sum`, then bound the filtered sum by the
+full one using the nonnegativity hypotheses. -/
+theorem markov_finset {ι : Type*} [DecidableEq ι] (s : Finset ι) (w X : ι → ℚ)
+    (hw : ∀ i ∈ s, 0 ≤ w i) (hX : ∀ i ∈ s, 0 ≤ X i) (a : ℚ) :
+    a * (∑ i ∈ s with a ≤ X i, w i) ≤ ∑ i ∈ s, w i * X i := by
+  sorry
+
+/-- Exercise 6 (case-max-principle.md §4, discrete maximum principle): a
+convex average never exceeds the sample max — the fact behind 'heat cannot
+create hot spots' on a graph. Moves: bound each product `w i * v i` by
+`w i` times the image max (weights are nonneg), sum, close with the
+normalization `hsum`. -/
+theorem convex_avg_le_max {ι : Type*} [DecidableEq ι] (s : Finset ι) (hs : s.Nonempty)
+    (w v : ι → ℚ) (hw : ∀ i ∈ s, 0 ≤ w i) (hsum : ∑ i ∈ s, w i = 1) :
+    ∑ i ∈ s, w i * v i ≤ (s.image v).max' (hs.image v) := by
+  sorry
+
 end MathTutor
