@@ -53,6 +53,10 @@ lake exe cache get   # downloads precompiled Mathlib (one-time, large)
 lake build           # verifies Frontier/ — must stay green, no sorry
 ```
 
+Gotcha: `lake clean` invalidates the downloaded Mathlib cache. If a build
+suddenly recompiles thousands of `Mathlib.*` modules, stop it and run
+`lake exe cache get && lake build`.
+
 ## The loop in one paragraph
 
 Diagnose what the researcher owns. Frame a target without spoilers. He
