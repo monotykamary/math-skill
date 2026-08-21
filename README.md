@@ -16,15 +16,23 @@ npx skills add monotykamary/math-skill
 
 - `SKILL.md`: the covenant, the session loop, the journal format, the Lean loop, and the voice rules.
 - `references/case-ewma.md`: exponential accumulation, proved completely. Closed form, fixed point, crossing time, threshold feedback.
+- `references/case-kalman.md`: sequential estimation. Gaussian conditioning, the Riccati fixed point, and the EWMA as its stateless shadow.
 - `references/case-kelly.md`: the Kelly criterion. Log-optimal growth, edge as information.
+- `references/case-gibbs.md`: maximum entropy and the Gibbs tilt. The rate function is an entropy deficit.
 - `references/case-large-deviations.md`: Chernoff and Cramér. Thresholds decay exponentially, and the rate is a Legendre transform.
+- `references/case-gaertner-ellis.md`: thresholds with memory and ruin. The threshold EWMA's exact log-mgf, and the Cramér–Lundberg exponent.
 - `references/case-heat-kernel.md`: graph heat diffusion, derived completely. Averaging, Laplacian, heat equation, Chebyshev evaluation. Contains a conjecture refuted by computation.
+- `references/case-mixing.md`: how a lazy cycle walk forgets its start. Spectral gap, chi-square decay, certified mixing time.
 - `references/case-max-principle.md`: the parabolic maximum principle as a theorem. Heat cannot create hot spots.
+- `references/case-burgers.md`: shocks and entropy conditions. Cole–Hopf turns Burgers into heat; the tanh viscous profile pays its bill exactly.
 - `references/case-black-scholes.md`: pricing from Brownian motion. The pricing equation is the heat equation.
+- `references/case-merton.md`: continuous-time Kelly. The HJB equation, and half-Merton keeping three quarters.
+- `references/case-h-theorem.md`: kinetic theory on a finite grid. Entropy never decreases; the bridge to Boltzmann is staked out.
 - `references/case-kolmogorov.md`: K41 turbulence from units alone, the 4/5 law, and the intermittency anomaly.
-- `lean/`: a Lean 4 sandbox pinning `leanprover/lean4:v4.33.0` with Mathlib. `Frontier/Proven.lean` certifies the EWMA results. `Frontier/Conjectures.lean` holds six open conjectures.
+- `references/case-extremes.md`: block maxima and the three limit laws. Where heavy tails kill the tilt and what replaces it.
+- `lean/`: a Lean 4 sandbox pinning `leanprover/lean4:v4.33.0` with Mathlib. `Frontier/Proven.lean` certifies the EWMA results. `Frontier/Conjectures.lean` closes the original six conjectures and holds two open watch-list entries.
 
-Curriculum order: ewma, kelly, large-deviations, heat-kernel, max-principle, black-scholes, kolmogorov.
+Curriculum order: ewma, kalman, kelly, gibbs, large-deviations, gaertner-ellis, heat-kernel, mixing, max-principle, burgers, black-scholes, merton, h-theorem, kolmogorov, extremes.
 
 ## Lean setup (macOS)
 
