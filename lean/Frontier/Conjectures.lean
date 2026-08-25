@@ -1,4 +1,8 @@
 import Frontier.Proven
+import Mathlib.Algebra.Order.Ring.Star
+import Mathlib.Analysis.Real.Sqrt
+import Mathlib.Data.Rat.Star
+import Mathlib.Tactic.Ring
 
 /-!
 # Conjectures
