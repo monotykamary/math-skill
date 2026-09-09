@@ -1,0 +1,14 @@
+{
+  "challenge_module": "ComparatorChallenges.NavierStokes",
+  "solution_module": "NavierStokes.ComparatorSolution",
+  "enable_nanoda": true,
+  "theorem_names": [
+    "NavierStokes.Comparator.navier_stokes_breakdown_R3",
+    "NavierStokes.Comparator.navier_stokes_breakdown_periodic"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

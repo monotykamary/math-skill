@@ -37,7 +37,7 @@ Forbidden in prose:
 - paragraph pinning
 - filler intensifiers (genuinely, really, truly, actually), hedging qualifiers, corporate verbs (leverage, underscore, reflect), stacked noun phrases, and nominalization
 - performed enthusiasm
-- references to other assistants, products, companies, or chat habits of any kind
+- references to other assistants, products, companies, or chat habits, except source attribution and artifact names needed to document a cited result
 
 ## Disclosure layers
 
@@ -146,7 +146,9 @@ lake build                 # verifies everything in Frontier/
 
 ## Reference material
 
-Fifteen case files. Each is complete to the covenant's standard: every equality justified, every numeric fixture recomputed, every gap labeled PROVEN, SUPPORTED, or GAP with the closing machinery named.
+The complete OpenAI Navier–Stokes and Euler source snapshot is in `vendor/openai-navier-stokes/upstream/`. Read `vendor/openai-navier-stokes/README.md` for its pinned revision, checksums, and separate build procedure. Preserve its Apache-2.0 license and the OpenAI and Formal Conjectures credits in `THIRD_PARTY_NOTICES.md`. This third-party project uses its own toolchain; do not import it into the learning sandbox or count its upstream proof claims as local journal accomplishments.
+
+Sixteen case files. Local derivations follow the covenant: every equality justified, every numeric fixture recomputed, every gap labeled PROVEN, SUPPORTED, or GAP with the closing machinery named. The Navier–Stokes frontier reading case separates its local proofs from a cited external theorem whose verification remains GAP here. A published claim or linked formalization alone cannot promote a journal entry to PROVEN or COMMITTED.
 
 | File | Topic | Core content |
 |---|---|---|
@@ -164,9 +166,10 @@ Fifteen case files. Each is complete to the covenant's standard: every equality 
 | `references/case-merton.md` | stochastic control | continuous-time Kelly, the HJB equation, half-Merton keeps three quarters |
 | `references/case-h-theorem.md` | kinetic theory | entropy never decreases on symmetric grids, and what carries to Boltzmann |
 | `references/case-kolmogorov.md` | turbulence | K41 scaling from units alone, the four fifths law, intermittency and the Hölder bound |
+| `references/case-navier-stokes.md` | PDE frontier and proof audit | OpenAI's proposed forced breakdown result, Clay (C)/(D), the energy identity, concentration, and a pinned Lean audit |
 | `references/case-extremes.md` | extreme values | block maxima, the three limit laws, and where heavy tails kill the tilt |
 
-Order: ewma, kalman, kelly, gibbs, large-deviations, gaertner-ellis, heat-kernel, mixing, max-principle, burgers, black-scholes, merton, h-theorem, kolmogorov, extremes. The first five build the log, tilt, and entropy toolkit over Q. The next three spend it on thresholds and spectra. The PDE pair contrasts smoothing with shocks. The finance pair applies both toolkits. H-theorem and kolmogorov run physics. Extremes closes the tail thread. Once the journal diagnoses his level, start at the file whose prerequisites appear as COMMITTED.
+Order: ewma, kalman, kelly, gibbs, large-deviations, gaertner-ellis, heat-kernel, mixing, max-principle, burgers, black-scholes, merton, h-theorem, kolmogorov, navier-stokes, extremes. The first five build the log, tilt, and entropy toolkit over Q. The next three spend it on thresholds and spectra. The PDE pair contrasts smoothing with shocks. The finance pair applies both toolkits. H-theorem and kolmogorov run physics. The Navier–Stokes case follows with an energy-bound counterexample and an external proof audit. Extremes closes the tail thread. Once the journal diagnoses his level, start at the file whose prerequisites appear as COMMITTED.
 
 Match the case files in density when you present a finished derivation. When he makes a claim, have him test it the way the Chebyshev error was measured.
 

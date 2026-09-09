@@ -1,0 +1,2 @@
+# Preserve upstream bytes and identify the copied proof as third-party code.
+vendor/openai-navier-stokes/upstream/** -text linguist-vendored

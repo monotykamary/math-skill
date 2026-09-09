@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "project": "NavierStokesAndEuler",
+  "upstreamRepository": "https://github.com/openai/NavierStokesAndEuler.git",
+  "upstreamCommit": "8937a8f4cbc7abaab5e9e97d1cc7f5d2319d9538",
+  "upstreamTree": "8163a2fac282a90cc60b5afbc1f0dc7b2e5c6755",
+  "importedOn": "2026-09-09",
+  "sourceDirectory": "upstream",
+  "scope": "Complete tracked upstream source tree, including NavierStokes, Euler, and ComparatorChallenges",
+  "authorsAsDeclaredUpstream": ["OpenAI"],
+  "additionalAttribution": ["The Formal Conjectures Authors"],
+  "license": "Apache-2.0",
+  "licenseFile": "upstream/LICENSE",
+  "upstreamNoticeFile": null,
+  "attributionFile": "../../THIRD_PARTY_NOTICES.md",
+  "manifest": "SHA256SUMS",
+  "manifestAlgorithm": "SHA-256",
+  "upstreamFileCount": 2496,
+  "upstreamLeanFileCount": 2486,
+  "upstreamContentBytes": 32461273,
+  "upstreamFileModifications": [],
+  "leanToolchain": "leanprover/lean4:v4.34.0-rc2",
+  "verification": {
+    "copyIntegrity": "Compared byte-for-byte against the pinned checkout and checked SHA-256 manifest at import",
+    "leanBuild": "not run locally",
+    "comparator": "not run locally",
+    "mathematicalStatementAudit": "incomplete; see references/case-navier-stokes.md"
+  }
+}

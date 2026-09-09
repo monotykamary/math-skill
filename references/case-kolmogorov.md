@@ -140,3 +140,11 @@ falsification of the higher orders → the exponent is rescued, eighty years
 later, as the sharp threshold of a conservation theorem. This is the
 physics loop from the schema site: hypothesize, test, let reality revise
 the model — run for a century.
+
+## 7. Next: smooth forced breakdown
+
+[The Navier–Stokes case](case-navier-stokes.md) studies the September 2026
+proposed breakdown result with smooth forcing at positive viscosity. It
+asks why bounded total energy can coexist with unbounded velocity, then
+sets out an audit of the external proof. Keep that question separate from
+K41's statistical postulates and the inviscid Onsager results above.

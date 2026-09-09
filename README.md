@@ -29,10 +29,12 @@ npx skills add monotykamary/math-skill
 - `references/case-merton.md`: continuous-time Kelly. The HJB equation, and half-Merton keeping three quarters.
 - `references/case-h-theorem.md`: kinetic theory on a finite grid. Entropy never decreases; the bridge to Boltzmann is staked out.
 - `references/case-kolmogorov.md`: K41 turbulence from units alone, the 4/5 law, and the intermittency anomaly.
+- `references/case-navier-stokes.md`: OpenAI's September 2026 proposed forced breakdown result for Clay (C)/(D). Primary sources, worked energy and concentration calculations, and a pinned Lean audit. The external proof has not been independently checked here.
 - `references/case-extremes.md`: block maxima and the three limit laws. Where heavy tails kill the tilt and what replaces it.
 - `lean/`: a Lean 4 sandbox pinning `leanprover/lean4:v4.33.0` with Mathlib. `Frontier/Proven.lean` certifies the EWMA results. `Frontier/Conjectures.lean` closes the original six conjectures and holds two open watch-list entries.
+- [`vendor/openai-navier-stokes/`](vendor/openai-navier-stokes/README.md): the complete, unmodified OpenAI Navier–Stokes and Euler Lean source bundle at a pinned revision, with its Apache-2.0 license, retained author credits, and checksum manifest. It is a separate Lean project; its proofs have not been checked locally.
 
-Curriculum order: ewma, kalman, kelly, gibbs, large-deviations, gaertner-ellis, heat-kernel, mixing, max-principle, burgers, black-scholes, merton, h-theorem, kolmogorov, extremes.
+Curriculum order: ewma, kalman, kelly, gibbs, large-deviations, gaertner-ellis, heat-kernel, mixing, max-principle, burgers, black-scholes, merton, h-theorem, kolmogorov, navier-stokes, extremes.
 
 ## Lean setup (macOS)
 
@@ -48,6 +50,10 @@ lake build           # verifies Frontier/ (green, no unexpected sorry)
 ```
 
 Gotcha: `lake clean` invalidates the downloaded Mathlib cache. If a build suddenly recompiles thousands of `Mathlib.*` modules, stop it and run `lake exe cache get && lake build`.
+
+## Third-party proof attribution
+
+The vendored formalizations are credited to OpenAI, with the Formal Conjectures authors credited for adapted statements and definitions. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for attribution and the preserved license. The [vendor README](vendor/openai-navier-stokes/README.md) records the exact revision, copy-integrity checks, and separate build instructions. The full upstream bundle adds about 32 MB of source; downloaded dependencies and compiled caches are excluded.
 
 ## The session in one paragraph
 

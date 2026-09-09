@@ -1,0 +1,14 @@
+{
+  "challenge_module": "ComparatorChallenges.Euler",
+  "solution_module": "Euler.Solution",
+  "enable_nanoda": true,
+  "theorem_names": [
+    "Euler.euler_breakdown_R3",
+    "Euler.exists_compact_smooth_euler_singularity"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

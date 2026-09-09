@@ -241,3 +241,8 @@ arithmetic, and the nu-independence is PROVEN.
 - Kinetic formulations of conservation laws (Lions-Perthame-Tadmor)
   read entropy solutions as the H-theorem's constraint manifold: the
   tie to case-h-theorem.md section 5 is literal, cited.
+- [Smooth forced Navier–Stokes breakdown](case-navier-stokes.md) is a
+  further frontier reading case in three dimensions at positive viscosity.
+  Compare its energy identity with section 7's entropy bill. Keep its
+  velocity blowup claim separate from the inviscid Burgers shock proved
+  here; the external Navier–Stokes proof still requires a local audit.
