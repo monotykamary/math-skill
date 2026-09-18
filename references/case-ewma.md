@@ -142,4 +142,6 @@ is**: unroll it, telescope it, or transform it (z-transform is the
 systematic version; the generating function $G(z) = \sum_k W_k z^k$ turns the
 recursion into algebra: try it as an exercise).
 
-Conjectures tied to this case live in `lean/Frontier/Conjectures.lean`.
+The exact rational certificates now live in `bend/LAWS.bend` and
+`bend/PROOF.bend`. Run `python3 bend/check.py`. The unchanged
+`lean/Frontier/` files preserve the historical certificates.

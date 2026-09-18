@@ -153,6 +153,15 @@ cycle has eigenvalues 1 - cos(2 pi j/n), whose first one is
 1 - cos(2 pi/n) ~ 2 pi^2/n^2, the same n^2 scale (both gaps differ by
 exact constants only).
 
+### Bend certificate scope
+
+`bend/LAWS.bend#chi_tv_transfer_rat` certifies the finite rational inequality
+`(sum |p_i-u_i|)^2 <= (sum u_i) * sum (|p_i-u_i|^2/u_i)` for strictly positive
+rational `u_i`. Its proof uses weighted sums of nonnegative squares and exact
+positive division. The original real-valued `Real.sqrt` goal remains open;
+this certificate does not formalize the spectral, exponential, or logarithmic
+steps elsewhere in this case. See `bend/README.md` and `bend/OPEN.md`.
+
 ## 6. Fixtures recomputed
 
 Exact two-step distribution from equation 1 (start 0, arithmetic by

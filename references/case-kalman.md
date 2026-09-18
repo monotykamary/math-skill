@@ -212,4 +212,6 @@ system implicitly assumes.
   faces when the large-deviations mgf of case-large-deviations.md
   section 7 does not exist.
 
-Conjectures tied to this case live in lean/Frontier/Conjectures.lean.
+The unrestricted gain-complement statement remains open in
+`lean/Frontier/Conjectures.lean`. `bend/OPEN.md` records the signed-division
+work needed to close its Bend counterpart.

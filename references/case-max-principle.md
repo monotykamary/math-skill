@@ -79,8 +79,10 @@ $$
 
 One line: a convex combination of numbers cannot exceed the largest of
 them; $W_{ij} = 0$ terms contribute nothing; done. $\blacksquare$
-This is conjecture 6 in `lean/Frontier/Conjectures.lean` — Lean checks what
-calculus cannot even see, because the statement needs no smoothness.
+The finite rational certificate is `convex_avg_le_max` in `bend/LAWS.bend`.
+It accepts explicit pointwise upper-bound certificates and exact weight
+normalization. Choosing the largest value as that bound gives this case.
+The historical statement remains in `lean/Frontier/Conjectures.lean`.
 
 ## 5. What the principle is for
 

@@ -165,5 +165,6 @@ identify the load-bearing premise, compute, keep or kill.
 - One measured number ($6\times10^{-9}$) standing in for a theorem until
   the theorem is committed.
 
-Conjectures tied to this case live in `lean/Frontier/Conjectures.lean`
-(the parts provable with undergraduate tools; deeper parts stay GAP-tagged).
+The degree-two Chebyshev certificate is `cheb_two_of_recurrence` in
+`bend/LAWS.bend`. The historical Lean statements remain in
+`lean/Frontier/Conjectures.lean`; the deeper analytic claims stay GAP-tagged.
