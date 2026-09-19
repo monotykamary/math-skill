@@ -9,40 +9,40 @@ then says precisely which steps carry to Boltzmann and which do not.
 
 ## 1. The model
 
-$N$ cells, counts $n_i \ge 0$, $\sum n_i = 1$ after normalization (the
+$N$ cells, counts $n\_i \ge 0$, $\sum n\_i = 1$ after normalization (the
 mass is one particle, and the master equation below conserves it). Matter
 transfers between cells $i$ and $j$ at symmetric rates:
-$k_{ij} = k_{ji} \ge 0$ (microscopic reversibility; on a connected graph,
+$k\_{ij} = k\_{ji} \ge 0$ (microscopic reversibility; on a connected graph,
 paths exist between any two cells). The master equation:
 
 $$
-\frac{dn_i}{dt} = \sum_j k_{ij} n_j - \sum_j k_{ji} n_i.
+\frac{dn\_i}{dt} = \sum\_j k\_{ij} n\_j - \sum\_j k\_{ji} n\_i.
 $$
 
-First term: influx into $i$ from every $j$ at rate $k_{ij}$ (the rate of
+First term: influx into $i$ from every $j$ at rate $k\_{ij}$ (the rate of
 the $j \to i$ channel times the mass at $j$). Second: efflux from $i$ to
-every $j$ at rate $k_{ji}$. Since $k$ is symmetric, rewrite as a single
+every $j$ at rate $k\_{ji}$. Since $k$ is symmetric, rewrite as a single
 sum of pairwise transfers:
 
 $$
-\frac{dn_i}{dt} = \sum_j k_{ij}(n_j - n_i).
+\frac{dn\_i}{dt} = \sum\_j k\_{ij}(n\_j - n\_i).
 $$
 
 Each channel contributes its signed exchange. The equation conserves
-mass: $\sum_i dn_i/dt = \sum_{i,j} k_{ij}(n_j - n_i) = 0$, because the
+mass: $\sum\_i dn\_i/dt = \sum\_{i,j} k\_{ij}(n\_j - n\_i) = 0$, because the
 double sum is antisymmetric under the label swap $i \leftrightarrow j$:
 rename $i$ as $j$ in the first part (valid since the sum ranges over all
-pairs) and the symmetry $k_{ji} = k_{ij}$ leaves $\sum k_{ij} n_i$; the
+pairs) and the symmetry $k\_{ji} = k\_{ij}$ leaves $\sum k\_{ij} n\_i$; the
 two parts cancel termwise. PROVEN, mass is conserved along the flow.
 
 ## 2. Entropy and its derivative
 
-$S := -\sum_i n_i \ln n_i$, with $0 \ln 0 := 0$ as in case-gibbs.md
+$S := -\sum\_i n\_i \ln n\_i$, with $0 \ln 0 := 0$ as in case-gibbs.md
 section 1, where the convention is argued. The chain rule on the
 $t$-derivative (factored in every term shown):
 
 $$
-\frac{dS}{dt} = -\sum_i \frac{dn_i}{dt} \ln n_i - \sum_i \frac{dn_i}{dt}.
+\frac{dS}{dt} = -\sum\_i \frac{dn\_i}{dt} \ln n\_i - \sum\_i \frac{dn\_i}{dt}.
 $$
 
 The second sum is zero by mass conservation just proven. The first:
@@ -52,8 +52,8 @@ into a sum of logs):
 
 $$
 \begin{aligned}
-\frac{dS}{dt} &= -\sum_{i,j} k_{ij}(n_j - n_i) \ln n_i \\
-&= -(1/2) \sum_{i,j} k_{ij}\bigl[(n_j - n_i) \ln n_i + (n_i - n_j) \ln n_j\bigr]
+\frac{dS}{dt} &= -\sum\_{i,j} k\_{ij}(n\_j - n\_i) \ln n\_i \\
+&= -(1/2) \sum\_{i,j} k\_{ij}\bigl[(n\_j - n\_i) \ln n\_i + (n\_i - n\_j) \ln n\_j\bigr]
 \end{aligned}
 $$
 
@@ -63,14 +63,14 @@ changes nothing: the summation ranges over all pairs either way; $k$
 symmetric as named). Combine:
 
 $$
-\frac{dS}{dt} = (1/2) \sum_{i,j} k_{ij} (n_j - n_i)(\ln n_j - \ln n_i) \ge 0.
+\frac{dS}{dt} = (1/2) \sum\_{i,j} k\_{ij} (n\_j - n\_i)(\ln n\_j - \ln n\_i) \ge 0.
 $$
 
-The inequality: $\ln$ is increasing, so the factors $(n_j - n_i)$ and
-$(\ln n_j - \ln n_i)$ have the same sign (monotone functions preserve
+The inequality: $\ln$ is increasing, so the factors $(n\_j - n\_i)$ and
+$(\ln n\_j - \ln n\_i)$ have the same sign (monotone functions preserve
 order; each named for the pair), their product is nonnegative, and
-$k_{ij} \ge 0$ carries it. Equality across the sum exactly when every
-active channel has $n_i = n_j$ (each nonnegative term vanishes), and on
+$k\_{ij} \ge 0$ carries it. Equality across the sum exactly when every
+active channel has $n\_i = n\_j$ (each nonnegative term vanishes), and on
 a connected graph that happens exactly at the uniform distribution
 (equality propagates along paths from any cell to every other, one
 edge at a time). PROVEN completely:
@@ -81,7 +81,7 @@ a difference; the only stationary non-wasting state is uniform.
 
 ## 3. What this has to do with Boltzmann
 
-Boltzmann's continuous $H = \int f \ln f \, dv$ with the binary
+Boltzmann's continuous $H = \int f \ln f \  dv$ with the binary
 collision gain-loss term is the same proof shape: the antisymmetry
 creating the cancellation is the collision kernel's microreversibility
 (stated as elasticity and time-reversal symmetry), and the
@@ -98,48 +98,43 @@ record: entropy maximized at fixed mass, momentum, and energy means by
 case-gibbs.md section 3 that the equilibrium is exponential in the two
 collision-preserved quantities, precisely the tilted measure of
 section 5 there read in velocity space:
-$f_{\mathrm{eq}}(v) = C \exp(-\beta |v - u|^2)$, the Maxwellian. The
+$f\_{\mathrm{eq}}(v) = C \exp(-\beta |v - u|^2)$, the Maxwellian. The
 connection is one line long because the Gibbs case did the work already;
 it is labeled as the cited bridge, not a fresh proof.
 
 ## 4. The two-cell trajectory, computed completely
 
-Cells 1 and 2, $k = 1/2$. With $n_1 + n_2 = 1$:
-$dn_1/dt = (1/2)(n_2 - n_1)$. The difference $\Delta := n_1 - n_2$
-subtracts its own equation:
-$d\Delta/dt = dn_1/dt - dn_2/dt
-= (1/2)(n_2 - n_1) - (1/2)(n_1 - n_2) = -(n_1 - n_2) = -\Delta$.
-This is the one-cell contraction of case-heat-kernel.md section 2 in
-exact miniature: $\Delta(t) = \Delta(0) e^{-t}$ (closed form by the same
-uniqueness cited there), hence
+Cells 1 and 2, $k = 1/2$. With $n\_1 + n\_2 = 1$: $dn\_1/dt = (1/2)(n\_2 - n\_1)$.
+The difference $\Delta := n\_1 - n\_2$ subtracts its own equation:
+$d\Delta/dt = dn\_1/dt - dn\_2/dt = (1/2)(n\_2 - n\_1) - (1/2)(n\_1 - n\_2) = -(n\_1 - n\_2) = -\Delta$.
+This is the one-cell contraction of case-heat-kernel.md section 2 in exact
+miniature: $\Delta(t) = \Delta(0) e^{-t}$ (closed form by the same uniqueness
+cited there), hence
 
 $$
-n_1(t) = (1 + e^{-t})/2, \qquad n_2(t) = (1 - e^{-t})/2
-\qquad \text{from } n_1(0) = 1.
+n\_1(t) = (1 + e^{-t})/2, \qquad n\_2(t) = (1 - e^{-t})/2
+\qquad \text{from } n\_1(0) = 1.
 $$
 
-PROVEN. Entropy along the flow, both routes; route one is the formula
-of section 2 evaluated:
-$dS/dt = k (n_1 - n_2)(\ln n_1 - \ln n_2)
-= (1/2)(n_1 - n_2)(\ln n_1 - \ln n_2)$ with $k = 1/2$
-(take $i,j = 1,2$ in the symmetrized sum; the two labelings 1,2 and 2,1
-carry the same product because both factors flip sign together, so the
+PROVEN. Entropy along the flow, both routes; route one is the formula of
+section 2 evaluated:
+$dS/dt = k (n\_1 - n\_2)(\ln n\_1 - \ln n\_2) = (1/2)(n\_1 - n\_2)(\ln n\_1 - \ln n\_2)$
+with $k = 1/2$ (take $i,j = 1,2$ in the symmetrized sum; the two labelings 1,2
+and 2,1 carry the same product because both factors flip sign together, so the
 $(1/2)$ times the doubled term leaves exactly
-$(1/2)(n_2 - n_1)(\ln n_2 - \ln n_1)$, honest bookkeeping). Route two is
-direct difference $S(t+1) - S(t)$ at sample points: $t = 0$: $S = 0$
-(one occupied cell: $1 \ln 1 = 0$ and the convention at 0). $t = 1$:
-$n_1 = 0.6839$, $n_2 = 0.3161$,
-$S = -0.6839 \ln(0.6839) - 0.3161 \ln(0.3161)
-= 0.6839 \cdot 0.3799 + 0.3161 \cdot 1.1518 = 0.2598 + 0.3641 = 0.6239$.
-$t = 2$: $n_1 = 0.5677$, $n_2 = 0.4323$,
+$(1/2)(n\_2 - n\_1)(\ln n\_2 - \ln n\_1)$, honest bookkeeping). Route two is direct
+difference $S(t+1) - S(t)$ at sample points: $t = 0$: $S = 0$ (one occupied
+cell: $1 \ln 1 = 0$ and the convention at 0). $t = 1$: $n\_1 = 0.6839$,
+$n\_2 = 0.3161$,
+$S = -0.6839 \ln(0.6839) - 0.3161 \ln(0.3161) = 0.6839 \cdot 0.3799 + 0.3161 \cdot 1.1518 = 0.2598 + 0.3641 = 0.6239$.
+$t = 2$: $n\_1 = 0.5677$, $n\_2 = 0.4323$,
 $S = 0.5677 \cdot 0.5662 + 0.4323 \cdot 0.8386 = 0.3214 + 0.3626 = 0.6840$.
-Limit: $n \to 1/2$, $S \to \ln 2 = 0.6931$ (uniform, the Gibbs
-computation of case-gibbs.md section 6 at $\beta = 0$ special case).
-Monotone upward $0 < 0.6239 < 0.6840 < 0.6931$. SUPPORTED by
-hand-table logarithms at the two cut points ($t = 1, 2$), the limit
-value PROVEN as the uniform entropy. Note $e^{-1} = 0.3679$ and
-$e^{-2} = 0.1353$ from the exponential table carry the $n$ values:
-$n_1(1) = (1 + 0.3679)/2$ and $n_1(2) = (1 + 0.1353)/2$, recomputed
+Limit: $n \to 1/2$, $S \to \ln 2 = 0.6931$ (uniform, the Gibbs computation of
+case-gibbs.md section 6 at $\beta = 0$ special case). Monotone upward
+$0 < 0.6239 < 0.6840 < 0.6931$. SUPPORTED by hand-table logarithms at the two
+cut points ($t = 1, 2$), the limit value PROVEN as the uniform entropy. Note
+$e^{-1} = 0.3679$ and $e^{-2} = 0.1353$ from the exponential table carry the
+$n$ values: $n\_1(1) = (1 + 0.3679)/2$ and $n\_1(2) = (1 + 0.1353)/2$, recomputed
 rather than trusted.
 
 ## 5. Method summary and ties
@@ -154,7 +149,7 @@ only (case-gibbs.md section 1); the approach $e^{-t}$ is the exponential
 contraction rate of the two-cell heat flow (case-heat-kernel.md section
 2 and case-ewma.md section 3 share the one-dimensional skeleton); and
 the mixing case closes the loop on which rate, exactly, large grids
-achieve (case-mixing.md computes $\lambda_2$ against its $\pi$). The route
+achieve (case-mixing.md computes $\lambda\_2$ against its $\pi$). The route
 outward to turbulence: a cascade is a non-equilibrium steady state
 with entropy flowing through it, the K41 setting where the H-theorem
 applies at every scale but never relaxes globally (case-kolmogorov.md
@@ -163,11 +158,11 @@ section 5).
 ## 6. Where the frontier is
 
 - Entropy-production inequalities: bounding $dS/dt$ below by a multiple
-  of the deficit $S_{\mathrm{eq}} - S$ for a linear master equation returns the
+  of the deficit $S\_{\mathrm{eq}} - S$ for a linear master equation returns the
   spectral gap machinery of case-mixing.md (the sharp constant is the
   log-Sobolev constant of the graph, cited). For nonlinear Boltzmann
   this bound is the Cercignani program:
-  $dH/dt \le -\text{const} \cdot (H - H_{\mathrm{eq}})$
+  $dH/dt \le -\text{const} \cdot (H - H\_{\mathrm{eq}})$
   holds in some regimes and fails in others, cited frontier.
 - The route from discrete master equation to kinetic PDE is coarse
   graining in space and velocity; keeping entropy semantics intact

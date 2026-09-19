@@ -13,12 +13,12 @@ claim size with tail $\mathbb{P}(Y > y) = (k/y)^\alpha$ on $y \ge k$
 ($\alpha > 0$, $k > 0$), density $\alpha k^\alpha y^{-\alpha-1}$ (the
 negative derivative of the tail, one-line check), the mgf at ANY
 $t > 0$ is infinite. Proof: the exponential series
-$e^{ty} = \sum_{N \ge 0} (t y)^N/N!$ is a sum of nonnegative terms, so
+$e^{ty} = \sum\_{N \ge 0} (t y)^N/N!$ is a sum of nonnegative terms, so
 it dominates any single term; choose $N$ to exceed $\alpha$, then
 
 $$
-\mathbb{E} e^{tY} = \int_k^\infty e^{ty} \alpha k^\alpha y^{-\alpha-1} \, dy
-\ge (\alpha k^\alpha t^N/N!) \int_k^\infty y^{N-\alpha-1} \, dy = \infty
+\mathbb{E} e^{tY} = \int\_k^\infty e^{ty} \alpha k^\alpha y^{-\alpha-1} \  dy
+\ge (\alpha k^\alpha t^N/N!) \int\_k^\infty y^{N-\alpha-1} \  dy = \infty
 $$
 
 because the exponent $N - \alpha - 1$ of the surviving power is above
@@ -34,25 +34,25 @@ the theory that lives behind it.
 
 ## 2. Block maxima: the exact distribution
 
-$M_n := \max(Y_1, \dots, Y_n)$, $Y_i$ i.i.d. with distribution $F$. The
+$M\_n := \max(Y\_1, \dots, Y\_n)$, $Y\_i$ i.i.d. with distribution $F$. The
 maximum is at most $u$ exactly when all $n$ observations are at most
 $u$; independence turns and into a product:
-$\mathbb{P}(M_n \le u) = F(u)^n$. PROVEN: intersection formulation plus
+$\mathbb{P}(M\_n \le u) = F(u)^n$. PROVEN: intersection formulation plus
 the independence factorization, both named.
 
 The whole extreme value program is the study of how $F(u)^n$ behaves
 when $u$ grows with $n$ so the product neither collapses to $0$ nor
 freezes at $1$. The scales for the Pareto are computable by hand. Set
-$u_n := k n^{1/\alpha}$:
+$u\_n := k n^{1/\alpha}$:
 
 $$
-\mathbb{P}(Y > u_n) = (k/(k n^{1/\alpha}))^\alpha = 1/n
+\mathbb{P}(Y > u\_n) = (k/(k n^{1/\alpha}))^\alpha = 1/n
 $$
 
 (powers cancel term by term, PROVEN arithmetic). Then for $x > 0$,
 
 $$
-\mathbb{P}(M_n \le u_n x) = (1 - \mathbb{P}(Y > u_n x))^n
+\mathbb{P}(M\_n \le u\_n x) = (1 - \mathbb{P}(Y > u\_n x))^n
 = (1 - 1/(n x^\alpha))^n \to \exp(-x^{-\alpha}),
 $$
 
@@ -62,7 +62,7 @@ remainder $O(1/n^2)$; the same series the course ran from case-ewma.md
 onward. PROVEN up to that cited series. The nondegenerate limit is
 
 $$
-G_\alpha(x) = \exp(-x^{-\alpha}), \qquad x > 0,
+G\_\alpha(x) = \exp(-x^{-\alpha}), \qquad x > 0,
 $$
 
 the Fréchet distribution.
@@ -75,7 +75,7 @@ limits of centered-scaled maxima are three families, and which one a
 tail produces is decided by the tail itself.
 
 1. Frechet (polar heavy tail): $F$ has regularly varying tail of index
-   $-\alpha$; the Pareto above is the emblem and produces $G_\alpha$.
+   $-\alpha$; the Pareto above is the emblem and produces $G\_\alpha$.
 2. Gumbel (thin or moderate tail): exponential or Gaussian tails; the
    exponential from case-gaertner-ellis.md section 6 is the emblem,
    centered at $(\ln n)/\gamma$ with scale $1/\gamma$ and limit
@@ -85,7 +85,7 @@ tail produces is decided by the tail itself.
    $\exp(-(-x)^\beta)$.
 
 The Pareto example above computed its own centering
-$u_n = k n^{1/\alpha}$ and scale; maximum domains require that the same
+$u\_n = k n^{1/\alpha}$ and scale; maximum domains require that the same
 centering works uniformly, and for the Pareto it does (section 2's
 computation).
 
@@ -94,18 +94,18 @@ computation).
 Take $\alpha = 2$, $k = 1$. Then
 
 $$
-u_n = n^{1/2}, \qquad \mathbb{P}(M_n \le n^{1/2} x) \to \exp(-x^{-2}).
+u\_n = n^{1/2}, \qquad \mathbb{P}(M\_n \le n^{1/2} x) \to \exp(-x^{-2}).
 $$
 
 Return-level reading, both directions recomputed: the typical
-maximum of $n$ Pareto squares is around $1.201\, n^{1/2}$, because the
+maximum of $n$ Pareto squares is around $1.201\  n^{1/2}$, because the
 median of the Frechet limit solves $\exp(-x^{-2}) = 1/2$, that is
 $-x^{-2} = \ln(1/2) = -0.6931$, $x = 1/\sqrt{0.6931} = 1.2011$ (log
 table arithmetic). Halved scales:
-$\mathbb{P}(M_n > (1/2) n^{1/2}) \to 1 - \exp(-4) = 1 - 0.0183 = 0.9817$,
+$\mathbb{P}(M\_n > (1/2) n^{1/2}) \to 1 - \exp(-4) = 1 - 0.0183 = 0.9817$,
 since $x = 1/2$ gives $-x^{-2} = -4$: the maximum clears half its
 typical scale almost always (the limit is exact, the decimals from the
-exponential table, arithmetic PROVEN). $n = 10^6$ makes $u_n = 1000$
+exponential table, arithmetic PROVEN). $n = 10^6$ makes $u\_n = 1000$
 exactly: the $10^6$ observations' maximum is medially around $1201$,
 and clears $500$ with limiting probability $0.9817$. SUPPORTED by the
 recomputed decimals against the closed forms.
@@ -114,11 +114,11 @@ recomputed decimals against the closed forms.
 
 Exponential claims, $\mathbb{P}(Y > y) = e^{-\gamma y}$, rate $\gamma$
 (the case of case-gaertner-ellis.md section 6): try the centering
-$c_n := (\ln n)/\gamma$:
+$c\_n := (\ln n)/\gamma$:
 
 $$
-\mathbb{P}(M_n \le c_n + x/\gamma)
-= (1 - \exp(-\gamma c_n - x))^n = (1 - e^{-x}/n)^n \to \exp(-e^{-x}),
+\mathbb{P}(M\_n \le c\_n + x/\gamma)
+= (1 - \exp(-\gamma c\_n - x))^n = (1 - e^{-x}/n)^n \to \exp(-e^{-x}),
 $$
 
 the Gumbel limit, the same $(1 - c/n)^n$ engine as section 2 with
@@ -142,7 +142,7 @@ in data are read off through two further engines, cited and not
 re-proven:
 
 1. Peak-over-threshold: exceedances beyond a high level $u$ satisfy
-   the generalized Pareto distribution asymptotically, $F_u$-type
+   the generalized Pareto distribution asymptotically, $F\_u$-type
    approx $\mathrm{GPD}(\xi, \sigma)$: the conditional tail of $Y - u$
    given $Y > u$. The same shape parameter $\xi$ carries the class:
    $\xi > 0$ heavy, $\xi = 0$ Gumbel, $\xi < 0$ Weibull (the sign

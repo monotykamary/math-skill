@@ -12,16 +12,16 @@ square completed out loud.
 A safe bond grows at constant rate $r$ (the holding of a token compounds
 by the exponential; the defining property $d(rcash)/dt$ polished in
 case-black-scholes.md section 4). A risky asset has price dynamics
-$dS/S = \mu\, dt + \sigma\, dB_t$ from case-black-scholes.md section 3,
+$dS/S = \mu\  dt + \sigma\  dB\_t$ from case-black-scholes.md section 3,
 that is the exponential
-$S_t = S_0 \exp((\mu - \sigma^2/2)t + \sigma B_t)$, PROVEN there by Ito.
+$S\_t = S\_0 \exp((\mu - \sigma^2/2)t + \sigma B\_t)$, PROVEN there by Ito.
 An investor keeps a fraction $\pi$ of wealth $W$ in the risky asset and
 $1 - \pi$ in the bond; take $\pi$ constant first (the optimization comes
 after). Wealth per turn:
 
 $$
-dW = W(1 - \pi) r\, dt + W \pi (dS/S)
-= W [r + \pi (\mu - r)]\, dt + W \pi \sigma\, dB_t.
+dW = W(1 - \pi) r\  dt + W \pi (dS/S)
+= W [r + \pi (\mu - r)]\  dt + W \pi \sigma\  dB\_t.
 $$
 
 Each line is bookkeeping: the dollar amounts invested in each position
@@ -38,17 +38,17 @@ section 3). Ito's formula for the scalar process with the quadratic
 variation of section 2 of the Black-Scholes case, $(dB)^2 = dt$:
 
 $$
-d\ln W = (1/W)\, dW + (1/2)(-1/W^2)\, d\langle W \rangle
-= [r + \pi(\mu - r)]\, dt + \pi \sigma\, dB_t - (1/2) \pi^2 \sigma^2\, dt
+d\ln W = (1/W)\  dW + (1/2)(-1/W^2)\  d\langle W \rangle
+= [r + \pi(\mu - r)]\  dt + \pi \sigma\  dB\_t - (1/2) \pi^2 \sigma^2\  dt
 $$
 
-because $d\langle W \rangle = \pi^2 \sigma^2 W^2\, dt$, the only nonzero
-bracket being $(\pi W \sigma\, dB)^2$ with the rule $(dB)^2 = dt$ (named;
+because $d\langle W \rangle = \pi^2 \sigma^2 W^2\  dt$, the only nonzero
+bracket being $(\pi W \sigma\  dB)^2$ with the rule $(dB)^2 = dt$ (named;
 the same rule justified in case-black-scholes.md section 2 through the
 mean-square computation). Collect the $dt$ terms:
 
 $$
-d\ln W = [r + \pi(\mu - r) - \pi^2 \sigma^2/2]\, dt + \pi \sigma\, dB_t.
+d\ln W = [r + \pi(\mu - r) - \pi^2 \sigma^2/2]\  dt + \pi \sigma\  dB\_t.
 $$
 
 The growth rate per unit time: the expectation of the $dB$ term is zero
@@ -80,11 +80,11 @@ g(\pi) = r + A^2/(2 \sigma^2) - (\sigma^2/2)(\pi - A/\sigma^2)^2.
 $$
 
 The pure-square term is nonpositive and zero exactly at
-$\pi^* = A/\sigma^2 = (\mu - r)/\sigma^2$. PROVEN: $\pi^*$ is the unique
-maximizer with maximal rate $g^* = r + (\mu - r)^2/(2 \sigma^2)$. The
-dictionary against discrete Kelly: there $f^* = \text{edge}/\text{variance}$
+$\pi^\* = A/\sigma^2 = (\mu - r)/\sigma^2$. PROVEN: $\pi^\*$ is the unique
+maximizer with maximal rate $g^\* = r + (\mu - r)^2/(2 \sigma^2)$. The
+dictionary against discrete Kelly: there $f^\* = \text{edge}/\text{variance}$
 with edge $pb - q$ and per-round variance $b^2 pq$; here
-$\pi^* = \text{risk premium}/\text{volatility}^2$, the same ratio at the
+$\pi^\* = \text{risk premium}/\text{volatility}^2$, the same ratio at the
 level of the local mean and local variance of log wealth. The claim that
 the two problems are the same object at different timescales is the
 small-time identification below, tagged SUPPORTED: it rests on the CLT
@@ -97,30 +97,30 @@ case-black-scholes.md section 1.
 This is the sturdier engine for the whole course, so carry it in full
 for the log case. The generator $L(\pi)$ of the controlled wealth process
 acts on smooth $v$ by
-$L(\pi)v = [r + \pi A]w v_w + (1/2) \pi^2 \sigma^2 w^2 v_{ww}$ (each
+$L(\pi)v = [r + \pi A]w v\_w + (1/2) \pi^2 \sigma^2 w^2 v\_{ww}$ (each
 coefficient read off the differential of section 1: the $dt$ coefficient
-times $v_w$, half the diffusion coefficient squared times $v_{ww}$, the
+times $v\_w$, half the diffusion coefficient squared times $v\_{ww}$, the
 Ito chain rule as written in case-black-scholes.md section 4). The
 Hamilton-Jacobi-Bellman equation for the value of a terminal criterion
 with zero running cost:
 
 $$
-0 = \sup_\pi \{ v_t + L(\pi)v \}.
+0 = \sup\_\pi \lbrace v\_t + L(\pi)v \rbrace.
 $$
 
 For the log criterion the natural candidate is
 $v(t,w) = \ln w + c (T - t)$ for a constant $c$ to be determined.
-Derivatives: $v_t = -c$, $v_w = 1/w$, $v_{ww} = -1/w^2$ (each by the
+Derivatives: $v\_t = -c$, $v\_w = 1/w$, $v\_{ww} = -1/w^2$ (each by the
 chain rule as it comes). Insert:
 
 $$
-0 = \sup_\pi \{ -c + [r + \pi A] - (1/2) \pi^2 \sigma^2 \}
-= -c + \sup_\pi \{ r + \pi A - \pi^2 \sigma^2/2 \}.
+0 = \sup\_\pi \lbrace -c + [r + \pi A] - (1/2) \pi^2 \sigma^2 \rbrace
+= -c + \sup\_\pi \lbrace r + \pi A - \pi^2 \sigma^2/2 \rbrace.
 $$
 
 The sup is exactly $g(\pi)$ of sections 2 and 3, evaluated there:
-$\sup_\pi g(\pi) = r + A^2/(2 \sigma^2)$. Hence
-$c = r + (\mu - r)^2/(2 \sigma^2) = g^*$: the HJB forces the constant to
+$\sup\_\pi g(\pi) = r + A^2/(2 \sigma^2)$. Hence
+$c = r + (\mu - r)^2/(2 \sigma^2) = g^\*$: the HJB forces the constant to
 be the very growth rate the direct computation found. PROVEN as the
 consistency of one object seen twice; the full verification theorem (that
 a smooth HJB solution is the value function, with the maximizing control
@@ -130,59 +130,57 @@ course's two instruments agree).
 
 ## 5. Half-Merton keeps three quarters
 
-The concavity arithmetic is identical territory to the half-Kelly
-paragraph of case-kelly.md section 5.
-$g(\pi^*/2) = r + A^2/(2 \sigma^2) - (\sigma^2/2)(A/(2 \sigma^2))^2
-= r + A^2/(2 \sigma^2) - A^2/(8 \sigma^2) = r + (3/4) A^2/(2 \sigma^2)$:
-three quarters of the excess, at half the exposure. Same formula
-$(2c - c^2)$ at $c = 1/2$ as there, now with one extra route available:
-it also follows from the square form of section 3 by putting
-$\pi = \pi^*/2$ inside one term. PROVEN.
+The concavity arithmetic is identical territory to the half-Kelly paragraph of
+case-kelly.md section 5.
+$g(\pi^\*/2) = r + A^2/(2 \sigma^2) - (\sigma^2/2)(A/(2 \sigma^2))^2 = r + A^2/(2 \sigma^2) - A^2/(8 \sigma^2) = r + (3/4) A^2/(2 \sigma^2)$:
+three quarters of the excess, at half the exposure. Same formula $(2c - c^2)$
+at $c = 1/2$ as there, now with one extra route available: it also follows from
+the square form of section 3 by putting $\pi = \pi^\*/2$ inside one term.
+PROVEN.
 
 ## 6. Numeric fixture, recomputed
 
-$\mu = 0.12$, $r = 0.04$, $\sigma = 0.20$ per year. Risk premium
-$A = 0.08$. $\pi^* = 0.08/0.04 = 2.00$: two units of exposure per unit of
-wealth, a levered position (borrow 1 unit at $r$ to hold 2 at $\mu$).
-$g^* = 0.04 + 0.08^2/(2 \cdot 0.04) = 0.04 + 0.0064/0.08 = 0.04 + 0.08
-= 0.12$ nats per year: expected log wealth grows linearly at rate $g^*$,
-and the doubling time is $\ln 2 / 0.12 \approx 5.78$ years (the
-expectation satisfies $\mathbb{E}[\ln W] = \ln W_0 + g^* t$, the same
-first-order solvability as case-heat-kernel.md section 2). Half-Merton:
-$\pi = 1.00$, $g = 0.04 + 0.08 - 0.02 = 0.10$: three quarters of the
-excess (the excess 0.08 decays to excess 0.06), as section 5 ordered. A
-one-hundredth rerun of the arithmetic satisfies the covenant check
-service: recompute before trusting.
+$\mu = 0.12$, $r = 0.04$, $\sigma = 0.20$ per year. Risk premium $A = 0.08$.
+$\pi^\* = 0.08/0.04 = 2.00$: two units of exposure per unit of wealth, a levered
+position (borrow 1 unit at $r$ to hold 2 at $\mu$).
+$g^\* = 0.04 + 0.08^2/(2 \cdot 0.04) = 0.04 + 0.0064/0.08 = 0.04 + 0.08 = 0.12$
+nats per year: expected log wealth grows linearly at rate $g^\*$, and the
+doubling time is $\ln 2 / 0.12 \approx 5.78$ years (the expectation satisfies
+$\mathbb{E}[\ln W] = \ln W\_0 + g^\* t$, the same first-order solvability as
+case-heat-kernel.md section 2). Half-Merton: $\pi = 1.00$,
+$g = 0.04 + 0.08 - 0.02 = 0.10$: three quarters of the excess (the excess 0.08
+decays to excess 0.06), as section 5 ordered. A one-hundredth rerun of the
+arithmetic satisfies the covenant check service: recompute before trusting.
 
 ## 7. Falsifiable checks
 
-- Zero premium: $\mu = r$ gives $A = 0$ and $\pi^* = 0$ by the formula;
+- Zero premium: $\mu = r$ gives $A = 0$ and $\pi^\* = 0$ by the formula;
   the square form then forces $g = r$ with no investment. PROVEN by
   substitution. A stock offering nothing beyond the bond receives none
   of the portfolio: the log-optimal answer to a fair coin.
-- No volatility: $\sigma \to 0$ with $A > 0$ sends $\pi^* \to \infty$ and
-  $g^* \to \infty$ (ratios with shrinking denominators, limits stated and
+- No volatility: $\sigma \to 0$ with $A > 0$ sends $\pi^\* \to \infty$ and
+  $g^\* \to \infty$ (ratios with shrinking denominators, limits stated and
   computed). A riskless premium is an arbitrage in this model, and the
   frictionless portfolio says borrow without bound; the transaction-cost
   frontier below is where this limit dies. PROVEN limits, and the
   honest reason no sane desk runs this.
 - The Black-Scholes contrast, in one sentence each: hedging set
-  $\Delta = V_S$ and REMOVED $\mu$ from the price; allocating sets
-  $\pi^*$ and needs $\mu$ exactly. Both conclusions are the same Ito
+  $\Delta = V\_S$ and REMOVED $\mu$ from the price; allocating sets
+  $\pi^\*$ and needs $\mu$ exactly. Both conclusions are the same Ito
   computation with the opposite instruction, PROVEN in their files; the
   pairing is the lesson.
 
 ## 8. Where the frontier is
 
 - Consumption and endowments: Merton's full problem maximizes utility
-  of a lifetime consumption stream and the HJB picks a $c^*$ consumption
-  policy along with $\pi^*$; the equation gains one term, the engine
+  of a lifetime consumption stream and the HJB picks a $c^\*$ consumption
+  policy along with $\pi^\*$; the equation gains one term, the engine
   above is unchanged. Cited, and flagged as the natural next derivation.
 - Beyond log: constant relative risk aversion $\gamma$ gives the classical
-  $\pi^* = A/(\sigma^2 \gamma)$: the power-utility HJB is an exercise with
+  $\pi^\* = A/(\sigma^2 \gamma)$: the power-utility HJB is an exercise with
   $v = w^{1-\gamma}/(1-\gamma)$ and the same completion of squares.
 - Transaction costs: the no-trade band of Davis-Norman replaces the
-  single $\pi^*$; the band width scales like $cost^{1/3}$, a genuinely
+  single $\pi^\*$; the band width scales like $cost^{1/3}$, a genuinely
   different regime (cited frontier, ties to the Leland repair mentioned
   in case-black-scholes.md section 8).
 - Robust control: if the drift $\mu$ is not known, the maximization over

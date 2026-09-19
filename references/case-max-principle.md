@@ -8,18 +8,18 @@ Giorgi–Nash begins.
 
 ## 1. Statement and the failure of the naive proof
 
-Let $u \in C^{2,1}$ solve $u_t = u_{xx}$ on $\Omega = (0,\ell) \times (0,T]$,
+Let $u \in C^{2,1}$ solve $u\_t = u\_{xx}$ on $\Omega = (0,\ell) \times (0,T]$,
 continuous on the closure. The parabolic boundary $\Gamma$ is the bottom
-$[0,\ell]\times\{0\}$ plus the two sides $\{0\}\times[0,T]$ and
-$\{\ell\}\times[0,T]$.
+$[0,\ell]\times\lbrace0\rbrace$ plus the two sides $\lbrace0\rbrace\times[0,T]$ and
+$\lbrace\ell\rbrace\times[0,T]$.
 
-**Theorem.** $\max_{\overline\Omega} u = \max_\Gamma u$.
+**Theorem.** $\max\_{\overline\Omega} u = \max\_\Gamma u$.
 
-Naive attempt: at an interior max $(x_0, t_0)$ with $t_0 > 0$, Fermat gives
-$u_x = 0$; concavity in space at a max gives $u_{xx} \le 0$; and
-$u_t(x_0, t_0) \ge 0$: if $t_0 < T$ then $u_t = 0$ by Fermat in $t$; if
-$t_0 = T$ a maximum on the top cannot be decreasing as $t \uparrow T$.
-Combining: $u_t - u_{xx} \ge 0$. But the equation says $u_t - u_{xx} = 0$.
+Naive attempt: at an interior max $(x\_0, t\_0)$ with $t\_0 > 0$, Fermat gives
+$u\_x = 0$; concavity in space at a max gives $u\_{xx} \le 0$; and
+$u\_t(x\_0, t\_0) \ge 0$: if $t\_0 < T$ then $u\_t = 0$ by Fermat in $t$; if
+$t\_0 = T$ a maximum on the top cannot be decreasing as $t \uparrow T$.
+Combining: $u\_t - u\_{xx} \ge 0$. But the equation says $u\_t - u\_{xx} = 0$.
 **No contradiction.** The naive proof fails and must be fixed — name the
 obstruction before the fix: the equations tolerate *equality* at a flat
 maximum, so we must buy strictness.
@@ -27,21 +27,21 @@ maximum, so we must buy strictness.
 ## 2. The fix: buy strictness for $\varepsilon$
 
 Set $w = u - \varepsilon t$ for $\varepsilon > 0$. Then
-$w_t - w_{xx} = u_t - \varepsilon - u_{xx} = -\varepsilon < 0$.
+$w\_t - w\_{xx} = u\_t - \varepsilon - u\_{xx} = -\varepsilon < 0$.
 
-Suppose $w$ had an interior max $(x_0, t_0)$, $t_0 > 0$. Then as above
-$w_{xx}(x_0,t_0) \le 0$ and $w_t(x_0,t_0) \ge 0$ (same two-case argument on
-$t_0$, applied verbatim). Hence $w_t - w_{xx} \ge 0$ there — contradicting
-$w_t - w_{xx} = -\varepsilon < 0$. So $w$ attains its max on $\Gamma \cup
-\{t = 0\}$... and $t_0 = 0$ is inside $\Gamma$ by definition, so
-$\max_{\overline\Omega} w = \max_\Gamma w$.
+Suppose $w$ had an interior max $(x\_0, t\_0)$, $t\_0 > 0$. Then as above
+$w\_{xx}(x\_0,t\_0) \le 0$ and $w\_t(x\_0,t\_0) \ge 0$ (same two-case argument on
+$t\_0$, applied verbatim). Hence $w\_t - w\_{xx} \ge 0$ there — contradicting
+$w\_t - w\_{xx} = -\varepsilon < 0$. So $w$ attains its max on
+$\Gamma \cup \lbracet = 0\rbrace$... and $t\_0 = 0$ is inside $\Gamma$ by
+definition, so $\max\_{\overline\Omega} w = \max\_\Gamma w$.
 
-Now $\max u \le \max w + \varepsilon T \le \max_\Gamma w + \varepsilon T
-\le \max_\Gamma u + \varepsilon T$
-(first inequality: $u = w + \varepsilon t \le w + \varepsilon T$
-pointwise; second: previous paragraph; third: $w \le u$). Let
-$\varepsilon \downarrow 0$: $\max u \le \max_\Gamma u$. The other direction
-is $\Gamma \subseteq \overline\Omega$. $\blacksquare$
+Now
+$\max u \le \max w + \varepsilon T \le \max\_\Gamma w + \varepsilon T \le \max\_\Gamma u + \varepsilon T$
+(first inequality: $u = w + \varepsilon t \le w + \varepsilon T$ pointwise;
+second: previous paragraph; third: $w \le u$). Let $\varepsilon \downarrow 0$:
+$\max u \le \max\_\Gamma u$. The other direction is
+$\Gamma \subseteq \overline\Omega$. $\blacksquare$
 
 Note the proof shape: strictify → contradict → unstrictify. This is the
 universal opening move of the whole elliptic/parabolic theory.
@@ -66,19 +66,19 @@ assumption about the kernel, it is forced by the equation.
 
 ## 4. The discrete shadow (ties to case-heat-kernel)
 
-The graph case is *elementary* — no calculus needed. Let $M = D^{-1}W$ be
-the row-averaging operator of case-heat-kernel.md §1: $(Mv)_i =
-\sum_j \frac{W_{ij}}{D_{ii}} v_j$, a convex combination of the $v_j$
-(weights nonnegative, summing to $\sum_j W_{ij}/D_{ii} = 1$ by the
-definition of $D_{ii}$). Then
+The graph case is *elementary* — no calculus needed. Let $M = D^{-1}W$ be the
+row-averaging operator of case-heat-kernel.md §1:
+$(Mv)\_i = \sum\_j \frac{W\_{ij}}{D\_{ii}} v\_j$, a convex combination of the $v\_j$
+(weights nonnegative, summing to $\sum\_j W\_{ij}/D\_{ii} = 1$ by the definition
+of $D\_{ii}$). Then
 
 $$
-(Mv)_i \le \max_j v_j \quad \text{for every } i
+(Mv)\_i \le \max\_j v\_j \quad \text{for every } i
 \quad\Longrightarrow\quad \max Mv \le \max v.
 $$
 
 One line: a convex combination of numbers cannot exceed the largest of
-them; $W_{ij} = 0$ terms contribute nothing; done. $\blacksquare$
+them; $W\_{ij} = 0$ terms contribute nothing; done. $\blacksquare$
 The finite rational certificate is `convex_avg_le_max` in `bend/LAWS.bend`.
 It accepts explicit pointwise upper-bound certificates and exact weight
 normalization. Choosing the largest value as that bound gives this case.
@@ -86,20 +86,20 @@ The historical statement remains in `lean/Frontier/Conjectures.lean`.
 
 ## 5. What the principle is for
 
-Discounted: with $u_t = u_{xx} - cu$, the same strictification
-($w = u e^{ct}$... check: $w_t = e^{ct}(u_t + cu) = e^{ct} u_{xx} = w_{xx}$, so $w$
-solves the plain equation) gives $e^{ct}\max u \le \max_\Gamma (e^{ct}u)$;
-on the top edge this forces $\max_{\overline\Omega} u \le \max_\Gamma u^+$ —
+Discounted: with $u\_t = u\_{xx} - cu$, the same strictification
+($w = u e^{ct}$... check: $w\_t = e^{ct}(u\_t + cu) = e^{ct} u\_{xx} = w\_{xx}$, so $w$
+solves the plain equation) gives $e^{ct}\max u \le \max\_\Gamma (e^{ct}u)$;
+on the top edge this forces $\max\_{\overline\Omega} u \le \max\_\Gamma u^+$ —
 the version used for stability estimates in numerics. (Each sub-step: chain
 rule on $w = e^{ct}u$; the max comparison; sign tracking. Exercise.)
 
 ## 6. Where the frontier is
 
-This whole file assumes $u_{xx}$ *exists*. The frontier begins when it
+This whole file assumes $u\_{xx}$ *exists*. The frontier begins when it
 does not:
 
 - **De Giorgi (1957), Nash (1958), Moser (1961).** Equations
-  $\partial_t u = \mathrm{div}(A(x)\nabla u)$ with $A$ merely
+  $\partial\_t u = \mathrm{div}(A(x)\nabla u)$ with $A$ merely
   *measurable* and uniformly elliptic still have Hölder-continuous
   solutions: regularity out of measurability. Aronson (1967) then proves
   the heat kernel still has **two-sided Gaussian bounds** — the kernel

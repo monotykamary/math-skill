@@ -50,27 +50,27 @@ $f(x,t)\in\mathbb R^3$ external force per unit mass, and $\nu>0$ viscosity.
 On $\mathbb R^3$, the equations are
 
 $$
-\partial_t u+(u\cdot\nabla)u-\nu\Delta u+\nabla p=f,
+\partial\_t u+(u\cdot\nabla)u-\nu\Delta u+\nabla p=f,
 \qquad \nabla\cdot u=0.
 $$
 
 **Cited statement, Theorem 1.1.** For every $\nu>0$, there exist
-$f\in C_c^\infty(\mathbb R^3\times(0,\infty);\mathbb R^3)$, a compact set
+$f\in C\_c^\infty(\mathbb R^3\times(0,\infty);\mathbb R^3)$, a compact set
 $K\subset\mathbb R^3$, and smooth fields $u,p$ on
 $\mathbb R^3\times[0,1)$ satisfying these equations and
 
 $$
 u(\cdot,0)=0,\qquad
-\mathrm{supp}\,u(\cdot,t)\cup\mathrm{supp}\,p(\cdot,t)\subset K,
+\mathrm{supp}\ u(\cdot,t)\cup\mathrm{supp}\ p(\cdot,t)\subset K,
 $$
 
 $$
-\sup_{0\le t<1}\|u(t)\|_{L^2(\mathbb R^3)}<\infty,
+\sup\_{0\le t<1}\lVertu(t)\rVert\_{L^2(\mathbb R^3)}<\infty,
 \qquad
-\limsup_{t\uparrow1}\|u(t)\|_{L^\infty(\mathbb R^3)}=\infty.
+\limsup\_{t\uparrow1}\lVertu(t)\rVert\_{L^\infty(\mathbb R^3)}=\infty.
 $$
 
-Here $C_c^\infty$ means smooth with compact support. In particular, the
+Here $C\_c^\infty$ means smooth with compact support. In particular, the
 force is smooth through $t=1$ and vanishes near the initial time.
 The singularity belongs to the velocity; singular forcing is excluded.
 
@@ -101,9 +101,9 @@ Scope checklist:
 
 Ask one question at a time. Stop for his calculation.
 
-1. If $\int_{\mathbb R^3}|u|^2\,dx$ stays bounded, must
-   $\sup_x|u(x)|$ stay bounded? State a bound or propose a counterexample.
-2. Choose a divergence-free profile $U$. For $v_\lambda(x)=A U(\lambda x)$,
+1. If $\int\_{\mathbb R^3}|u|^2\ dx$ stays bounded, must
+   $\sup\_x|u(x)|$ stay bounded? State a bound or propose a counterexample.
+2. Choose a divergence-free profile $U$. For $v\_\lambda(x)=A U(\lambda x)$,
    which power of $\lambda$ should $A$ use to keep the energy fixed?
 
 Enter his answer as HYPOTHESIZED. Reveal section 4 when he has predicted
@@ -117,15 +117,15 @@ support on each compact time subinterval, so differentiation under the
 integral and the following boundary cancellations are valid. Define
 
 $$
-E(t)=\frac12\int_{\mathbb R^3}|u(x,t)|^2\,dx,
+E(t)=\frac12\int\_{\mathbb R^3}|u(x,t)|^2\ dx,
 \qquad
-\|\nabla u\|_2^2=\sum_{i,j=1}^3\int_{\mathbb R^3}(\partial_j u_i)^2\,dx.
+\lVert\nabla u\rVert\_2^2=\sum\_{i,j=1}^3\int\_{\mathbb R^3}(\partial\_j u\_i)^2\ dx.
 $$
 
 The chain rule and the momentum equation give
 
 $$
-E'(t)=\int u\cdot\partial_tu
+E'(t)=\int u\cdot\partial\_tu
 =-\int u\cdot(u\cdot\nabla)u
 +\nu\int u\cdot\Delta u-\int u\cdot\nabla p+\int u\cdot f.
 $$
@@ -136,8 +136,8 @@ and incompressibility give
 $$
 \begin{aligned}
 \int u\cdot(u\cdot\nabla)u
-&=\sum_{i,j}\int u_i u_j\partial_j u_i\\
-&=\frac12\sum_j\int u_j\partial_j(|u|^2)\\
+&=\sum\_{i,j}\int u\_i u\_j\partial\_j u\_i\\
+&=\frac12\sum\_j\int u\_j\partial\_j(|u|^2)\\
 &=\frac12\int\nabla\cdot(|u|^2u)
  -\frac12\int |u|^2\nabla\cdot u=0.
 \end{aligned}
@@ -155,19 +155,19 @@ For viscosity, integration by parts in each coordinate yields
 
 $$
 \int u\cdot\Delta u
-=\sum_{i,j}\int u_i\partial_j^2u_i
-=-\sum_{i,j}\int(\partial_j u_i)^2=-\|\nabla u\|_2^2.
+=\sum\_{i,j}\int u\_i\partial\_j^2u\_i
+=-\sum\_{i,j}\int(\partial\_j u\_i)^2=-\lVert\nabla u\rVert\_2^2.
 $$
 
 Substitution and integration in time now give
 
 $$
-\boxed{E'(t)+\nu\|\nabla u(t)\|_2^2=\int u(x,t)\cdot f(x,t)\,dx,}
+\boxed{E'(t)+\nu\lVert\nabla u(t)\rVert\_2^2=\int u(x,t)\cdot f(x,t)\ dx,}
 $$
 
 $$
-E(t)+\nu\int_0^t\|\nabla u(s)\|_2^2\,ds
-=E(0)+\int_0^t\int u(x,s)\cdot f(x,s)\,dx\,ds.
+E(t)+\nu\int\_0^t\lVert\nabla u(s)\rVert\_2^2\ ds
+=E(0)+\int\_0^t\int u(x,s)\cdot f(x,s)\ dx\ ds.
 $$
 
 PROVEN under the stated smoothness and support assumptions. This is an
@@ -183,42 +183,42 @@ from rest must receive energy from its force before it can break down.
 
 Fix a nonzero smooth compactly supported divergence-free vector field
 $U$ on $\mathbb R^3$. Such fields can be constructed as
-$U=(\partial_2\psi,-\partial_1\psi,0)$ for a smooth compactly supported
+$U=(\partial\_2\psi,-\partial\_1\psi,0)$ for a smooth compactly supported
 $\psi$ with a nonzero derivative in the first two coordinates. Indeed,
 
 $$
-\nabla\cdot U=\partial_1\partial_2\psi-\partial_2\partial_1\psi=0
+\nabla\cdot U=\partial\_1\partial\_2\psi-\partial\_2\partial\_1\psi=0
 $$
 
 by equality of mixed derivatives. Normalize $U$ by its nonzero $L^2$
-norm, so $\|U\|_2=1$. For $\lambda\ge1$, define
+norm, so $\lVertU\rVert\_2=1$. For $\lambda\ge1$, define
 
 $$
-v_\lambda(x)=\lambda^{3/2}U(\lambda x).
+v\_\lambda(x)=\lambda^{3/2}U(\lambda x).
 $$
 
 The chain rule preserves incompressibility:
-$\nabla\cdot v_\lambda=\lambda^{5/2}(\nabla\cdot U)(\lambda x)=0$.
+$\nabla\cdot v\_\lambda=\lambda^{5/2}(\nabla\cdot U)(\lambda x)=0$.
 With $y=\lambda x$, the volume element is $dx=\lambda^{-3}dy$. Thus
 
 $$
-\|v_\lambda\|_2^2
-=\int\lambda^3|U(\lambda x)|^2\,dx
-=\lambda^3\lambda^{-3}\int|U(y)|^2\,dy=1.
+\lVertv\_\lambda\rVert\_2^2
+=\int\lambda^3|U(\lambda x)|^2\ dx
+=\lambda^3\lambda^{-3}\int|U(y)|^2\ dy=1.
 $$
 
 Since $x\mapsto\lambda x$ maps $\mathbb R^3$ onto itself,
 
 $$
-\|v_\lambda\|_\infty=\lambda^{3/2}\|U\|_\infty\longrightarrow\infty.
+\lVertv\_\lambda\rVert\_\infty=\lambda^{3/2}\lVertU\rVert\_\infty\longrightarrow\infty.
 $$
 
 Each derivative adds a factor $\lambda$, so the same substitution gives
 
 $$
-\|\nabla v_\lambda\|_2^2
-=\lambda^5\lambda^{-3}\|\nabla U\|_2^2
-=\lambda^2\|\nabla U\|_2^2.
+\lVert\nabla v\_\lambda\rVert\_2^2
+=\lambda^5\lambda^{-3}\lVert\nabla U\rVert\_2^2
+=\lambda^2\lVert\nabla U\rVert\_2^2.
 $$
 
 The support shrinks by $\lambda^{-1}$. All these supports lie in a fixed
@@ -226,7 +226,7 @@ ball containing the support of $U$.
 
 Numeric fixture, with the last two columns expressed as ratios to $U$:
 
-| $\lambda$ | $\frac12\|v_\lambda\|_2^2$ | $\|v_\lambda\|_\infty/\|U\|_\infty$ | $\|\nabla v_\lambda\|_2^2/\|\nabla U\|_2^2$ |
+| $\lambda$ | $\frac12\lVertv\_\lambda\rVert\_2^2$ | $\lVertv\_\lambda\rVert\_\infty/\lVertU\rVert\_\infty$ | $\lVert\nabla v\_\lambda\rVert\_2^2/\lVert\nabla U\rVert\_2^2$ |
 |---|---|---|---|
 | 1 | $1/2$ | 1 | 1 |
 | 4 | $1/2$ | 8 | 16 |
@@ -247,7 +247,7 @@ family a solution of the breakdown problem leaves a GAP.
 For any chosen divergence-free $u$ and pressure $p$, defining
 
 $$
-f:=\partial_tu+(u\cdot\nabla)u-\nu\Delta u+\nabla p
+f:=\partial\_tu+(u\cdot\nabla)u-\nu\Delta u+\nabla p
 $$
 
 makes the momentum equation hold by substitution. If $u$ becomes
