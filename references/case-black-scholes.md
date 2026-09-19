@@ -10,14 +10,15 @@ form → formula. Long, but no step is skipped and every formula is checked.
 Let $X_1, X_2, \dots$ be i.i.d. $\pm 1$ with probability $1/2$, partial sums
 $S_n$. Scale space by $\sqrt{n}$ and time by $n$:
 
-$$B_t^{(n)} := \frac{S_{\lfloor nt \rfloor}}{\sqrt{n}}.
+$$
+B_t^{(n)} := \frac{S_{\lfloor nt \rfloor}}{\sqrt{n}}.
 $$
 
 Variance computation (complete): each $X_k$ has $\mathbb{E}X_k = 0$,
 $\mathbb{E}X_k^2 = 1$, and independence gives
 
 $$
-\operatorname{Var} B_t^{(n)} = \frac{1}{n}\operatorname{Var} S_{\lfloor nt \rfloor}
+\mathrm{Var}\, B_t^{(n)} = \frac{1}{n}\mathrm{Var}\, S_{\lfloor nt \rfloor}
 = \frac{\lfloor nt \rfloor}{n} \xrightarrow[n\to\infty]{} t.
 $$
 

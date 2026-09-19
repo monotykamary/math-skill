@@ -99,7 +99,7 @@ This whole file assumes $u_{xx}$ *exists*. The frontier begins when it
 does not:
 
 - **De Giorgi (1957), Nash (1958), Moser (1961).** Equations
-  $\partial_t u = \operatorname{div}(A(x)\nabla u)$ with $A$ merely
+  $\partial_t u = \mathrm{div}(A(x)\nabla u)$ with $A$ merely
   *measurable* and uniformly elliptic still have Hölder-continuous
   solutions: regularity out of measurability. Aronson (1967) then proves
   the heat kernel still has **two-sided Gaussian bounds** — the kernel

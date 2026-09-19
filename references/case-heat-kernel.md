@@ -79,7 +79,7 @@ entry if unproven for you) makes it *the* solution. $\blacksquare$
 
 ## 3. Reading the flow (the intuition, earned)
 
-Diagonalize: $L = U \Lambda U^\top$ with $\Lambda = \operatorname{diag}
+Diagonalize: $L = U \Lambda U^\top$ with $\Lambda = \mathrm{diag}
 (\lambda_0 \le \lambda_1 \le \cdots)$, $\lambda_0 = 0$. Since $e^{-tL}$ has
 the same eigenvectors with eigenvalues $e^{-t\lambda_j}$, write the seed in
 the eigenbasis, $s = \sum_j c_j u_j$:

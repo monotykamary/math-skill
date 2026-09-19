@@ -57,7 +57,7 @@ Compute: $\Lambda'(t) = \mathbb{E}[X e^{tX}]/M(t)$ and
 
 $$
 \Lambda''(t) = \frac{\mathbb{E}[X^2 e^{tX}]}{M(t)} - \left(\frac{\mathbb{E}[X e^{tX}]}{M(t)}\right)^2
-= \operatorname{Var}_{\mathbb{Q}_t}[X] \ge 0,
+= \mathrm{Var}_{\mathbb{Q}_t}[X] \ge 0,
 $$
 
 where $\mathbb{Q}_t$ is the *tilted* measure $d\mathbb{Q}_t/d\mathbb{P}
@@ -95,9 +95,9 @@ one-liner — exercise.
 
 **Fair coin, $X = \pm 1$.** $M(t) = \cosh t$. The condition
 $\Lambda'(t_a) = a$ reads $\tanh t_a = a$, i.e.
-$t_a = \operatorname{artanh} a = \tfrac12 \ln\frac{1+a}{1-a}$. Now
-$\cosh(\operatorname{artanh} a) = 1/\sqrt{1 - a^2}$ (from
-$1 - \tanh^2 = \operatorname{sech}^2$), so
+$t_a = \mathrm{artanh}\, a = \tfrac12 \ln\frac{1+a}{1-a}$. Now
+$\cosh(\mathrm{artanh}\, a) = 1/\sqrt{1 - a^2}$ (from
+$1 - \tanh^2 = \mathrm{sech}^2$), so
 
 $$
 \begin{aligned}
@@ -116,7 +116,7 @@ $X = \pm 1$ fair, $n = 100$, $a = 0.4$:
 - Chernoff: $I(0.4) = 0.5\,[1.4 \ln 1.4 + 0.6 \ln 0.6]
 = 0.5\,[0.471061 - 0.306495] = 0.082283$,
 so $\mathbb{P}(S_{100} \ge 40) \le e^{-8.2283} \approx 2.7 \times 10^{-4}$.
-- Chebyshev: $\operatorname{Var} S_{100} = 100$, so
+- Chebyshev: $\mathrm{Var}\, S_{100} = 100$, so
 $\mathbb{P}(|S_{100}| \ge 40) \le 100/1600 = 1/16 = 0.0625$.
 
 Same event, same ingredients (mean, variance) versus one more ingredient

@@ -61,7 +61,7 @@ $\mathbb R^3\times[0,1)$ satisfying these equations and
 
 $$
 u(\cdot,0)=0,\qquad
-\operatorname{supp}u(\cdot,t)\cup\operatorname{supp}p(\cdot,t)\subset K,
+\mathrm{supp}\,u(\cdot,t)\cup\mathrm{supp}\,p(\cdot,t)\subset K,
 $$
 
 $$

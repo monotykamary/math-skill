@@ -112,13 +112,13 @@ proven.
 Per-round log-return $R = \log(1{+}bf)$ or $\log(1{-}f)$ has variance
 
 $$
-\operatorname{Var}[R] = pq\,\big[\log(1+bf) - \log(1-f)\big]^2
+\mathrm{Var}[R] = pq\,\big[\log(1+bf) - \log(1-f)\big]^2
 = pq\,\Big[\log\frac{1+bf}{1-f}\Big]^2,
 $$
 
-since $R$ takes two values; $\operatorname{Var}[R] = \mathbb{E}R^2 - (\mathbb{E}R)^2 = pq(\log\tfrac{1+bf}{1-f})^2$
+since $R$ takes two values; $\mathrm{Var}[R] = \mathbb{E}R^2 - (\mathbb{E}R)^2 = pq(\log\tfrac{1+bf}{1-f})^2$
 (the standard two-point variable formula — derive: for a variable taking
-$u$ w.p. $p$ and $v$ w.p. $q$, $\operatorname{Var} = pq(u-v)^2$, verified by
+$u$ w.p. $p$ and $v$ w.p. $q$, $\mathrm{Var} = pq(u-v)^2$, verified by
 expanding both sides).
 
 Half-Kelly fixture: $f = f^*/2 = 0.1$ at $p = 0.6$, $b = 1$:
