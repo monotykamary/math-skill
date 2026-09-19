@@ -169,7 +169,7 @@ an exercise; the general theorem — expectations of diffusions solve the
 backward equation — is cited machinery, GAP).
 
 Now evaluate. With $d\_2 := \frac{\ln(S/K) + (r - \sigma^2/2)\tau}{\sigma\sqrt{\tau}}$,
-the event $\lbraceS\_T > K\rbrace$ is $\lbraceZ > -d\_2\rbrace$. Second term:
+the event $\lbrace S\_T > K\rbrace$ is $\lbrace Z > -d\_2\rbrace$. Second term:
 $e^{-r\tau} K\  \mathbb{P}(Z > -d\_2) = K e^{-r\tau} N(d\_2)$. First term:
 $e^{-r\tau} S e^{(r-\sigma^2/2)\tau}\  \mathbb{E}[e^{\sigma\sqrt\tau Z} \mathbf 1\_{Z>-d\_2}]$.
 Complete the square inside the expectation:

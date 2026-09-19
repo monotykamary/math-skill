@@ -44,9 +44,9 @@ machinery cited, proof is a GAP entry unless already committed).
 after similarity: $D^{-1}W\ \mathbf{1} = \mathbf{1}$ componentwise by
 definition of $D$, so $1$ is an eigenvalue of $D^{-1}W$, hence of $M$, hence
 $0$ is an eigenvalue of $L$. For the band: $M$'s eigenvalues lie in $[-1,1]$
-because $\lVertM\rVert\_2 \le 1$, shown by
+because $\lVert M\rVert\_2 \le 1$, shown by
 $v^\top M v = \sum\_{ij} W\_{ij}\  (v\_i/\sqrt{D\_{ii}})(v\_j/\sqrt{D\_{jj}})$ with
-$2|xy| \le x^2+y^2$ giving $|v^\top M v| \le \sum\_i v\_i^2 = \lVertv\rVert^2$.
+$2|xy| \le x^2+y^2$ giving $|v^\top M v| \le \sum\_i v\_i^2 = \lVert v\rVert^2$.
 (Each sub-step: expand the quadratic form, bound each pair, regroup.) So
 $\sigma(L) = 1 - \sigma(M) \subseteq [0,2]$. $\blacksquare$
 
@@ -65,7 +65,7 @@ $$
 **Claim 2.** $v(t) = e^{-tL} s$, where $e^{A} = \sum\_{k\ge0} A^k/k!$.
 
 *Proof.* The series for $e^{-tL}$ converges absolutely for every $t$
-(bounded by $e^{\lVerttL\rVert}$, comparison test), so term-by-term differentiation
+(bounded by $e^{\lVert tL\rVert}$, comparison test), so term-by-term differentiation
 is valid on any finite interval:
 
 $$

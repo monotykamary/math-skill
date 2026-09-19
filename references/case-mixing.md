@@ -30,7 +30,7 @@ $$
 (the factor $1/2$ keeps it in $[0,1]$; the sum without the factor is the
 $L^1$ distance and equals twice the maximum over sets $A$ of
 $\mathbb{P}(X\_t \in A) - \pi(A)$; tag that duality as a named premise,
-provable by choosing $A = \lbracey : p\_t(y) > \pi(y)\rbrace$, the maximizing set,
+provable by choosing $A = \lbrace y : p\_t(y) > \pi(y)\rbrace$, the maximizing set,
 since mass above the target on the complement is compensated below it).
 
 The question: the smallest $t$ with $\mathrm{TV}(t) \le 1/4$ for every
@@ -124,13 +124,13 @@ $\lambda\_j^t$ because powers of diagonal form, named.) The $j = 0$
 coefficient $b\_0$ vanishes: $\langle f, \psi\_0 \rangle = \sum\_x f(x)/3 = 0$
 because $p\_t$ and $\pi$ both sum to 1 (named check). Parseval (the same
 orthogonality identities, squared):
-$\lVertP^t f\rVert^2 = \sum\_{j>0} \lambda\_j^{2t} |b\_j|^2 \le \lambda\_2^{2t} \sum\_{j>0} |b\_j|^2 = \lambda\_2^{2t} \lVertf\rVert^2$,
+$\lVert P^t f\rVert^2 = \sum\_{j>0} \lambda\_j^{2t} |b\_j|^2 \le \lambda\_2^{2t} \sum\_{j>0} |b\_j|^2 = \lambda\_2^{2t} \lVert f\rVert^2$,
 each $\lambda\_j$ in $[0, \lambda\_2]$ used once, under the squaring the
 ordering is preserved (monotone square on nonnegatives, named).
 
 Chi-square distance to $\pi$: $\chi^2 := \sum\_y (p\_t(y) - \pi(y))^2/\pi(y)$.
 With $\pi = 1/9$:
-$\chi^2 = 9 \lVertp\_t - \pi\rVert^2 \le 9 \lambda\_2^{2t} \lVertp\_0 - \pi\rVert^2$
+$\chi^2 = 9 \lVert p\_t - \pi\rVert^2 \le 9 \lambda\_2^{2t} \lVert p\_0 - \pi\rVert^2$
 where $p\_0$ is the delta at $0$. The initial contribution:
 $\lVert\delta\_0 - \pi\rVert^2 = (1 - 1/9)^2 + 8(1/9)^2$ (one site carries 1 and
 the other eight carry 0 against $\pi = 1/9$, expanded)

@@ -176,7 +176,7 @@ integration:
 $\int\_0^\infty \gamma e^{-\gamma y} e^{r y} \  dy = \gamma \int e^{-(\gamma-r)y} \  dy = \gamma/(\gamma-r)$;
 each step named). Premium income flows at rate $c$. Surplus:
 $X\_t = u + c t - \sum\_{i \le N\_t} Y\_i$, where $N\_t$ is the Poisson count. Ruin
-time $T = \inf\lbracet : X\_t < 0\rbrace$; ruin probability
+time $T = \inf\lbrace t : X\_t < 0\rbrace$; ruin probability
 $\psi(u) = \mathbb{P}(T < \infty)$.
 
 The adjustment equation: find $r^\* > 0$ with
@@ -211,10 +211,10 @@ supermartingales, cited; note $\mathbb{E} M\_{T \wedge t} \le \mathbb{E} M\_0$ i
 fact holds with the supermartingale sign and equality requires care that
 ruinicity alone does not give). Tag GAP: the stopping-time justification.
 
-On the set $\lbraceT \le t\rbrace$, $X\_T < 0$ (ruin means strictly negative at the
+On the set $\lbrace T \le t\rbrace$, $X\_T < 0$ (ruin means strictly negative at the
 first touch; the surplus has downward jumps, so the first touch passes
 below 0), hence $-r^\* X\_T > 0$ and $M\_T = e^{-r^\* X\_T} \ge 1$. Therefore
-$\mathbf{1}\_{\lbraceT \le t\rbrace} \le M\_{T \wedge t}$ pointwise (on the ruin
+$\mathbf{1}\_{\lbrace T \le t\rbrace} \le M\_{T \wedge t}$ pointwise (on the ruin
 event $M\_T \ge 1$ given the indicator is 1; off the event the indicator
 is $0 \le$ the nonnegative $M$). Taking expectations and passing
 $t \to \infty$ (monotone convergence on the increasing events, named):

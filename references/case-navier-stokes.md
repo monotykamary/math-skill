@@ -65,9 +65,9 @@ u(\cdot,0)=0,\qquad
 $$
 
 $$
-\sup\_{0\le t<1}\lVertu(t)\rVert\_{L^2(\mathbb R^3)}<\infty,
+\sup\_{0\le t<1}\lVert u(t)\rVert\_{L^2(\mathbb R^3)}<\infty,
 \qquad
-\limsup\_{t\uparrow1}\lVertu(t)\rVert\_{L^\infty(\mathbb R^3)}=\infty.
+\limsup\_{t\uparrow1}\lVert u(t)\rVert\_{L^\infty(\mathbb R^3)}=\infty.
 $$
 
 Here $C\_c^\infty$ means smooth with compact support. In particular, the
@@ -191,7 +191,7 @@ $$
 $$
 
 by equality of mixed derivatives. Normalize $U$ by its nonzero $L^2$
-norm, so $\lVertU\rVert\_2=1$. For $\lambda\ge1$, define
+norm, so $\lVert U\rVert\_2=1$. For $\lambda\ge1$, define
 
 $$
 v\_\lambda(x)=\lambda^{3/2}U(\lambda x).
@@ -202,7 +202,7 @@ $\nabla\cdot v\_\lambda=\lambda^{5/2}(\nabla\cdot U)(\lambda x)=0$.
 With $y=\lambda x$, the volume element is $dx=\lambda^{-3}dy$. Thus
 
 $$
-\lVertv\_\lambda\rVert\_2^2
+\lVert v\_\lambda\rVert\_2^2
 =\int\lambda^3|U(\lambda x)|^2\ dx
 =\lambda^3\lambda^{-3}\int|U(y)|^2\ dy=1.
 $$
@@ -210,7 +210,7 @@ $$
 Since $x\mapsto\lambda x$ maps $\mathbb R^3$ onto itself,
 
 $$
-\lVertv\_\lambda\rVert\_\infty=\lambda^{3/2}\lVertU\rVert\_\infty\longrightarrow\infty.
+\lVert v\_\lambda\rVert\_\infty=\lambda^{3/2}\lVert U\rVert\_\infty\longrightarrow\infty.
 $$
 
 Each derivative adds a factor $\lambda$, so the same substitution gives
@@ -226,7 +226,7 @@ ball containing the support of $U$.
 
 Numeric fixture, with the last two columns expressed as ratios to $U$:
 
-| $\lambda$ | $\frac12\lVertv\_\lambda\rVert\_2^2$ | $\lVertv\_\lambda\rVert\_\infty/\lVertU\rVert\_\infty$ | $\lVert\nabla v\_\lambda\rVert\_2^2/\lVert\nabla U\rVert\_2^2$ |
+| $\lambda$ | $\frac12\lVert v\_\lambda\rVert\_2^2$ | $\lVert v\_\lambda\rVert\_\infty/\lVert U\rVert\_\infty$ | $\lVert\nabla v\_\lambda\rVert\_2^2/\lVert\nabla U\rVert\_2^2$ |
 |---|---|---|---|
 | 1 | $1/2$ | 1 | 1 |
 | 4 | $1/2$ | 8 | 16 |

@@ -9,11 +9,11 @@ proved completely; the matching lower bound is stated and honestly tagged.
 ## 1. Markov's inequality, proved from the indicator axiom
 
 For $Y \ge 0$ and $a > 0$: pointwise,
-$Y \ge a\ \mathbf 1\_{\lbraceY \ge a\rbrace}$ (if $Y < a$ the right side is $0$;
+$Y \ge a\ \mathbf 1\_{\lbrace Y \ge a\rbrace}$ (if $Y < a$ the right side is $0$;
 otherwise it is $a \le Y$). Take expectations — monotonicity of expectation:
 
 $$
-\mathbb{E}Y \ge a\  \mathbb{E}\mathbf 1\_{\lbraceY \ge a\rbrace} = a\  \mathbb{P}(Y \ge a)
+\mathbb{E}Y \ge a\  \mathbb{E}\mathbf 1\_{\lbrace Y \ge a\rbrace} = a\  \mathbb{P}(Y \ge a)
 \quad\Longrightarrow\quad
 \mathbb{P}(Y \ge a) \le \frac{\mathbb{E}Y}{a}. \quad \blacksquare
 $$
@@ -25,7 +25,7 @@ function $M(t) = \mathbb{E}e^{tX}$, and $S\_n = \sum X\_i$. For $a > \mu$ and
 any $t \ge 0$, the indicator trick above upgrades:
 
 $$
-\mathbf 1\_{\lbraceS\_n \ge na\rbrace} \le e^{t(S\_n - na)},
+\mathbf 1\_{\lbrace S\_n \ge na\rbrace} \le e^{t(S\_n - na)},
 $$
 
 because if $S\_n < na$ the left side is $0 \le$ right side, and if

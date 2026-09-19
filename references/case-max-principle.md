@@ -33,7 +33,7 @@ Suppose $w$ had an interior max $(x\_0, t\_0)$, $t\_0 > 0$. Then as above
 $w\_{xx}(x\_0,t\_0) \le 0$ and $w\_t(x\_0,t\_0) \ge 0$ (same two-case argument on
 $t\_0$, applied verbatim). Hence $w\_t - w\_{xx} \ge 0$ there — contradicting
 $w\_t - w\_{xx} = -\varepsilon < 0$. So $w$ attains its max on
-$\Gamma \cup \lbracet = 0\rbrace$... and $t\_0 = 0$ is inside $\Gamma$ by
+$\Gamma \cup \lbrace t = 0\rbrace$... and $t\_0 = 0$ is inside $\Gamma$ by
 definition, so $\max\_{\overline\Omega} w = \max\_\Gamma w$.
 
 Now
