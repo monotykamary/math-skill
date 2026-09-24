@@ -43,15 +43,16 @@ def overshoot(a, b, x, e):
         C.neg_congr(Q.neg(x), Q.sub(b, a), E.sym(Q.sub(b, a), Q.neg(x), e)))),
     R.add_neg_sub(a, b))
 
-# A zero magnitude is reported as a negative case; it still means a == b.
+# decompose reports equal operands as a zero positive magnitude; a zero
+# negative magnitude still means a == b.
 def decide_from(+a: Q.Number, +b: Q.Number, r: M.SignedMagnitude<Q.sub(b, a)>) -> Decision<a, b>:
   match r:
     case M.PositiveCase{+m, e}:
-      AtMost{u => Q.Bound{m, settle(a, b, m, e)}}
+      AtMost{u => Q.Bound{m, settle(a, b, m, e(Unit{}))}}
     case M.NegativeCase{Q.Nonnegative{B.Zero{}, +d}, e}:
-      AtMost{u => Q.Bound{Q.Nonnegative{B.Zero{}, d}, settle(a, b, Q.Nonnegative{B.Zero{}, d}, e)}}
+      AtMost{u => Q.Bound{Q.Nonnegative{B.Zero{}, d}, settle(a, b, Q.Nonnegative{B.Zero{}, d}, e(Unit{}))}}
     case M.NegativeCase{Q.Nonnegative{B.Pos{+k}, +d}, e}:
-      Exceeds{u => Q.StrictBound{Q.Positive{k, d}, overshoot(a, b, Q.Fraction{B.Pos{k}, B.Zero{}, d}, e)}}
+      Exceeds{u => Q.StrictBound{Q.Positive{k, d}, overshoot(a, b, Q.Fraction{B.Pos{k}, B.Zero{}, d}, e(Unit{}))}}
 
 def decide(+a: Q.Number, +b: Q.Number) -> Decision<a, b>:
   decide_from(a, b, M.decompose(Q.sub(b, a)))

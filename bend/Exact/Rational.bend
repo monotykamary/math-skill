@@ -78,6 +78,11 @@ def div_positive(a: Number, b: Positive) -> Number:
     case Fraction{ap, an, ad} Positive{bn, +bd}:
       Fraction{B.mul(ap, B.Pos{bd}), B.mul(an, B.Pos{bd}), B.positive_mul(ad, bn)}
 
+def positive_mul(a: Positive, b: Positive) -> Positive:
+  match a b:
+    case Positive{an, ad} Positive{bn, bd}:
+      Positive{B.positive_mul(an, bn), B.positive_mul(ad, bd)}
+
 def nonnegative_add(a: Nonnegative, b: Nonnegative) -> Nonnegative:
   match a b:
     case Nonnegative{an, +ad} Nonnegative{bn, +bd}:

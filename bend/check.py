@@ -15,6 +15,7 @@ PUBLIC_LAWS = frozenset({
     'heat_fixture_four', 'heat_crossing_fixture', 'chi_tv_transfer_rat',
     'markov_threshold', 'threshold_exact', 'le_lt_exclusive',
     'convex_avg_le_maximum', 'maximum_member', 'gain_complement',
+    'chi_tv_transfer_sqrt',
 })
 IMPORT = re.compile(r'import (\./[A-Za-z0-9_./-]+\.bend) as ([A-Za-z][A-Za-z0-9_]*)')
 TOKENS = re.compile(r'"(?:\\.|[^"\\])*"|#[^\n]*')

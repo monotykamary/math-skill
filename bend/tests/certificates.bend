@@ -75,3 +75,17 @@ def inverse_examples() -> Q.Eq(I.div(Q.one(), Q.two()), Q.ratio(1n, 2n, Unit{}))
 
 def cancel_example() -> Q.Eq(Q.mul(Q.two(), I.inv(Q.two())), Q.one()):
   I.mul_inv_cancel(Q.two(), e => K.positive_nonzero(B.Bit0{B.One{}}, B.One{}, e))
+
+# Roots 1/2 of 1/4 and 2/3 of 4/9, checked by computation.
+def rooted() -> X.Rooted:
+  X.RootedObservation{Q.ratio(3n, 4n, Unit{}), Q.positive_ratio(1n, 4n, Unit{}, Unit{}), Q.positive_ratio(1n, 2n, Unit{}, Unit{}),
+    X.RootedObservation{Q.neg(Q.ratio(1n, 3n, Unit{})), Q.positive_ratio(4n, 9n, Unit{}, Unit{}), Q.positive_ratio(2n, 3n, Unit{}, Unit{}), X.NoRooted{}}}
+
+def rooted_example() -> Q.Le<Q.mul(X.total_deviation(X.unrooted(rooted())), X.total_deviation(X.unrooted(rooted()))), Q.mul(X.mass(X.unrooted(rooted())), X.root_chi_square(rooted()))>:
+  XP.chi_tv_transfer_sqrt(rooted(),
+    (D.eq(Q.mul(Q.ratio(1n, 2n, Unit{}), Q.ratio(1n, 2n, Unit{})), Q.ratio(1n, 4n, Unit{}), {==}),
+     (D.eq(Q.mul(Q.ratio(2n, 3n, Unit{}), Q.ratio(2n, 3n, Unit{})), Q.ratio(4n, 9n, Unit{}), {==}), Unit{})))
+
+# The root chi-square matches its closed value: (1/2 / 1/2)^2 + (7/9 / 2/3)^2 = 1 + 49/36.
+def root_chi_value() -> Q.Eq(X.root_chi_square(rooted()), Q.ratio(85n, 36n, Unit{})):
+  D.eq(X.root_chi_square(rooted()), Q.ratio(85n, 36n, Unit{}), {==})

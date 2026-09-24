@@ -34,22 +34,22 @@ def cancel_from(a, h, r):
   match r:
     case M.PositiveCase{Q.Nonnegative{B.Zero{}, +d}, e}:
       Empty.absurd(Q.Eq(Q.mul(a, Q.zero()), Q.one()),
-        h(E.trans(a, Q.Fraction{B.Zero{}, B.Zero{}, d}, Q.zero(), e, Q.Witness{{==}})))
+        h(E.trans(a, Q.Fraction{B.Zero{}, B.Zero{}, d}, Q.zero(), e(Unit{}), Q.Witness{{==}})))
     case M.PositiveCase{Q.Nonnegative{B.Pos{+k}, +d}, e}:
       +u = {Q.Positive{k, d} : Q.Positive}
       +i = Q.div_positive(Q.one(), u)
       E.trans(Q.mul(a, i), Q.mul(Q.of_positive(u), i), Q.one(),
-        E.mul_congr(a, Q.of_positive(u), i, e), D.divide_cancel(Q.one(), u))
+        E.mul_congr(a, Q.of_positive(u), i, e(Unit{})), D.divide_cancel(Q.one(), u))
     case M.NegativeCase{Q.Nonnegative{B.Zero{}, +d}, e}:
       Empty.absurd(Q.Eq(Q.mul(a, Q.zero()), Q.one()),
-        h(E.trans(a, Q.Fraction{B.Zero{}, B.Zero{}, d}, Q.zero(), e, Q.Witness{{==}})))
+        h(E.trans(a, Q.Fraction{B.Zero{}, B.Zero{}, d}, Q.zero(), e(Unit{}), Q.Witness{{==}})))
     case M.NegativeCase{Q.Nonnegative{B.Pos{+k}, +d}, e}:
       +u = {Q.Positive{k, d} : Q.Positive}
       +i = Q.neg(Q.div_positive(Q.one(), u))
       # (-x) * (-(1/x)) and x * (1/x) compute to one fraction: the signs
       # swap both binary parts, and the cross products agree.
       E.trans(Q.mul(a, i), Q.mul(Q.neg(Q.of_positive(u)), i), Q.one(),
-        E.mul_congr(a, Q.neg(Q.of_positive(u)), i, e), D.divide_cancel(Q.one(), u))
+        E.mul_congr(a, Q.neg(Q.of_positive(u)), i, e(Unit{})), D.divide_cancel(Q.one(), u))
 
 law mul_inv_cancel:
   for +a: Q.Number

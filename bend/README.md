@@ -7,7 +7,7 @@ python3 bend/check.py
 python3 -m unittest discover -s bend/tests -v
 ```
 
-The gate checks 17 public laws across the local proof dependency closure. It rejects changed compiler versions, missing public proofs, unused production modules, unsafe declarations, holes, floating-point/effectful certificate code, external imports, and any checker result other than `All terms check.`. It runs `bend version`, then `bend PROOF.bend --check-only`, so no `main` executes. Bend's exit status alone does not suffice: `@unsafe` definitions can exit zero with a warning.
+The gate checks 18 public laws across the local proof dependency closure. It rejects changed compiler versions, missing public proofs, unused production modules, unsafe declarations, holes, floating-point/effectful certificate code, external imports, and any checker result other than `All terms check.`. It runs `bend version`, then `bend PROOF.bend --check-only`, so no `main` executes. Bend's exit status alone does not suffice: `@unsafe` definitions can exit zero with a warning.
 
 ## What is proved
 
@@ -32,6 +32,7 @@ The gate checks 17 public laws across the local proof dependency closure. It rej
 | `maximum_member` | That maximum is one of the list's values |
 | `gain_complement` | Original Kalman gain complement `r/(p+r) = 1 - p/(p+r)` for `p + r != 0`, with Lean's total division |
 | `chi_tv_transfer_rat` | New rational analogue of the open real-valued mixing goal |
+| `chi_tv_transfer_sqrt` | Lean's statement shape, `(sum |p-u|)^2 <= (sum u) * (sum (|p-u|/s)^2)`, with a certified root `s * s = u` for each `u` |
 
 For Markov, `Finite.Samples` contains nonnegative weights and observations, a selection flag, and a separate `Above` hypothesis certificate. `markov_threshold` supplies that selection: `Finite.threshold` decides `a <= x` for each `Finite.Draws` entry with `Compare.decide`, and `threshold_above` discharges the `Above` certificate.
 
@@ -43,7 +44,9 @@ The rational mixing theorem states, for any finite list of rational p_i and stri
 (sum |p_i - u_i|)^2 <= (sum u_i) * (sum (|p_i - u_i|^2 / u_i))
 ```
 
-`MomentProof.bend` proves weighted Cauchy–Schwarz by induction using a nonnegative sum-of-squares defect. `MixingProof.bend` transports that result through proved positive-division identities. No square root, floating-point tolerance, probability normalization, or analytic axiom is used. This does not discharge the original theorem over all real numbers.
+`MomentProof.bend` proves weighted Cauchy–Schwarz by induction using a nonnegative sum-of-squares defect. `MixingProof.bend` transports that result through proved positive-division identities. No square root, floating-point tolerance, probability normalization, or analytic axiom is used.
+
+`chi_tv_transfer_sqrt` restores Lean's `sqrt` shape. Each `Mixing.Rooted` observation carries a positive rational `s`, and `Mixing.Roots` certifies `s * s = u`. The proof reweights the Cauchy–Schwarz rows by `s * s` and then replaces each `s * s` by `u`. It covers every input whose reference weights have rational square roots. Neither law discharges the original theorem over all real numbers.
 
 ## Exact representation and trust boundary
 
@@ -54,6 +57,7 @@ The rational mixing theorem states, for any finite list of rational p_i and stri
 - `Q.Le` carries a nonnegative rational slack and an equality certificate. `Q.Lt` carries a strictly positive slack. These are propositions with witnesses, not Boolean numerical tests.
 - `Q.ratio(n, d, Unit{})`, `Q.nonnegative_ratio` and `Q.positive_ratio` build literal fractions from `Nat` literals. Each denominator (and a `Positive` numerator) takes a `B.NonZero` certificate: `Unit{}` checks by computation for a nonzero literal, and `0n` cannot be certified.
 - `Q.div_positive` is total division by a statically positive rational.
+- `Exact/Subtraction.bend` compares two binary naturals in one pass over their bits and returns the signed gap; `compare_correct` relates the result to the unary model. `Magnitude.decompose` uses it, and keeps its equality evidence behind a `Unit ->` thunk, so running code never evaluates the unary proof model.
 - `Exact/Compare.bend` decides `a <= b` or `b < a` from the sign of `b - a` given by `Magnitude.decompose`, and proves the two outcomes exclusive. Each certificate sits behind a `Unit ->` thunk: running code reads only the outcome, and a proof forces the equality chain.
 - `Exact/Inverse.bend` defines a total signed inverse and `div(a, b) = a * inv(b)`. As in Lean, `inv(0) = 0`; `mul_inv_cancel` takes a `Q.Ne(a, Q.zero())` hypothesis.
 - `Exact/Decision.bend` proves the soundness of binary cross-product reflection for concrete equality certificates. It does not accept unchecked host-language equality results.
@@ -64,7 +68,7 @@ The Python scripts in `tools/` are **untrusted proof generators**. Every generat
 
 Numerators and denominators are not bounded by Bend's machine-word `Nat`. The runtime tests include signed arithmetic above 2^80 and the strict EWMA gap after 80 steps. `Nat` is used for iteration counts and the convenience constructor `Binary.from_nat`; Bend's runtime limit on those counts still applies.
 
-Core binary addition and multiplication run directly on digits. Unreduced fractions can grow. `Magnitude.bend` deliberately uses a simple verified unary-model comparison and conversion for absolute values. It is exact but can be very slow or exhaust memory on large numeric magnitudes. It is a reference specification and proof foundation, not a high-performance mixing calculator. Binary comparison, reduction, and faster certified magnitude computation are future optimizations.
+Core binary addition and multiplication run directly on digits. Unreduced fractions can grow. Absolute values, comparison, `max`, the threshold filter, the running maximum and the inverse run on binary digits as well, in time linear in the bit length. The runtime tests include magnitudes near 2^100 and comparisons of values near 2^90 that differ by 2^-70. Fraction reduction is not implemented, so denominators grow across repeated operations.
 
 The tests compare executable arithmetic against Python `Fraction` on the JS backend. Native tests require clang 14+; an unavailable compiler is reported as a skip. GPU execution is not tested.
 

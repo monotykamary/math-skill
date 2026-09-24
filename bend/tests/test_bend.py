@@ -37,7 +37,7 @@ def rational(value: Fraction) -> str:
 class ProofGate(unittest.TestCase):
     def test_public_certificates(self):
         laws, modules = check.verify()
-        self.assertEqual(laws, 17)
+        self.assertEqual(laws, 18)
         self.assertGreater(modules, 20)
 
     def test_finite_certificate_examples(self):
@@ -164,14 +164,17 @@ class ExactRuntime(unittest.TestCase):
                           (25,Fraction(1),Fraction(1,2)), (80,Fraction(1),Fraction(1,2)),
                           (5,Fraction(-7,3),Fraction(-2,3)), (3,Fraction(2),Fraction(3,2))]:
             add(f'F.heat({n}n, {rational(s)}, {rational(rho)})', s*(1-rho**n))
-        for a in [Fraction(-7,3),Fraction(0),Fraction(5,4)]:
+        for a in [Fraction(-7,3),Fraction(0),Fraction(5,4),Fraction(-(2**90 + 5), 3**40),Fraction(2**100 - 1, 7)]:
             add(f'Q.of_nonnegative(M.magnitude({rational(a)}))', abs(a))
         div = 'Q.Positive{' + positive(3) + ', ' + positive(5) + '}'
         add(f'Q.div_positive({rational(Fraction(-7,4))}, {div})', Fraction(-35,12))
         for a in [Fraction(-7,3), Fraction(0), Fraction(5,4)]:
             add(f'I.inv({rational(a)})', 1/a if a else Fraction(0))
         add(f'I.div({rational(Fraction(-7,4))}, {rational(Fraction(3,5))})', Fraction(-35,12))
-        for a, b in [(Fraction(-3,2), Fraction(1,4)), (Fraction(5,4), Fraction(-7,3)), (Fraction(2,3), Fraction(4,6))]:
+        big = Fraction(2**90 + 1, 3)
+        add(f'I.inv({rational(-big)})', -1/big)
+        for a, b in [(Fraction(-3,2), Fraction(1,4)), (Fraction(5,4), Fraction(-7,3)), (Fraction(2,3), Fraction(4,6)),
+                     (big, big + Fraction(1, 2**70)), (big + Fraction(1, 2**70), big)]:
             add(f'K.max({rational(a)}, {rational(b)})', max(a, b))
         values = [Fraction(-3,2), Fraction(5,4), Fraction(1,4), Fraction(-7,3)]
         def weight(w):

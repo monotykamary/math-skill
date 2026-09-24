@@ -30,11 +30,11 @@ def from_magnitude(a, m, e):
 def cases(+a: Q.Number, result: M.SignedMagnitude<a>) -> Q.Le<Q.zero(), Q.mul(a, a)>:
   match result:
     case M.PositiveCase{+m, e}:
-      from_magnitude(a, m, congr(a, Q.of_nonnegative(m), e))
+      from_magnitude(a, m, congr(a, Q.of_nonnegative(m), e(Unit{})))
     case M.NegativeCase{+m, e}:
       +qm = Q.of_nonnegative(m)
       from_magnitude(a, m,
-        E.trans(Q.mul(a, a), Q.mul(Q.neg(qm), Q.neg(qm)), Q.mul(qm, qm), congr(a, Q.neg(qm), e), R.neg_square(qm)))
+        E.trans(Q.mul(a, a), Q.mul(Q.neg(qm), Q.neg(qm)), Q.mul(qm, qm), congr(a, Q.neg(qm), e(Unit{})), R.neg_square(qm)))
 
 law nonnegative:
   for +a: Q.Number

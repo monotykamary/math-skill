@@ -176,3 +176,23 @@ def mul_swap(a, b, c):
   %mul_comm(a, b) : {mul(a, mul(b, c)) == mul(_, c) : Number}
   %mul_assoc(a, b, c) : {_ == mul(mul(a, b), c) : Number}
   {==}
+
+law add_one:
+  for +a: Number
+  {add(a, S{Z{}}) == S{a} : Number}
+def add_one(a):
+  %add_zero(a) : {add(a, S{Z{}}) == S{_} : Number}
+  add_succ(a, Z{})
+
+law add_interchange:
+  for +a: Number
+  for +b: Number
+  for +c: Number
+  for +d: Number
+  {add(add(a, b), add(c, d)) == add(add(a, c), add(b, d)) : Number}
+def add_interchange(a, b, c, d):
+  Equal.trans(Number, add(add(a, b), add(c, d)), add(a, add(b, add(c, d))), add(add(a, c), add(b, d)),
+    add_assoc(a, b, add(c, d)),
+    Equal.trans(Number, add(a, add(b, add(c, d))), add(a, add(c, add(b, d))), add(add(a, c), add(b, d)),
+      Equal.cong(Number, Number, x => add(a, x), add(b, add(c, d)), add(c, add(b, d)), add_swap(b, c, d)),
+      Equal.sym(Number, add(add(a, c), add(b, d)), add(a, add(c, add(b, d))), add_assoc(a, c, add(b, d)))))

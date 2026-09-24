@@ -133,3 +133,6 @@ def Laws.heat_crossing_fixture():
 
 def Laws.chi_tv_transfer_rat(xs):
   MixingProof.chi_tv_transfer_rat(xs)
+
+def Laws.chi_tv_transfer_sqrt(xs, h):
+  MixingProof.chi_tv_transfer_sqrt(xs, h)

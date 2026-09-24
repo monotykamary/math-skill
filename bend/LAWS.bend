@@ -106,3 +106,11 @@ law heat_crossing_fixture:
 law chi_tv_transfer_rat:
   for +xs: Mixing.Observations
   Q.Le<Q.mul(Mixing.total_deviation(xs), Mixing.total_deviation(xs)), Q.mul(Mixing.mass(xs), Mixing.chi_square(xs))>
+
+# Lean's statement shape, with a certified square root s of each u in place
+# of Real.sqrt u. It holds wherever the roots exist; it is not the theorem
+# over all real numbers.
+law chi_tv_transfer_sqrt:
+  for +xs: Mixing.Rooted
+  for h: Mixing.Roots(xs)
+  Q.Le<Q.mul(Mixing.total_deviation(Mixing.unrooted(xs)), Mixing.total_deviation(Mixing.unrooted(xs))), Q.mul(Mixing.mass(Mixing.unrooted(xs)), Mixing.root_chi_square(xs))>

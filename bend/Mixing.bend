@@ -42,3 +42,41 @@ def chi_square(xs: Observations) -> Q.Number:
 
 def mass(xs: Observations) -> Q.Number:
   F.weights(rows(xs))
+
+# Observations that also carry a square root s of each reference weight u.
+# Roots certifies s * s = u; the root then replaces Lean's Real.sqrt u.
+type Rooted is Data:
+  NoRooted{}
+  RootedObservation{p: Q.Number, u: Q.Positive, root: Q.Positive, tail: Rooted}
+
+def Roots(xs: Rooted) -> Type:
+  match xs:
+    case NoRooted{}:
+      Unit
+    case RootedObservation{p, +u, +s, tail}:
+      Q.Eq(Q.mul(Q.of_positive(s), Q.of_positive(s)), Q.of_positive(u)) & Roots(tail)
+
+def unrooted(xs: Rooted) -> Observations:
+  match xs:
+    case NoRooted{}:
+      NoObservations{}
+    case RootedObservation{p, u, s, tail}:
+      Observation{p, u, unrooted(tail)}
+
+# sum of (|p - u| / s)^2, Lean's sum of (|p - u| / sqrt u)^2.
+def root_chi_square(xs: Rooted) -> Q.Number:
+  match xs:
+    case NoRooted{}:
+      Q.zero()
+    case RootedObservation{p, u, +s, tail}:
+      +r = Q.div_positive(deviation(p, u), s)
+      Q.add(Q.mul(r, r), root_chi_square(tail))
+
+# Cauchy-Schwarz rows weighted by s * s rather than u.
+def squared_rows(xs: Rooted) -> F.Rows:
+  match xs:
+    case NoRooted{}:
+      F.NoRows{}
+    case RootedObservation{p, u, +s, tail}:
+      +w = Q.positive_mul(s, s)
+      F.Row{weight(w), Q.div_positive(deviation(p, u), w), squared_rows(tail)}
