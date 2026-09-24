@@ -31,7 +31,7 @@ law cool_contracts_deficit:
 
 law cheb_two_of_recurrence:
   for +x: Q.Number
-  Q.Eq(F.chebyshev_two(x), Q.sub(Q.mul(Q.mul(Q.add(Q.one(), Q.one()), x), x), Q.one()))
+  Q.Eq(F.chebyshev_two(x), Q.sub(Q.mul(Q.mul(Q.two(), x), x), Q.one()))
 
 law heat_capped_lane_below_one:
   for +n: Nat

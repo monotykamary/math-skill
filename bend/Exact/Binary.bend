@@ -97,6 +97,29 @@ def from_nat(n: Nat) -> Whole:
     case 1n+p:
       successor(from_nat(p))
 
+# A literal's nonzero certificate: Unit{} checks by computation for any
+# nonzero Nat literal; 0n asks for an Empty, which cannot be written.
+def NonZero(n: Nat) -> Type:
+  match n:
+    case 0n:
+      Empty
+    case 1n+p:
+      Unit
+
+def successor_positive(n: Nat) -> Positive:
+  match n:
+    case 0n:
+      One{}
+    case 1n+p:
+      inc(successor_positive(p))
+
+def positive_from_nat(n: Nat, nz: NonZero(n)) -> Positive:
+  match n:
+    case 0n:
+      match nz:
+    case 1n+p:
+      successor_positive(p)
+
 def positive_show(a: Positive) -> String:
   match a:
     case One{}:

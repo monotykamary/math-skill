@@ -74,6 +74,8 @@ class ProofGate(unittest.TestCase):
             check.run_checker(source)
             for body in [
                 'def bad() -> Q.Number:\n  Q.Fraction{B.Zero{}, B.Zero{}, B.Zero{}}\n',
+                'def bad() -> Q.Number:\n  Q.ratio(1n, 0n, Unit{})\n',
+                'def bad() -> Q.Positive:\n  Q.positive_ratio(0n, 1n, Unit{}, Unit{})\n',
                 'def bad() -> Q.Eq(Q.zero(), Q.one()):\n  D.eq(Q.zero(), Q.one(), {==})\n',
             ]:
                 with self.subTest(body=body):

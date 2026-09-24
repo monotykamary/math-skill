@@ -58,10 +58,10 @@ def inspect_sources(entry: Path, root: Path = ROOT) -> dict[Path, str]:
 
 def run_checker(entry: Path, executable: str = 'bend') -> None:
     try:
-        result = subprocess.run([executable, str(entry)], capture_output=True, text=True, timeout=120)
+        result = subprocess.run([executable, str(entry), '--check-only'], capture_output=True, text=True, timeout=120)
     except (OSError, subprocess.TimeoutExpired) as exc:
         raise VerificationError(f'Cannot run Bend: {exc}') from exc
-    # Bend 2.0.5 exits zero for @unsafe code. Exit status alone is NOT a certificate.
+    # Bend exits zero for @unsafe code. Exit status alone is NOT a certificate.
     if result.returncode != 0 or result.stdout.strip() != 'All terms check.' or result.stderr.strip():
         output = (result.stdout + result.stderr).strip()
         raise VerificationError(f'Bend did not issue a clean certificate (exit {result.returncode}):\n{output}')
@@ -70,7 +70,7 @@ def verify(root: Path = ROOT, executable: str = 'bend') -> tuple[int, int]:
     root = root.resolve()
     expected = (root / 'bend-version').read_text().strip()
     try:
-        version = subprocess.run([executable, '--version'], capture_output=True, text=True, timeout=15)
+        version = subprocess.run([executable, 'version'], capture_output=True, text=True, timeout=15)
     except (OSError, subprocess.TimeoutExpired) as exc:
         raise VerificationError(f'Install Bend {expected}: {exc}') from exc
     if version.returncode or version.stdout.strip() != f'bend {expected}' or version.stderr.strip():

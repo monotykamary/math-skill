@@ -1,13 +1,13 @@
 # Exact Bend sandbox
 
-Bend **2.0.5** is the default first-party verifier. Python **3.10+** runs the gate and tests. Neither Lean nor Mathlib is needed for this sandbox.
+Bend **2.0.27** is the default first-party verifier. Python **3.10+** runs the gate and tests. Neither Lean nor Mathlib is needed for this sandbox.
 
 ```sh
 python3 bend/check.py
 python3 -m unittest discover -s bend/tests -v
 ```
 
-The gate checks 11 public laws across the local proof dependency closure. It rejects changed compiler versions, missing public proofs, unused production modules, unsafe declarations, holes, floating-point/effectful certificate code, external imports, and any checker result other than `All terms check.`. Bend's exit status alone does not suffice: `@unsafe` definitions can exit zero with a warning.
+The gate checks 11 public laws across the local proof dependency closure. It rejects changed compiler versions, missing public proofs, unused production modules, unsafe declarations, holes, floating-point/effectful certificate code, external imports, and any checker result other than `All terms check.`. It runs `bend version`, then `bend PROOF.bend --check-only`, so no `main` executes. Bend's exit status alone does not suffice: `@unsafe` definitions can exit zero with a warning.
 
 ## What is proved
 
@@ -22,7 +22,7 @@ The gate checks 11 public laws across the local proof dependency closure. It rej
 | `geom_sum` | Original finite geometric-sum identity |
 | `heat_step_increment` | Original rational increment identity |
 | `cool_contracts_deficit` | Original rational cooling identity |
-| `cheb_two_of_recurrence` | Original degree-two Chebyshev identity; squaring is explicit multiplication |
+| `cheb_two_of_recurrence` | Original degree-two Chebyshev identity, with the square written as `Q.pow(2n, x)` as in Lean |
 | `markov_finset` | Finite-list generalization: any selected subset with certificates that selected values reach the threshold |
 | `convex_avg_le_max` | Finite-list generalization: any certified common upper bound, with weights summing to one |
 | `chi_tv_transfer_rat` | New rational analogue of the open real-valued mixing goal |
@@ -46,10 +46,11 @@ The rational mixing theorem states, for any finite list of rational p_i and stri
 - `Q.Number` represents `(positive - negative) / denominator`. Both numerator parts are binary naturals. The denominator has a strictly positive datatype, so zero denominators cannot be constructed.
 - Fractions are not reduced. Use `Q.Eq`, not structural equality: 1/2 and 2/4 have different representations. `Q.Eq` wraps an exact natural cross-product equality. The wrapper prevents eager expansion of large unary numerals during theorem application. Congruence and transitivity are proved, including cancellation of the positive denominator.
 - `Q.Le` carries a nonnegative rational slack and an equality certificate. `Q.Lt` carries a strictly positive slack. These are propositions with witnesses, not Boolean numerical tests.
+- `Q.ratio(n, d, Unit{})`, `Q.nonnegative_ratio` and `Q.positive_ratio` build literal fractions from `Nat` literals. Each denominator (and a `Positive` numerator) takes a `B.NonZero` certificate: `Unit{}` checks by computation for a nonzero literal, and `0n` cannot be certified.
 - `Q.div_positive` is total division by a statically positive rational. General signed division is not part of this API.
 - `Exact/Decision.bend` proves the soundness of binary cross-product reflection for concrete equality certificates. It does not accept unchecked host-language equality results.
 
-The Python scripts in `tools/` are **untrusted proof generators**. Every generated step is checked by Bend against induction lemmas. They introduce no axioms and are not run by the certificate gate. Committed certificates can be checked without executing a generator. This still trusts Bend 2.0.5 and its bundled Base/checker. It is not an independent soundness audit or a proof of compiler correctness.
+The Python scripts in `tools/` are **untrusted proof generators**. Every generated step is checked by Bend against induction lemmas. They introduce no axioms and are not run by the certificate gate. Committed certificates can be checked without executing a generator. This still trusts Bend 2.0.27 and its bundled Base/checker. It is not an independent soundness audit or a proof of compiler correctness.
 
 ## Runtime limits
 

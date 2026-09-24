@@ -126,7 +126,7 @@ Rules: COMMITTED requires a complete proof or a clean `python3 bend/check.py` ce
 
 ## The Bend loop
 
-Bend 2.0.5 is the default verifier for the finite rational sandbox. Use it to seal results. The thinking stays with him. Setup, theorem mappings, and limits live in `bend/README.md`.
+Bend 2.0.27 is the default verifier for the finite rational sandbox. Use it to seal results. The thinking stays with him. Setup, theorem mappings, and limits live in `bend/README.md`.
 
 1. **State the law first.** Write the exact domain, quantifiers, and hypotheses in `bend/LAWS.bend`. Get agreement before changing a statement. Preserve the statement during proof work. Put paired definitions in `bend/PROOF.bend`.
 2. **Use exact arithmetic.** `bend/Exact/` supplies unbounded binary integers and signed rationals with positive denominators. Use `Q.Eq` for rational equality; representation equality is a different claim. Use `Q.Le` and `Q.Lt` for checked order certificates. Floating-point fixtures remain SUPPORTED evidence.

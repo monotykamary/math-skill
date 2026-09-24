@@ -24,10 +24,10 @@ def cool(rho: Q.Number, w: Q.Number) -> Q.Number:
   Q.mul(rho, w)
 
 def chebyshev_two(+x: Q.Number) -> Q.Number:
-  Q.sub(Q.mul(Q.add(Q.one(), Q.one()), Q.mul(x, x)), Q.one())
+  Q.sub(Q.mul(Q.two(), Q.pow(2n, x)), Q.one())
 
 def half() -> Q.Number:
-  Q.Fraction{B.Pos{B.One{}}, B.Zero{}, B.Bit0{B.One{}}}
+  Q.ratio(1n, 2n, Unit{})
 
 def pow2(n: Nat) -> B.Positive:
   match n:

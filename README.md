@@ -31,7 +31,7 @@ npx skills add monotykamary/math-skill
 - `references/case-kolmogorov.md`: K41 turbulence from units alone, the 4/5 law, and the intermittency anomaly.
 - `references/case-navier-stokes.md`: OpenAI's September 2026 proposed forced breakdown result for Clay (C)/(D). Primary sources, worked energy and concentration calculations, and a pinned Lean audit. The external proof has not been independently checked here.
 - `references/case-extremes.md`: block maxima and the three limit laws. Where heavy tails kill the tilt and what replaces it.
-- [`bend/`](bend/README.md): the default first-party verifier, pinned to Bend 2.0.5. Eleven checked public laws cover exact rational EWMA, finite probability, and a square-root-free rational mixing bound. Binary arithmetic has no fixed word-size limit. `python3 bend/check.py` is the certificate gate.
+- [`bend/`](bend/README.md): the default first-party verifier, pinned to Bend 2.0.27. Eleven checked public laws cover exact rational EWMA, finite probability, and a square-root-free rational mixing bound. Binary arithmetic has no fixed word-size limit. `python3 bend/check.py` is the certificate gate.
 - `lean/`: the unchanged historical Lean 4 / Mathlib sandbox at `v4.33.0`. Its ten completed rational claims remain available for comparison. The original Kalman gain and real-valued mixing goals still contain `sorry`; these are not certified by the Bend migration.
 - [`vendor/openai-navier-stokes/`](vendor/openai-navier-stokes/README.md): the complete, unmodified OpenAI Navier–Stokes and Euler Lean source bundle at a pinned revision, with its Apache-2.0 license, retained author credits, and checksum manifest. It is a separate Lean project; its proofs have not been checked locally.
 
@@ -39,10 +39,10 @@ Curriculum order: ewma, kalman, kelly, gibbs, large-deviations, gaertner-ellis, 
 
 ## Bend setup and verification
 
-Install **Bend 2.0.5** from [Bend upstream](https://bend-lang.com/) and Python 3.10 or newer. The gate checks `bend/bend-version` and refuses other compiler versions.
+Install **Bend 2.0.27** from [Bend upstream](https://bend-lang.com/) and Python 3.10 or newer. The gate checks `bend/bend-version` and refuses other compiler versions.
 
 ```bash
-bend --version
+bend version
 bend guide
 python3 bend/check.py
 python3 -m unittest discover -s bend/tests -v

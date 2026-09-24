@@ -52,8 +52,14 @@ def Laws.heat_step_increment(n, s, rho):
 def Laws.cool_contracts_deficit(s, rho, w):
   R.cool_contracts_deficit(rho, w, s)
 
+# Q.pow(2n, x) unfolds to x * (x * 1); drop the unit, then regroup.
 def Laws.cheb_two_of_recurrence(x):
-  R.chebyshev_two(x)
+  +square = Q.mul(x, x)
+  E.trans(F.chebyshev_two(x), Q.sub(Q.mul(Q.two(), square), Q.one()), Q.sub(Q.mul(Q.mul(Q.two(), x), x), Q.one()),
+    C.sub_congr(Q.mul(Q.two(), Q.pow(2n, x)), Q.mul(Q.two(), square), Q.one(), Q.one(),
+      C.mul_right(Q.pow(2n, x), square, Q.two(), C.mul_right(Q.mul(x, Q.one()), x, x, R.mul_one(x))),
+      R.refl(Q.one())),
+    R.chebyshev_two(x))
 
 law half_power:
   for +n: Nat

@@ -20,6 +20,20 @@ def zero() -> Number:
 def one() -> Number:
   Fraction{B.Pos{B.One{}}, B.Zero{}, B.One{}}
 
+# Literal fractions n/d. Pass Unit{} for each nonzero certificate; a zero
+# denominator (or a zero Positive numerator) does not check.
+def ratio(n: Nat, d: Nat, nd: B.NonZero(d)) -> Number:
+  Fraction{B.from_nat(n), B.Zero{}, B.positive_from_nat(d, nd)}
+
+def nonnegative_ratio(n: Nat, d: Nat, nd: B.NonZero(d)) -> Nonnegative:
+  Nonnegative{B.from_nat(n), B.positive_from_nat(d, nd)}
+
+def positive_ratio(n: Nat, d: Nat, nn: B.NonZero(n), nd: B.NonZero(d)) -> Positive:
+  Positive{B.positive_from_nat(n, nn), B.positive_from_nat(d, nd)}
+
+def two() -> Number:
+  ratio(2n, 1n, Unit{})
+
 def of_nonnegative(a: Nonnegative) -> Number:
   match a:
     case Nonnegative{n, d}:

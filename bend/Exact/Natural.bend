@@ -86,11 +86,10 @@ law add_swap:
   for +c: Number
   {add(a, add(b, c)) == add(b, add(a, c)) : Number}
 def add_swap(a, b, c):
-  Equal.trans(Number, add(a, add(b, c)), add(add(a, b), c), add(b, add(a, c)),
-    Equal.sym(Number, add(add(a, b), c), add(a, add(b, c)), add_assoc(a, b, c)),
-    Equal.trans(Number, add(add(a, b), c), add(add(b, a), c), add(b, add(a, c)),
-      Equal.cong(Number, Number, x => add(x, c), add(a, b), add(b, a), add_comm(a, b)),
-      add_assoc(b, a, c)))
+  %add_assoc(b, a, c) : {add(a, add(b, c)) == _ : Number}
+  %add_comm(a, b) : {add(a, add(b, c)) == add(_, c) : Number}
+  %add_assoc(a, b, c) : {_ == add(add(a, b), c) : Number}
+  {==}
 
 law mul_succ:
   for +a: Number
@@ -101,9 +100,9 @@ def mul_succ(a, b):
     case Z{}:
       {==}
     case S{p}:
-      Equal.trans(Number, S{add(b, mul(p, S{b}))}, S{add(b, add(p, mul(p, b)))}, S{add(p, add(b, mul(p, b)))},
-        Equal.cong(Number, Number, x => S{add(b, x)}, mul(p, S{b}), add(p, mul(p, b)), mul_succ(p, b)),
-        Equal.cong(Number, Number, x => S{x}, add(b, add(p, mul(p, b))), add(p, add(b, mul(p, b))), add_swap(b, p, mul(p, b))))
+      %add_swap(b, p, mul(p, b)) : {S{add(b, mul(p, S{b}))} == S{_} : Number}
+      %mul_succ(p, b) : {S{add(b, mul(p, S{b}))} == S{add(b, _)} : Number}
+      {==}
 
 law mul_comm:
   for +a: Number
@@ -138,23 +137,20 @@ law add_mul:
   for +c: Number
   {mul(a, add(b, c)) == add(mul(a, b), mul(a, c)) : Number}
 def add_mul(a, b, c):
-  Equal.trans(Number, mul(a, add(b, c)), mul(add(b, c), a), add(mul(a, b), mul(a, c)),
-    mul_comm(a, add(b, c)),
-    Equal.trans(Number, mul(add(b, c), a), add(mul(b, a), mul(c, a)), add(mul(a, b), mul(a, c)),
-      mul_add(b, c, a),
-      Equal.trans(Number, add(mul(b, a), mul(c, a)), add(mul(a, b), mul(c, a)), add(mul(a, b), mul(a, c)),
-        Equal.cong(Number, Number, x => add(x, mul(c, a)), mul(b, a), mul(a, b), mul_comm(b, a)),
-        Equal.cong(Number, Number, x => add(mul(a, b), x), mul(c, a), mul(a, c), mul_comm(c, a)))))
+  %mul_comm(c, a) : {mul(a, add(b, c)) == add(mul(a, b), _) : Number}
+  %mul_comm(b, a) : {mul(a, add(b, c)) == add(_, mul(c, a)) : Number}
+  %mul_add(b, c, a) : {mul(a, add(b, c)) == _ : Number}
+  %mul_comm(add(b, c), a) : {_ == mul(add(b, c), a) : Number}
+  {==}
 
 law mul_one:
   for +a: Number
   {mul(a, S{Z{}}) == a : Number}
 def mul_one(a):
-  Equal.trans(Number, mul(a, S{Z{}}), add(a, mul(a, Z{})), a,
-    mul_succ(a, Z{}),
-    Equal.trans(Number, add(a, mul(a, Z{})), add(a, Z{}), a,
-      Equal.cong(Number, Number, x => add(a, x), mul(a, Z{}), Z{}, mul_zero(a)),
-      add_zero(a)))
+  %add_zero(a) : {mul(a, S{Z{}}) == _ : Number}
+  %mul_zero(a) : {mul(a, S{Z{}}) == add(a, _) : Number}
+  %mul_succ(a, Z{}) : {mul(a, S{Z{}}) == _ : Number}
+  {==}
 
 law mul_assoc:
   for +a: Number
@@ -166,9 +162,9 @@ def mul_assoc(a, b, c):
     case Z{}:
       {==}
     case S{p}:
-      Equal.trans(Number, mul(add(b, mul(p, b)), c), add(mul(b, c), mul(mul(p, b), c)), add(mul(b, c), mul(p, mul(b, c))),
-        mul_add(b, mul(p, b), c),
-        Equal.cong(Number, Number, x => add(mul(b, c), x), mul(mul(p, b), c), mul(p, mul(b, c)), mul_assoc(p, b, c)))
+      %mul_assoc(p, b, c) : {mul(add(b, mul(p, b)), c) == add(mul(b, c), _) : Number}
+      %mul_add(b, mul(p, b), c) : {mul(add(b, mul(p, b)), c) == _ : Number}
+      {==}
 
 law mul_swap:
   for +a: Number
@@ -176,8 +172,7 @@ law mul_swap:
   for +c: Number
   {mul(a, mul(b, c)) == mul(b, mul(a, c)) : Number}
 def mul_swap(a, b, c):
-  Equal.trans(Number, mul(a, mul(b, c)), mul(mul(a, b), c), mul(b, mul(a, c)),
-    Equal.sym(Number, mul(mul(a, b), c), mul(a, mul(b, c)), mul_assoc(a, b, c)),
-    Equal.trans(Number, mul(mul(a, b), c), mul(mul(b, a), c), mul(b, mul(a, c)),
-      Equal.cong(Number, Number, x => mul(x, c), mul(a, b), mul(b, a), mul_comm(a, b)),
-      mul_assoc(b, a, c)))
+  %mul_assoc(b, a, c) : {mul(a, mul(b, c)) == _ : Number}
+  %mul_comm(a, b) : {mul(a, mul(b, c)) == mul(_, c) : Number}
+  %mul_assoc(a, b, c) : {_ == mul(mul(a, b), c) : Number}
+  {==}
