@@ -1,5 +1,6 @@
 import Base
 import ./Exact/Rational.bend as Q
+import ./Exact/Compare.bend as K
 
 # Lists make the finite carrier explicit. Repeated rows are allowed;
 # all the inequalities therefore also apply to finite sets.
@@ -63,3 +64,57 @@ def Above(+threshold: Q.Number, xs: Samples) -> Type:
           Above(threshold, tail)
         case True{}:
           Q.Le<threshold, Q.of_nonnegative(x)> & Above(threshold, tail)
+
+def Below(+threshold: Q.Number, xs: Samples) -> Type:
+  match xs:
+    case NoSamples{}:
+      Unit
+    case Sample{w, x, chosen, tail}:
+      match chosen:
+        case False{}:
+          Q.Lt<Q.of_nonnegative(x), threshold> & Below(threshold, tail)
+        case True{}:
+          Below(threshold, tail)
+
+# Weighted draws with no selection: the finite probability space itself.
+type Draws is Data:
+  NoDraws{}
+  Draw{weight: Q.Nonnegative, value: Q.Nonnegative, tail: Draws}
+
+def mean(xs: Draws) -> Q.Number:
+  match xs:
+    case NoDraws{}:
+      Q.zero()
+    case Draw{w, x, tail}:
+      Q.add(Q.mul(Q.of_nonnegative(w), Q.of_nonnegative(x)), mean(tail))
+
+def reaches(-a: Q.Number, -x: Q.Number, d: K.Decision<a, x>) -> Bool:
+  match d:
+    case K.AtMost{h}:
+      True{}
+    case K.Exceeds{g}:
+      False{}
+
+# Select exactly the draws with a <= x, deciding each comparison.
+def threshold(+a: Q.Number, xs: Draws) -> Samples:
+  match xs:
+    case NoDraws{}:
+      NoSamples{}
+    case Draw{w, +x, tail}:
+      Sample{w, x, reaches(a, Q.of_nonnegative(x), K.decide(a, Q.of_nonnegative(x))), threshold(a, tail)}
+
+# The running maximum of the values in xs, seeded by m. For a nonempty
+# list, seed with its first value: maximum(tail, v).
+def maximum(xs: Rows, +m: Q.Number) -> Q.Number:
+  match xs:
+    case NoRows{}:
+      m
+    case Row{w, +v, tail}:
+      maximum(tail, K.max(m, v))
+
+def Member(+y: Q.Number, xs: Rows) -> Type:
+  match xs:
+    case NoRows{}:
+      Empty
+    case Row{w, v, tail}:
+      Or({y == v : Q.Number}, Member(y, tail))

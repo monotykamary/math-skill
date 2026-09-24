@@ -103,6 +103,9 @@ type Equality<-a: Number, -b: Number> is Data:
 def Eq(a: Number, b: Number) -> Data:
   Equality<a, b>
 
+def Ne(a: Number, b: Number) -> Type:
+  Eq(a, b) -> Empty
+
 # A constructive order certificate: b = a + a nonnegative rational.
 # The evidence uses exact cross multiplication, not a floating comparison.
 type Le<-a: Number, -b: Number> is Type:

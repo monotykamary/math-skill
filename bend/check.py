@@ -13,6 +13,8 @@ PUBLIC_LAWS = frozenset({
     'cool_contracts_deficit', 'cheb_two_of_recurrence',
     'heat_capped_lane_below_one', 'convex_avg_le_max', 'markov_finset',
     'heat_fixture_four', 'heat_crossing_fixture', 'chi_tv_transfer_rat',
+    'markov_threshold', 'threshold_exact', 'le_lt_exclusive',
+    'convex_avg_le_maximum', 'maximum_member', 'gain_complement',
 })
 IMPORT = re.compile(r'import (\./[A-Za-z0-9_./-]+\.bend) as ([A-Za-z][A-Za-z0-9_]*)')
 TOKENS = re.compile(r'"(?:\\.|[^"\\])*"|#[^\n]*')

@@ -4,6 +4,7 @@ import ./Frontier.bend as F
 import ./Finite.bend as Fin
 import ./Mixing.bend as Mixing
 import ./Fixtures.bend as Fixtures
+import ./Exact/Inverse.bend as I
 
 # Public claims. No floating-point substitution or parameter restriction.
 law heat_closed:
@@ -51,6 +52,47 @@ law markov_finset:
   for +a: Q.Number
   for h: Fin.Above(a, xs)
   Q.Le<Q.mul(a, Fin.selected_weight(xs)), Fin.expectation(xs)>
+
+# Lean's filtered form: threshold decides a <= x for every draw.
+# threshold_exact and le_lt_exclusive show it selects exactly those draws.
+law markov_threshold:
+  for +xs: Fin.Draws
+  for +a: Q.Number
+  Q.Le<Q.mul(a, Fin.selected_weight(Fin.threshold(a, xs))), Fin.mean(xs)>
+
+law threshold_exact:
+  for +a: Q.Number
+  for +xs: Fin.Draws
+  Fin.Above(a, Fin.threshold(a, xs)) & Fin.Below(a, Fin.threshold(a, xs))
+
+law le_lt_exclusive:
+  for +a: Q.Number
+  for +b: Q.Number
+  for h: Q.Le<a, b>
+  for g: Q.Lt<b, a>
+  Empty
+
+# Lean's max' form: a nonempty list bounded by its computed maximum, which
+# is one of its values.
+law convex_avg_le_maximum:
+  for +w: Q.Nonnegative
+  for +v: Q.Number
+  for +tail: Fin.Rows
+  for hsum: Q.Eq(Fin.weights(Fin.Row{w, v, tail}), Q.one())
+  Q.Le<Fin.weighted_sum(Fin.Row{w, v, tail}), Fin.maximum(tail, v)>
+
+law maximum_member:
+  for +w: Q.Nonnegative
+  for +v: Q.Number
+  for +tail: Fin.Rows
+  Fin.Member(Fin.maximum(tail, v), Fin.Row{w, v, tail})
+
+# Division is total and inv(0) = 0, as in Lean; the hypothesis excludes it.
+law gain_complement:
+  for +p: Q.Number
+  for +r: Q.Number
+  for h: Q.Ne(Q.add(p, r), Q.zero())
+  Q.Eq(I.div(r, Q.add(p, r)), Q.sub(Q.one(), I.div(p, Q.add(p, r))))
 
 law heat_fixture_four:
   Q.Eq(F.heat(4n, Q.one(), F.half()), Fixtures.fifteen_sixteenths())

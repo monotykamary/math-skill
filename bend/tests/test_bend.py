@@ -37,7 +37,7 @@ def rational(value: Fraction) -> str:
 class ProofGate(unittest.TestCase):
     def test_public_certificates(self):
         laws, modules = check.verify()
-        self.assertEqual(laws, 11)
+        self.assertEqual(laws, 17)
         self.assertGreater(modules, 20)
 
     def test_finite_certificate_examples(self):
@@ -168,11 +168,32 @@ class ExactRuntime(unittest.TestCase):
             add(f'Q.of_nonnegative(M.magnitude({rational(a)}))', abs(a))
         div = 'Q.Positive{' + positive(3) + ', ' + positive(5) + '}'
         add(f'Q.div_positive({rational(Fraction(-7,4))}, {div})', Fraction(-35,12))
+        for a in [Fraction(-7,3), Fraction(0), Fraction(5,4)]:
+            add(f'I.inv({rational(a)})', 1/a if a else Fraction(0))
+        add(f'I.div({rational(Fraction(-7,4))}, {rational(Fraction(3,5))})', Fraction(-35,12))
+        for a, b in [(Fraction(-3,2), Fraction(1,4)), (Fraction(5,4), Fraction(-7,3)), (Fraction(2,3), Fraction(4,6))]:
+            add(f'K.max({rational(a)}, {rational(b)})', max(a, b))
+        values = [Fraction(-3,2), Fraction(5,4), Fraction(1,4), Fraction(-7,3)]
+        def weight(w):
+            return f'Q.Nonnegative{{{whole(w.numerator)}, {positive(w.denominator)}}}'
+        rows = 'Fin.NoRows{}'
+        for v in reversed(values):
+            rows = f'Fin.Row{{{weight(Fraction(1,4))}, {rational(v)}, {rows}}}'
+        add(f'Fin.maximum({rows}, {rational(values[0])})', max(values))
+        draws = [(Fraction(1,2), Fraction(0)), (Fraction(1,3), Fraction(3,2)), (Fraction(1,6), Fraction(5,4))]
+        chain = 'Fin.NoDraws{}'
+        for w, x in reversed(draws):
+            chain = f'Fin.Draw{{{weight(w)}, {weight(x)}, {chain}}}'
+        for a in [Fraction(5,4), Fraction(4,3)]:
+            add(f'Fin.selected_weight(Fin.threshold({rational(a)}, {chain}))', sum(w for w, x in draws if a <= x))
         cls.expected = expected
         cls.source.write_text('''import Base
 import ../Exact/Binary.bend as B
 import ../Exact/Rational.bend as Q
 import ../Exact/Magnitude.bend as M
+import ../Exact/Compare.bend as K
+import ../Exact/Inverse.bend as I
+import ../Finite.bend as Fin
 import ../Frontier.bend as F
 
 def show(a: Q.Number) -> String:

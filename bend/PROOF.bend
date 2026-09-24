@@ -11,6 +11,8 @@ import ./FiniteProof.bend as FP
 import ./LAWS.bend as Laws
 import ./MixingProof.bend as MixingProof
 import ./Fixtures.bend as Fixtures
+import ./Exact/Compare.bend as K
+import ./Exact/Inverse.bend as I
 
 def Laws.heat_closed(n, s, rho):
   match n:
@@ -92,6 +94,29 @@ def Laws.convex_avg_le_max(xs, m, hmax, hsum):
 
 def Laws.markov_finset(xs, a, h):
   FP.markov_finset(xs, a, h)
+
+def Laws.markov_threshold(xs, a):
+  FP.markov_threshold(xs, a)
+
+def Laws.threshold_exact(a, xs):
+  FP.threshold_exact(a, xs)
+
+def Laws.le_lt_exclusive(a, b, h, g):
+  K.le_lt_absurd(a, b, h, g)
+
+def Laws.convex_avg_le_maximum(w, v, tail, hsum):
+  FP.convex_avg_le_maximum(w, v, tail, hsum)
+
+def Laws.maximum_member(w, v, tail):
+  FP.maximum_member(w, v, tail)
+
+# r/s = s/s - p/s, and s * inv(s) = 1 because s = p + r is not zero.
+def Laws.gain_complement(p, r, h):
+  +s = Q.add(p, r)
+  +i = I.inv(s)
+  E.trans(Q.mul(r, i), Q.sub(Q.mul(s, i), Q.mul(p, i)), Q.sub(Q.one(), Q.mul(p, i)),
+    R.gain_split(p, r, i),
+    C.sub_congr(Q.mul(s, i), Q.one(), Q.mul(p, i), Q.mul(p, i), I.mul_inv_cancel(s, h), R.refl(Q.mul(p, i))))
 
 def Laws.heat_fixture_four():
   E.trans(F.heat(4n, Q.one(), F.half()), F.closed(4n, Q.one(), F.half()), Fixtures.fifteen_sixteenths(),

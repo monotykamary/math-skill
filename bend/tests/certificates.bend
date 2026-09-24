@@ -1,5 +1,8 @@
 import Base
+import ../Exact/Binary.bend as B
 import ../Exact/Rational.bend as Q
+import ../Exact/Compare.bend as K
+import ../Exact/Inverse.bend as I
 import ../Exact/Decision.bend as D
 import ../Exact/Order.bend as O
 import ../Finite.bend as F
@@ -40,3 +43,35 @@ def observations() -> X.Observations:
 
 def mixing_example() -> Q.Le<Q.mul(X.total_deviation(observations()), X.total_deviation(observations())), Q.mul(X.mass(observations()), X.chi_square(observations()))>:
   XP.chi_tv_transfer_rat(observations())
+
+def draws() -> F.Draws:
+  F.Draw{half_weight(), O.zero(), F.Draw{half_weight(), two(), F.NoDraws{}}}
+
+def markov_threshold_example() -> Q.Le<Q.mul(Q.one(), F.selected_weight(F.threshold(Q.one(), draws()))), F.mean(draws())>:
+  P.markov_threshold(draws(), Q.one())
+
+# At threshold 1 only the draw at 2 is kept, so the selected weight is 1/2.
+def threshold_example() -> Q.Eq(F.selected_weight(F.threshold(Q.one(), draws())), Q.ratio(1n, 2n, Unit{})):
+  D.eq(F.selected_weight(F.threshold(Q.one(), draws())), Q.ratio(1n, 2n, Unit{}), {==})
+
+def signed_rows() -> F.Rows:
+  F.Row{half_weight(), Q.neg(Q.ratio(3n, 2n, Unit{})), F.Row{half_weight(), Q.ratio(1n, 4n, Unit{}), F.NoRows{}}}
+
+# max(1/2, -3/2, 1/4) is the seed 1/2; max(0, 1) is 1.
+def maximum_seed_example() -> {F.maximum(signed_rows(), Q.ratio(1n, 2n, Unit{})) == Q.ratio(1n, 2n, Unit{}) : Q.Number}:
+  {==}
+
+def maximum_value_example() -> {F.maximum(F.Row{half_weight(), Q.one(), F.NoRows{}}, Q.zero()) == Q.one() : Q.Number}:
+  {==}
+
+def convex_maximum_example() -> Q.Le<F.weighted_sum(rows()), F.maximum(F.Row{half_weight(), Q.one(), F.NoRows{}}, Q.zero())>:
+  P.convex_avg_le_maximum(half_weight(), Q.zero(), F.Row{half_weight(), Q.one(), F.NoRows{}},
+    D.eq(F.weights(rows()), Q.one(), {==}))
+
+def inverse_examples() -> Q.Eq(I.div(Q.one(), Q.two()), Q.ratio(1n, 2n, Unit{})) & Q.Eq(I.inv(Q.neg(Q.ratio(3n, 4n, Unit{}))), Q.neg(Q.ratio(4n, 3n, Unit{}))) & Q.Eq(I.inv(Q.zero()), Q.zero()):
+  (D.eq(I.div(Q.one(), Q.two()), Q.ratio(1n, 2n, Unit{}), {==}),
+   D.eq(I.inv(Q.neg(Q.ratio(3n, 4n, Unit{}))), Q.neg(Q.ratio(4n, 3n, Unit{})), {==}),
+   D.eq(I.inv(Q.zero()), Q.zero(), {==}))
+
+def cancel_example() -> Q.Eq(Q.mul(Q.two(), I.inv(Q.two())), Q.one()):
+  I.mul_inv_cancel(Q.two(), e => K.positive_nonzero(B.Bit0{B.One{}}, B.One{}, e))

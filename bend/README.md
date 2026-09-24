@@ -7,7 +7,7 @@ python3 bend/check.py
 python3 -m unittest discover -s bend/tests -v
 ```
 
-The gate checks 11 public laws across the local proof dependency closure. It rejects changed compiler versions, missing public proofs, unused production modules, unsafe declarations, holes, floating-point/effectful certificate code, external imports, and any checker result other than `All terms check.`. It runs `bend version`, then `bend PROOF.bend --check-only`, so no `main` executes. Bend's exit status alone does not suffice: `@unsafe` definitions can exit zero with a warning.
+The gate checks 17 public laws across the local proof dependency closure. It rejects changed compiler versions, missing public proofs, unused production modules, unsafe declarations, holes, floating-point/effectful certificate code, external imports, and any checker result other than `All terms check.`. It runs `bend version`, then `bend PROOF.bend --check-only`, so no `main` executes. Bend's exit status alone does not suffice: `@unsafe` definitions can exit zero with a warning.
 
 ## What is proved
 
@@ -25,11 +25,17 @@ The gate checks 11 public laws across the local proof dependency closure. It rej
 | `cheb_two_of_recurrence` | Original degree-two Chebyshev identity, with the square written as `Q.pow(2n, x)` as in Lean |
 | `markov_finset` | Finite-list generalization: any selected subset with certificates that selected values reach the threshold |
 | `convex_avg_le_max` | Finite-list generalization: any certified common upper bound, with weights summing to one |
+| `markov_threshold` | Lean's filtered form: `a * P(a <= X) <= E[X]`, with the selection computed by `Finite.threshold` |
+| `threshold_exact` | The threshold keeps every draw with `a <= x` and certifies `x < a` for every other draw |
+| `le_lt_exclusive` | `a <= b` and `b < a` never both hold, so the threshold selects exactly Lean's filtered set |
+| `convex_avg_le_maximum` | Lean's `max'` form: a nonempty list's convex average is at most its computed `Finite.maximum` |
+| `maximum_member` | That maximum is one of the list's values |
+| `gain_complement` | Original Kalman gain complement `r/(p+r) = 1 - p/(p+r)` for `p + r != 0`, with Lean's total division |
 | `chi_tv_transfer_rat` | New rational analogue of the open real-valued mixing goal |
 
-For Markov, `Finite.Samples` contains nonnegative weights and observations, a selection flag, and a separate `Above` hypothesis certificate. Selecting exactly the observations above the threshold gives the original filtered-set case. A threshold-filter builder is not supplied.
+For Markov, `Finite.Samples` contains nonnegative weights and observations, a selection flag, and a separate `Above` hypothesis certificate. `markov_threshold` supplies that selection: `Finite.threshold` decides `a <= x` for each `Finite.Draws` entry with `Compare.decide`, and `threshold_above` discharges the `Above` certificate.
 
-For convex averages, `Finite.Rows` contains nonnegative weights and arbitrary signed values. `AllBelow` certifies each value's bound; the theorem also takes an exact normalization proof. Choosing the maximum gives the original maximum case. A maximum-search builder is not supplied. Lists may repeat entries; a finite set is a special case. These formulations expose hypotheses formerly discharged by Mathlib.
+For convex averages, `Finite.Rows` contains nonnegative weights and arbitrary signed values. `AllBelow` certifies each value's bound; the theorem also takes an exact normalization proof. `convex_avg_le_maximum` supplies the maximum: `Finite.maximum(tail, v)` folds `Compare.max` over a nonempty list seeded by its first value, and `maximum_bounds` discharges `AllBelow`. Lists may repeat entries; a finite set is a special case. These formulations expose hypotheses formerly discharged by Mathlib.
 
 The rational mixing theorem states, for any finite list of rational p_i and strictly positive rational u_i:
 
@@ -47,7 +53,9 @@ The rational mixing theorem states, for any finite list of rational p_i and stri
 - Fractions are not reduced. Use `Q.Eq`, not structural equality: 1/2 and 2/4 have different representations. `Q.Eq` wraps an exact natural cross-product equality. The wrapper prevents eager expansion of large unary numerals during theorem application. Congruence and transitivity are proved, including cancellation of the positive denominator.
 - `Q.Le` carries a nonnegative rational slack and an equality certificate. `Q.Lt` carries a strictly positive slack. These are propositions with witnesses, not Boolean numerical tests.
 - `Q.ratio(n, d, Unit{})`, `Q.nonnegative_ratio` and `Q.positive_ratio` build literal fractions from `Nat` literals. Each denominator (and a `Positive` numerator) takes a `B.NonZero` certificate: `Unit{}` checks by computation for a nonzero literal, and `0n` cannot be certified.
-- `Q.div_positive` is total division by a statically positive rational. General signed division is not part of this API.
+- `Q.div_positive` is total division by a statically positive rational.
+- `Exact/Compare.bend` decides `a <= b` or `b < a` from the sign of `b - a` given by `Magnitude.decompose`, and proves the two outcomes exclusive. Each certificate sits behind a `Unit ->` thunk: running code reads only the outcome, and a proof forces the equality chain.
+- `Exact/Inverse.bend` defines a total signed inverse and `div(a, b) = a * inv(b)`. As in Lean, `inv(0) = 0`; `mul_inv_cancel` takes a `Q.Ne(a, Q.zero())` hypothesis.
 - `Exact/Decision.bend` proves the soundness of binary cross-product reflection for concrete equality certificates. It does not accept unchecked host-language equality results.
 
 The Python scripts in `tools/` are **untrusted proof generators**. Every generated step is checked by Bend against induction lemmas. They introduce no axioms and are not run by the certificate gate. Committed certificates can be checked without executing a generator. This still trusts Bend 2.0.27 and its bundled Base/checker. It is not an independent soundness audit or a proof of compiler correctness.

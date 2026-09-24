@@ -14772,3 +14772,2002 @@ def heat_increment_algebra(a, b, c):
       %Equal.sym(N.Number, v1396, v1008, N.add_swap(v511, v493, v1006)) : {v1009 == N.add(v467, _) : N.Number}
       {==}
       )}
+
+law add_neg_sub:
+  for +a: Q.Number
+  for +b: Q.Number
+  Q.Eq(Q.add(b, Q.neg(Q.sub(b, a))), a)
+def add_neg_sub(a, b):
+  match a b:
+    case Q.Fraction{ap, an, ad} Q.Fraction{bp, bn, bd}:
+      +v0 = B.positive_value(ad)
+      +v1 = B.value(an)
+      +v2 = B.positive_value(B.positive_mul(bd, B.positive_mul(bd, ad)))
+      +v3 = N.mul(v1, v2)
+      +v4 = B.value(ap)
+      +v5 = N.mul(v4, v2)
+      +v6 = B.value(B.add(B.mul(bn, B.Pos{B.positive_mul(bd, ad)}), B.mul(B.add(B.mul(bp, B.Pos{ad}), B.mul(an, B.Pos{bd})), B.Pos{bd})))
+      +v7 = N.mul(v6, v0)
+      +v8 = N.add(v5, v7)
+      +v9 = B.value(B.add(B.mul(bp, B.Pos{B.positive_mul(bd, ad)}), B.mul(B.add(B.mul(bn, B.Pos{ad}), B.mul(ap, B.Pos{bd})), B.Pos{bd})))
+      +v10 = B.value(B.mul(bp, B.Pos{B.positive_mul(bd, ad)}))
+      +v11 = B.value(B.mul(B.add(B.mul(bn, B.Pos{ad}), B.mul(ap, B.Pos{bd})), B.Pos{bd}))
+      +v12 = N.add(v10, v11)
+      +v13 = B.value(bp)
+      +v14 = B.value(B.Pos{B.positive_mul(bd, ad)})
+      +v15 = N.mul(v13, v14)
+      +v16 = B.positive_value(B.positive_mul(bd, ad))
+      +v17 = B.positive_value(bd)
+      +v18 = N.mul(v17, v0)
+      +v19 = N.mul(v13, v18)
+      +v20 = B.value(B.add(B.mul(bn, B.Pos{ad}), B.mul(ap, B.Pos{bd})))
+      +v21 = B.value(B.Pos{bd})
+      +v22 = N.mul(v20, v21)
+      +v23 = B.value(B.mul(bn, B.Pos{ad}))
+      +v24 = B.value(B.mul(ap, B.Pos{bd}))
+      +v25 = N.add(v23, v24)
+      +v26 = B.value(bn)
+      +v27 = B.value(B.Pos{ad})
+      +v28 = N.mul(v26, v27)
+      +v29 = N.mul(v26, v0)
+      +v30 = N.mul(v4, v21)
+      +v31 = N.mul(v4, v17)
+      +v32 = N.add(v29, v31)
+      +v33 = N.mul(v32, v17)
+      +v34 = N.add(v19, v33)
+      +v35 = N.mul(v34, v0)
+      +v36 = N.mul(v17, v16)
+      +v37 = N.mul(v17, v18)
+      +v38 = N.mul(v1, v37)
+      +v39 = N.add(v35, v38)
+      +v40 = N.mul(v4, v37)
+      +v41 = B.value(B.mul(bn, B.Pos{B.positive_mul(bd, ad)}))
+      +v42 = B.value(B.mul(B.add(B.mul(bp, B.Pos{ad}), B.mul(an, B.Pos{bd})), B.Pos{bd}))
+      +v43 = N.add(v41, v42)
+      +v44 = N.mul(v26, v14)
+      +v45 = N.mul(v26, v18)
+      +v46 = B.value(B.add(B.mul(bp, B.Pos{ad}), B.mul(an, B.Pos{bd})))
+      +v47 = N.mul(v46, v21)
+      +v48 = B.value(B.mul(bp, B.Pos{ad}))
+      +v49 = B.value(B.mul(an, B.Pos{bd}))
+      +v50 = N.add(v48, v49)
+      +v51 = N.mul(v13, v27)
+      +v52 = N.mul(v13, v0)
+      +v53 = N.mul(v1, v21)
+      +v54 = N.mul(v1, v17)
+      +v55 = N.add(v52, v54)
+      +v56 = N.mul(v55, v17)
+      +v57 = N.add(v45, v56)
+      +v58 = N.mul(v57, v0)
+      +v59 = N.add(v40, v58)
+      +v60 = N.mul(v0, v17)
+      +v61 = N.mul(v13, v60)
+      +v62 = N.mul(v13, v17)
+      +v63 = N.mul(v0, v62)
+      +v64 = N.mul(v17, v13)
+      +v65 = N.mul(v0, v64)
+      +v66 = N.mul(v0, v26)
+      +v67 = N.mul(v17, v4)
+      +v68 = N.add(v66, v67)
+      +v69 = N.mul(v68, v17)
+      +v70 = N.mul(v66, v17)
+      +v71 = N.mul(v67, v17)
+      +v72 = N.add(v70, v71)
+      +v73 = N.mul(v26, v17)
+      +v74 = N.mul(v0, v73)
+      +v75 = N.mul(v17, v26)
+      +v76 = N.mul(v0, v75)
+      +v77 = N.mul(v17, v31)
+      +v78 = N.mul(v17, v67)
+      +v79 = N.add(v76, v78)
+      +v80 = N.add(v65, v79)
+      +v81 = N.add(v65, v78)
+      +v82 = N.add(v76, v81)
+      +v83 = N.mul(v82, v0)
+      +v84 = N.mul(v76, v0)
+      +v85 = N.mul(v81, v0)
+      +v86 = N.add(v84, v85)
+      +v87 = N.mul(v75, v0)
+      +v88 = N.mul(v0, v87)
+      +v89 = N.mul(v17, v29)
+      +v90 = N.mul(v17, v66)
+      +v91 = N.mul(v0, v76)
+      +v92 = N.mul(v65, v0)
+      +v93 = N.mul(v78, v0)
+      +v94 = N.add(v92, v93)
+      +v95 = N.mul(v64, v0)
+      +v96 = N.mul(v0, v95)
+      +v97 = N.mul(v17, v52)
+      +v98 = N.mul(v0, v13)
+      +v99 = N.mul(v17, v98)
+      +v100 = N.mul(v0, v65)
+      +v101 = N.mul(v67, v0)
+      +v102 = N.mul(v17, v101)
+      +v103 = N.mul(v4, v0)
+      +v104 = N.mul(v17, v103)
+      +v105 = N.mul(v0, v4)
+      +v106 = N.mul(v17, v105)
+      +v107 = N.mul(v0, v67)
+      +v108 = N.mul(v17, v107)
+      +v109 = N.mul(v0, v78)
+      +v110 = N.add(v100, v109)
+      +v111 = N.add(v91, v110)
+      +v112 = N.mul(v17, v60)
+      +v113 = N.mul(v17, v17)
+      +v114 = N.mul(v0, v113)
+      +v115 = N.mul(v1, v114)
+      +v116 = N.mul(v1, v113)
+      +v117 = N.mul(v0, v116)
+      +v118 = N.mul(v17, v54)
+      +v119 = N.mul(v17, v1)
+      +v120 = N.mul(v17, v119)
+      +v121 = N.mul(v0, v120)
+      +v122 = N.add(v111, v121)
+      +v123 = N.add(v110, v121)
+      +v124 = N.add(v91, v123)
+      +v125 = N.add(v109, v121)
+      +v126 = N.add(v100, v125)
+      +v127 = N.add(v121, v109)
+      +v128 = N.add(v100, v127)
+      +v129 = N.add(v91, v128)
+      +v130 = N.mul(v4, v114)
+      +v131 = N.mul(v4, v113)
+      +v132 = N.mul(v0, v131)
+      +v133 = N.mul(v26, v60)
+      +v134 = N.add(v98, v119)
+      +v135 = N.mul(v134, v17)
+      +v136 = N.mul(v98, v17)
+      +v137 = N.mul(v119, v17)
+      +v138 = N.add(v136, v137)
+      +v139 = N.add(v65, v120)
+      +v140 = N.add(v76, v139)
+      +v141 = N.mul(v140, v0)
+      +v142 = N.mul(v139, v0)
+      +v143 = N.add(v84, v142)
+      +v144 = N.mul(v120, v0)
+      +v145 = N.add(v92, v144)
+      +v146 = N.mul(v119, v0)
+      +v147 = N.mul(v17, v146)
+      +v148 = N.mul(v1, v0)
+      +v149 = N.mul(v17, v148)
+      +v150 = N.mul(v0, v1)
+      +v151 = N.mul(v17, v150)
+      +v152 = N.mul(v0, v119)
+      +v153 = N.mul(v17, v152)
+      +v154 = N.add(v100, v121)
+      +v155 = N.add(v91, v154)
+      +v156 = N.add(v109, v155)
+      +v157 = N.add(v109, v154)
+      +v158 = N.add(v91, v157)
+      Q.Witness{(
+      %Equal.sym(N.Number, v9, v12, BP.add_correct(B.mul(bp, B.Pos{B.positive_mul(bd, ad)}), B.mul(B.add(B.mul(bn, B.Pos{ad}), B.mul(ap, B.Pos{bd})), B.Pos{bd}))) : {N.add(N.mul(_, v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v10, v15, BP.mul_correct(bp, B.Pos{B.positive_mul(bd, ad)})) : {N.add(N.mul(N.add(_, v11), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v14, v16, {==}) : {N.add(N.mul(N.add(N.mul(v13, _), v11), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v16, v18, BP.positive_mul_correct(bd, ad)) : {N.add(N.mul(N.add(N.mul(v13, _), v11), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v11, v22, BP.mul_correct(B.add(B.mul(bn, B.Pos{ad}), B.mul(ap, B.Pos{bd})), B.Pos{bd})) : {N.add(N.mul(N.add(v19, _), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v20, v25, BP.add_correct(B.mul(bn, B.Pos{ad}), B.mul(ap, B.Pos{bd}))) : {N.add(N.mul(N.add(v19, N.mul(_, v21)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v23, v28, BP.mul_correct(bn, B.Pos{ad})) : {N.add(N.mul(N.add(v19, N.mul(N.add(_, v24), v21)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v27, v0, {==}) : {N.add(N.mul(N.add(v19, N.mul(N.add(N.mul(v26, _), v24), v21)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v24, v30, BP.mul_correct(ap, B.Pos{bd})) : {N.add(N.mul(N.add(v19, N.mul(N.add(v29, _), v21)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v21, v17, {==}) : {N.add(N.mul(N.add(v19, N.mul(N.add(v29, N.mul(v4, _)), _)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v2, v36, BP.positive_mul_correct(bd, B.positive_mul(bd, ad))) : {N.add(v35, N.mul(v1, _)) == v8 : N.Number}
+      %Equal.sym(N.Number, v16, v18, BP.positive_mul_correct(bd, ad)) : {N.add(v35, N.mul(v1, N.mul(v17, _))) == v8 : N.Number}
+      %Equal.sym(N.Number, v2, v36, BP.positive_mul_correct(bd, B.positive_mul(bd, ad))) : {v39 == N.add(N.mul(v4, _), v7) : N.Number}
+      %Equal.sym(N.Number, v16, v18, BP.positive_mul_correct(bd, ad)) : {v39 == N.add(N.mul(v4, N.mul(v17, _)), v7) : N.Number}
+      %Equal.sym(N.Number, v6, v43, BP.add_correct(B.mul(bn, B.Pos{B.positive_mul(bd, ad)}), B.mul(B.add(B.mul(bp, B.Pos{ad}), B.mul(an, B.Pos{bd})), B.Pos{bd}))) : {v39 == N.add(v40, N.mul(_, v0)) : N.Number}
+      %Equal.sym(N.Number, v41, v44, BP.mul_correct(bn, B.Pos{B.positive_mul(bd, ad)})) : {v39 == N.add(v40, N.mul(N.add(_, v42), v0)) : N.Number}
+      %Equal.sym(N.Number, v14, v16, {==}) : {v39 == N.add(v40, N.mul(N.add(N.mul(v26, _), v42), v0)) : N.Number}
+      %Equal.sym(N.Number, v16, v18, BP.positive_mul_correct(bd, ad)) : {v39 == N.add(v40, N.mul(N.add(N.mul(v26, _), v42), v0)) : N.Number}
+      %Equal.sym(N.Number, v42, v47, BP.mul_correct(B.add(B.mul(bp, B.Pos{ad}), B.mul(an, B.Pos{bd})), B.Pos{bd})) : {v39 == N.add(v40, N.mul(N.add(v45, _), v0)) : N.Number}
+      %Equal.sym(N.Number, v46, v50, BP.add_correct(B.mul(bp, B.Pos{ad}), B.mul(an, B.Pos{bd}))) : {v39 == N.add(v40, N.mul(N.add(v45, N.mul(_, v21)), v0)) : N.Number}
+      %Equal.sym(N.Number, v48, v51, BP.mul_correct(bp, B.Pos{ad})) : {v39 == N.add(v40, N.mul(N.add(v45, N.mul(N.add(_, v49), v21)), v0)) : N.Number}
+      %Equal.sym(N.Number, v27, v0, {==}) : {v39 == N.add(v40, N.mul(N.add(v45, N.mul(N.add(N.mul(v13, _), v49), v21)), v0)) : N.Number}
+      %Equal.sym(N.Number, v49, v53, BP.mul_correct(an, B.Pos{bd})) : {v39 == N.add(v40, N.mul(N.add(v45, N.mul(N.add(v52, _), v21)), v0)) : N.Number}
+      %Equal.sym(N.Number, v21, v17, {==}) : {v39 == N.add(v40, N.mul(N.add(v45, N.mul(N.add(v52, N.mul(v1, _)), _)), v0)) : N.Number}
+      %Equal.sym(N.Number, v18, v60, N.mul_comm(v17, v0)) : {N.add(N.mul(N.add(N.mul(v13, _), v33), v0), v38) == v59 : N.Number}
+      %Equal.sym(N.Number, v61, v63, N.mul_swap(v13, v0, v17)) : {N.add(N.mul(N.add(_, v33), v0), v38) == v59 : N.Number}
+      %Equal.sym(N.Number, v62, v64, N.mul_comm(v13, v17)) : {N.add(N.mul(N.add(N.mul(v0, _), v33), v0), v38) == v59 : N.Number}
+      %Equal.sym(N.Number, v29, v66, N.mul_comm(v26, v0)) : {N.add(N.mul(N.add(v65, N.mul(N.add(_, v31), v17)), v0), v38) == v59 : N.Number}
+      %Equal.sym(N.Number, v31, v67, N.mul_comm(v4, v17)) : {N.add(N.mul(N.add(v65, N.mul(N.add(v66, _), v17)), v0), v38) == v59 : N.Number}
+      %Equal.sym(N.Number, v69, v72, N.mul_add(v66, v67, v17)) : {N.add(N.mul(N.add(v65, _), v0), v38) == v59 : N.Number}
+      %Equal.sym(N.Number, v70, v74, N.mul_assoc(v0, v26, v17)) : {N.add(N.mul(N.add(v65, N.add(_, v71)), v0), v38) == v59 : N.Number}
+      %Equal.sym(N.Number, v73, v75, N.mul_comm(v26, v17)) : {N.add(N.mul(N.add(v65, N.add(N.mul(v0, _), v71)), v0), v38) == v59 : N.Number}
+      %Equal.sym(N.Number, v71, v77, N.mul_assoc(v17, v4, v17)) : {N.add(N.mul(N.add(v65, N.add(v76, _)), v0), v38) == v59 : N.Number}
+      %Equal.sym(N.Number, v31, v67, N.mul_comm(v4, v17)) : {N.add(N.mul(N.add(v65, N.add(v76, N.mul(v17, _))), v0), v38) == v59 : N.Number}
+      %Equal.sym(N.Number, v80, v82, N.add_swap(v65, v76, v78)) : {N.add(N.mul(_, v0), v38) == v59 : N.Number}
+      %Equal.sym(N.Number, v83, v86, N.mul_add(v76, v81, v0)) : {N.add(_, v38) == v59 : N.Number}
+      %Equal.sym(N.Number, v84, v88, N.mul_assoc(v0, v75, v0)) : {N.add(N.add(_, v85), v38) == v59 : N.Number}
+      %Equal.sym(N.Number, v87, v89, N.mul_assoc(v17, v26, v0)) : {N.add(N.add(N.mul(v0, _), v85), v38) == v59 : N.Number}
+      %Equal.sym(N.Number, v29, v66, N.mul_comm(v26, v0)) : {N.add(N.add(N.mul(v0, N.mul(v17, _)), v85), v38) == v59 : N.Number}
+      %Equal.sym(N.Number, v90, v76, N.mul_swap(v17, v0, v26)) : {N.add(N.add(N.mul(v0, _), v85), v38) == v59 : N.Number}
+      %Equal.sym(N.Number, v85, v94, N.mul_add(v65, v78, v0)) : {N.add(N.add(v91, _), v38) == v59 : N.Number}
+      %Equal.sym(N.Number, v92, v96, N.mul_assoc(v0, v64, v0)) : {N.add(N.add(v91, N.add(_, v93)), v38) == v59 : N.Number}
+      %Equal.sym(N.Number, v95, v97, N.mul_assoc(v17, v13, v0)) : {N.add(N.add(v91, N.add(N.mul(v0, _), v93)), v38) == v59 : N.Number}
+      %Equal.sym(N.Number, v52, v98, N.mul_comm(v13, v0)) : {N.add(N.add(v91, N.add(N.mul(v0, N.mul(v17, _)), v93)), v38) == v59 : N.Number}
+      %Equal.sym(N.Number, v99, v65, N.mul_swap(v17, v0, v13)) : {N.add(N.add(v91, N.add(N.mul(v0, _), v93)), v38) == v59 : N.Number}
+      %Equal.sym(N.Number, v93, v102, N.mul_assoc(v17, v67, v0)) : {N.add(N.add(v91, N.add(v100, _)), v38) == v59 : N.Number}
+      %Equal.sym(N.Number, v101, v104, N.mul_assoc(v17, v4, v0)) : {N.add(N.add(v91, N.add(v100, N.mul(v17, _))), v38) == v59 : N.Number}
+      %Equal.sym(N.Number, v103, v105, N.mul_comm(v4, v0)) : {N.add(N.add(v91, N.add(v100, N.mul(v17, N.mul(v17, _)))), v38) == v59 : N.Number}
+      %Equal.sym(N.Number, v106, v107, N.mul_swap(v17, v0, v4)) : {N.add(N.add(v91, N.add(v100, N.mul(v17, _))), v38) == v59 : N.Number}
+      %Equal.sym(N.Number, v108, v109, N.mul_swap(v17, v0, v67)) : {N.add(N.add(v91, N.add(v100, _)), v38) == v59 : N.Number}
+      %Equal.sym(N.Number, v18, v60, N.mul_comm(v17, v0)) : {N.add(v111, N.mul(v1, N.mul(v17, _))) == v59 : N.Number}
+      %Equal.sym(N.Number, v112, v114, N.mul_swap(v17, v0, v17)) : {N.add(v111, N.mul(v1, _)) == v59 : N.Number}
+      %Equal.sym(N.Number, v115, v117, N.mul_swap(v1, v0, v113)) : {N.add(v111, _) == v59 : N.Number}
+      %Equal.sym(N.Number, v116, v118, N.mul_swap(v1, v17, v17)) : {N.add(v111, N.mul(v0, _)) == v59 : N.Number}
+      %Equal.sym(N.Number, v54, v119, N.mul_comm(v1, v17)) : {N.add(v111, N.mul(v0, N.mul(v17, _))) == v59 : N.Number}
+      %Equal.sym(N.Number, v122, v124, N.add_assoc(v91, v110, v121)) : {_ == v59 : N.Number}
+      %Equal.sym(N.Number, v123, v126, N.add_assoc(v100, v109, v121)) : {N.add(v91, _) == v59 : N.Number}
+      %Equal.sym(N.Number, v125, v127, N.add_comm(v109, v121)) : {N.add(v91, N.add(v100, _)) == v59 : N.Number}
+      %Equal.sym(N.Number, v18, v60, N.mul_comm(v17, v0)) : {v129 == N.add(N.mul(v4, N.mul(v17, _)), v58) : N.Number}
+      %Equal.sym(N.Number, v112, v114, N.mul_swap(v17, v0, v17)) : {v129 == N.add(N.mul(v4, _), v58) : N.Number}
+      %Equal.sym(N.Number, v130, v132, N.mul_swap(v4, v0, v113)) : {v129 == N.add(_, v58) : N.Number}
+      %Equal.sym(N.Number, v131, v77, N.mul_swap(v4, v17, v17)) : {v129 == N.add(N.mul(v0, _), v58) : N.Number}
+      %Equal.sym(N.Number, v31, v67, N.mul_comm(v4, v17)) : {v129 == N.add(N.mul(v0, N.mul(v17, _)), v58) : N.Number}
+      %Equal.sym(N.Number, v18, v60, N.mul_comm(v17, v0)) : {v129 == N.add(v109, N.mul(N.add(N.mul(v26, _), v56), v0)) : N.Number}
+      %Equal.sym(N.Number, v133, v74, N.mul_swap(v26, v0, v17)) : {v129 == N.add(v109, N.mul(N.add(_, v56), v0)) : N.Number}
+      %Equal.sym(N.Number, v73, v75, N.mul_comm(v26, v17)) : {v129 == N.add(v109, N.mul(N.add(N.mul(v0, _), v56), v0)) : N.Number}
+      %Equal.sym(N.Number, v52, v98, N.mul_comm(v13, v0)) : {v129 == N.add(v109, N.mul(N.add(v76, N.mul(N.add(_, v54), v17)), v0)) : N.Number}
+      %Equal.sym(N.Number, v54, v119, N.mul_comm(v1, v17)) : {v129 == N.add(v109, N.mul(N.add(v76, N.mul(N.add(v98, _), v17)), v0)) : N.Number}
+      %Equal.sym(N.Number, v135, v138, N.mul_add(v98, v119, v17)) : {v129 == N.add(v109, N.mul(N.add(v76, _), v0)) : N.Number}
+      %Equal.sym(N.Number, v136, v63, N.mul_assoc(v0, v13, v17)) : {v129 == N.add(v109, N.mul(N.add(v76, N.add(_, v137)), v0)) : N.Number}
+      %Equal.sym(N.Number, v62, v64, N.mul_comm(v13, v17)) : {v129 == N.add(v109, N.mul(N.add(v76, N.add(N.mul(v0, _), v137)), v0)) : N.Number}
+      %Equal.sym(N.Number, v137, v118, N.mul_assoc(v17, v1, v17)) : {v129 == N.add(v109, N.mul(N.add(v76, N.add(v65, _)), v0)) : N.Number}
+      %Equal.sym(N.Number, v54, v119, N.mul_comm(v1, v17)) : {v129 == N.add(v109, N.mul(N.add(v76, N.add(v65, N.mul(v17, _))), v0)) : N.Number}
+      %Equal.sym(N.Number, v141, v143, N.mul_add(v76, v139, v0)) : {v129 == N.add(v109, _) : N.Number}
+      %Equal.sym(N.Number, v84, v88, N.mul_assoc(v0, v75, v0)) : {v129 == N.add(v109, N.add(_, v142)) : N.Number}
+      %Equal.sym(N.Number, v87, v89, N.mul_assoc(v17, v26, v0)) : {v129 == N.add(v109, N.add(N.mul(v0, _), v142)) : N.Number}
+      %Equal.sym(N.Number, v29, v66, N.mul_comm(v26, v0)) : {v129 == N.add(v109, N.add(N.mul(v0, N.mul(v17, _)), v142)) : N.Number}
+      %Equal.sym(N.Number, v90, v76, N.mul_swap(v17, v0, v26)) : {v129 == N.add(v109, N.add(N.mul(v0, _), v142)) : N.Number}
+      %Equal.sym(N.Number, v142, v145, N.mul_add(v65, v120, v0)) : {v129 == N.add(v109, N.add(v91, _)) : N.Number}
+      %Equal.sym(N.Number, v92, v96, N.mul_assoc(v0, v64, v0)) : {v129 == N.add(v109, N.add(v91, N.add(_, v144))) : N.Number}
+      %Equal.sym(N.Number, v95, v97, N.mul_assoc(v17, v13, v0)) : {v129 == N.add(v109, N.add(v91, N.add(N.mul(v0, _), v144))) : N.Number}
+      %Equal.sym(N.Number, v52, v98, N.mul_comm(v13, v0)) : {v129 == N.add(v109, N.add(v91, N.add(N.mul(v0, N.mul(v17, _)), v144))) : N.Number}
+      %Equal.sym(N.Number, v99, v65, N.mul_swap(v17, v0, v13)) : {v129 == N.add(v109, N.add(v91, N.add(N.mul(v0, _), v144))) : N.Number}
+      %Equal.sym(N.Number, v144, v147, N.mul_assoc(v17, v119, v0)) : {v129 == N.add(v109, N.add(v91, N.add(v100, _))) : N.Number}
+      %Equal.sym(N.Number, v146, v149, N.mul_assoc(v17, v1, v0)) : {v129 == N.add(v109, N.add(v91, N.add(v100, N.mul(v17, _)))) : N.Number}
+      %Equal.sym(N.Number, v148, v150, N.mul_comm(v1, v0)) : {v129 == N.add(v109, N.add(v91, N.add(v100, N.mul(v17, N.mul(v17, _))))) : N.Number}
+      %Equal.sym(N.Number, v151, v152, N.mul_swap(v17, v0, v1)) : {v129 == N.add(v109, N.add(v91, N.add(v100, N.mul(v17, _)))) : N.Number}
+      %Equal.sym(N.Number, v153, v121, N.mul_swap(v17, v0, v119)) : {v129 == N.add(v109, N.add(v91, N.add(v100, _))) : N.Number}
+      %Equal.sym(N.Number, v156, v158, N.add_swap(v109, v91, v154)) : {v129 == _ : N.Number}
+      %Equal.sym(N.Number, v157, v126, N.add_swap(v109, v100, v121)) : {v129 == N.add(v91, _) : N.Number}
+      %Equal.sym(N.Number, v125, v127, N.add_comm(v109, v121)) : {v129 == N.add(v91, N.add(v100, _)) : N.Number}
+      {==}
+      )}
+
+law neg_add_self:
+  for +a: Q.Number
+  Q.Eq(Q.add(Q.neg(a), a), Q.zero())
+def neg_add_self(a):
+  match a:
+    case Q.Fraction{ap, an, ad}:
+      +v0 = B.positive_value(B.One{})
+      +v1 = B.value(B.Zero{})
+      +v2 = B.positive_value(B.positive_mul(ad, ad))
+      +v3 = N.mul(v1, v2)
+      +v4 = B.value(B.add(B.mul(ap, B.Pos{ad}), B.mul(an, B.Pos{ad})))
+      +v5 = N.mul(v4, v0)
+      +v6 = N.add(v3, v5)
+      +v7 = B.value(B.add(B.mul(an, B.Pos{ad}), B.mul(ap, B.Pos{ad})))
+      +v8 = B.value(B.mul(an, B.Pos{ad}))
+      +v9 = B.value(B.mul(ap, B.Pos{ad}))
+      +v10 = N.add(v8, v9)
+      +v11 = B.value(an)
+      +v12 = B.value(B.Pos{ad})
+      +v13 = N.mul(v11, v12)
+      +v14 = B.positive_value(ad)
+      +v15 = N.mul(v11, v14)
+      +v16 = B.value(ap)
+      +v17 = N.mul(v16, v12)
+      +v18 = N.mul(v16, v14)
+      +v19 = N.add(v15, v18)
+      +v20 = N.mul(v19, N.S{N.Z{}})
+      +v21 = N.mul(v14, v14)
+      +v22 = N.mul(N.Z{}, v21)
+      +v23 = N.add(v20, v22)
+      +v24 = N.add(v9, v8)
+      +v25 = N.add(v18, v15)
+      +v26 = N.mul(v25, N.S{N.Z{}})
+      +v27 = N.add(v22, v26)
+      +v28 = N.mul(v14, v11)
+      +v29 = N.mul(v14, v16)
+      +v30 = N.add(v28, v29)
+      +v31 = N.mul(v30, N.S{N.Z{}})
+      +v32 = N.add(v30, N.Z{})
+      +v33 = N.add(v29, v28)
+      +v34 = N.add(N.Z{}, v30)
+      Q.Witness{(
+      %Equal.sym(N.Number, v7, v10, BP.add_correct(B.mul(an, B.Pos{ad}), B.mul(ap, B.Pos{ad}))) : {N.add(N.mul(_, v0), v3) == v6 : N.Number}
+      %Equal.sym(N.Number, v8, v13, BP.mul_correct(an, B.Pos{ad})) : {N.add(N.mul(N.add(_, v9), v0), v3) == v6 : N.Number}
+      %Equal.sym(N.Number, v12, v14, {==}) : {N.add(N.mul(N.add(N.mul(v11, _), v9), v0), v3) == v6 : N.Number}
+      %Equal.sym(N.Number, v9, v17, BP.mul_correct(ap, B.Pos{ad})) : {N.add(N.mul(N.add(v15, _), v0), v3) == v6 : N.Number}
+      %Equal.sym(N.Number, v12, v14, {==}) : {N.add(N.mul(N.add(v15, N.mul(v16, _)), v0), v3) == v6 : N.Number}
+      %Equal.sym(N.Number, v0, N.S{N.Z{}}, {==}) : {N.add(N.mul(v19, _), v3) == v6 : N.Number}
+      %Equal.sym(N.Number, v1, N.Z{}, {==}) : {N.add(v20, N.mul(_, v2)) == v6 : N.Number}
+      %Equal.sym(N.Number, v2, v21, BP.positive_mul_correct(ad, ad)) : {N.add(v20, N.mul(N.Z{}, _)) == v6 : N.Number}
+      %Equal.sym(N.Number, v1, N.Z{}, {==}) : {v23 == N.add(N.mul(_, v2), v5) : N.Number}
+      %Equal.sym(N.Number, v2, v21, BP.positive_mul_correct(ad, ad)) : {v23 == N.add(N.mul(N.Z{}, _), v5) : N.Number}
+      %Equal.sym(N.Number, v4, v24, BP.add_correct(B.mul(ap, B.Pos{ad}), B.mul(an, B.Pos{ad}))) : {v23 == N.add(v22, N.mul(_, v0)) : N.Number}
+      %Equal.sym(N.Number, v9, v17, BP.mul_correct(ap, B.Pos{ad})) : {v23 == N.add(v22, N.mul(N.add(_, v8), v0)) : N.Number}
+      %Equal.sym(N.Number, v12, v14, {==}) : {v23 == N.add(v22, N.mul(N.add(N.mul(v16, _), v8), v0)) : N.Number}
+      %Equal.sym(N.Number, v8, v13, BP.mul_correct(an, B.Pos{ad})) : {v23 == N.add(v22, N.mul(N.add(v18, _), v0)) : N.Number}
+      %Equal.sym(N.Number, v12, v14, {==}) : {v23 == N.add(v22, N.mul(N.add(v18, N.mul(v11, _)), v0)) : N.Number}
+      %Equal.sym(N.Number, v0, N.S{N.Z{}}, {==}) : {v23 == N.add(v22, N.mul(v25, _)) : N.Number}
+      %Equal.sym(N.Number, v15, v28, N.mul_comm(v11, v14)) : {N.add(N.mul(N.add(_, v18), N.S{N.Z{}}), v22) == v27 : N.Number}
+      %Equal.sym(N.Number, v18, v29, N.mul_comm(v16, v14)) : {N.add(N.mul(N.add(v28, _), N.S{N.Z{}}), v22) == v27 : N.Number}
+      %Equal.sym(N.Number, v31, v30, N.mul_one(v30)) : {N.add(_, v22) == v27 : N.Number}
+      %Equal.sym(N.Number, v22, N.Z{}, {==}) : {N.add(v30, _) == v27 : N.Number}
+      %Equal.sym(N.Number, v32, v30, N.add_zero(v30)) : {_ == v27 : N.Number}
+      %Equal.sym(N.Number, v22, N.Z{}, {==}) : {v30 == N.add(_, v26) : N.Number}
+      %Equal.sym(N.Number, v18, v29, N.mul_comm(v16, v14)) : {v30 == N.add(N.Z{}, N.mul(N.add(_, v15), N.S{N.Z{}})) : N.Number}
+      %Equal.sym(N.Number, v15, v28, N.mul_comm(v11, v14)) : {v30 == N.add(N.Z{}, N.mul(N.add(v29, _), N.S{N.Z{}})) : N.Number}
+      %Equal.sym(N.Number, v33, v30, N.add_comm(v29, v28)) : {v30 == N.add(N.Z{}, N.mul(_, N.S{N.Z{}})) : N.Number}
+      %Equal.sym(N.Number, v31, v30, N.mul_one(v30)) : {v30 == N.add(N.Z{}, _) : N.Number}
+      %Equal.sym(N.Number, v34, v30, {==}) : {v30 == _ : N.Number}
+      {==}
+      )}
+
+law cancel_front:
+  for +a: Q.Number
+  for +b: Q.Number
+  for +c: Q.Number
+  Q.Eq(Q.add(Q.neg(a), Q.add(Q.add(a, b), c)), Q.add(b, c))
+def cancel_front(a, b, c):
+  match a b c:
+    case Q.Fraction{ap, an, ad} Q.Fraction{bp, bn, bd} Q.Fraction{cp, cn, cd}:
+      +v0 = B.positive_value(B.positive_mul(bd, cd))
+      +v1 = B.value(B.add(B.mul(bn, B.Pos{cd}), B.mul(cn, B.Pos{bd})))
+      +v2 = B.positive_value(B.positive_mul(ad, B.positive_mul(B.positive_mul(ad, bd), cd)))
+      +v3 = N.mul(v1, v2)
+      +v4 = B.value(B.add(B.mul(bp, B.Pos{cd}), B.mul(cp, B.Pos{bd})))
+      +v5 = N.mul(v4, v2)
+      +v6 = B.value(B.add(B.mul(ap, B.Pos{B.positive_mul(B.positive_mul(ad, bd), cd)}), B.mul(B.add(B.mul(B.add(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad})), B.Pos{cd}), B.mul(cn, B.Pos{B.positive_mul(ad, bd)})), B.Pos{ad})))
+      +v7 = N.mul(v6, v0)
+      +v8 = N.add(v5, v7)
+      +v9 = B.value(B.add(B.mul(an, B.Pos{B.positive_mul(B.positive_mul(ad, bd), cd)}), B.mul(B.add(B.mul(B.add(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad})), B.Pos{cd}), B.mul(cp, B.Pos{B.positive_mul(ad, bd)})), B.Pos{ad})))
+      +v10 = B.value(B.mul(an, B.Pos{B.positive_mul(B.positive_mul(ad, bd), cd)}))
+      +v11 = B.value(B.mul(B.add(B.mul(B.add(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad})), B.Pos{cd}), B.mul(cp, B.Pos{B.positive_mul(ad, bd)})), B.Pos{ad}))
+      +v12 = N.add(v10, v11)
+      +v13 = B.value(an)
+      +v14 = B.value(B.Pos{B.positive_mul(B.positive_mul(ad, bd), cd)})
+      +v15 = N.mul(v13, v14)
+      +v16 = B.positive_value(B.positive_mul(B.positive_mul(ad, bd), cd))
+      +v17 = B.positive_value(B.positive_mul(ad, bd))
+      +v18 = B.positive_value(cd)
+      +v19 = N.mul(v17, v18)
+      +v20 = B.positive_value(ad)
+      +v21 = B.positive_value(bd)
+      +v22 = N.mul(v20, v21)
+      +v23 = N.mul(v22, v18)
+      +v24 = N.mul(v13, v23)
+      +v25 = B.value(B.add(B.mul(B.add(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad})), B.Pos{cd}), B.mul(cp, B.Pos{B.positive_mul(ad, bd)})))
+      +v26 = B.value(B.Pos{ad})
+      +v27 = N.mul(v25, v26)
+      +v28 = B.value(B.mul(B.add(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad})), B.Pos{cd}))
+      +v29 = B.value(B.mul(cp, B.Pos{B.positive_mul(ad, bd)}))
+      +v30 = N.add(v28, v29)
+      +v31 = B.value(B.add(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad})))
+      +v32 = B.value(B.Pos{cd})
+      +v33 = N.mul(v31, v32)
+      +v34 = B.value(B.mul(ap, B.Pos{bd}))
+      +v35 = B.value(B.mul(bp, B.Pos{ad}))
+      +v36 = N.add(v34, v35)
+      +v37 = B.value(ap)
+      +v38 = B.value(B.Pos{bd})
+      +v39 = N.mul(v37, v38)
+      +v40 = N.mul(v37, v21)
+      +v41 = B.value(bp)
+      +v42 = N.mul(v41, v26)
+      +v43 = N.mul(v41, v20)
+      +v44 = N.add(v40, v43)
+      +v45 = N.mul(v44, v18)
+      +v46 = B.value(cp)
+      +v47 = B.value(B.Pos{B.positive_mul(ad, bd)})
+      +v48 = N.mul(v46, v47)
+      +v49 = N.mul(v46, v22)
+      +v50 = N.add(v45, v49)
+      +v51 = N.mul(v50, v20)
+      +v52 = N.add(v24, v51)
+      +v53 = N.mul(v21, v18)
+      +v54 = N.mul(v52, v53)
+      +v55 = B.value(B.mul(bn, B.Pos{cd}))
+      +v56 = B.value(B.mul(cn, B.Pos{bd}))
+      +v57 = N.add(v55, v56)
+      +v58 = B.value(bn)
+      +v59 = N.mul(v58, v32)
+      +v60 = N.mul(v58, v18)
+      +v61 = B.value(cn)
+      +v62 = N.mul(v61, v38)
+      +v63 = N.mul(v61, v21)
+      +v64 = N.add(v60, v63)
+      +v65 = N.mul(v20, v16)
+      +v66 = N.mul(v20, v23)
+      +v67 = N.mul(v64, v66)
+      +v68 = N.add(v54, v67)
+      +v69 = B.value(B.mul(bp, B.Pos{cd}))
+      +v70 = B.value(B.mul(cp, B.Pos{bd}))
+      +v71 = N.add(v69, v70)
+      +v72 = N.mul(v41, v32)
+      +v73 = N.mul(v41, v18)
+      +v74 = N.mul(v46, v38)
+      +v75 = N.mul(v46, v21)
+      +v76 = N.add(v73, v75)
+      +v77 = N.mul(v76, v66)
+      +v78 = B.value(B.mul(ap, B.Pos{B.positive_mul(B.positive_mul(ad, bd), cd)}))
+      +v79 = B.value(B.mul(B.add(B.mul(B.add(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad})), B.Pos{cd}), B.mul(cn, B.Pos{B.positive_mul(ad, bd)})), B.Pos{ad}))
+      +v80 = N.add(v78, v79)
+      +v81 = N.mul(v37, v14)
+      +v82 = N.mul(v37, v23)
+      +v83 = B.value(B.add(B.mul(B.add(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad})), B.Pos{cd}), B.mul(cn, B.Pos{B.positive_mul(ad, bd)})))
+      +v84 = N.mul(v83, v26)
+      +v85 = B.value(B.mul(B.add(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad})), B.Pos{cd}))
+      +v86 = B.value(B.mul(cn, B.Pos{B.positive_mul(ad, bd)}))
+      +v87 = N.add(v85, v86)
+      +v88 = B.value(B.add(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad})))
+      +v89 = N.mul(v88, v32)
+      +v90 = B.value(B.mul(an, B.Pos{bd}))
+      +v91 = B.value(B.mul(bn, B.Pos{ad}))
+      +v92 = N.add(v90, v91)
+      +v93 = N.mul(v13, v38)
+      +v94 = N.mul(v13, v21)
+      +v95 = N.mul(v58, v26)
+      +v96 = N.mul(v58, v20)
+      +v97 = N.add(v94, v96)
+      +v98 = N.mul(v97, v18)
+      +v99 = N.mul(v61, v47)
+      +v100 = N.mul(v61, v22)
+      +v101 = N.add(v98, v100)
+      +v102 = N.mul(v101, v20)
+      +v103 = N.add(v82, v102)
+      +v104 = N.mul(v103, v53)
+      +v105 = N.add(v77, v104)
+      +v106 = N.mul(v20, v53)
+      +v107 = N.mul(v13, v106)
+      +v108 = N.mul(v13, v53)
+      +v109 = N.mul(v20, v108)
+      +v110 = N.mul(v13, v18)
+      +v111 = N.mul(v21, v110)
+      +v112 = N.mul(v18, v13)
+      +v113 = N.mul(v21, v112)
+      +v114 = N.mul(v20, v113)
+      +v115 = N.mul(v21, v37)
+      +v116 = N.mul(v20, v41)
+      +v117 = N.add(v115, v116)
+      +v118 = N.add(v116, v115)
+      +v119 = N.mul(v118, v18)
+      +v120 = N.mul(v116, v18)
+      +v121 = N.mul(v115, v18)
+      +v122 = N.add(v120, v121)
+      +v123 = N.mul(v20, v73)
+      +v124 = N.mul(v18, v41)
+      +v125 = N.mul(v20, v124)
+      +v126 = N.mul(v37, v18)
+      +v127 = N.mul(v21, v126)
+      +v128 = N.mul(v18, v37)
+      +v129 = N.mul(v21, v128)
+      +v130 = N.add(v125, v129)
+      +v131 = N.mul(v20, v75)
+      +v132 = N.mul(v21, v46)
+      +v133 = N.mul(v20, v132)
+      +v134 = N.add(v130, v133)
+      +v135 = N.add(v129, v133)
+      +v136 = N.add(v125, v135)
+      +v137 = N.add(v133, v129)
+      +v138 = N.add(v125, v137)
+      +v139 = N.add(v133, v130)
+      +v140 = N.mul(v139, v20)
+      +v141 = N.mul(v133, v20)
+      +v142 = N.mul(v130, v20)
+      +v143 = N.add(v141, v142)
+      +v144 = N.mul(v132, v20)
+      +v145 = N.mul(v20, v144)
+      +v146 = N.mul(v46, v20)
+      +v147 = N.mul(v21, v146)
+      +v148 = N.mul(v20, v46)
+      +v149 = N.mul(v21, v148)
+      +v150 = N.mul(v20, v133)
+      +v151 = N.mul(v125, v20)
+      +v152 = N.mul(v129, v20)
+      +v153 = N.add(v151, v152)
+      +v154 = N.mul(v124, v20)
+      +v155 = N.mul(v20, v154)
+      +v156 = N.mul(v18, v43)
+      +v157 = N.mul(v18, v116)
+      +v158 = N.mul(v20, v125)
+      +v159 = N.mul(v128, v20)
+      +v160 = N.mul(v21, v159)
+      +v161 = N.mul(v37, v20)
+      +v162 = N.mul(v18, v161)
+      +v163 = N.mul(v20, v37)
+      +v164 = N.mul(v18, v163)
+      +v165 = N.mul(v20, v128)
+      +v166 = N.mul(v21, v165)
+      +v167 = N.mul(v20, v129)
+      +v168 = N.add(v158, v167)
+      +v169 = N.add(v150, v168)
+      +v170 = N.add(v114, v169)
+      +v171 = N.add(v114, v168)
+      +v172 = N.add(v150, v171)
+      +v173 = N.add(v114, v167)
+      +v174 = N.add(v158, v173)
+      +v175 = N.add(v150, v174)
+      +v176 = N.mul(v175, v53)
+      +v177 = N.mul(v150, v53)
+      +v178 = N.mul(v174, v53)
+      +v179 = N.add(v177, v178)
+      +v180 = N.mul(v133, v53)
+      +v181 = N.mul(v20, v180)
+      +v182 = N.mul(v132, v53)
+      +v183 = N.mul(v20, v182)
+      +v184 = N.mul(v46, v53)
+      +v185 = N.mul(v21, v184)
+      +v186 = N.mul(v46, v18)
+      +v187 = N.mul(v21, v186)
+      +v188 = N.mul(v18, v46)
+      +v189 = N.mul(v21, v188)
+      +v190 = N.mul(v21, v189)
+      +v191 = N.mul(v20, v190)
+      +v192 = N.mul(v20, v191)
+      +v193 = N.mul(v158, v53)
+      +v194 = N.mul(v173, v53)
+      +v195 = N.add(v193, v194)
+      +v196 = N.mul(v125, v53)
+      +v197 = N.mul(v20, v196)
+      +v198 = N.mul(v124, v53)
+      +v199 = N.mul(v20, v198)
+      +v200 = N.mul(v41, v53)
+      +v201 = N.mul(v18, v200)
+      +v202 = N.mul(v21, v73)
+      +v203 = N.mul(v21, v124)
+      +v204 = N.mul(v18, v203)
+      +v205 = N.mul(v18, v124)
+      +v206 = N.mul(v21, v205)
+      +v207 = N.mul(v20, v206)
+      +v208 = N.mul(v20, v207)
+      +v209 = N.mul(v114, v53)
+      +v210 = N.mul(v167, v53)
+      +v211 = N.add(v209, v210)
+      +v212 = N.mul(v113, v53)
+      +v213 = N.mul(v20, v212)
+      +v214 = N.mul(v112, v53)
+      +v215 = N.mul(v21, v214)
+      +v216 = N.mul(v18, v108)
+      +v217 = N.mul(v18, v113)
+      +v218 = N.mul(v18, v112)
+      +v219 = N.mul(v21, v218)
+      +v220 = N.mul(v21, v219)
+      +v221 = N.mul(v20, v220)
+      +v222 = N.mul(v129, v53)
+      +v223 = N.mul(v20, v222)
+      +v224 = N.mul(v128, v53)
+      +v225 = N.mul(v21, v224)
+      +v226 = N.mul(v37, v53)
+      +v227 = N.mul(v18, v226)
+      +v228 = N.mul(v18, v129)
+      +v229 = N.mul(v18, v128)
+      +v230 = N.mul(v21, v229)
+      +v231 = N.mul(v21, v230)
+      +v232 = N.mul(v20, v231)
+      +v233 = N.add(v221, v232)
+      +v234 = N.add(v208, v233)
+      +v235 = N.add(v192, v234)
+      +v236 = N.mul(v18, v58)
+      +v237 = N.mul(v21, v61)
+      +v238 = N.add(v236, v237)
+      +v239 = N.add(v237, v236)
+      +v240 = N.mul(v20, v106)
+      +v241 = N.mul(v239, v240)
+      +v242 = N.mul(v237, v240)
+      +v243 = N.mul(v236, v240)
+      +v244 = N.add(v242, v243)
+      +v245 = N.mul(v61, v240)
+      +v246 = N.mul(v21, v245)
+      +v247 = N.mul(v61, v106)
+      +v248 = N.mul(v20, v247)
+      +v249 = N.mul(v61, v53)
+      +v250 = N.mul(v20, v249)
+      +v251 = N.mul(v61, v18)
+      +v252 = N.mul(v21, v251)
+      +v253 = N.mul(v18, v61)
+      +v254 = N.mul(v21, v253)
+      +v255 = N.mul(v20, v254)
+      +v256 = N.mul(v20, v255)
+      +v257 = N.mul(v21, v256)
+      +v258 = N.mul(v21, v255)
+      +v259 = N.mul(v20, v258)
+      +v260 = N.mul(v21, v254)
+      +v261 = N.mul(v20, v260)
+      +v262 = N.mul(v20, v261)
+      +v263 = N.mul(v58, v240)
+      +v264 = N.mul(v18, v263)
+      +v265 = N.mul(v58, v106)
+      +v266 = N.mul(v20, v265)
+      +v267 = N.mul(v58, v53)
+      +v268 = N.mul(v20, v267)
+      +v269 = N.mul(v21, v60)
+      +v270 = N.mul(v21, v236)
+      +v271 = N.mul(v20, v270)
+      +v272 = N.mul(v20, v271)
+      +v273 = N.mul(v18, v272)
+      +v274 = N.mul(v18, v271)
+      +v275 = N.mul(v20, v274)
+      +v276 = N.mul(v18, v270)
+      +v277 = N.mul(v20, v276)
+      +v278 = N.mul(v18, v236)
+      +v279 = N.mul(v21, v278)
+      +v280 = N.mul(v20, v279)
+      +v281 = N.mul(v20, v280)
+      +v282 = N.add(v262, v281)
+      +v283 = N.add(v235, v282)
+      +v284 = N.add(v234, v282)
+      +v285 = N.add(v192, v284)
+      +v286 = N.add(v233, v282)
+      +v287 = N.add(v208, v286)
+      +v288 = N.add(v232, v282)
+      +v289 = N.add(v221, v288)
+      +v290 = N.add(v232, v281)
+      +v291 = N.add(v262, v290)
+      +v292 = N.add(v281, v232)
+      +v293 = N.add(v262, v292)
+      +v294 = N.add(v221, v293)
+      +v295 = N.add(v221, v292)
+      +v296 = N.add(v262, v295)
+      +v297 = N.add(v281, v233)
+      +v298 = N.add(v262, v297)
+      +v299 = N.add(v208, v298)
+      +v300 = N.add(v208, v297)
+      +v301 = N.add(v262, v300)
+      +v302 = N.add(v281, v234)
+      +v303 = N.add(v262, v302)
+      +v304 = N.add(v192, v303)
+      +v305 = N.add(v192, v302)
+      +v306 = N.add(v262, v305)
+      +v307 = N.add(v124, v132)
+      +v308 = N.add(v132, v124)
+      +v309 = N.mul(v308, v240)
+      +v310 = N.mul(v132, v240)
+      +v311 = N.mul(v124, v240)
+      +v312 = N.add(v310, v311)
+      +v313 = N.mul(v46, v240)
+      +v314 = N.mul(v21, v313)
+      +v315 = N.mul(v46, v106)
+      +v316 = N.mul(v20, v315)
+      +v317 = N.mul(v20, v184)
+      +v318 = N.mul(v20, v189)
+      +v319 = N.mul(v20, v318)
+      +v320 = N.mul(v21, v319)
+      +v321 = N.mul(v21, v318)
+      +v322 = N.mul(v20, v321)
+      +v323 = N.mul(v41, v240)
+      +v324 = N.mul(v18, v323)
+      +v325 = N.mul(v41, v106)
+      +v326 = N.mul(v20, v325)
+      +v327 = N.mul(v20, v200)
+      +v328 = N.mul(v20, v203)
+      +v329 = N.mul(v20, v328)
+      +v330 = N.mul(v18, v329)
+      +v331 = N.mul(v18, v328)
+      +v332 = N.mul(v20, v331)
+      +v333 = N.mul(v20, v204)
+      +v334 = N.add(v192, v208)
+      +v335 = N.mul(v37, v106)
+      +v336 = N.mul(v20, v226)
+      +v337 = N.mul(v21, v13)
+      +v338 = N.mul(v20, v58)
+      +v339 = N.add(v337, v338)
+      +v340 = N.add(v338, v337)
+      +v341 = N.mul(v340, v18)
+      +v342 = N.mul(v338, v18)
+      +v343 = N.mul(v337, v18)
+      +v344 = N.add(v342, v343)
+      +v345 = N.mul(v20, v60)
+      +v346 = N.mul(v20, v236)
+      +v347 = N.add(v346, v113)
+      +v348 = N.mul(v20, v63)
+      +v349 = N.mul(v20, v237)
+      +v350 = N.add(v347, v349)
+      +v351 = N.add(v113, v349)
+      +v352 = N.add(v346, v351)
+      +v353 = N.add(v349, v113)
+      +v354 = N.add(v346, v353)
+      +v355 = N.add(v349, v347)
+      +v356 = N.mul(v355, v20)
+      +v357 = N.mul(v349, v20)
+      +v358 = N.mul(v347, v20)
+      +v359 = N.add(v357, v358)
+      +v360 = N.mul(v237, v20)
+      +v361 = N.mul(v20, v360)
+      +v362 = N.mul(v61, v20)
+      +v363 = N.mul(v21, v362)
+      +v364 = N.mul(v20, v61)
+      +v365 = N.mul(v21, v364)
+      +v366 = N.mul(v20, v349)
+      +v367 = N.mul(v346, v20)
+      +v368 = N.mul(v113, v20)
+      +v369 = N.add(v367, v368)
+      +v370 = N.mul(v236, v20)
+      +v371 = N.mul(v20, v370)
+      +v372 = N.mul(v18, v96)
+      +v373 = N.mul(v18, v338)
+      +v374 = N.mul(v20, v346)
+      +v375 = N.mul(v112, v20)
+      +v376 = N.mul(v21, v375)
+      +v377 = N.mul(v13, v20)
+      +v378 = N.mul(v18, v377)
+      +v379 = N.mul(v20, v13)
+      +v380 = N.mul(v18, v379)
+      +v381 = N.mul(v20, v112)
+      +v382 = N.mul(v21, v381)
+      +v383 = N.add(v374, v114)
+      +v384 = N.add(v366, v383)
+      +v385 = N.add(v167, v384)
+      +v386 = N.add(v167, v383)
+      +v387 = N.add(v366, v386)
+      +v388 = N.add(v167, v114)
+      +v389 = N.add(v374, v388)
+      +v390 = N.add(v374, v173)
+      +v391 = N.add(v366, v390)
+      +v392 = N.mul(v391, v53)
+      +v393 = N.mul(v366, v53)
+      +v394 = N.mul(v390, v53)
+      +v395 = N.add(v393, v394)
+      +v396 = N.mul(v349, v53)
+      +v397 = N.mul(v20, v396)
+      +v398 = N.mul(v237, v53)
+      +v399 = N.mul(v20, v398)
+      +v400 = N.mul(v21, v249)
+      +v401 = N.mul(v374, v53)
+      +v402 = N.add(v401, v194)
+      +v403 = N.mul(v346, v53)
+      +v404 = N.mul(v20, v403)
+      +v405 = N.mul(v236, v53)
+      +v406 = N.mul(v20, v405)
+      +v407 = N.mul(v18, v267)
+      +v408 = N.add(v334, v298)
+      +v409 = N.add(v192, v299)
+      Q.Witness{(
+      %Equal.sym(N.Number, v9, v12, BP.add_correct(B.mul(an, B.Pos{B.positive_mul(B.positive_mul(ad, bd), cd)}), B.mul(B.add(B.mul(B.add(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad})), B.Pos{cd}), B.mul(cp, B.Pos{B.positive_mul(ad, bd)})), B.Pos{ad}))) : {N.add(N.mul(_, v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v10, v15, BP.mul_correct(an, B.Pos{B.positive_mul(B.positive_mul(ad, bd), cd)})) : {N.add(N.mul(N.add(_, v11), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v14, v16, {==}) : {N.add(N.mul(N.add(N.mul(v13, _), v11), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v16, v19, BP.positive_mul_correct(B.positive_mul(ad, bd), cd)) : {N.add(N.mul(N.add(N.mul(v13, _), v11), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v17, v22, BP.positive_mul_correct(ad, bd)) : {N.add(N.mul(N.add(N.mul(v13, N.mul(_, v18)), v11), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v11, v27, BP.mul_correct(B.add(B.mul(B.add(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad})), B.Pos{cd}), B.mul(cp, B.Pos{B.positive_mul(ad, bd)})), B.Pos{ad})) : {N.add(N.mul(N.add(v24, _), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v25, v30, BP.add_correct(B.mul(B.add(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad})), B.Pos{cd}), B.mul(cp, B.Pos{B.positive_mul(ad, bd)}))) : {N.add(N.mul(N.add(v24, N.mul(_, v26)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v28, v33, BP.mul_correct(B.add(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad})), B.Pos{cd})) : {N.add(N.mul(N.add(v24, N.mul(N.add(_, v29), v26)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v31, v36, BP.add_correct(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad}))) : {N.add(N.mul(N.add(v24, N.mul(N.add(N.mul(_, v32), v29), v26)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v34, v39, BP.mul_correct(ap, B.Pos{bd})) : {N.add(N.mul(N.add(v24, N.mul(N.add(N.mul(N.add(_, v35), v32), v29), v26)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v38, v21, {==}) : {N.add(N.mul(N.add(v24, N.mul(N.add(N.mul(N.add(N.mul(v37, _), v35), v32), v29), v26)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v35, v42, BP.mul_correct(bp, B.Pos{ad})) : {N.add(N.mul(N.add(v24, N.mul(N.add(N.mul(N.add(v40, _), v32), v29), v26)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v26, v20, {==}) : {N.add(N.mul(N.add(v24, N.mul(N.add(N.mul(N.add(v40, N.mul(v41, _)), v32), v29), _)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v32, v18, {==}) : {N.add(N.mul(N.add(v24, N.mul(N.add(N.mul(v44, _), v29), v20)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v29, v48, BP.mul_correct(cp, B.Pos{B.positive_mul(ad, bd)})) : {N.add(N.mul(N.add(v24, N.mul(N.add(v45, _), v20)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v47, v17, {==}) : {N.add(N.mul(N.add(v24, N.mul(N.add(v45, N.mul(v46, _)), v20)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v17, v22, BP.positive_mul_correct(ad, bd)) : {N.add(N.mul(N.add(v24, N.mul(N.add(v45, N.mul(v46, _)), v20)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v0, v53, BP.positive_mul_correct(bd, cd)) : {N.add(N.mul(v52, _), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v1, v57, BP.add_correct(B.mul(bn, B.Pos{cd}), B.mul(cn, B.Pos{bd}))) : {N.add(v54, N.mul(_, v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v55, v59, BP.mul_correct(bn, B.Pos{cd})) : {N.add(v54, N.mul(N.add(_, v56), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v32, v18, {==}) : {N.add(v54, N.mul(N.add(N.mul(v58, _), v56), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v56, v62, BP.mul_correct(cn, B.Pos{bd})) : {N.add(v54, N.mul(N.add(v60, _), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v38, v21, {==}) : {N.add(v54, N.mul(N.add(v60, N.mul(v61, _)), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v2, v65, BP.positive_mul_correct(ad, B.positive_mul(B.positive_mul(ad, bd), cd))) : {N.add(v54, N.mul(v64, _)) == v8 : N.Number}
+      %Equal.sym(N.Number, v16, v19, BP.positive_mul_correct(B.positive_mul(ad, bd), cd)) : {N.add(v54, N.mul(v64, N.mul(v20, _))) == v8 : N.Number}
+      %Equal.sym(N.Number, v17, v22, BP.positive_mul_correct(ad, bd)) : {N.add(v54, N.mul(v64, N.mul(v20, N.mul(_, v18)))) == v8 : N.Number}
+      %Equal.sym(N.Number, v4, v71, BP.add_correct(B.mul(bp, B.Pos{cd}), B.mul(cp, B.Pos{bd}))) : {v68 == N.add(N.mul(_, v2), v7) : N.Number}
+      %Equal.sym(N.Number, v69, v72, BP.mul_correct(bp, B.Pos{cd})) : {v68 == N.add(N.mul(N.add(_, v70), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v32, v18, {==}) : {v68 == N.add(N.mul(N.add(N.mul(v41, _), v70), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v70, v74, BP.mul_correct(cp, B.Pos{bd})) : {v68 == N.add(N.mul(N.add(v73, _), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v38, v21, {==}) : {v68 == N.add(N.mul(N.add(v73, N.mul(v46, _)), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v2, v65, BP.positive_mul_correct(ad, B.positive_mul(B.positive_mul(ad, bd), cd))) : {v68 == N.add(N.mul(v76, _), v7) : N.Number}
+      %Equal.sym(N.Number, v16, v19, BP.positive_mul_correct(B.positive_mul(ad, bd), cd)) : {v68 == N.add(N.mul(v76, N.mul(v20, _)), v7) : N.Number}
+      %Equal.sym(N.Number, v17, v22, BP.positive_mul_correct(ad, bd)) : {v68 == N.add(N.mul(v76, N.mul(v20, N.mul(_, v18))), v7) : N.Number}
+      %Equal.sym(N.Number, v6, v80, BP.add_correct(B.mul(ap, B.Pos{B.positive_mul(B.positive_mul(ad, bd), cd)}), B.mul(B.add(B.mul(B.add(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad})), B.Pos{cd}), B.mul(cn, B.Pos{B.positive_mul(ad, bd)})), B.Pos{ad}))) : {v68 == N.add(v77, N.mul(_, v0)) : N.Number}
+      %Equal.sym(N.Number, v78, v81, BP.mul_correct(ap, B.Pos{B.positive_mul(B.positive_mul(ad, bd), cd)})) : {v68 == N.add(v77, N.mul(N.add(_, v79), v0)) : N.Number}
+      %Equal.sym(N.Number, v14, v16, {==}) : {v68 == N.add(v77, N.mul(N.add(N.mul(v37, _), v79), v0)) : N.Number}
+      %Equal.sym(N.Number, v16, v19, BP.positive_mul_correct(B.positive_mul(ad, bd), cd)) : {v68 == N.add(v77, N.mul(N.add(N.mul(v37, _), v79), v0)) : N.Number}
+      %Equal.sym(N.Number, v17, v22, BP.positive_mul_correct(ad, bd)) : {v68 == N.add(v77, N.mul(N.add(N.mul(v37, N.mul(_, v18)), v79), v0)) : N.Number}
+      %Equal.sym(N.Number, v79, v84, BP.mul_correct(B.add(B.mul(B.add(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad})), B.Pos{cd}), B.mul(cn, B.Pos{B.positive_mul(ad, bd)})), B.Pos{ad})) : {v68 == N.add(v77, N.mul(N.add(v82, _), v0)) : N.Number}
+      %Equal.sym(N.Number, v83, v87, BP.add_correct(B.mul(B.add(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad})), B.Pos{cd}), B.mul(cn, B.Pos{B.positive_mul(ad, bd)}))) : {v68 == N.add(v77, N.mul(N.add(v82, N.mul(_, v26)), v0)) : N.Number}
+      %Equal.sym(N.Number, v85, v89, BP.mul_correct(B.add(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad})), B.Pos{cd})) : {v68 == N.add(v77, N.mul(N.add(v82, N.mul(N.add(_, v86), v26)), v0)) : N.Number}
+      %Equal.sym(N.Number, v88, v92, BP.add_correct(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad}))) : {v68 == N.add(v77, N.mul(N.add(v82, N.mul(N.add(N.mul(_, v32), v86), v26)), v0)) : N.Number}
+      %Equal.sym(N.Number, v90, v93, BP.mul_correct(an, B.Pos{bd})) : {v68 == N.add(v77, N.mul(N.add(v82, N.mul(N.add(N.mul(N.add(_, v91), v32), v86), v26)), v0)) : N.Number}
+      %Equal.sym(N.Number, v38, v21, {==}) : {v68 == N.add(v77, N.mul(N.add(v82, N.mul(N.add(N.mul(N.add(N.mul(v13, _), v91), v32), v86), v26)), v0)) : N.Number}
+      %Equal.sym(N.Number, v91, v95, BP.mul_correct(bn, B.Pos{ad})) : {v68 == N.add(v77, N.mul(N.add(v82, N.mul(N.add(N.mul(N.add(v94, _), v32), v86), v26)), v0)) : N.Number}
+      %Equal.sym(N.Number, v26, v20, {==}) : {v68 == N.add(v77, N.mul(N.add(v82, N.mul(N.add(N.mul(N.add(v94, N.mul(v58, _)), v32), v86), _)), v0)) : N.Number}
+      %Equal.sym(N.Number, v32, v18, {==}) : {v68 == N.add(v77, N.mul(N.add(v82, N.mul(N.add(N.mul(v97, _), v86), v20)), v0)) : N.Number}
+      %Equal.sym(N.Number, v86, v99, BP.mul_correct(cn, B.Pos{B.positive_mul(ad, bd)})) : {v68 == N.add(v77, N.mul(N.add(v82, N.mul(N.add(v98, _), v20)), v0)) : N.Number}
+      %Equal.sym(N.Number, v47, v17, {==}) : {v68 == N.add(v77, N.mul(N.add(v82, N.mul(N.add(v98, N.mul(v61, _)), v20)), v0)) : N.Number}
+      %Equal.sym(N.Number, v17, v22, BP.positive_mul_correct(ad, bd)) : {v68 == N.add(v77, N.mul(N.add(v82, N.mul(N.add(v98, N.mul(v61, _)), v20)), v0)) : N.Number}
+      %Equal.sym(N.Number, v0, v53, BP.positive_mul_correct(bd, cd)) : {v68 == N.add(v77, N.mul(v103, _)) : N.Number}
+      %Equal.sym(N.Number, v23, v106, N.mul_assoc(v20, v21, v18)) : {N.add(N.mul(N.add(N.mul(v13, _), v51), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v107, v109, N.mul_swap(v13, v20, v53)) : {N.add(N.mul(N.add(_, v51), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v108, v111, N.mul_swap(v13, v21, v18)) : {N.add(N.mul(N.add(N.mul(v20, _), v51), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v110, v112, N.mul_comm(v13, v18)) : {N.add(N.mul(N.add(N.mul(v20, N.mul(v21, _)), v51), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v40, v115, N.mul_comm(v37, v21)) : {N.add(N.mul(N.add(v114, N.mul(N.add(N.mul(N.add(_, v43), v18), v49), v20)), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v43, v116, N.mul_comm(v41, v20)) : {N.add(N.mul(N.add(v114, N.mul(N.add(N.mul(N.add(v115, _), v18), v49), v20)), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v117, v118, N.add_comm(v115, v116)) : {N.add(N.mul(N.add(v114, N.mul(N.add(N.mul(_, v18), v49), v20)), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v119, v122, N.mul_add(v116, v115, v18)) : {N.add(N.mul(N.add(v114, N.mul(N.add(_, v49), v20)), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v120, v123, N.mul_assoc(v20, v41, v18)) : {N.add(N.mul(N.add(v114, N.mul(N.add(N.add(_, v121), v49), v20)), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v73, v124, N.mul_comm(v41, v18)) : {N.add(N.mul(N.add(v114, N.mul(N.add(N.add(N.mul(v20, _), v121), v49), v20)), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v121, v127, N.mul_assoc(v21, v37, v18)) : {N.add(N.mul(N.add(v114, N.mul(N.add(N.add(v125, _), v49), v20)), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v126, v128, N.mul_comm(v37, v18)) : {N.add(N.mul(N.add(v114, N.mul(N.add(N.add(v125, N.mul(v21, _)), v49), v20)), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v49, v131, N.mul_swap(v46, v20, v21)) : {N.add(N.mul(N.add(v114, N.mul(N.add(v130, _), v20)), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v75, v132, N.mul_comm(v46, v21)) : {N.add(N.mul(N.add(v114, N.mul(N.add(v130, N.mul(v20, _)), v20)), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v134, v136, N.add_assoc(v125, v129, v133)) : {N.add(N.mul(N.add(v114, N.mul(_, v20)), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v135, v137, N.add_comm(v129, v133)) : {N.add(N.mul(N.add(v114, N.mul(N.add(v125, _), v20)), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v138, v139, N.add_swap(v125, v133, v129)) : {N.add(N.mul(N.add(v114, N.mul(_, v20)), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v140, v143, N.mul_add(v133, v130, v20)) : {N.add(N.mul(N.add(v114, _), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v141, v145, N.mul_assoc(v20, v132, v20)) : {N.add(N.mul(N.add(v114, N.add(_, v142)), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v144, v147, N.mul_assoc(v21, v46, v20)) : {N.add(N.mul(N.add(v114, N.add(N.mul(v20, _), v142)), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v146, v148, N.mul_comm(v46, v20)) : {N.add(N.mul(N.add(v114, N.add(N.mul(v20, N.mul(v21, _)), v142)), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v149, v133, N.mul_swap(v21, v20, v46)) : {N.add(N.mul(N.add(v114, N.add(N.mul(v20, _), v142)), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v142, v153, N.mul_add(v125, v129, v20)) : {N.add(N.mul(N.add(v114, N.add(v150, _)), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v151, v155, N.mul_assoc(v20, v124, v20)) : {N.add(N.mul(N.add(v114, N.add(v150, N.add(_, v152))), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v154, v156, N.mul_assoc(v18, v41, v20)) : {N.add(N.mul(N.add(v114, N.add(v150, N.add(N.mul(v20, _), v152))), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v43, v116, N.mul_comm(v41, v20)) : {N.add(N.mul(N.add(v114, N.add(v150, N.add(N.mul(v20, N.mul(v18, _)), v152))), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v157, v125, N.mul_swap(v18, v20, v41)) : {N.add(N.mul(N.add(v114, N.add(v150, N.add(N.mul(v20, _), v152))), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v152, v160, N.mul_assoc(v21, v128, v20)) : {N.add(N.mul(N.add(v114, N.add(v150, N.add(v158, _))), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v159, v162, N.mul_assoc(v18, v37, v20)) : {N.add(N.mul(N.add(v114, N.add(v150, N.add(v158, N.mul(v21, _)))), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v161, v163, N.mul_comm(v37, v20)) : {N.add(N.mul(N.add(v114, N.add(v150, N.add(v158, N.mul(v21, N.mul(v18, _))))), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v164, v165, N.mul_swap(v18, v20, v37)) : {N.add(N.mul(N.add(v114, N.add(v150, N.add(v158, N.mul(v21, _)))), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v166, v167, N.mul_swap(v21, v20, v128)) : {N.add(N.mul(N.add(v114, N.add(v150, N.add(v158, _))), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v170, v172, N.add_swap(v114, v150, v168)) : {N.add(N.mul(_, v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v171, v174, N.add_swap(v114, v158, v167)) : {N.add(N.mul(N.add(v150, _), v53), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v176, v179, N.mul_add(v150, v174, v53)) : {N.add(_, v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v177, v181, N.mul_assoc(v20, v133, v53)) : {N.add(N.add(_, v178), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v180, v183, N.mul_assoc(v20, v132, v53)) : {N.add(N.add(N.mul(v20, _), v178), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v182, v185, N.mul_assoc(v21, v46, v53)) : {N.add(N.add(N.mul(v20, N.mul(v20, _)), v178), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v184, v187, N.mul_swap(v46, v21, v18)) : {N.add(N.add(N.mul(v20, N.mul(v20, N.mul(v21, _))), v178), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v186, v188, N.mul_comm(v46, v18)) : {N.add(N.add(N.mul(v20, N.mul(v20, N.mul(v21, N.mul(v21, _)))), v178), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v178, v195, N.mul_add(v158, v173, v53)) : {N.add(N.add(v192, _), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v193, v197, N.mul_assoc(v20, v125, v53)) : {N.add(N.add(v192, N.add(_, v194)), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v196, v199, N.mul_assoc(v20, v124, v53)) : {N.add(N.add(v192, N.add(N.mul(v20, _), v194)), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v198, v201, N.mul_assoc(v18, v41, v53)) : {N.add(N.add(v192, N.add(N.mul(v20, N.mul(v20, _)), v194)), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v200, v202, N.mul_swap(v41, v21, v18)) : {N.add(N.add(v192, N.add(N.mul(v20, N.mul(v20, N.mul(v18, _))), v194)), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v73, v124, N.mul_comm(v41, v18)) : {N.add(N.add(v192, N.add(N.mul(v20, N.mul(v20, N.mul(v18, N.mul(v21, _)))), v194)), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v204, v206, N.mul_swap(v18, v21, v124)) : {N.add(N.add(v192, N.add(N.mul(v20, N.mul(v20, _)), v194)), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v194, v211, N.mul_add(v114, v167, v53)) : {N.add(N.add(v192, N.add(v208, _)), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v209, v213, N.mul_assoc(v20, v113, v53)) : {N.add(N.add(v192, N.add(v208, N.add(_, v210))), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v212, v215, N.mul_assoc(v21, v112, v53)) : {N.add(N.add(v192, N.add(v208, N.add(N.mul(v20, _), v210))), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v214, v216, N.mul_assoc(v18, v13, v53)) : {N.add(N.add(v192, N.add(v208, N.add(N.mul(v20, N.mul(v21, _)), v210))), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v108, v111, N.mul_swap(v13, v21, v18)) : {N.add(N.add(v192, N.add(v208, N.add(N.mul(v20, N.mul(v21, N.mul(v18, _))), v210))), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v110, v112, N.mul_comm(v13, v18)) : {N.add(N.add(v192, N.add(v208, N.add(N.mul(v20, N.mul(v21, N.mul(v18, N.mul(v21, _)))), v210))), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v217, v219, N.mul_swap(v18, v21, v112)) : {N.add(N.add(v192, N.add(v208, N.add(N.mul(v20, N.mul(v21, _)), v210))), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v210, v223, N.mul_assoc(v20, v129, v53)) : {N.add(N.add(v192, N.add(v208, N.add(v221, _))), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v222, v225, N.mul_assoc(v21, v128, v53)) : {N.add(N.add(v192, N.add(v208, N.add(v221, N.mul(v20, _)))), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v224, v227, N.mul_assoc(v18, v37, v53)) : {N.add(N.add(v192, N.add(v208, N.add(v221, N.mul(v20, N.mul(v21, _))))), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v226, v127, N.mul_swap(v37, v21, v18)) : {N.add(N.add(v192, N.add(v208, N.add(v221, N.mul(v20, N.mul(v21, N.mul(v18, _)))))), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v126, v128, N.mul_comm(v37, v18)) : {N.add(N.add(v192, N.add(v208, N.add(v221, N.mul(v20, N.mul(v21, N.mul(v18, N.mul(v21, _))))))), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v228, v230, N.mul_swap(v18, v21, v128)) : {N.add(N.add(v192, N.add(v208, N.add(v221, N.mul(v20, N.mul(v21, _))))), v67) == v105 : N.Number}
+      %Equal.sym(N.Number, v60, v236, N.mul_comm(v58, v18)) : {N.add(v235, N.mul(N.add(_, v63), v66)) == v105 : N.Number}
+      %Equal.sym(N.Number, v63, v237, N.mul_comm(v61, v21)) : {N.add(v235, N.mul(N.add(v236, _), v66)) == v105 : N.Number}
+      %Equal.sym(N.Number, v238, v239, N.add_comm(v236, v237)) : {N.add(v235, N.mul(_, v66)) == v105 : N.Number}
+      %Equal.sym(N.Number, v23, v106, N.mul_assoc(v20, v21, v18)) : {N.add(v235, N.mul(v239, N.mul(v20, _))) == v105 : N.Number}
+      %Equal.sym(N.Number, v241, v244, N.mul_add(v237, v236, v240)) : {N.add(v235, _) == v105 : N.Number}
+      %Equal.sym(N.Number, v242, v246, N.mul_assoc(v21, v61, v240)) : {N.add(v235, N.add(_, v243)) == v105 : N.Number}
+      %Equal.sym(N.Number, v245, v248, N.mul_swap(v61, v20, v106)) : {N.add(v235, N.add(N.mul(v21, _), v243)) == v105 : N.Number}
+      %Equal.sym(N.Number, v247, v250, N.mul_swap(v61, v20, v53)) : {N.add(v235, N.add(N.mul(v21, N.mul(v20, _)), v243)) == v105 : N.Number}
+      %Equal.sym(N.Number, v249, v252, N.mul_swap(v61, v21, v18)) : {N.add(v235, N.add(N.mul(v21, N.mul(v20, N.mul(v20, _))), v243)) == v105 : N.Number}
+      %Equal.sym(N.Number, v251, v253, N.mul_comm(v61, v18)) : {N.add(v235, N.add(N.mul(v21, N.mul(v20, N.mul(v20, N.mul(v21, _)))), v243)) == v105 : N.Number}
+      %Equal.sym(N.Number, v257, v259, N.mul_swap(v21, v20, v255)) : {N.add(v235, N.add(_, v243)) == v105 : N.Number}
+      %Equal.sym(N.Number, v258, v261, N.mul_swap(v21, v20, v254)) : {N.add(v235, N.add(N.mul(v20, _), v243)) == v105 : N.Number}
+      %Equal.sym(N.Number, v243, v264, N.mul_assoc(v18, v58, v240)) : {N.add(v235, N.add(v262, _)) == v105 : N.Number}
+      %Equal.sym(N.Number, v263, v266, N.mul_swap(v58, v20, v106)) : {N.add(v235, N.add(v262, N.mul(v18, _))) == v105 : N.Number}
+      %Equal.sym(N.Number, v265, v268, N.mul_swap(v58, v20, v53)) : {N.add(v235, N.add(v262, N.mul(v18, N.mul(v20, _)))) == v105 : N.Number}
+      %Equal.sym(N.Number, v267, v269, N.mul_swap(v58, v21, v18)) : {N.add(v235, N.add(v262, N.mul(v18, N.mul(v20, N.mul(v20, _))))) == v105 : N.Number}
+      %Equal.sym(N.Number, v60, v236, N.mul_comm(v58, v18)) : {N.add(v235, N.add(v262, N.mul(v18, N.mul(v20, N.mul(v20, N.mul(v21, _)))))) == v105 : N.Number}
+      %Equal.sym(N.Number, v273, v275, N.mul_swap(v18, v20, v271)) : {N.add(v235, N.add(v262, _)) == v105 : N.Number}
+      %Equal.sym(N.Number, v274, v277, N.mul_swap(v18, v20, v270)) : {N.add(v235, N.add(v262, N.mul(v20, _))) == v105 : N.Number}
+      %Equal.sym(N.Number, v276, v279, N.mul_swap(v18, v21, v236)) : {N.add(v235, N.add(v262, N.mul(v20, N.mul(v20, _)))) == v105 : N.Number}
+      %Equal.sym(N.Number, v283, v285, N.add_assoc(v192, v234, v282)) : {_ == v105 : N.Number}
+      %Equal.sym(N.Number, v284, v287, N.add_assoc(v208, v233, v282)) : {N.add(v192, _) == v105 : N.Number}
+      %Equal.sym(N.Number, v286, v289, N.add_assoc(v221, v232, v282)) : {N.add(v192, N.add(v208, _)) == v105 : N.Number}
+      %Equal.sym(N.Number, v288, v291, N.add_swap(v232, v262, v281)) : {N.add(v192, N.add(v208, N.add(v221, _))) == v105 : N.Number}
+      %Equal.sym(N.Number, v290, v292, N.add_comm(v232, v281)) : {N.add(v192, N.add(v208, N.add(v221, N.add(v262, _)))) == v105 : N.Number}
+      %Equal.sym(N.Number, v294, v296, N.add_swap(v221, v262, v292)) : {N.add(v192, N.add(v208, _)) == v105 : N.Number}
+      %Equal.sym(N.Number, v295, v297, N.add_swap(v221, v281, v232)) : {N.add(v192, N.add(v208, N.add(v262, _))) == v105 : N.Number}
+      %Equal.sym(N.Number, v299, v301, N.add_swap(v208, v262, v297)) : {N.add(v192, _) == v105 : N.Number}
+      %Equal.sym(N.Number, v300, v302, N.add_swap(v208, v281, v233)) : {N.add(v192, N.add(v262, _)) == v105 : N.Number}
+      %Equal.sym(N.Number, v304, v306, N.add_swap(v192, v262, v302)) : {_ == v105 : N.Number}
+      %Equal.sym(N.Number, v73, v124, N.mul_comm(v41, v18)) : {v306 == N.add(N.mul(N.add(_, v75), v66), v104) : N.Number}
+      %Equal.sym(N.Number, v75, v132, N.mul_comm(v46, v21)) : {v306 == N.add(N.mul(N.add(v124, _), v66), v104) : N.Number}
+      %Equal.sym(N.Number, v307, v308, N.add_comm(v124, v132)) : {v306 == N.add(N.mul(_, v66), v104) : N.Number}
+      %Equal.sym(N.Number, v23, v106, N.mul_assoc(v20, v21, v18)) : {v306 == N.add(N.mul(v308, N.mul(v20, _)), v104) : N.Number}
+      %Equal.sym(N.Number, v309, v312, N.mul_add(v132, v124, v240)) : {v306 == N.add(_, v104) : N.Number}
+      %Equal.sym(N.Number, v310, v314, N.mul_assoc(v21, v46, v240)) : {v306 == N.add(N.add(_, v311), v104) : N.Number}
+      %Equal.sym(N.Number, v313, v316, N.mul_swap(v46, v20, v106)) : {v306 == N.add(N.add(N.mul(v21, _), v311), v104) : N.Number}
+      %Equal.sym(N.Number, v315, v317, N.mul_swap(v46, v20, v53)) : {v306 == N.add(N.add(N.mul(v21, N.mul(v20, _)), v311), v104) : N.Number}
+      %Equal.sym(N.Number, v184, v187, N.mul_swap(v46, v21, v18)) : {v306 == N.add(N.add(N.mul(v21, N.mul(v20, N.mul(v20, _))), v311), v104) : N.Number}
+      %Equal.sym(N.Number, v186, v188, N.mul_comm(v46, v18)) : {v306 == N.add(N.add(N.mul(v21, N.mul(v20, N.mul(v20, N.mul(v21, _)))), v311), v104) : N.Number}
+      %Equal.sym(N.Number, v320, v322, N.mul_swap(v21, v20, v318)) : {v306 == N.add(N.add(_, v311), v104) : N.Number}
+      %Equal.sym(N.Number, v321, v191, N.mul_swap(v21, v20, v189)) : {v306 == N.add(N.add(N.mul(v20, _), v311), v104) : N.Number}
+      %Equal.sym(N.Number, v311, v324, N.mul_assoc(v18, v41, v240)) : {v306 == N.add(N.add(v192, _), v104) : N.Number}
+      %Equal.sym(N.Number, v323, v326, N.mul_swap(v41, v20, v106)) : {v306 == N.add(N.add(v192, N.mul(v18, _)), v104) : N.Number}
+      %Equal.sym(N.Number, v325, v327, N.mul_swap(v41, v20, v53)) : {v306 == N.add(N.add(v192, N.mul(v18, N.mul(v20, _))), v104) : N.Number}
+      %Equal.sym(N.Number, v200, v202, N.mul_swap(v41, v21, v18)) : {v306 == N.add(N.add(v192, N.mul(v18, N.mul(v20, N.mul(v20, _)))), v104) : N.Number}
+      %Equal.sym(N.Number, v73, v124, N.mul_comm(v41, v18)) : {v306 == N.add(N.add(v192, N.mul(v18, N.mul(v20, N.mul(v20, N.mul(v21, _))))), v104) : N.Number}
+      %Equal.sym(N.Number, v330, v332, N.mul_swap(v18, v20, v328)) : {v306 == N.add(N.add(v192, _), v104) : N.Number}
+      %Equal.sym(N.Number, v331, v333, N.mul_swap(v18, v20, v203)) : {v306 == N.add(N.add(v192, N.mul(v20, _)), v104) : N.Number}
+      %Equal.sym(N.Number, v204, v206, N.mul_swap(v18, v21, v124)) : {v306 == N.add(N.add(v192, N.mul(v20, N.mul(v20, _))), v104) : N.Number}
+      %Equal.sym(N.Number, v23, v106, N.mul_assoc(v20, v21, v18)) : {v306 == N.add(v334, N.mul(N.add(N.mul(v37, _), v102), v53)) : N.Number}
+      %Equal.sym(N.Number, v335, v336, N.mul_swap(v37, v20, v53)) : {v306 == N.add(v334, N.mul(N.add(_, v102), v53)) : N.Number}
+      %Equal.sym(N.Number, v226, v127, N.mul_swap(v37, v21, v18)) : {v306 == N.add(v334, N.mul(N.add(N.mul(v20, _), v102), v53)) : N.Number}
+      %Equal.sym(N.Number, v126, v128, N.mul_comm(v37, v18)) : {v306 == N.add(v334, N.mul(N.add(N.mul(v20, N.mul(v21, _)), v102), v53)) : N.Number}
+      %Equal.sym(N.Number, v94, v337, N.mul_comm(v13, v21)) : {v306 == N.add(v334, N.mul(N.add(v167, N.mul(N.add(N.mul(N.add(_, v96), v18), v100), v20)), v53)) : N.Number}
+      %Equal.sym(N.Number, v96, v338, N.mul_comm(v58, v20)) : {v306 == N.add(v334, N.mul(N.add(v167, N.mul(N.add(N.mul(N.add(v337, _), v18), v100), v20)), v53)) : N.Number}
+      %Equal.sym(N.Number, v339, v340, N.add_comm(v337, v338)) : {v306 == N.add(v334, N.mul(N.add(v167, N.mul(N.add(N.mul(_, v18), v100), v20)), v53)) : N.Number}
+      %Equal.sym(N.Number, v341, v344, N.mul_add(v338, v337, v18)) : {v306 == N.add(v334, N.mul(N.add(v167, N.mul(N.add(_, v100), v20)), v53)) : N.Number}
+      %Equal.sym(N.Number, v342, v345, N.mul_assoc(v20, v58, v18)) : {v306 == N.add(v334, N.mul(N.add(v167, N.mul(N.add(N.add(_, v343), v100), v20)), v53)) : N.Number}
+      %Equal.sym(N.Number, v60, v236, N.mul_comm(v58, v18)) : {v306 == N.add(v334, N.mul(N.add(v167, N.mul(N.add(N.add(N.mul(v20, _), v343), v100), v20)), v53)) : N.Number}
+      %Equal.sym(N.Number, v343, v111, N.mul_assoc(v21, v13, v18)) : {v306 == N.add(v334, N.mul(N.add(v167, N.mul(N.add(N.add(v346, _), v100), v20)), v53)) : N.Number}
+      %Equal.sym(N.Number, v110, v112, N.mul_comm(v13, v18)) : {v306 == N.add(v334, N.mul(N.add(v167, N.mul(N.add(N.add(v346, N.mul(v21, _)), v100), v20)), v53)) : N.Number}
+      %Equal.sym(N.Number, v100, v348, N.mul_swap(v61, v20, v21)) : {v306 == N.add(v334, N.mul(N.add(v167, N.mul(N.add(v347, _), v20)), v53)) : N.Number}
+      %Equal.sym(N.Number, v63, v237, N.mul_comm(v61, v21)) : {v306 == N.add(v334, N.mul(N.add(v167, N.mul(N.add(v347, N.mul(v20, _)), v20)), v53)) : N.Number}
+      %Equal.sym(N.Number, v350, v352, N.add_assoc(v346, v113, v349)) : {v306 == N.add(v334, N.mul(N.add(v167, N.mul(_, v20)), v53)) : N.Number}
+      %Equal.sym(N.Number, v351, v353, N.add_comm(v113, v349)) : {v306 == N.add(v334, N.mul(N.add(v167, N.mul(N.add(v346, _), v20)), v53)) : N.Number}
+      %Equal.sym(N.Number, v354, v355, N.add_swap(v346, v349, v113)) : {v306 == N.add(v334, N.mul(N.add(v167, N.mul(_, v20)), v53)) : N.Number}
+      %Equal.sym(N.Number, v356, v359, N.mul_add(v349, v347, v20)) : {v306 == N.add(v334, N.mul(N.add(v167, _), v53)) : N.Number}
+      %Equal.sym(N.Number, v357, v361, N.mul_assoc(v20, v237, v20)) : {v306 == N.add(v334, N.mul(N.add(v167, N.add(_, v358)), v53)) : N.Number}
+      %Equal.sym(N.Number, v360, v363, N.mul_assoc(v21, v61, v20)) : {v306 == N.add(v334, N.mul(N.add(v167, N.add(N.mul(v20, _), v358)), v53)) : N.Number}
+      %Equal.sym(N.Number, v362, v364, N.mul_comm(v61, v20)) : {v306 == N.add(v334, N.mul(N.add(v167, N.add(N.mul(v20, N.mul(v21, _)), v358)), v53)) : N.Number}
+      %Equal.sym(N.Number, v365, v349, N.mul_swap(v21, v20, v61)) : {v306 == N.add(v334, N.mul(N.add(v167, N.add(N.mul(v20, _), v358)), v53)) : N.Number}
+      %Equal.sym(N.Number, v358, v369, N.mul_add(v346, v113, v20)) : {v306 == N.add(v334, N.mul(N.add(v167, N.add(v366, _)), v53)) : N.Number}
+      %Equal.sym(N.Number, v367, v371, N.mul_assoc(v20, v236, v20)) : {v306 == N.add(v334, N.mul(N.add(v167, N.add(v366, N.add(_, v368))), v53)) : N.Number}
+      %Equal.sym(N.Number, v370, v372, N.mul_assoc(v18, v58, v20)) : {v306 == N.add(v334, N.mul(N.add(v167, N.add(v366, N.add(N.mul(v20, _), v368))), v53)) : N.Number}
+      %Equal.sym(N.Number, v96, v338, N.mul_comm(v58, v20)) : {v306 == N.add(v334, N.mul(N.add(v167, N.add(v366, N.add(N.mul(v20, N.mul(v18, _)), v368))), v53)) : N.Number}
+      %Equal.sym(N.Number, v373, v346, N.mul_swap(v18, v20, v58)) : {v306 == N.add(v334, N.mul(N.add(v167, N.add(v366, N.add(N.mul(v20, _), v368))), v53)) : N.Number}
+      %Equal.sym(N.Number, v368, v376, N.mul_assoc(v21, v112, v20)) : {v306 == N.add(v334, N.mul(N.add(v167, N.add(v366, N.add(v374, _))), v53)) : N.Number}
+      %Equal.sym(N.Number, v375, v378, N.mul_assoc(v18, v13, v20)) : {v306 == N.add(v334, N.mul(N.add(v167, N.add(v366, N.add(v374, N.mul(v21, _)))), v53)) : N.Number}
+      %Equal.sym(N.Number, v377, v379, N.mul_comm(v13, v20)) : {v306 == N.add(v334, N.mul(N.add(v167, N.add(v366, N.add(v374, N.mul(v21, N.mul(v18, _))))), v53)) : N.Number}
+      %Equal.sym(N.Number, v380, v381, N.mul_swap(v18, v20, v13)) : {v306 == N.add(v334, N.mul(N.add(v167, N.add(v366, N.add(v374, N.mul(v21, _)))), v53)) : N.Number}
+      %Equal.sym(N.Number, v382, v114, N.mul_swap(v21, v20, v112)) : {v306 == N.add(v334, N.mul(N.add(v167, N.add(v366, N.add(v374, _))), v53)) : N.Number}
+      %Equal.sym(N.Number, v385, v387, N.add_swap(v167, v366, v383)) : {v306 == N.add(v334, N.mul(_, v53)) : N.Number}
+      %Equal.sym(N.Number, v386, v389, N.add_swap(v167, v374, v114)) : {v306 == N.add(v334, N.mul(N.add(v366, _), v53)) : N.Number}
+      %Equal.sym(N.Number, v388, v173, N.add_comm(v167, v114)) : {v306 == N.add(v334, N.mul(N.add(v366, N.add(v374, _)), v53)) : N.Number}
+      %Equal.sym(N.Number, v392, v395, N.mul_add(v366, v390, v53)) : {v306 == N.add(v334, _) : N.Number}
+      %Equal.sym(N.Number, v393, v397, N.mul_assoc(v20, v349, v53)) : {v306 == N.add(v334, N.add(_, v394)) : N.Number}
+      %Equal.sym(N.Number, v396, v399, N.mul_assoc(v20, v237, v53)) : {v306 == N.add(v334, N.add(N.mul(v20, _), v394)) : N.Number}
+      %Equal.sym(N.Number, v398, v400, N.mul_assoc(v21, v61, v53)) : {v306 == N.add(v334, N.add(N.mul(v20, N.mul(v20, _)), v394)) : N.Number}
+      %Equal.sym(N.Number, v249, v252, N.mul_swap(v61, v21, v18)) : {v306 == N.add(v334, N.add(N.mul(v20, N.mul(v20, N.mul(v21, _))), v394)) : N.Number}
+      %Equal.sym(N.Number, v251, v253, N.mul_comm(v61, v18)) : {v306 == N.add(v334, N.add(N.mul(v20, N.mul(v20, N.mul(v21, N.mul(v21, _)))), v394)) : N.Number}
+      %Equal.sym(N.Number, v394, v402, N.mul_add(v374, v173, v53)) : {v306 == N.add(v334, N.add(v262, _)) : N.Number}
+      %Equal.sym(N.Number, v401, v404, N.mul_assoc(v20, v346, v53)) : {v306 == N.add(v334, N.add(v262, N.add(_, v194))) : N.Number}
+      %Equal.sym(N.Number, v403, v406, N.mul_assoc(v20, v236, v53)) : {v306 == N.add(v334, N.add(v262, N.add(N.mul(v20, _), v194))) : N.Number}
+      %Equal.sym(N.Number, v405, v407, N.mul_assoc(v18, v58, v53)) : {v306 == N.add(v334, N.add(v262, N.add(N.mul(v20, N.mul(v20, _)), v194))) : N.Number}
+      %Equal.sym(N.Number, v267, v269, N.mul_swap(v58, v21, v18)) : {v306 == N.add(v334, N.add(v262, N.add(N.mul(v20, N.mul(v20, N.mul(v18, _))), v194))) : N.Number}
+      %Equal.sym(N.Number, v60, v236, N.mul_comm(v58, v18)) : {v306 == N.add(v334, N.add(v262, N.add(N.mul(v20, N.mul(v20, N.mul(v18, N.mul(v21, _)))), v194))) : N.Number}
+      %Equal.sym(N.Number, v276, v279, N.mul_swap(v18, v21, v236)) : {v306 == N.add(v334, N.add(v262, N.add(N.mul(v20, N.mul(v20, _)), v194))) : N.Number}
+      %Equal.sym(N.Number, v194, v211, N.mul_add(v114, v167, v53)) : {v306 == N.add(v334, N.add(v262, N.add(v281, _))) : N.Number}
+      %Equal.sym(N.Number, v209, v213, N.mul_assoc(v20, v113, v53)) : {v306 == N.add(v334, N.add(v262, N.add(v281, N.add(_, v210)))) : N.Number}
+      %Equal.sym(N.Number, v212, v215, N.mul_assoc(v21, v112, v53)) : {v306 == N.add(v334, N.add(v262, N.add(v281, N.add(N.mul(v20, _), v210)))) : N.Number}
+      %Equal.sym(N.Number, v214, v216, N.mul_assoc(v18, v13, v53)) : {v306 == N.add(v334, N.add(v262, N.add(v281, N.add(N.mul(v20, N.mul(v21, _)), v210)))) : N.Number}
+      %Equal.sym(N.Number, v108, v111, N.mul_swap(v13, v21, v18)) : {v306 == N.add(v334, N.add(v262, N.add(v281, N.add(N.mul(v20, N.mul(v21, N.mul(v18, _))), v210)))) : N.Number}
+      %Equal.sym(N.Number, v110, v112, N.mul_comm(v13, v18)) : {v306 == N.add(v334, N.add(v262, N.add(v281, N.add(N.mul(v20, N.mul(v21, N.mul(v18, N.mul(v21, _)))), v210)))) : N.Number}
+      %Equal.sym(N.Number, v217, v219, N.mul_swap(v18, v21, v112)) : {v306 == N.add(v334, N.add(v262, N.add(v281, N.add(N.mul(v20, N.mul(v21, _)), v210)))) : N.Number}
+      %Equal.sym(N.Number, v210, v223, N.mul_assoc(v20, v129, v53)) : {v306 == N.add(v334, N.add(v262, N.add(v281, N.add(v221, _)))) : N.Number}
+      %Equal.sym(N.Number, v222, v225, N.mul_assoc(v21, v128, v53)) : {v306 == N.add(v334, N.add(v262, N.add(v281, N.add(v221, N.mul(v20, _))))) : N.Number}
+      %Equal.sym(N.Number, v224, v227, N.mul_assoc(v18, v37, v53)) : {v306 == N.add(v334, N.add(v262, N.add(v281, N.add(v221, N.mul(v20, N.mul(v21, _)))))) : N.Number}
+      %Equal.sym(N.Number, v226, v127, N.mul_swap(v37, v21, v18)) : {v306 == N.add(v334, N.add(v262, N.add(v281, N.add(v221, N.mul(v20, N.mul(v21, N.mul(v18, _))))))) : N.Number}
+      %Equal.sym(N.Number, v126, v128, N.mul_comm(v37, v18)) : {v306 == N.add(v334, N.add(v262, N.add(v281, N.add(v221, N.mul(v20, N.mul(v21, N.mul(v18, N.mul(v21, _)))))))) : N.Number}
+      %Equal.sym(N.Number, v228, v230, N.mul_swap(v18, v21, v128)) : {v306 == N.add(v334, N.add(v262, N.add(v281, N.add(v221, N.mul(v20, N.mul(v21, _)))))) : N.Number}
+      %Equal.sym(N.Number, v408, v409, N.add_assoc(v192, v208, v298)) : {v306 == _ : N.Number}
+      %Equal.sym(N.Number, v299, v301, N.add_swap(v208, v262, v297)) : {v306 == N.add(v192, _) : N.Number}
+      %Equal.sym(N.Number, v300, v302, N.add_swap(v208, v281, v233)) : {v306 == N.add(v192, N.add(v262, _)) : N.Number}
+      %Equal.sym(N.Number, v304, v306, N.add_swap(v192, v262, v302)) : {v306 == _ : N.Number}
+      {==}
+      )}
+
+law gain_split:
+  for +a: Q.Number
+  for +b: Q.Number
+  for +c: Q.Number
+  Q.Eq(Q.mul(b, c), Q.sub(Q.mul(Q.add(a, b), c), Q.mul(a, c)))
+def gain_split(a, b, c):
+  match a b c:
+    case Q.Fraction{ap, an, ad} Q.Fraction{bp, bn, bd} Q.Fraction{cp, cn, cd}:
+      +v0 = B.positive_value(B.positive_mul(B.positive_mul(B.positive_mul(ad, bd), cd), B.positive_mul(ad, cd)))
+      +v1 = B.value(B.add(B.mul(B.add(B.mul(B.add(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad})), cn), B.mul(B.add(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad})), cp)), B.Pos{B.positive_mul(ad, cd)}), B.mul(B.add(B.mul(ap, cp), B.mul(an, cn)), B.Pos{B.positive_mul(B.positive_mul(ad, bd), cd)})))
+      +v2 = B.positive_value(B.positive_mul(bd, cd))
+      +v3 = N.mul(v1, v2)
+      +v4 = B.value(B.add(B.mul(B.add(B.mul(B.add(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad})), cp), B.mul(B.add(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad})), cn)), B.Pos{B.positive_mul(ad, cd)}), B.mul(B.add(B.mul(ap, cn), B.mul(an, cp)), B.Pos{B.positive_mul(B.positive_mul(ad, bd), cd)})))
+      +v5 = N.mul(v4, v2)
+      +v6 = B.value(B.add(B.mul(bp, cn), B.mul(bn, cp)))
+      +v7 = N.mul(v6, v0)
+      +v8 = N.add(v5, v7)
+      +v9 = B.value(B.add(B.mul(bp, cp), B.mul(bn, cn)))
+      +v10 = B.value(B.mul(bp, cp))
+      +v11 = B.value(B.mul(bn, cn))
+      +v12 = N.add(v10, v11)
+      +v13 = B.value(bp)
+      +v14 = B.value(cp)
+      +v15 = N.mul(v13, v14)
+      +v16 = B.value(bn)
+      +v17 = B.value(cn)
+      +v18 = N.mul(v16, v17)
+      +v19 = N.add(v15, v18)
+      +v20 = B.positive_value(B.positive_mul(B.positive_mul(ad, bd), cd))
+      +v21 = B.positive_value(B.positive_mul(ad, cd))
+      +v22 = N.mul(v20, v21)
+      +v23 = B.positive_value(B.positive_mul(ad, bd))
+      +v24 = B.positive_value(cd)
+      +v25 = N.mul(v23, v24)
+      +v26 = B.positive_value(ad)
+      +v27 = B.positive_value(bd)
+      +v28 = N.mul(v26, v27)
+      +v29 = N.mul(v28, v24)
+      +v30 = N.mul(v26, v24)
+      +v31 = N.mul(v29, v30)
+      +v32 = N.mul(v19, v31)
+      +v33 = B.value(B.mul(B.add(B.mul(B.add(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad})), cn), B.mul(B.add(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad})), cp)), B.Pos{B.positive_mul(ad, cd)}))
+      +v34 = B.value(B.mul(B.add(B.mul(ap, cp), B.mul(an, cn)), B.Pos{B.positive_mul(B.positive_mul(ad, bd), cd)}))
+      +v35 = N.add(v33, v34)
+      +v36 = B.value(B.add(B.mul(B.add(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad})), cn), B.mul(B.add(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad})), cp)))
+      +v37 = B.value(B.Pos{B.positive_mul(ad, cd)})
+      +v38 = N.mul(v36, v37)
+      +v39 = B.value(B.mul(B.add(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad})), cn))
+      +v40 = B.value(B.mul(B.add(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad})), cp))
+      +v41 = N.add(v39, v40)
+      +v42 = B.value(B.add(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad})))
+      +v43 = N.mul(v42, v17)
+      +v44 = B.value(B.mul(ap, B.Pos{bd}))
+      +v45 = B.value(B.mul(bp, B.Pos{ad}))
+      +v46 = N.add(v44, v45)
+      +v47 = B.value(ap)
+      +v48 = B.value(B.Pos{bd})
+      +v49 = N.mul(v47, v48)
+      +v50 = N.mul(v47, v27)
+      +v51 = B.value(B.Pos{ad})
+      +v52 = N.mul(v13, v51)
+      +v53 = N.mul(v13, v26)
+      +v54 = N.add(v50, v53)
+      +v55 = N.mul(v54, v17)
+      +v56 = B.value(B.add(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad})))
+      +v57 = N.mul(v56, v14)
+      +v58 = B.value(B.mul(an, B.Pos{bd}))
+      +v59 = B.value(B.mul(bn, B.Pos{ad}))
+      +v60 = N.add(v58, v59)
+      +v61 = B.value(an)
+      +v62 = N.mul(v61, v48)
+      +v63 = N.mul(v61, v27)
+      +v64 = N.mul(v16, v51)
+      +v65 = N.mul(v16, v26)
+      +v66 = N.add(v63, v65)
+      +v67 = N.mul(v66, v14)
+      +v68 = N.add(v55, v67)
+      +v69 = N.mul(v68, v30)
+      +v70 = B.value(B.add(B.mul(ap, cp), B.mul(an, cn)))
+      +v71 = B.value(B.Pos{B.positive_mul(B.positive_mul(ad, bd), cd)})
+      +v72 = N.mul(v70, v71)
+      +v73 = B.value(B.mul(ap, cp))
+      +v74 = B.value(B.mul(an, cn))
+      +v75 = N.add(v73, v74)
+      +v76 = N.mul(v47, v14)
+      +v77 = N.mul(v61, v17)
+      +v78 = N.add(v76, v77)
+      +v79 = N.mul(v78, v29)
+      +v80 = N.add(v69, v79)
+      +v81 = N.mul(v27, v24)
+      +v82 = N.mul(v80, v81)
+      +v83 = N.add(v32, v82)
+      +v84 = B.value(B.mul(B.add(B.mul(B.add(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad})), cp), B.mul(B.add(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad})), cn)), B.Pos{B.positive_mul(ad, cd)}))
+      +v85 = B.value(B.mul(B.add(B.mul(ap, cn), B.mul(an, cp)), B.Pos{B.positive_mul(B.positive_mul(ad, bd), cd)}))
+      +v86 = N.add(v84, v85)
+      +v87 = B.value(B.add(B.mul(B.add(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad})), cp), B.mul(B.add(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad})), cn)))
+      +v88 = N.mul(v87, v37)
+      +v89 = B.value(B.mul(B.add(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad})), cp))
+      +v90 = B.value(B.mul(B.add(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad})), cn))
+      +v91 = N.add(v89, v90)
+      +v92 = N.mul(v42, v14)
+      +v93 = N.mul(v54, v14)
+      +v94 = N.mul(v56, v17)
+      +v95 = N.mul(v66, v17)
+      +v96 = N.add(v93, v95)
+      +v97 = N.mul(v96, v30)
+      +v98 = B.value(B.add(B.mul(ap, cn), B.mul(an, cp)))
+      +v99 = N.mul(v98, v71)
+      +v100 = B.value(B.mul(ap, cn))
+      +v101 = B.value(B.mul(an, cp))
+      +v102 = N.add(v100, v101)
+      +v103 = N.mul(v47, v17)
+      +v104 = N.mul(v61, v14)
+      +v105 = N.add(v103, v104)
+      +v106 = N.mul(v105, v29)
+      +v107 = N.add(v97, v106)
+      +v108 = N.mul(v107, v81)
+      +v109 = B.value(B.mul(bp, cn))
+      +v110 = B.value(B.mul(bn, cp))
+      +v111 = N.add(v109, v110)
+      +v112 = N.mul(v13, v17)
+      +v113 = N.mul(v16, v14)
+      +v114 = N.add(v112, v113)
+      +v115 = N.mul(v114, v31)
+      +v116 = N.add(v108, v115)
+      +v117 = N.add(v18, v15)
+      +v118 = N.mul(v26, v81)
+      +v119 = N.mul(v118, v30)
+      +v120 = N.mul(v81, v30)
+      +v121 = N.mul(v26, v120)
+      +v122 = N.mul(v24, v30)
+      +v123 = N.mul(v27, v122)
+      +v124 = N.mul(v24, v24)
+      +v125 = N.mul(v26, v124)
+      +v126 = N.mul(v27, v125)
+      +v127 = N.mul(v27, v124)
+      +v128 = N.mul(v26, v127)
+      +v129 = N.mul(v26, v128)
+      +v130 = N.mul(v117, v129)
+      +v131 = N.mul(v18, v129)
+      +v132 = N.mul(v15, v129)
+      +v133 = N.add(v131, v132)
+      +v134 = N.mul(v17, v129)
+      +v135 = N.mul(v16, v134)
+      +v136 = N.mul(v17, v128)
+      +v137 = N.mul(v26, v136)
+      +v138 = N.mul(v17, v127)
+      +v139 = N.mul(v26, v138)
+      +v140 = N.mul(v17, v124)
+      +v141 = N.mul(v27, v140)
+      +v142 = N.mul(v17, v24)
+      +v143 = N.mul(v24, v142)
+      +v144 = N.mul(v24, v17)
+      +v145 = N.mul(v24, v144)
+      +v146 = N.mul(v27, v145)
+      +v147 = N.mul(v26, v146)
+      +v148 = N.mul(v26, v147)
+      +v149 = N.mul(v16, v148)
+      +v150 = N.mul(v16, v147)
+      +v151 = N.mul(v26, v150)
+      +v152 = N.mul(v16, v146)
+      +v153 = N.mul(v26, v152)
+      +v154 = N.mul(v16, v145)
+      +v155 = N.mul(v27, v154)
+      +v156 = N.mul(v16, v144)
+      +v157 = N.mul(v24, v156)
+      +v158 = N.mul(v24, v18)
+      +v159 = N.mul(v24, v158)
+      +v160 = N.mul(v27, v159)
+      +v161 = N.mul(v26, v160)
+      +v162 = N.mul(v26, v161)
+      +v163 = N.mul(v14, v129)
+      +v164 = N.mul(v13, v163)
+      +v165 = N.mul(v14, v128)
+      +v166 = N.mul(v26, v165)
+      +v167 = N.mul(v14, v127)
+      +v168 = N.mul(v26, v167)
+      +v169 = N.mul(v14, v124)
+      +v170 = N.mul(v27, v169)
+      +v171 = N.mul(v14, v24)
+      +v172 = N.mul(v24, v171)
+      +v173 = N.mul(v24, v14)
+      +v174 = N.mul(v24, v173)
+      +v175 = N.mul(v27, v174)
+      +v176 = N.mul(v26, v175)
+      +v177 = N.mul(v26, v176)
+      +v178 = N.mul(v13, v177)
+      +v179 = N.mul(v13, v176)
+      +v180 = N.mul(v26, v179)
+      +v181 = N.mul(v13, v175)
+      +v182 = N.mul(v26, v181)
+      +v183 = N.mul(v13, v174)
+      +v184 = N.mul(v27, v183)
+      +v185 = N.mul(v13, v173)
+      +v186 = N.mul(v24, v185)
+      +v187 = N.mul(v24, v15)
+      +v188 = N.mul(v24, v187)
+      +v189 = N.mul(v27, v188)
+      +v190 = N.mul(v26, v189)
+      +v191 = N.mul(v26, v190)
+      +v192 = N.add(v162, v191)
+      +v193 = N.mul(v27, v47)
+      +v194 = N.mul(v26, v13)
+      +v195 = N.add(v193, v194)
+      +v196 = N.add(v194, v193)
+      +v197 = N.mul(v196, v17)
+      +v198 = N.mul(v194, v17)
+      +v199 = N.mul(v193, v17)
+      +v200 = N.add(v198, v199)
+      +v201 = N.mul(v26, v112)
+      +v202 = N.mul(v27, v103)
+      +v203 = N.add(v201, v202)
+      +v204 = N.mul(v27, v61)
+      +v205 = N.mul(v26, v16)
+      +v206 = N.add(v204, v205)
+      +v207 = N.add(v205, v204)
+      +v208 = N.mul(v207, v14)
+      +v209 = N.mul(v205, v14)
+      +v210 = N.mul(v204, v14)
+      +v211 = N.add(v209, v210)
+      +v212 = N.mul(v26, v113)
+      +v213 = N.mul(v27, v104)
+      +v214 = N.add(v212, v213)
+      +v215 = N.add(v203, v214)
+      +v216 = N.add(v202, v214)
+      +v217 = N.add(v201, v216)
+      +v218 = N.add(v202, v213)
+      +v219 = N.add(v212, v218)
+      +v220 = N.add(v213, v202)
+      +v221 = N.add(v212, v220)
+      +v222 = N.add(v201, v221)
+      +v223 = N.add(v201, v220)
+      +v224 = N.add(v212, v223)
+      +v225 = N.mul(v224, v30)
+      +v226 = N.mul(v212, v30)
+      +v227 = N.mul(v223, v30)
+      +v228 = N.add(v226, v227)
+      +v229 = N.mul(v113, v30)
+      +v230 = N.mul(v26, v229)
+      +v231 = N.mul(v14, v30)
+      +v232 = N.mul(v16, v231)
+      +v233 = N.mul(v26, v171)
+      +v234 = N.mul(v26, v173)
+      +v235 = N.mul(v16, v234)
+      +v236 = N.mul(v16, v173)
+      +v237 = N.mul(v26, v236)
+      +v238 = N.mul(v24, v113)
+      +v239 = N.mul(v26, v238)
+      +v240 = N.mul(v26, v239)
+      +v241 = N.mul(v201, v30)
+      +v242 = N.mul(v220, v30)
+      +v243 = N.add(v241, v242)
+      +v244 = N.mul(v112, v30)
+      +v245 = N.mul(v26, v244)
+      +v246 = N.mul(v17, v30)
+      +v247 = N.mul(v13, v246)
+      +v248 = N.mul(v26, v142)
+      +v249 = N.mul(v26, v144)
+      +v250 = N.mul(v13, v249)
+      +v251 = N.mul(v13, v144)
+      +v252 = N.mul(v26, v251)
+      +v253 = N.mul(v24, v112)
+      +v254 = N.mul(v26, v253)
+      +v255 = N.mul(v26, v254)
+      +v256 = N.mul(v213, v30)
+      +v257 = N.mul(v202, v30)
+      +v258 = N.add(v256, v257)
+      +v259 = N.mul(v104, v30)
+      +v260 = N.mul(v27, v259)
+      +v261 = N.mul(v61, v231)
+      +v262 = N.mul(v61, v234)
+      +v263 = N.mul(v61, v173)
+      +v264 = N.mul(v26, v263)
+      +v265 = N.mul(v24, v104)
+      +v266 = N.mul(v26, v265)
+      +v267 = N.mul(v27, v266)
+      +v268 = N.mul(v27, v265)
+      +v269 = N.mul(v26, v268)
+      +v270 = N.mul(v103, v30)
+      +v271 = N.mul(v27, v270)
+      +v272 = N.mul(v47, v246)
+      +v273 = N.mul(v47, v249)
+      +v274 = N.mul(v47, v144)
+      +v275 = N.mul(v26, v274)
+      +v276 = N.mul(v24, v103)
+      +v277 = N.mul(v26, v276)
+      +v278 = N.mul(v27, v277)
+      +v279 = N.mul(v27, v276)
+      +v280 = N.mul(v26, v279)
+      +v281 = N.add(v269, v280)
+      +v282 = N.add(v255, v281)
+      +v283 = N.add(v240, v282)
+      +v284 = N.add(v77, v76)
+      +v285 = N.mul(v284, v118)
+      +v286 = N.mul(v77, v118)
+      +v287 = N.mul(v76, v118)
+      +v288 = N.add(v286, v287)
+      +v289 = N.mul(v17, v118)
+      +v290 = N.mul(v61, v289)
+      +v291 = N.mul(v17, v81)
+      +v292 = N.mul(v26, v291)
+      +v293 = N.mul(v27, v142)
+      +v294 = N.mul(v27, v144)
+      +v295 = N.mul(v26, v294)
+      +v296 = N.mul(v61, v295)
+      +v297 = N.mul(v61, v294)
+      +v298 = N.mul(v26, v297)
+      +v299 = N.mul(v61, v144)
+      +v300 = N.mul(v27, v299)
+      +v301 = N.mul(v24, v77)
+      +v302 = N.mul(v27, v301)
+      +v303 = N.mul(v26, v302)
+      +v304 = N.mul(v14, v118)
+      +v305 = N.mul(v47, v304)
+      +v306 = N.mul(v14, v81)
+      +v307 = N.mul(v26, v306)
+      +v308 = N.mul(v27, v171)
+      +v309 = N.mul(v27, v173)
+      +v310 = N.mul(v26, v309)
+      +v311 = N.mul(v47, v310)
+      +v312 = N.mul(v47, v309)
+      +v313 = N.mul(v26, v312)
+      +v314 = N.mul(v47, v173)
+      +v315 = N.mul(v27, v314)
+      +v316 = N.mul(v24, v76)
+      +v317 = N.mul(v27, v316)
+      +v318 = N.mul(v26, v317)
+      +v319 = N.add(v303, v318)
+      +v320 = N.add(v283, v319)
+      +v321 = N.add(v282, v319)
+      +v322 = N.add(v240, v321)
+      +v323 = N.add(v281, v319)
+      +v324 = N.add(v255, v323)
+      +v325 = N.add(v280, v319)
+      +v326 = N.add(v269, v325)
+      +v327 = N.add(v280, v318)
+      +v328 = N.add(v303, v327)
+      +v329 = N.add(v269, v328)
+      +v330 = N.add(v269, v327)
+      +v331 = N.add(v303, v330)
+      +v332 = N.add(v255, v331)
+      +v333 = N.add(v240, v332)
+      +v334 = N.mul(v333, v81)
+      +v335 = N.mul(v240, v81)
+      +v336 = N.mul(v332, v81)
+      +v337 = N.add(v335, v336)
+      +v338 = N.mul(v239, v81)
+      +v339 = N.mul(v26, v338)
+      +v340 = N.mul(v238, v81)
+      +v341 = N.mul(v26, v340)
+      +v342 = N.mul(v113, v81)
+      +v343 = N.mul(v24, v342)
+      +v344 = N.mul(v16, v306)
+      +v345 = N.mul(v16, v309)
+      +v346 = N.mul(v27, v236)
+      +v347 = N.mul(v27, v238)
+      +v348 = N.mul(v24, v347)
+      +v349 = N.mul(v24, v238)
+      +v350 = N.mul(v27, v349)
+      +v351 = N.mul(v26, v350)
+      +v352 = N.mul(v26, v351)
+      +v353 = N.mul(v255, v81)
+      +v354 = N.mul(v331, v81)
+      +v355 = N.add(v353, v354)
+      +v356 = N.mul(v254, v81)
+      +v357 = N.mul(v26, v356)
+      +v358 = N.mul(v253, v81)
+      +v359 = N.mul(v26, v358)
+      +v360 = N.mul(v112, v81)
+      +v361 = N.mul(v24, v360)
+      +v362 = N.mul(v13, v291)
+      +v363 = N.mul(v13, v294)
+      +v364 = N.mul(v27, v251)
+      +v365 = N.mul(v27, v253)
+      +v366 = N.mul(v24, v365)
+      +v367 = N.mul(v24, v253)
+      +v368 = N.mul(v27, v367)
+      +v369 = N.mul(v26, v368)
+      +v370 = N.mul(v26, v369)
+      +v371 = N.mul(v303, v81)
+      +v372 = N.mul(v330, v81)
+      +v373 = N.add(v371, v372)
+      +v374 = N.mul(v302, v81)
+      +v375 = N.mul(v26, v374)
+      +v376 = N.mul(v301, v81)
+      +v377 = N.mul(v27, v376)
+      +v378 = N.mul(v77, v81)
+      +v379 = N.mul(v24, v378)
+      +v380 = N.mul(v61, v291)
+      +v381 = N.mul(v24, v302)
+      +v382 = N.mul(v24, v301)
+      +v383 = N.mul(v27, v382)
+      +v384 = N.mul(v27, v383)
+      +v385 = N.mul(v26, v384)
+      +v386 = N.mul(v269, v81)
+      +v387 = N.mul(v327, v81)
+      +v388 = N.add(v386, v387)
+      +v389 = N.mul(v268, v81)
+      +v390 = N.mul(v26, v389)
+      +v391 = N.mul(v265, v81)
+      +v392 = N.mul(v27, v391)
+      +v393 = N.mul(v104, v81)
+      +v394 = N.mul(v24, v393)
+      +v395 = N.mul(v61, v306)
+      +v396 = N.mul(v61, v309)
+      +v397 = N.mul(v27, v263)
+      +v398 = N.mul(v24, v268)
+      +v399 = N.mul(v24, v265)
+      +v400 = N.mul(v27, v399)
+      +v401 = N.mul(v27, v400)
+      +v402 = N.mul(v26, v401)
+      +v403 = N.mul(v280, v81)
+      +v404 = N.mul(v318, v81)
+      +v405 = N.add(v403, v404)
+      +v406 = N.mul(v279, v81)
+      +v407 = N.mul(v26, v406)
+      +v408 = N.mul(v276, v81)
+      +v409 = N.mul(v27, v408)
+      +v410 = N.mul(v103, v81)
+      +v411 = N.mul(v24, v410)
+      +v412 = N.mul(v47, v291)
+      +v413 = N.mul(v47, v294)
+      +v414 = N.mul(v27, v274)
+      +v415 = N.mul(v24, v279)
+      +v416 = N.mul(v24, v276)
+      +v417 = N.mul(v27, v416)
+      +v418 = N.mul(v27, v417)
+      +v419 = N.mul(v26, v418)
+      +v420 = N.mul(v317, v81)
+      +v421 = N.mul(v26, v420)
+      +v422 = N.mul(v316, v81)
+      +v423 = N.mul(v27, v422)
+      +v424 = N.mul(v76, v81)
+      +v425 = N.mul(v24, v424)
+      +v426 = N.mul(v47, v306)
+      +v427 = N.mul(v24, v317)
+      +v428 = N.mul(v24, v316)
+      +v429 = N.mul(v27, v428)
+      +v430 = N.mul(v27, v429)
+      +v431 = N.mul(v26, v430)
+      +v432 = N.add(v419, v431)
+      +v433 = N.add(v402, v432)
+      +v434 = N.add(v385, v433)
+      +v435 = N.add(v370, v434)
+      +v436 = N.add(v352, v435)
+      +v437 = N.add(v192, v436)
+      +v438 = N.add(v191, v436)
+      +v439 = N.add(v162, v438)
+      +v440 = N.add(v191, v435)
+      +v441 = N.add(v352, v440)
+      +v442 = N.add(v191, v434)
+      +v443 = N.add(v370, v442)
+      +v444 = N.add(v352, v443)
+      +v445 = N.add(v162, v444)
+      +v446 = N.mul(v196, v14)
+      +v447 = N.mul(v194, v14)
+      +v448 = N.mul(v193, v14)
+      +v449 = N.add(v447, v448)
+      +v450 = N.mul(v26, v15)
+      +v451 = N.mul(v27, v76)
+      +v452 = N.add(v450, v451)
+      +v453 = N.mul(v207, v17)
+      +v454 = N.mul(v205, v17)
+      +v455 = N.mul(v204, v17)
+      +v456 = N.add(v454, v455)
+      +v457 = N.mul(v26, v18)
+      +v458 = N.mul(v27, v77)
+      +v459 = N.add(v457, v458)
+      +v460 = N.add(v452, v459)
+      +v461 = N.add(v451, v459)
+      +v462 = N.add(v450, v461)
+      +v463 = N.add(v451, v458)
+      +v464 = N.add(v457, v463)
+      +v465 = N.add(v458, v451)
+      +v466 = N.add(v457, v465)
+      +v467 = N.add(v450, v466)
+      +v468 = N.add(v450, v465)
+      +v469 = N.add(v457, v468)
+      +v470 = N.mul(v469, v30)
+      +v471 = N.mul(v457, v30)
+      +v472 = N.mul(v468, v30)
+      +v473 = N.add(v471, v472)
+      +v474 = N.mul(v18, v30)
+      +v475 = N.mul(v26, v474)
+      +v476 = N.mul(v16, v246)
+      +v477 = N.mul(v16, v249)
+      +v478 = N.mul(v26, v156)
+      +v479 = N.mul(v26, v158)
+      +v480 = N.mul(v26, v479)
+      +v481 = N.mul(v450, v30)
+      +v482 = N.mul(v465, v30)
+      +v483 = N.add(v481, v482)
+      +v484 = N.mul(v15, v30)
+      +v485 = N.mul(v26, v484)
+      +v486 = N.mul(v13, v231)
+      +v487 = N.mul(v13, v234)
+      +v488 = N.mul(v26, v185)
+      +v489 = N.mul(v26, v187)
+      +v490 = N.mul(v26, v489)
+      +v491 = N.mul(v458, v30)
+      +v492 = N.mul(v451, v30)
+      +v493 = N.add(v491, v492)
+      +v494 = N.mul(v77, v30)
+      +v495 = N.mul(v27, v494)
+      +v496 = N.mul(v61, v246)
+      +v497 = N.mul(v61, v249)
+      +v498 = N.mul(v26, v299)
+      +v499 = N.mul(v26, v301)
+      +v500 = N.mul(v27, v499)
+      +v501 = N.mul(v76, v30)
+      +v502 = N.mul(v27, v501)
+      +v503 = N.mul(v47, v231)
+      +v504 = N.mul(v47, v234)
+      +v505 = N.mul(v26, v314)
+      +v506 = N.mul(v26, v316)
+      +v507 = N.mul(v27, v506)
+      +v508 = N.add(v490, v319)
+      +v509 = N.add(v480, v508)
+      +v510 = N.add(v104, v103)
+      +v511 = N.mul(v510, v118)
+      +v512 = N.mul(v104, v118)
+      +v513 = N.mul(v103, v118)
+      +v514 = N.add(v512, v513)
+      +v515 = N.mul(v61, v304)
+      +v516 = N.mul(v61, v310)
+      +v517 = N.mul(v26, v396)
+      +v518 = N.mul(v47, v289)
+      +v519 = N.mul(v47, v295)
+      +v520 = N.mul(v26, v413)
+      +v521 = N.add(v509, v281)
+      +v522 = N.add(v508, v281)
+      +v523 = N.add(v480, v522)
+      +v524 = N.add(v319, v281)
+      +v525 = N.add(v490, v524)
+      +v526 = N.add(v318, v281)
+      +v527 = N.add(v303, v526)
+      +v528 = N.add(v318, v280)
+      +v529 = N.add(v269, v528)
+      +v530 = N.add(v490, v331)
+      +v531 = N.add(v480, v530)
+      +v532 = N.mul(v531, v81)
+      +v533 = N.mul(v480, v81)
+      +v534 = N.mul(v530, v81)
+      +v535 = N.add(v533, v534)
+      +v536 = N.mul(v479, v81)
+      +v537 = N.mul(v26, v536)
+      +v538 = N.mul(v158, v81)
+      +v539 = N.mul(v26, v538)
+      +v540 = N.mul(v18, v81)
+      +v541 = N.mul(v24, v540)
+      +v542 = N.mul(v16, v291)
+      +v543 = N.mul(v16, v294)
+      +v544 = N.mul(v27, v156)
+      +v545 = N.mul(v27, v158)
+      +v546 = N.mul(v24, v545)
+      +v547 = N.mul(v490, v81)
+      +v548 = N.add(v547, v354)
+      +v549 = N.mul(v489, v81)
+      +v550 = N.mul(v26, v549)
+      +v551 = N.mul(v187, v81)
+      +v552 = N.mul(v26, v551)
+      +v553 = N.mul(v15, v81)
+      +v554 = N.mul(v24, v553)
+      +v555 = N.mul(v13, v306)
+      +v556 = N.mul(v13, v309)
+      +v557 = N.mul(v27, v185)
+      +v558 = N.mul(v27, v187)
+      +v559 = N.mul(v24, v558)
+      +v560 = N.add(v162, v442)
+      +v561 = N.add(v113, v112)
+      +v562 = N.mul(v561, v129)
+      +v563 = N.mul(v113, v129)
+      +v564 = N.mul(v112, v129)
+      +v565 = N.add(v563, v564)
+      +v566 = N.mul(v16, v163)
+      +v567 = N.mul(v16, v177)
+      +v568 = N.mul(v16, v176)
+      +v569 = N.mul(v26, v568)
+      +v570 = N.mul(v16, v175)
+      +v571 = N.mul(v26, v570)
+      +v572 = N.mul(v16, v174)
+      +v573 = N.mul(v27, v572)
+      +v574 = N.mul(v24, v236)
+      +v575 = N.mul(v13, v134)
+      +v576 = N.mul(v13, v148)
+      +v577 = N.mul(v13, v147)
+      +v578 = N.mul(v26, v577)
+      +v579 = N.mul(v13, v146)
+      +v580 = N.mul(v26, v579)
+      +v581 = N.mul(v13, v145)
+      +v582 = N.mul(v27, v581)
+      +v583 = N.mul(v24, v251)
+      +v584 = N.add(v352, v370)
+      +v585 = N.add(v560, v584)
+      +v586 = N.add(v442, v584)
+      +v587 = N.add(v162, v586)
+      +v588 = N.add(v434, v584)
+      +v589 = N.add(v191, v588)
+      +v590 = N.add(v433, v584)
+      +v591 = N.add(v385, v590)
+      +v592 = N.add(v432, v584)
+      +v593 = N.add(v402, v592)
+      +v594 = N.add(v431, v584)
+      +v595 = N.add(v419, v594)
+      +v596 = N.add(v431, v370)
+      +v597 = N.add(v352, v596)
+      +v598 = N.add(v370, v431)
+      +v599 = N.add(v352, v598)
+      +v600 = N.add(v419, v599)
+      +v601 = N.add(v419, v598)
+      +v602 = N.add(v352, v601)
+      +v603 = N.add(v370, v432)
+      +v604 = N.add(v352, v603)
+      +v605 = N.add(v402, v604)
+      +v606 = N.add(v402, v603)
+      +v607 = N.add(v352, v606)
+      +v608 = N.add(v370, v433)
+      +v609 = N.add(v352, v608)
+      +v610 = N.add(v385, v609)
+      +v611 = N.add(v385, v608)
+      +v612 = N.add(v352, v611)
+      Q.Witness{(
+      %Equal.sym(N.Number, v9, v12, BP.add_correct(B.mul(bp, cp), B.mul(bn, cn))) : {N.add(N.mul(_, v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v10, v15, BP.mul_correct(bp, cp)) : {N.add(N.mul(N.add(_, v11), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v11, v18, BP.mul_correct(bn, cn)) : {N.add(N.mul(N.add(v15, _), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v0, v22, BP.positive_mul_correct(B.positive_mul(B.positive_mul(ad, bd), cd), B.positive_mul(ad, cd))) : {N.add(N.mul(v19, _), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v20, v25, BP.positive_mul_correct(B.positive_mul(ad, bd), cd)) : {N.add(N.mul(v19, N.mul(_, v21)), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v23, v28, BP.positive_mul_correct(ad, bd)) : {N.add(N.mul(v19, N.mul(N.mul(_, v24), v21)), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v21, v30, BP.positive_mul_correct(ad, cd)) : {N.add(N.mul(v19, N.mul(v29, _)), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v1, v35, BP.add_correct(B.mul(B.add(B.mul(B.add(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad})), cn), B.mul(B.add(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad})), cp)), B.Pos{B.positive_mul(ad, cd)}), B.mul(B.add(B.mul(ap, cp), B.mul(an, cn)), B.Pos{B.positive_mul(B.positive_mul(ad, bd), cd)}))) : {N.add(v32, N.mul(_, v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v33, v38, BP.mul_correct(B.add(B.mul(B.add(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad})), cn), B.mul(B.add(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad})), cp)), B.Pos{B.positive_mul(ad, cd)})) : {N.add(v32, N.mul(N.add(_, v34), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v36, v41, BP.add_correct(B.mul(B.add(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad})), cn), B.mul(B.add(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad})), cp))) : {N.add(v32, N.mul(N.add(N.mul(_, v37), v34), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v39, v43, BP.mul_correct(B.add(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad})), cn)) : {N.add(v32, N.mul(N.add(N.mul(N.add(_, v40), v37), v34), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v42, v46, BP.add_correct(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad}))) : {N.add(v32, N.mul(N.add(N.mul(N.add(N.mul(_, v17), v40), v37), v34), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v44, v49, BP.mul_correct(ap, B.Pos{bd})) : {N.add(v32, N.mul(N.add(N.mul(N.add(N.mul(N.add(_, v45), v17), v40), v37), v34), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v48, v27, {==}) : {N.add(v32, N.mul(N.add(N.mul(N.add(N.mul(N.add(N.mul(v47, _), v45), v17), v40), v37), v34), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v45, v52, BP.mul_correct(bp, B.Pos{ad})) : {N.add(v32, N.mul(N.add(N.mul(N.add(N.mul(N.add(v50, _), v17), v40), v37), v34), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v51, v26, {==}) : {N.add(v32, N.mul(N.add(N.mul(N.add(N.mul(N.add(v50, N.mul(v13, _)), v17), v40), v37), v34), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v40, v57, BP.mul_correct(B.add(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad})), cp)) : {N.add(v32, N.mul(N.add(N.mul(N.add(v55, _), v37), v34), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v56, v60, BP.add_correct(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad}))) : {N.add(v32, N.mul(N.add(N.mul(N.add(v55, N.mul(_, v14)), v37), v34), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v58, v62, BP.mul_correct(an, B.Pos{bd})) : {N.add(v32, N.mul(N.add(N.mul(N.add(v55, N.mul(N.add(_, v59), v14)), v37), v34), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v48, v27, {==}) : {N.add(v32, N.mul(N.add(N.mul(N.add(v55, N.mul(N.add(N.mul(v61, _), v59), v14)), v37), v34), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v59, v64, BP.mul_correct(bn, B.Pos{ad})) : {N.add(v32, N.mul(N.add(N.mul(N.add(v55, N.mul(N.add(v63, _), v14)), v37), v34), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v51, v26, {==}) : {N.add(v32, N.mul(N.add(N.mul(N.add(v55, N.mul(N.add(v63, N.mul(v16, _)), v14)), v37), v34), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v37, v21, {==}) : {N.add(v32, N.mul(N.add(N.mul(v68, _), v34), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v21, v30, BP.positive_mul_correct(ad, cd)) : {N.add(v32, N.mul(N.add(N.mul(v68, _), v34), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v34, v72, BP.mul_correct(B.add(B.mul(ap, cp), B.mul(an, cn)), B.Pos{B.positive_mul(B.positive_mul(ad, bd), cd)})) : {N.add(v32, N.mul(N.add(v69, _), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v70, v75, BP.add_correct(B.mul(ap, cp), B.mul(an, cn))) : {N.add(v32, N.mul(N.add(v69, N.mul(_, v71)), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v73, v76, BP.mul_correct(ap, cp)) : {N.add(v32, N.mul(N.add(v69, N.mul(N.add(_, v74), v71)), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v74, v77, BP.mul_correct(an, cn)) : {N.add(v32, N.mul(N.add(v69, N.mul(N.add(v76, _), v71)), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v71, v20, {==}) : {N.add(v32, N.mul(N.add(v69, N.mul(v78, _)), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v20, v25, BP.positive_mul_correct(B.positive_mul(ad, bd), cd)) : {N.add(v32, N.mul(N.add(v69, N.mul(v78, _)), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v23, v28, BP.positive_mul_correct(ad, bd)) : {N.add(v32, N.mul(N.add(v69, N.mul(v78, N.mul(_, v24))), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v2, v81, BP.positive_mul_correct(bd, cd)) : {N.add(v32, N.mul(v80, _)) == v8 : N.Number}
+      %Equal.sym(N.Number, v4, v86, BP.add_correct(B.mul(B.add(B.mul(B.add(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad})), cp), B.mul(B.add(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad})), cn)), B.Pos{B.positive_mul(ad, cd)}), B.mul(B.add(B.mul(ap, cn), B.mul(an, cp)), B.Pos{B.positive_mul(B.positive_mul(ad, bd), cd)}))) : {v83 == N.add(N.mul(_, v2), v7) : N.Number}
+      %Equal.sym(N.Number, v84, v88, BP.mul_correct(B.add(B.mul(B.add(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad})), cp), B.mul(B.add(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad})), cn)), B.Pos{B.positive_mul(ad, cd)})) : {v83 == N.add(N.mul(N.add(_, v85), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v87, v91, BP.add_correct(B.mul(B.add(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad})), cp), B.mul(B.add(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad})), cn))) : {v83 == N.add(N.mul(N.add(N.mul(_, v37), v85), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v89, v92, BP.mul_correct(B.add(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad})), cp)) : {v83 == N.add(N.mul(N.add(N.mul(N.add(_, v90), v37), v85), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v42, v46, BP.add_correct(B.mul(ap, B.Pos{bd}), B.mul(bp, B.Pos{ad}))) : {v83 == N.add(N.mul(N.add(N.mul(N.add(N.mul(_, v14), v90), v37), v85), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v44, v49, BP.mul_correct(ap, B.Pos{bd})) : {v83 == N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(_, v45), v14), v90), v37), v85), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v48, v27, {==}) : {v83 == N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(N.mul(v47, _), v45), v14), v90), v37), v85), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v45, v52, BP.mul_correct(bp, B.Pos{ad})) : {v83 == N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(v50, _), v14), v90), v37), v85), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v51, v26, {==}) : {v83 == N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(v50, N.mul(v13, _)), v14), v90), v37), v85), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v90, v94, BP.mul_correct(B.add(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad})), cn)) : {v83 == N.add(N.mul(N.add(N.mul(N.add(v93, _), v37), v85), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v56, v60, BP.add_correct(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad}))) : {v83 == N.add(N.mul(N.add(N.mul(N.add(v93, N.mul(_, v17)), v37), v85), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v58, v62, BP.mul_correct(an, B.Pos{bd})) : {v83 == N.add(N.mul(N.add(N.mul(N.add(v93, N.mul(N.add(_, v59), v17)), v37), v85), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v48, v27, {==}) : {v83 == N.add(N.mul(N.add(N.mul(N.add(v93, N.mul(N.add(N.mul(v61, _), v59), v17)), v37), v85), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v59, v64, BP.mul_correct(bn, B.Pos{ad})) : {v83 == N.add(N.mul(N.add(N.mul(N.add(v93, N.mul(N.add(v63, _), v17)), v37), v85), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v51, v26, {==}) : {v83 == N.add(N.mul(N.add(N.mul(N.add(v93, N.mul(N.add(v63, N.mul(v16, _)), v17)), v37), v85), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v37, v21, {==}) : {v83 == N.add(N.mul(N.add(N.mul(v96, _), v85), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v21, v30, BP.positive_mul_correct(ad, cd)) : {v83 == N.add(N.mul(N.add(N.mul(v96, _), v85), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v85, v99, BP.mul_correct(B.add(B.mul(ap, cn), B.mul(an, cp)), B.Pos{B.positive_mul(B.positive_mul(ad, bd), cd)})) : {v83 == N.add(N.mul(N.add(v97, _), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v98, v102, BP.add_correct(B.mul(ap, cn), B.mul(an, cp))) : {v83 == N.add(N.mul(N.add(v97, N.mul(_, v71)), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v100, v103, BP.mul_correct(ap, cn)) : {v83 == N.add(N.mul(N.add(v97, N.mul(N.add(_, v101), v71)), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v101, v104, BP.mul_correct(an, cp)) : {v83 == N.add(N.mul(N.add(v97, N.mul(N.add(v103, _), v71)), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v71, v20, {==}) : {v83 == N.add(N.mul(N.add(v97, N.mul(v105, _)), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v20, v25, BP.positive_mul_correct(B.positive_mul(ad, bd), cd)) : {v83 == N.add(N.mul(N.add(v97, N.mul(v105, _)), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v23, v28, BP.positive_mul_correct(ad, bd)) : {v83 == N.add(N.mul(N.add(v97, N.mul(v105, N.mul(_, v24))), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v2, v81, BP.positive_mul_correct(bd, cd)) : {v83 == N.add(N.mul(v107, _), v7) : N.Number}
+      %Equal.sym(N.Number, v6, v111, BP.add_correct(B.mul(bp, cn), B.mul(bn, cp))) : {v83 == N.add(v108, N.mul(_, v0)) : N.Number}
+      %Equal.sym(N.Number, v109, v112, BP.mul_correct(bp, cn)) : {v83 == N.add(v108, N.mul(N.add(_, v110), v0)) : N.Number}
+      %Equal.sym(N.Number, v110, v113, BP.mul_correct(bn, cp)) : {v83 == N.add(v108, N.mul(N.add(v112, _), v0)) : N.Number}
+      %Equal.sym(N.Number, v0, v22, BP.positive_mul_correct(B.positive_mul(B.positive_mul(ad, bd), cd), B.positive_mul(ad, cd))) : {v83 == N.add(v108, N.mul(v114, _)) : N.Number}
+      %Equal.sym(N.Number, v20, v25, BP.positive_mul_correct(B.positive_mul(ad, bd), cd)) : {v83 == N.add(v108, N.mul(v114, N.mul(_, v21))) : N.Number}
+      %Equal.sym(N.Number, v23, v28, BP.positive_mul_correct(ad, bd)) : {v83 == N.add(v108, N.mul(v114, N.mul(N.mul(_, v24), v21))) : N.Number}
+      %Equal.sym(N.Number, v21, v30, BP.positive_mul_correct(ad, cd)) : {v83 == N.add(v108, N.mul(v114, N.mul(v29, _))) : N.Number}
+      %Equal.sym(N.Number, v19, v117, N.add_comm(v15, v18)) : {N.add(N.mul(_, v31), v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v29, v118, N.mul_assoc(v26, v27, v24)) : {N.add(N.mul(v117, N.mul(_, v30)), v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v119, v121, N.mul_assoc(v26, v81, v30)) : {N.add(N.mul(v117, _), v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v120, v123, N.mul_assoc(v27, v24, v30)) : {N.add(N.mul(v117, N.mul(v26, _)), v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v122, v125, N.mul_swap(v24, v26, v24)) : {N.add(N.mul(v117, N.mul(v26, N.mul(v27, _))), v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v126, v128, N.mul_swap(v27, v26, v124)) : {N.add(N.mul(v117, N.mul(v26, _)), v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v130, v133, N.mul_add(v18, v15, v129)) : {N.add(_, v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v131, v135, N.mul_assoc(v16, v17, v129)) : {N.add(N.add(_, v132), v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v134, v137, N.mul_swap(v17, v26, v128)) : {N.add(N.add(N.mul(v16, _), v132), v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v136, v139, N.mul_swap(v17, v26, v127)) : {N.add(N.add(N.mul(v16, N.mul(v26, _)), v132), v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v138, v141, N.mul_swap(v17, v27, v124)) : {N.add(N.add(N.mul(v16, N.mul(v26, N.mul(v26, _))), v132), v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v140, v143, N.mul_swap(v17, v24, v24)) : {N.add(N.add(N.mul(v16, N.mul(v26, N.mul(v26, N.mul(v27, _)))), v132), v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v142, v144, N.mul_comm(v17, v24)) : {N.add(N.add(N.mul(v16, N.mul(v26, N.mul(v26, N.mul(v27, N.mul(v24, _))))), v132), v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v149, v151, N.mul_swap(v16, v26, v147)) : {N.add(N.add(_, v132), v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v150, v153, N.mul_swap(v16, v26, v146)) : {N.add(N.add(N.mul(v26, _), v132), v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v152, v155, N.mul_swap(v16, v27, v145)) : {N.add(N.add(N.mul(v26, N.mul(v26, _)), v132), v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v154, v157, N.mul_swap(v16, v24, v144)) : {N.add(N.add(N.mul(v26, N.mul(v26, N.mul(v27, _))), v132), v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v156, v158, N.mul_swap(v16, v24, v17)) : {N.add(N.add(N.mul(v26, N.mul(v26, N.mul(v27, N.mul(v24, _)))), v132), v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v132, v164, N.mul_assoc(v13, v14, v129)) : {N.add(N.add(v162, _), v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v163, v166, N.mul_swap(v14, v26, v128)) : {N.add(N.add(v162, N.mul(v13, _)), v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v165, v168, N.mul_swap(v14, v26, v127)) : {N.add(N.add(v162, N.mul(v13, N.mul(v26, _))), v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v167, v170, N.mul_swap(v14, v27, v124)) : {N.add(N.add(v162, N.mul(v13, N.mul(v26, N.mul(v26, _)))), v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v169, v172, N.mul_swap(v14, v24, v24)) : {N.add(N.add(v162, N.mul(v13, N.mul(v26, N.mul(v26, N.mul(v27, _))))), v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v171, v173, N.mul_comm(v14, v24)) : {N.add(N.add(v162, N.mul(v13, N.mul(v26, N.mul(v26, N.mul(v27, N.mul(v24, _)))))), v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v178, v180, N.mul_swap(v13, v26, v176)) : {N.add(N.add(v162, _), v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v179, v182, N.mul_swap(v13, v26, v175)) : {N.add(N.add(v162, N.mul(v26, _)), v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v181, v184, N.mul_swap(v13, v27, v174)) : {N.add(N.add(v162, N.mul(v26, N.mul(v26, _))), v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v183, v186, N.mul_swap(v13, v24, v173)) : {N.add(N.add(v162, N.mul(v26, N.mul(v26, N.mul(v27, _)))), v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v185, v187, N.mul_swap(v13, v24, v14)) : {N.add(N.add(v162, N.mul(v26, N.mul(v26, N.mul(v27, N.mul(v24, _))))), v82) == v116 : N.Number}
+      %Equal.sym(N.Number, v50, v193, N.mul_comm(v47, v27)) : {N.add(v192, N.mul(N.add(N.mul(N.add(N.mul(N.add(_, v53), v17), v67), v30), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v53, v194, N.mul_comm(v13, v26)) : {N.add(v192, N.mul(N.add(N.mul(N.add(N.mul(N.add(v193, _), v17), v67), v30), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v195, v196, N.add_comm(v193, v194)) : {N.add(v192, N.mul(N.add(N.mul(N.add(N.mul(_, v17), v67), v30), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v197, v200, N.mul_add(v194, v193, v17)) : {N.add(v192, N.mul(N.add(N.mul(N.add(_, v67), v30), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v198, v201, N.mul_assoc(v26, v13, v17)) : {N.add(v192, N.mul(N.add(N.mul(N.add(N.add(_, v199), v67), v30), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v199, v202, N.mul_assoc(v27, v47, v17)) : {N.add(v192, N.mul(N.add(N.mul(N.add(N.add(v201, _), v67), v30), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v63, v204, N.mul_comm(v61, v27)) : {N.add(v192, N.mul(N.add(N.mul(N.add(v203, N.mul(N.add(_, v65), v14)), v30), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v65, v205, N.mul_comm(v16, v26)) : {N.add(v192, N.mul(N.add(N.mul(N.add(v203, N.mul(N.add(v204, _), v14)), v30), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v206, v207, N.add_comm(v204, v205)) : {N.add(v192, N.mul(N.add(N.mul(N.add(v203, N.mul(_, v14)), v30), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v208, v211, N.mul_add(v205, v204, v14)) : {N.add(v192, N.mul(N.add(N.mul(N.add(v203, _), v30), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v209, v212, N.mul_assoc(v26, v16, v14)) : {N.add(v192, N.mul(N.add(N.mul(N.add(v203, N.add(_, v210)), v30), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v210, v213, N.mul_assoc(v27, v61, v14)) : {N.add(v192, N.mul(N.add(N.mul(N.add(v203, N.add(v212, _)), v30), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v215, v217, N.add_assoc(v201, v202, v214)) : {N.add(v192, N.mul(N.add(N.mul(_, v30), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v216, v219, N.add_swap(v202, v212, v213)) : {N.add(v192, N.mul(N.add(N.mul(N.add(v201, _), v30), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v218, v220, N.add_comm(v202, v213)) : {N.add(v192, N.mul(N.add(N.mul(N.add(v201, N.add(v212, _)), v30), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v222, v224, N.add_swap(v201, v212, v220)) : {N.add(v192, N.mul(N.add(N.mul(_, v30), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v225, v228, N.mul_add(v212, v223, v30)) : {N.add(v192, N.mul(N.add(_, v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v226, v230, N.mul_assoc(v26, v113, v30)) : {N.add(v192, N.mul(N.add(N.add(_, v227), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v229, v232, N.mul_assoc(v16, v14, v30)) : {N.add(v192, N.mul(N.add(N.add(N.mul(v26, _), v227), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v231, v233, N.mul_swap(v14, v26, v24)) : {N.add(v192, N.mul(N.add(N.add(N.mul(v26, N.mul(v16, _)), v227), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v171, v173, N.mul_comm(v14, v24)) : {N.add(v192, N.mul(N.add(N.add(N.mul(v26, N.mul(v16, N.mul(v26, _))), v227), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v235, v237, N.mul_swap(v16, v26, v173)) : {N.add(v192, N.mul(N.add(N.add(N.mul(v26, _), v227), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v236, v238, N.mul_swap(v16, v24, v14)) : {N.add(v192, N.mul(N.add(N.add(N.mul(v26, N.mul(v26, _)), v227), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v227, v243, N.mul_add(v201, v220, v30)) : {N.add(v192, N.mul(N.add(N.add(v240, _), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v241, v245, N.mul_assoc(v26, v112, v30)) : {N.add(v192, N.mul(N.add(N.add(v240, N.add(_, v242)), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v244, v247, N.mul_assoc(v13, v17, v30)) : {N.add(v192, N.mul(N.add(N.add(v240, N.add(N.mul(v26, _), v242)), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v246, v248, N.mul_swap(v17, v26, v24)) : {N.add(v192, N.mul(N.add(N.add(v240, N.add(N.mul(v26, N.mul(v13, _)), v242)), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v142, v144, N.mul_comm(v17, v24)) : {N.add(v192, N.mul(N.add(N.add(v240, N.add(N.mul(v26, N.mul(v13, N.mul(v26, _))), v242)), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v250, v252, N.mul_swap(v13, v26, v144)) : {N.add(v192, N.mul(N.add(N.add(v240, N.add(N.mul(v26, _), v242)), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v251, v253, N.mul_swap(v13, v24, v17)) : {N.add(v192, N.mul(N.add(N.add(v240, N.add(N.mul(v26, N.mul(v26, _)), v242)), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v242, v258, N.mul_add(v213, v202, v30)) : {N.add(v192, N.mul(N.add(N.add(v240, N.add(v255, _)), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v256, v260, N.mul_assoc(v27, v104, v30)) : {N.add(v192, N.mul(N.add(N.add(v240, N.add(v255, N.add(_, v257))), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v259, v261, N.mul_assoc(v61, v14, v30)) : {N.add(v192, N.mul(N.add(N.add(v240, N.add(v255, N.add(N.mul(v27, _), v257))), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v231, v233, N.mul_swap(v14, v26, v24)) : {N.add(v192, N.mul(N.add(N.add(v240, N.add(v255, N.add(N.mul(v27, N.mul(v61, _)), v257))), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v171, v173, N.mul_comm(v14, v24)) : {N.add(v192, N.mul(N.add(N.add(v240, N.add(v255, N.add(N.mul(v27, N.mul(v61, N.mul(v26, _))), v257))), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v262, v264, N.mul_swap(v61, v26, v173)) : {N.add(v192, N.mul(N.add(N.add(v240, N.add(v255, N.add(N.mul(v27, _), v257))), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v263, v265, N.mul_swap(v61, v24, v14)) : {N.add(v192, N.mul(N.add(N.add(v240, N.add(v255, N.add(N.mul(v27, N.mul(v26, _)), v257))), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v267, v269, N.mul_swap(v27, v26, v265)) : {N.add(v192, N.mul(N.add(N.add(v240, N.add(v255, N.add(_, v257))), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v257, v271, N.mul_assoc(v27, v103, v30)) : {N.add(v192, N.mul(N.add(N.add(v240, N.add(v255, N.add(v269, _))), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v270, v272, N.mul_assoc(v47, v17, v30)) : {N.add(v192, N.mul(N.add(N.add(v240, N.add(v255, N.add(v269, N.mul(v27, _)))), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v246, v248, N.mul_swap(v17, v26, v24)) : {N.add(v192, N.mul(N.add(N.add(v240, N.add(v255, N.add(v269, N.mul(v27, N.mul(v47, _))))), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v142, v144, N.mul_comm(v17, v24)) : {N.add(v192, N.mul(N.add(N.add(v240, N.add(v255, N.add(v269, N.mul(v27, N.mul(v47, N.mul(v26, _)))))), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v273, v275, N.mul_swap(v47, v26, v144)) : {N.add(v192, N.mul(N.add(N.add(v240, N.add(v255, N.add(v269, N.mul(v27, _)))), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v274, v276, N.mul_swap(v47, v24, v17)) : {N.add(v192, N.mul(N.add(N.add(v240, N.add(v255, N.add(v269, N.mul(v27, N.mul(v26, _))))), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v278, v280, N.mul_swap(v27, v26, v276)) : {N.add(v192, N.mul(N.add(N.add(v240, N.add(v255, N.add(v269, _))), v79), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v78, v284, N.add_comm(v76, v77)) : {N.add(v192, N.mul(N.add(v283, N.mul(_, v29)), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v29, v118, N.mul_assoc(v26, v27, v24)) : {N.add(v192, N.mul(N.add(v283, N.mul(v284, _)), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v285, v288, N.mul_add(v77, v76, v118)) : {N.add(v192, N.mul(N.add(v283, _), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v286, v290, N.mul_assoc(v61, v17, v118)) : {N.add(v192, N.mul(N.add(v283, N.add(_, v287)), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v289, v292, N.mul_swap(v17, v26, v81)) : {N.add(v192, N.mul(N.add(v283, N.add(N.mul(v61, _), v287)), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v291, v293, N.mul_swap(v17, v27, v24)) : {N.add(v192, N.mul(N.add(v283, N.add(N.mul(v61, N.mul(v26, _)), v287)), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v142, v144, N.mul_comm(v17, v24)) : {N.add(v192, N.mul(N.add(v283, N.add(N.mul(v61, N.mul(v26, N.mul(v27, _))), v287)), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v296, v298, N.mul_swap(v61, v26, v294)) : {N.add(v192, N.mul(N.add(v283, N.add(_, v287)), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v297, v300, N.mul_swap(v61, v27, v144)) : {N.add(v192, N.mul(N.add(v283, N.add(N.mul(v26, _), v287)), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v299, v301, N.mul_swap(v61, v24, v17)) : {N.add(v192, N.mul(N.add(v283, N.add(N.mul(v26, N.mul(v27, _)), v287)), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v287, v305, N.mul_assoc(v47, v14, v118)) : {N.add(v192, N.mul(N.add(v283, N.add(v303, _)), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v304, v307, N.mul_swap(v14, v26, v81)) : {N.add(v192, N.mul(N.add(v283, N.add(v303, N.mul(v47, _))), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v306, v308, N.mul_swap(v14, v27, v24)) : {N.add(v192, N.mul(N.add(v283, N.add(v303, N.mul(v47, N.mul(v26, _)))), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v171, v173, N.mul_comm(v14, v24)) : {N.add(v192, N.mul(N.add(v283, N.add(v303, N.mul(v47, N.mul(v26, N.mul(v27, _))))), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v311, v313, N.mul_swap(v47, v26, v309)) : {N.add(v192, N.mul(N.add(v283, N.add(v303, _)), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v312, v315, N.mul_swap(v47, v27, v173)) : {N.add(v192, N.mul(N.add(v283, N.add(v303, N.mul(v26, _))), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v314, v316, N.mul_swap(v47, v24, v14)) : {N.add(v192, N.mul(N.add(v283, N.add(v303, N.mul(v26, N.mul(v27, _)))), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v320, v322, N.add_assoc(v240, v282, v319)) : {N.add(v192, N.mul(_, v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v321, v324, N.add_assoc(v255, v281, v319)) : {N.add(v192, N.mul(N.add(v240, _), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v323, v326, N.add_assoc(v269, v280, v319)) : {N.add(v192, N.mul(N.add(v240, N.add(v255, _)), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v325, v328, N.add_swap(v280, v303, v318)) : {N.add(v192, N.mul(N.add(v240, N.add(v255, N.add(v269, _))), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v329, v331, N.add_swap(v269, v303, v327)) : {N.add(v192, N.mul(N.add(v240, N.add(v255, _)), v81)) == v116 : N.Number}
+      %Equal.sym(N.Number, v334, v337, N.mul_add(v240, v332, v81)) : {N.add(v192, _) == v116 : N.Number}
+      %Equal.sym(N.Number, v335, v339, N.mul_assoc(v26, v239, v81)) : {N.add(v192, N.add(_, v336)) == v116 : N.Number}
+      %Equal.sym(N.Number, v338, v341, N.mul_assoc(v26, v238, v81)) : {N.add(v192, N.add(N.mul(v26, _), v336)) == v116 : N.Number}
+      %Equal.sym(N.Number, v340, v343, N.mul_assoc(v24, v113, v81)) : {N.add(v192, N.add(N.mul(v26, N.mul(v26, _)), v336)) == v116 : N.Number}
+      %Equal.sym(N.Number, v342, v344, N.mul_assoc(v16, v14, v81)) : {N.add(v192, N.add(N.mul(v26, N.mul(v26, N.mul(v24, _))), v336)) == v116 : N.Number}
+      %Equal.sym(N.Number, v306, v308, N.mul_swap(v14, v27, v24)) : {N.add(v192, N.add(N.mul(v26, N.mul(v26, N.mul(v24, N.mul(v16, _)))), v336)) == v116 : N.Number}
+      %Equal.sym(N.Number, v171, v173, N.mul_comm(v14, v24)) : {N.add(v192, N.add(N.mul(v26, N.mul(v26, N.mul(v24, N.mul(v16, N.mul(v27, _))))), v336)) == v116 : N.Number}
+      %Equal.sym(N.Number, v345, v346, N.mul_swap(v16, v27, v173)) : {N.add(v192, N.add(N.mul(v26, N.mul(v26, N.mul(v24, _))), v336)) == v116 : N.Number}
+      %Equal.sym(N.Number, v236, v238, N.mul_swap(v16, v24, v14)) : {N.add(v192, N.add(N.mul(v26, N.mul(v26, N.mul(v24, N.mul(v27, _)))), v336)) == v116 : N.Number}
+      %Equal.sym(N.Number, v348, v350, N.mul_swap(v24, v27, v238)) : {N.add(v192, N.add(N.mul(v26, N.mul(v26, _)), v336)) == v116 : N.Number}
+      %Equal.sym(N.Number, v336, v355, N.mul_add(v255, v331, v81)) : {N.add(v192, N.add(v352, _)) == v116 : N.Number}
+      %Equal.sym(N.Number, v353, v357, N.mul_assoc(v26, v254, v81)) : {N.add(v192, N.add(v352, N.add(_, v354))) == v116 : N.Number}
+      %Equal.sym(N.Number, v356, v359, N.mul_assoc(v26, v253, v81)) : {N.add(v192, N.add(v352, N.add(N.mul(v26, _), v354))) == v116 : N.Number}
+      %Equal.sym(N.Number, v358, v361, N.mul_assoc(v24, v112, v81)) : {N.add(v192, N.add(v352, N.add(N.mul(v26, N.mul(v26, _)), v354))) == v116 : N.Number}
+      %Equal.sym(N.Number, v360, v362, N.mul_assoc(v13, v17, v81)) : {N.add(v192, N.add(v352, N.add(N.mul(v26, N.mul(v26, N.mul(v24, _))), v354))) == v116 : N.Number}
+      %Equal.sym(N.Number, v291, v293, N.mul_swap(v17, v27, v24)) : {N.add(v192, N.add(v352, N.add(N.mul(v26, N.mul(v26, N.mul(v24, N.mul(v13, _)))), v354))) == v116 : N.Number}
+      %Equal.sym(N.Number, v142, v144, N.mul_comm(v17, v24)) : {N.add(v192, N.add(v352, N.add(N.mul(v26, N.mul(v26, N.mul(v24, N.mul(v13, N.mul(v27, _))))), v354))) == v116 : N.Number}
+      %Equal.sym(N.Number, v363, v364, N.mul_swap(v13, v27, v144)) : {N.add(v192, N.add(v352, N.add(N.mul(v26, N.mul(v26, N.mul(v24, _))), v354))) == v116 : N.Number}
+      %Equal.sym(N.Number, v251, v253, N.mul_swap(v13, v24, v17)) : {N.add(v192, N.add(v352, N.add(N.mul(v26, N.mul(v26, N.mul(v24, N.mul(v27, _)))), v354))) == v116 : N.Number}
+      %Equal.sym(N.Number, v366, v368, N.mul_swap(v24, v27, v253)) : {N.add(v192, N.add(v352, N.add(N.mul(v26, N.mul(v26, _)), v354))) == v116 : N.Number}
+      %Equal.sym(N.Number, v354, v373, N.mul_add(v303, v330, v81)) : {N.add(v192, N.add(v352, N.add(v370, _))) == v116 : N.Number}
+      %Equal.sym(N.Number, v371, v375, N.mul_assoc(v26, v302, v81)) : {N.add(v192, N.add(v352, N.add(v370, N.add(_, v372)))) == v116 : N.Number}
+      %Equal.sym(N.Number, v374, v377, N.mul_assoc(v27, v301, v81)) : {N.add(v192, N.add(v352, N.add(v370, N.add(N.mul(v26, _), v372)))) == v116 : N.Number}
+      %Equal.sym(N.Number, v376, v379, N.mul_assoc(v24, v77, v81)) : {N.add(v192, N.add(v352, N.add(v370, N.add(N.mul(v26, N.mul(v27, _)), v372)))) == v116 : N.Number}
+      %Equal.sym(N.Number, v378, v380, N.mul_assoc(v61, v17, v81)) : {N.add(v192, N.add(v352, N.add(v370, N.add(N.mul(v26, N.mul(v27, N.mul(v24, _))), v372)))) == v116 : N.Number}
+      %Equal.sym(N.Number, v291, v293, N.mul_swap(v17, v27, v24)) : {N.add(v192, N.add(v352, N.add(v370, N.add(N.mul(v26, N.mul(v27, N.mul(v24, N.mul(v61, _)))), v372)))) == v116 : N.Number}
+      %Equal.sym(N.Number, v142, v144, N.mul_comm(v17, v24)) : {N.add(v192, N.add(v352, N.add(v370, N.add(N.mul(v26, N.mul(v27, N.mul(v24, N.mul(v61, N.mul(v27, _))))), v372)))) == v116 : N.Number}
+      %Equal.sym(N.Number, v297, v300, N.mul_swap(v61, v27, v144)) : {N.add(v192, N.add(v352, N.add(v370, N.add(N.mul(v26, N.mul(v27, N.mul(v24, _))), v372)))) == v116 : N.Number}
+      %Equal.sym(N.Number, v299, v301, N.mul_swap(v61, v24, v17)) : {N.add(v192, N.add(v352, N.add(v370, N.add(N.mul(v26, N.mul(v27, N.mul(v24, N.mul(v27, _)))), v372)))) == v116 : N.Number}
+      %Equal.sym(N.Number, v381, v383, N.mul_swap(v24, v27, v301)) : {N.add(v192, N.add(v352, N.add(v370, N.add(N.mul(v26, N.mul(v27, _)), v372)))) == v116 : N.Number}
+      %Equal.sym(N.Number, v372, v388, N.mul_add(v269, v327, v81)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, _)))) == v116 : N.Number}
+      %Equal.sym(N.Number, v386, v390, N.mul_assoc(v26, v268, v81)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, N.add(_, v387))))) == v116 : N.Number}
+      %Equal.sym(N.Number, v389, v392, N.mul_assoc(v27, v265, v81)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, N.add(N.mul(v26, _), v387))))) == v116 : N.Number}
+      %Equal.sym(N.Number, v391, v394, N.mul_assoc(v24, v104, v81)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, N.add(N.mul(v26, N.mul(v27, _)), v387))))) == v116 : N.Number}
+      %Equal.sym(N.Number, v393, v395, N.mul_assoc(v61, v14, v81)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, N.add(N.mul(v26, N.mul(v27, N.mul(v24, _))), v387))))) == v116 : N.Number}
+      %Equal.sym(N.Number, v306, v308, N.mul_swap(v14, v27, v24)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, N.add(N.mul(v26, N.mul(v27, N.mul(v24, N.mul(v61, _)))), v387))))) == v116 : N.Number}
+      %Equal.sym(N.Number, v171, v173, N.mul_comm(v14, v24)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, N.add(N.mul(v26, N.mul(v27, N.mul(v24, N.mul(v61, N.mul(v27, _))))), v387))))) == v116 : N.Number}
+      %Equal.sym(N.Number, v396, v397, N.mul_swap(v61, v27, v173)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, N.add(N.mul(v26, N.mul(v27, N.mul(v24, _))), v387))))) == v116 : N.Number}
+      %Equal.sym(N.Number, v263, v265, N.mul_swap(v61, v24, v14)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, N.add(N.mul(v26, N.mul(v27, N.mul(v24, N.mul(v27, _)))), v387))))) == v116 : N.Number}
+      %Equal.sym(N.Number, v398, v400, N.mul_swap(v24, v27, v265)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, N.add(N.mul(v26, N.mul(v27, _)), v387))))) == v116 : N.Number}
+      %Equal.sym(N.Number, v387, v405, N.mul_add(v280, v318, v81)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, N.add(v402, _))))) == v116 : N.Number}
+      %Equal.sym(N.Number, v403, v407, N.mul_assoc(v26, v279, v81)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, N.add(v402, N.add(_, v404)))))) == v116 : N.Number}
+      %Equal.sym(N.Number, v406, v409, N.mul_assoc(v27, v276, v81)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, N.add(v402, N.add(N.mul(v26, _), v404)))))) == v116 : N.Number}
+      %Equal.sym(N.Number, v408, v411, N.mul_assoc(v24, v103, v81)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, N.add(v402, N.add(N.mul(v26, N.mul(v27, _)), v404)))))) == v116 : N.Number}
+      %Equal.sym(N.Number, v410, v412, N.mul_assoc(v47, v17, v81)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, N.add(v402, N.add(N.mul(v26, N.mul(v27, N.mul(v24, _))), v404)))))) == v116 : N.Number}
+      %Equal.sym(N.Number, v291, v293, N.mul_swap(v17, v27, v24)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, N.add(v402, N.add(N.mul(v26, N.mul(v27, N.mul(v24, N.mul(v47, _)))), v404)))))) == v116 : N.Number}
+      %Equal.sym(N.Number, v142, v144, N.mul_comm(v17, v24)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, N.add(v402, N.add(N.mul(v26, N.mul(v27, N.mul(v24, N.mul(v47, N.mul(v27, _))))), v404)))))) == v116 : N.Number}
+      %Equal.sym(N.Number, v413, v414, N.mul_swap(v47, v27, v144)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, N.add(v402, N.add(N.mul(v26, N.mul(v27, N.mul(v24, _))), v404)))))) == v116 : N.Number}
+      %Equal.sym(N.Number, v274, v276, N.mul_swap(v47, v24, v17)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, N.add(v402, N.add(N.mul(v26, N.mul(v27, N.mul(v24, N.mul(v27, _)))), v404)))))) == v116 : N.Number}
+      %Equal.sym(N.Number, v415, v417, N.mul_swap(v24, v27, v276)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, N.add(v402, N.add(N.mul(v26, N.mul(v27, _)), v404)))))) == v116 : N.Number}
+      %Equal.sym(N.Number, v404, v421, N.mul_assoc(v26, v317, v81)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, N.add(v402, N.add(v419, _)))))) == v116 : N.Number}
+      %Equal.sym(N.Number, v420, v423, N.mul_assoc(v27, v316, v81)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, N.add(v402, N.add(v419, N.mul(v26, _))))))) == v116 : N.Number}
+      %Equal.sym(N.Number, v422, v425, N.mul_assoc(v24, v76, v81)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, N.add(v402, N.add(v419, N.mul(v26, N.mul(v27, _)))))))) == v116 : N.Number}
+      %Equal.sym(N.Number, v424, v426, N.mul_assoc(v47, v14, v81)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, N.add(v402, N.add(v419, N.mul(v26, N.mul(v27, N.mul(v24, _))))))))) == v116 : N.Number}
+      %Equal.sym(N.Number, v306, v308, N.mul_swap(v14, v27, v24)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, N.add(v402, N.add(v419, N.mul(v26, N.mul(v27, N.mul(v24, N.mul(v47, _)))))))))) == v116 : N.Number}
+      %Equal.sym(N.Number, v171, v173, N.mul_comm(v14, v24)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, N.add(v402, N.add(v419, N.mul(v26, N.mul(v27, N.mul(v24, N.mul(v47, N.mul(v27, _))))))))))) == v116 : N.Number}
+      %Equal.sym(N.Number, v312, v315, N.mul_swap(v47, v27, v173)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, N.add(v402, N.add(v419, N.mul(v26, N.mul(v27, N.mul(v24, _))))))))) == v116 : N.Number}
+      %Equal.sym(N.Number, v314, v316, N.mul_swap(v47, v24, v14)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, N.add(v402, N.add(v419, N.mul(v26, N.mul(v27, N.mul(v24, N.mul(v27, _)))))))))) == v116 : N.Number}
+      %Equal.sym(N.Number, v427, v429, N.mul_swap(v24, v27, v316)) : {N.add(v192, N.add(v352, N.add(v370, N.add(v385, N.add(v402, N.add(v419, N.mul(v26, N.mul(v27, _)))))))) == v116 : N.Number}
+      %Equal.sym(N.Number, v437, v439, N.add_assoc(v162, v191, v436)) : {_ == v116 : N.Number}
+      %Equal.sym(N.Number, v438, v441, N.add_swap(v191, v352, v435)) : {N.add(v162, _) == v116 : N.Number}
+      %Equal.sym(N.Number, v440, v443, N.add_swap(v191, v370, v434)) : {N.add(v162, N.add(v352, _)) == v116 : N.Number}
+      %Equal.sym(N.Number, v50, v193, N.mul_comm(v47, v27)) : {v445 == N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(_, v53), v14), v95), v30), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v53, v194, N.mul_comm(v13, v26)) : {v445 == N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(v193, _), v14), v95), v30), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v195, v196, N.add_comm(v193, v194)) : {v445 == N.add(N.mul(N.add(N.mul(N.add(N.mul(_, v14), v95), v30), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v446, v449, N.mul_add(v194, v193, v14)) : {v445 == N.add(N.mul(N.add(N.mul(N.add(_, v95), v30), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v447, v450, N.mul_assoc(v26, v13, v14)) : {v445 == N.add(N.mul(N.add(N.mul(N.add(N.add(_, v448), v95), v30), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v448, v451, N.mul_assoc(v27, v47, v14)) : {v445 == N.add(N.mul(N.add(N.mul(N.add(N.add(v450, _), v95), v30), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v63, v204, N.mul_comm(v61, v27)) : {v445 == N.add(N.mul(N.add(N.mul(N.add(v452, N.mul(N.add(_, v65), v17)), v30), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v65, v205, N.mul_comm(v16, v26)) : {v445 == N.add(N.mul(N.add(N.mul(N.add(v452, N.mul(N.add(v204, _), v17)), v30), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v206, v207, N.add_comm(v204, v205)) : {v445 == N.add(N.mul(N.add(N.mul(N.add(v452, N.mul(_, v17)), v30), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v453, v456, N.mul_add(v205, v204, v17)) : {v445 == N.add(N.mul(N.add(N.mul(N.add(v452, _), v30), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v454, v457, N.mul_assoc(v26, v16, v17)) : {v445 == N.add(N.mul(N.add(N.mul(N.add(v452, N.add(_, v455)), v30), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v455, v458, N.mul_assoc(v27, v61, v17)) : {v445 == N.add(N.mul(N.add(N.mul(N.add(v452, N.add(v457, _)), v30), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v460, v462, N.add_assoc(v450, v451, v459)) : {v445 == N.add(N.mul(N.add(N.mul(_, v30), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v461, v464, N.add_swap(v451, v457, v458)) : {v445 == N.add(N.mul(N.add(N.mul(N.add(v450, _), v30), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v463, v465, N.add_comm(v451, v458)) : {v445 == N.add(N.mul(N.add(N.mul(N.add(v450, N.add(v457, _)), v30), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v467, v469, N.add_swap(v450, v457, v465)) : {v445 == N.add(N.mul(N.add(N.mul(_, v30), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v470, v473, N.mul_add(v457, v468, v30)) : {v445 == N.add(N.mul(N.add(_, v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v471, v475, N.mul_assoc(v26, v18, v30)) : {v445 == N.add(N.mul(N.add(N.add(_, v472), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v474, v476, N.mul_assoc(v16, v17, v30)) : {v445 == N.add(N.mul(N.add(N.add(N.mul(v26, _), v472), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v246, v248, N.mul_swap(v17, v26, v24)) : {v445 == N.add(N.mul(N.add(N.add(N.mul(v26, N.mul(v16, _)), v472), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v142, v144, N.mul_comm(v17, v24)) : {v445 == N.add(N.mul(N.add(N.add(N.mul(v26, N.mul(v16, N.mul(v26, _))), v472), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v477, v478, N.mul_swap(v16, v26, v144)) : {v445 == N.add(N.mul(N.add(N.add(N.mul(v26, _), v472), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v156, v158, N.mul_swap(v16, v24, v17)) : {v445 == N.add(N.mul(N.add(N.add(N.mul(v26, N.mul(v26, _)), v472), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v472, v483, N.mul_add(v450, v465, v30)) : {v445 == N.add(N.mul(N.add(N.add(v480, _), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v481, v485, N.mul_assoc(v26, v15, v30)) : {v445 == N.add(N.mul(N.add(N.add(v480, N.add(_, v482)), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v484, v486, N.mul_assoc(v13, v14, v30)) : {v445 == N.add(N.mul(N.add(N.add(v480, N.add(N.mul(v26, _), v482)), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v231, v233, N.mul_swap(v14, v26, v24)) : {v445 == N.add(N.mul(N.add(N.add(v480, N.add(N.mul(v26, N.mul(v13, _)), v482)), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v171, v173, N.mul_comm(v14, v24)) : {v445 == N.add(N.mul(N.add(N.add(v480, N.add(N.mul(v26, N.mul(v13, N.mul(v26, _))), v482)), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v487, v488, N.mul_swap(v13, v26, v173)) : {v445 == N.add(N.mul(N.add(N.add(v480, N.add(N.mul(v26, _), v482)), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v185, v187, N.mul_swap(v13, v24, v14)) : {v445 == N.add(N.mul(N.add(N.add(v480, N.add(N.mul(v26, N.mul(v26, _)), v482)), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v482, v493, N.mul_add(v458, v451, v30)) : {v445 == N.add(N.mul(N.add(N.add(v480, N.add(v490, _)), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v491, v495, N.mul_assoc(v27, v77, v30)) : {v445 == N.add(N.mul(N.add(N.add(v480, N.add(v490, N.add(_, v492))), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v494, v496, N.mul_assoc(v61, v17, v30)) : {v445 == N.add(N.mul(N.add(N.add(v480, N.add(v490, N.add(N.mul(v27, _), v492))), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v246, v248, N.mul_swap(v17, v26, v24)) : {v445 == N.add(N.mul(N.add(N.add(v480, N.add(v490, N.add(N.mul(v27, N.mul(v61, _)), v492))), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v142, v144, N.mul_comm(v17, v24)) : {v445 == N.add(N.mul(N.add(N.add(v480, N.add(v490, N.add(N.mul(v27, N.mul(v61, N.mul(v26, _))), v492))), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v497, v498, N.mul_swap(v61, v26, v144)) : {v445 == N.add(N.mul(N.add(N.add(v480, N.add(v490, N.add(N.mul(v27, _), v492))), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v299, v301, N.mul_swap(v61, v24, v17)) : {v445 == N.add(N.mul(N.add(N.add(v480, N.add(v490, N.add(N.mul(v27, N.mul(v26, _)), v492))), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v500, v303, N.mul_swap(v27, v26, v301)) : {v445 == N.add(N.mul(N.add(N.add(v480, N.add(v490, N.add(_, v492))), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v492, v502, N.mul_assoc(v27, v76, v30)) : {v445 == N.add(N.mul(N.add(N.add(v480, N.add(v490, N.add(v303, _))), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v501, v503, N.mul_assoc(v47, v14, v30)) : {v445 == N.add(N.mul(N.add(N.add(v480, N.add(v490, N.add(v303, N.mul(v27, _)))), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v231, v233, N.mul_swap(v14, v26, v24)) : {v445 == N.add(N.mul(N.add(N.add(v480, N.add(v490, N.add(v303, N.mul(v27, N.mul(v47, _))))), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v171, v173, N.mul_comm(v14, v24)) : {v445 == N.add(N.mul(N.add(N.add(v480, N.add(v490, N.add(v303, N.mul(v27, N.mul(v47, N.mul(v26, _)))))), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v504, v505, N.mul_swap(v47, v26, v173)) : {v445 == N.add(N.mul(N.add(N.add(v480, N.add(v490, N.add(v303, N.mul(v27, _)))), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v314, v316, N.mul_swap(v47, v24, v14)) : {v445 == N.add(N.mul(N.add(N.add(v480, N.add(v490, N.add(v303, N.mul(v27, N.mul(v26, _))))), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v507, v318, N.mul_swap(v27, v26, v316)) : {v445 == N.add(N.mul(N.add(N.add(v480, N.add(v490, N.add(v303, _))), v106), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v105, v510, N.add_comm(v103, v104)) : {v445 == N.add(N.mul(N.add(v509, N.mul(_, v29)), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v29, v118, N.mul_assoc(v26, v27, v24)) : {v445 == N.add(N.mul(N.add(v509, N.mul(v510, _)), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v511, v514, N.mul_add(v104, v103, v118)) : {v445 == N.add(N.mul(N.add(v509, _), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v512, v515, N.mul_assoc(v61, v14, v118)) : {v445 == N.add(N.mul(N.add(v509, N.add(_, v513)), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v304, v307, N.mul_swap(v14, v26, v81)) : {v445 == N.add(N.mul(N.add(v509, N.add(N.mul(v61, _), v513)), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v306, v308, N.mul_swap(v14, v27, v24)) : {v445 == N.add(N.mul(N.add(v509, N.add(N.mul(v61, N.mul(v26, _)), v513)), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v171, v173, N.mul_comm(v14, v24)) : {v445 == N.add(N.mul(N.add(v509, N.add(N.mul(v61, N.mul(v26, N.mul(v27, _))), v513)), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v516, v517, N.mul_swap(v61, v26, v309)) : {v445 == N.add(N.mul(N.add(v509, N.add(_, v513)), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v396, v397, N.mul_swap(v61, v27, v173)) : {v445 == N.add(N.mul(N.add(v509, N.add(N.mul(v26, _), v513)), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v263, v265, N.mul_swap(v61, v24, v14)) : {v445 == N.add(N.mul(N.add(v509, N.add(N.mul(v26, N.mul(v27, _)), v513)), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v513, v518, N.mul_assoc(v47, v17, v118)) : {v445 == N.add(N.mul(N.add(v509, N.add(v269, _)), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v289, v292, N.mul_swap(v17, v26, v81)) : {v445 == N.add(N.mul(N.add(v509, N.add(v269, N.mul(v47, _))), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v291, v293, N.mul_swap(v17, v27, v24)) : {v445 == N.add(N.mul(N.add(v509, N.add(v269, N.mul(v47, N.mul(v26, _)))), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v142, v144, N.mul_comm(v17, v24)) : {v445 == N.add(N.mul(N.add(v509, N.add(v269, N.mul(v47, N.mul(v26, N.mul(v27, _))))), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v519, v520, N.mul_swap(v47, v26, v294)) : {v445 == N.add(N.mul(N.add(v509, N.add(v269, _)), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v413, v414, N.mul_swap(v47, v27, v144)) : {v445 == N.add(N.mul(N.add(v509, N.add(v269, N.mul(v26, _))), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v274, v276, N.mul_swap(v47, v24, v17)) : {v445 == N.add(N.mul(N.add(v509, N.add(v269, N.mul(v26, N.mul(v27, _)))), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v521, v523, N.add_assoc(v480, v508, v281)) : {v445 == N.add(N.mul(_, v81), v115) : N.Number}
+      %Equal.sym(N.Number, v522, v525, N.add_assoc(v490, v319, v281)) : {v445 == N.add(N.mul(N.add(v480, _), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v524, v527, N.add_assoc(v303, v318, v281)) : {v445 == N.add(N.mul(N.add(v480, N.add(v490, _)), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v526, v529, N.add_swap(v318, v269, v280)) : {v445 == N.add(N.mul(N.add(v480, N.add(v490, N.add(v303, _))), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v528, v327, N.add_comm(v318, v280)) : {v445 == N.add(N.mul(N.add(v480, N.add(v490, N.add(v303, N.add(v269, _)))), v81), v115) : N.Number}
+      %Equal.sym(N.Number, v532, v535, N.mul_add(v480, v530, v81)) : {v445 == N.add(_, v115) : N.Number}
+      %Equal.sym(N.Number, v533, v537, N.mul_assoc(v26, v479, v81)) : {v445 == N.add(N.add(_, v534), v115) : N.Number}
+      %Equal.sym(N.Number, v536, v539, N.mul_assoc(v26, v158, v81)) : {v445 == N.add(N.add(N.mul(v26, _), v534), v115) : N.Number}
+      %Equal.sym(N.Number, v538, v541, N.mul_assoc(v24, v18, v81)) : {v445 == N.add(N.add(N.mul(v26, N.mul(v26, _)), v534), v115) : N.Number}
+      %Equal.sym(N.Number, v540, v542, N.mul_assoc(v16, v17, v81)) : {v445 == N.add(N.add(N.mul(v26, N.mul(v26, N.mul(v24, _))), v534), v115) : N.Number}
+      %Equal.sym(N.Number, v291, v293, N.mul_swap(v17, v27, v24)) : {v445 == N.add(N.add(N.mul(v26, N.mul(v26, N.mul(v24, N.mul(v16, _)))), v534), v115) : N.Number}
+      %Equal.sym(N.Number, v142, v144, N.mul_comm(v17, v24)) : {v445 == N.add(N.add(N.mul(v26, N.mul(v26, N.mul(v24, N.mul(v16, N.mul(v27, _))))), v534), v115) : N.Number}
+      %Equal.sym(N.Number, v543, v544, N.mul_swap(v16, v27, v144)) : {v445 == N.add(N.add(N.mul(v26, N.mul(v26, N.mul(v24, _))), v534), v115) : N.Number}
+      %Equal.sym(N.Number, v156, v158, N.mul_swap(v16, v24, v17)) : {v445 == N.add(N.add(N.mul(v26, N.mul(v26, N.mul(v24, N.mul(v27, _)))), v534), v115) : N.Number}
+      %Equal.sym(N.Number, v546, v160, N.mul_swap(v24, v27, v158)) : {v445 == N.add(N.add(N.mul(v26, N.mul(v26, _)), v534), v115) : N.Number}
+      %Equal.sym(N.Number, v534, v548, N.mul_add(v490, v331, v81)) : {v445 == N.add(N.add(v162, _), v115) : N.Number}
+      %Equal.sym(N.Number, v547, v550, N.mul_assoc(v26, v489, v81)) : {v445 == N.add(N.add(v162, N.add(_, v354)), v115) : N.Number}
+      %Equal.sym(N.Number, v549, v552, N.mul_assoc(v26, v187, v81)) : {v445 == N.add(N.add(v162, N.add(N.mul(v26, _), v354)), v115) : N.Number}
+      %Equal.sym(N.Number, v551, v554, N.mul_assoc(v24, v15, v81)) : {v445 == N.add(N.add(v162, N.add(N.mul(v26, N.mul(v26, _)), v354)), v115) : N.Number}
+      %Equal.sym(N.Number, v553, v555, N.mul_assoc(v13, v14, v81)) : {v445 == N.add(N.add(v162, N.add(N.mul(v26, N.mul(v26, N.mul(v24, _))), v354)), v115) : N.Number}
+      %Equal.sym(N.Number, v306, v308, N.mul_swap(v14, v27, v24)) : {v445 == N.add(N.add(v162, N.add(N.mul(v26, N.mul(v26, N.mul(v24, N.mul(v13, _)))), v354)), v115) : N.Number}
+      %Equal.sym(N.Number, v171, v173, N.mul_comm(v14, v24)) : {v445 == N.add(N.add(v162, N.add(N.mul(v26, N.mul(v26, N.mul(v24, N.mul(v13, N.mul(v27, _))))), v354)), v115) : N.Number}
+      %Equal.sym(N.Number, v556, v557, N.mul_swap(v13, v27, v173)) : {v445 == N.add(N.add(v162, N.add(N.mul(v26, N.mul(v26, N.mul(v24, _))), v354)), v115) : N.Number}
+      %Equal.sym(N.Number, v185, v187, N.mul_swap(v13, v24, v14)) : {v445 == N.add(N.add(v162, N.add(N.mul(v26, N.mul(v26, N.mul(v24, N.mul(v27, _)))), v354)), v115) : N.Number}
+      %Equal.sym(N.Number, v559, v189, N.mul_swap(v24, v27, v187)) : {v445 == N.add(N.add(v162, N.add(N.mul(v26, N.mul(v26, _)), v354)), v115) : N.Number}
+      %Equal.sym(N.Number, v354, v373, N.mul_add(v303, v330, v81)) : {v445 == N.add(N.add(v162, N.add(v191, _)), v115) : N.Number}
+      %Equal.sym(N.Number, v371, v375, N.mul_assoc(v26, v302, v81)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(_, v372))), v115) : N.Number}
+      %Equal.sym(N.Number, v374, v377, N.mul_assoc(v27, v301, v81)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(N.mul(v26, _), v372))), v115) : N.Number}
+      %Equal.sym(N.Number, v376, v379, N.mul_assoc(v24, v77, v81)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(N.mul(v26, N.mul(v27, _)), v372))), v115) : N.Number}
+      %Equal.sym(N.Number, v378, v380, N.mul_assoc(v61, v17, v81)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(N.mul(v26, N.mul(v27, N.mul(v24, _))), v372))), v115) : N.Number}
+      %Equal.sym(N.Number, v291, v293, N.mul_swap(v17, v27, v24)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(N.mul(v26, N.mul(v27, N.mul(v24, N.mul(v61, _)))), v372))), v115) : N.Number}
+      %Equal.sym(N.Number, v142, v144, N.mul_comm(v17, v24)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(N.mul(v26, N.mul(v27, N.mul(v24, N.mul(v61, N.mul(v27, _))))), v372))), v115) : N.Number}
+      %Equal.sym(N.Number, v297, v300, N.mul_swap(v61, v27, v144)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(N.mul(v26, N.mul(v27, N.mul(v24, _))), v372))), v115) : N.Number}
+      %Equal.sym(N.Number, v299, v301, N.mul_swap(v61, v24, v17)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(N.mul(v26, N.mul(v27, N.mul(v24, N.mul(v27, _)))), v372))), v115) : N.Number}
+      %Equal.sym(N.Number, v381, v383, N.mul_swap(v24, v27, v301)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(N.mul(v26, N.mul(v27, _)), v372))), v115) : N.Number}
+      %Equal.sym(N.Number, v372, v388, N.mul_add(v269, v327, v81)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, _))), v115) : N.Number}
+      %Equal.sym(N.Number, v386, v390, N.mul_assoc(v26, v268, v81)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, N.add(_, v387)))), v115) : N.Number}
+      %Equal.sym(N.Number, v389, v392, N.mul_assoc(v27, v265, v81)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, N.add(N.mul(v26, _), v387)))), v115) : N.Number}
+      %Equal.sym(N.Number, v391, v394, N.mul_assoc(v24, v104, v81)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, N.add(N.mul(v26, N.mul(v27, _)), v387)))), v115) : N.Number}
+      %Equal.sym(N.Number, v393, v395, N.mul_assoc(v61, v14, v81)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, N.add(N.mul(v26, N.mul(v27, N.mul(v24, _))), v387)))), v115) : N.Number}
+      %Equal.sym(N.Number, v306, v308, N.mul_swap(v14, v27, v24)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, N.add(N.mul(v26, N.mul(v27, N.mul(v24, N.mul(v61, _)))), v387)))), v115) : N.Number}
+      %Equal.sym(N.Number, v171, v173, N.mul_comm(v14, v24)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, N.add(N.mul(v26, N.mul(v27, N.mul(v24, N.mul(v61, N.mul(v27, _))))), v387)))), v115) : N.Number}
+      %Equal.sym(N.Number, v396, v397, N.mul_swap(v61, v27, v173)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, N.add(N.mul(v26, N.mul(v27, N.mul(v24, _))), v387)))), v115) : N.Number}
+      %Equal.sym(N.Number, v263, v265, N.mul_swap(v61, v24, v14)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, N.add(N.mul(v26, N.mul(v27, N.mul(v24, N.mul(v27, _)))), v387)))), v115) : N.Number}
+      %Equal.sym(N.Number, v398, v400, N.mul_swap(v24, v27, v265)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, N.add(N.mul(v26, N.mul(v27, _)), v387)))), v115) : N.Number}
+      %Equal.sym(N.Number, v387, v405, N.mul_add(v280, v318, v81)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, N.add(v402, _)))), v115) : N.Number}
+      %Equal.sym(N.Number, v403, v407, N.mul_assoc(v26, v279, v81)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, N.add(v402, N.add(_, v404))))), v115) : N.Number}
+      %Equal.sym(N.Number, v406, v409, N.mul_assoc(v27, v276, v81)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, N.add(v402, N.add(N.mul(v26, _), v404))))), v115) : N.Number}
+      %Equal.sym(N.Number, v408, v411, N.mul_assoc(v24, v103, v81)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, N.add(v402, N.add(N.mul(v26, N.mul(v27, _)), v404))))), v115) : N.Number}
+      %Equal.sym(N.Number, v410, v412, N.mul_assoc(v47, v17, v81)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, N.add(v402, N.add(N.mul(v26, N.mul(v27, N.mul(v24, _))), v404))))), v115) : N.Number}
+      %Equal.sym(N.Number, v291, v293, N.mul_swap(v17, v27, v24)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, N.add(v402, N.add(N.mul(v26, N.mul(v27, N.mul(v24, N.mul(v47, _)))), v404))))), v115) : N.Number}
+      %Equal.sym(N.Number, v142, v144, N.mul_comm(v17, v24)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, N.add(v402, N.add(N.mul(v26, N.mul(v27, N.mul(v24, N.mul(v47, N.mul(v27, _))))), v404))))), v115) : N.Number}
+      %Equal.sym(N.Number, v413, v414, N.mul_swap(v47, v27, v144)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, N.add(v402, N.add(N.mul(v26, N.mul(v27, N.mul(v24, _))), v404))))), v115) : N.Number}
+      %Equal.sym(N.Number, v274, v276, N.mul_swap(v47, v24, v17)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, N.add(v402, N.add(N.mul(v26, N.mul(v27, N.mul(v24, N.mul(v27, _)))), v404))))), v115) : N.Number}
+      %Equal.sym(N.Number, v415, v417, N.mul_swap(v24, v27, v276)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, N.add(v402, N.add(N.mul(v26, N.mul(v27, _)), v404))))), v115) : N.Number}
+      %Equal.sym(N.Number, v404, v421, N.mul_assoc(v26, v317, v81)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, N.add(v402, N.add(v419, _))))), v115) : N.Number}
+      %Equal.sym(N.Number, v420, v423, N.mul_assoc(v27, v316, v81)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, N.add(v402, N.add(v419, N.mul(v26, _)))))), v115) : N.Number}
+      %Equal.sym(N.Number, v422, v425, N.mul_assoc(v24, v76, v81)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, N.add(v402, N.add(v419, N.mul(v26, N.mul(v27, _))))))), v115) : N.Number}
+      %Equal.sym(N.Number, v424, v426, N.mul_assoc(v47, v14, v81)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, N.add(v402, N.add(v419, N.mul(v26, N.mul(v27, N.mul(v24, _)))))))), v115) : N.Number}
+      %Equal.sym(N.Number, v306, v308, N.mul_swap(v14, v27, v24)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, N.add(v402, N.add(v419, N.mul(v26, N.mul(v27, N.mul(v24, N.mul(v47, _))))))))), v115) : N.Number}
+      %Equal.sym(N.Number, v171, v173, N.mul_comm(v14, v24)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, N.add(v402, N.add(v419, N.mul(v26, N.mul(v27, N.mul(v24, N.mul(v47, N.mul(v27, _)))))))))), v115) : N.Number}
+      %Equal.sym(N.Number, v312, v315, N.mul_swap(v47, v27, v173)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, N.add(v402, N.add(v419, N.mul(v26, N.mul(v27, N.mul(v24, _)))))))), v115) : N.Number}
+      %Equal.sym(N.Number, v314, v316, N.mul_swap(v47, v24, v14)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, N.add(v402, N.add(v419, N.mul(v26, N.mul(v27, N.mul(v24, N.mul(v27, _))))))))), v115) : N.Number}
+      %Equal.sym(N.Number, v427, v429, N.mul_swap(v24, v27, v316)) : {v445 == N.add(N.add(v162, N.add(v191, N.add(v385, N.add(v402, N.add(v419, N.mul(v26, N.mul(v27, _))))))), v115) : N.Number}
+      %Equal.sym(N.Number, v114, v561, N.add_comm(v112, v113)) : {v445 == N.add(v560, N.mul(_, v31)) : N.Number}
+      %Equal.sym(N.Number, v29, v118, N.mul_assoc(v26, v27, v24)) : {v445 == N.add(v560, N.mul(v561, N.mul(_, v30))) : N.Number}
+      %Equal.sym(N.Number, v119, v121, N.mul_assoc(v26, v81, v30)) : {v445 == N.add(v560, N.mul(v561, _)) : N.Number}
+      %Equal.sym(N.Number, v120, v123, N.mul_assoc(v27, v24, v30)) : {v445 == N.add(v560, N.mul(v561, N.mul(v26, _))) : N.Number}
+      %Equal.sym(N.Number, v122, v125, N.mul_swap(v24, v26, v24)) : {v445 == N.add(v560, N.mul(v561, N.mul(v26, N.mul(v27, _)))) : N.Number}
+      %Equal.sym(N.Number, v126, v128, N.mul_swap(v27, v26, v124)) : {v445 == N.add(v560, N.mul(v561, N.mul(v26, _))) : N.Number}
+      %Equal.sym(N.Number, v562, v565, N.mul_add(v113, v112, v129)) : {v445 == N.add(v560, _) : N.Number}
+      %Equal.sym(N.Number, v563, v566, N.mul_assoc(v16, v14, v129)) : {v445 == N.add(v560, N.add(_, v564)) : N.Number}
+      %Equal.sym(N.Number, v163, v166, N.mul_swap(v14, v26, v128)) : {v445 == N.add(v560, N.add(N.mul(v16, _), v564)) : N.Number}
+      %Equal.sym(N.Number, v165, v168, N.mul_swap(v14, v26, v127)) : {v445 == N.add(v560, N.add(N.mul(v16, N.mul(v26, _)), v564)) : N.Number}
+      %Equal.sym(N.Number, v167, v170, N.mul_swap(v14, v27, v124)) : {v445 == N.add(v560, N.add(N.mul(v16, N.mul(v26, N.mul(v26, _))), v564)) : N.Number}
+      %Equal.sym(N.Number, v169, v172, N.mul_swap(v14, v24, v24)) : {v445 == N.add(v560, N.add(N.mul(v16, N.mul(v26, N.mul(v26, N.mul(v27, _)))), v564)) : N.Number}
+      %Equal.sym(N.Number, v171, v173, N.mul_comm(v14, v24)) : {v445 == N.add(v560, N.add(N.mul(v16, N.mul(v26, N.mul(v26, N.mul(v27, N.mul(v24, _))))), v564)) : N.Number}
+      %Equal.sym(N.Number, v567, v569, N.mul_swap(v16, v26, v176)) : {v445 == N.add(v560, N.add(_, v564)) : N.Number}
+      %Equal.sym(N.Number, v568, v571, N.mul_swap(v16, v26, v175)) : {v445 == N.add(v560, N.add(N.mul(v26, _), v564)) : N.Number}
+      %Equal.sym(N.Number, v570, v573, N.mul_swap(v16, v27, v174)) : {v445 == N.add(v560, N.add(N.mul(v26, N.mul(v26, _)), v564)) : N.Number}
+      %Equal.sym(N.Number, v572, v574, N.mul_swap(v16, v24, v173)) : {v445 == N.add(v560, N.add(N.mul(v26, N.mul(v26, N.mul(v27, _))), v564)) : N.Number}
+      %Equal.sym(N.Number, v236, v238, N.mul_swap(v16, v24, v14)) : {v445 == N.add(v560, N.add(N.mul(v26, N.mul(v26, N.mul(v27, N.mul(v24, _)))), v564)) : N.Number}
+      %Equal.sym(N.Number, v564, v575, N.mul_assoc(v13, v17, v129)) : {v445 == N.add(v560, N.add(v352, _)) : N.Number}
+      %Equal.sym(N.Number, v134, v137, N.mul_swap(v17, v26, v128)) : {v445 == N.add(v560, N.add(v352, N.mul(v13, _))) : N.Number}
+      %Equal.sym(N.Number, v136, v139, N.mul_swap(v17, v26, v127)) : {v445 == N.add(v560, N.add(v352, N.mul(v13, N.mul(v26, _)))) : N.Number}
+      %Equal.sym(N.Number, v138, v141, N.mul_swap(v17, v27, v124)) : {v445 == N.add(v560, N.add(v352, N.mul(v13, N.mul(v26, N.mul(v26, _))))) : N.Number}
+      %Equal.sym(N.Number, v140, v143, N.mul_swap(v17, v24, v24)) : {v445 == N.add(v560, N.add(v352, N.mul(v13, N.mul(v26, N.mul(v26, N.mul(v27, _)))))) : N.Number}
+      %Equal.sym(N.Number, v142, v144, N.mul_comm(v17, v24)) : {v445 == N.add(v560, N.add(v352, N.mul(v13, N.mul(v26, N.mul(v26, N.mul(v27, N.mul(v24, _))))))) : N.Number}
+      %Equal.sym(N.Number, v576, v578, N.mul_swap(v13, v26, v147)) : {v445 == N.add(v560, N.add(v352, _)) : N.Number}
+      %Equal.sym(N.Number, v577, v580, N.mul_swap(v13, v26, v146)) : {v445 == N.add(v560, N.add(v352, N.mul(v26, _))) : N.Number}
+      %Equal.sym(N.Number, v579, v582, N.mul_swap(v13, v27, v145)) : {v445 == N.add(v560, N.add(v352, N.mul(v26, N.mul(v26, _)))) : N.Number}
+      %Equal.sym(N.Number, v581, v583, N.mul_swap(v13, v24, v144)) : {v445 == N.add(v560, N.add(v352, N.mul(v26, N.mul(v26, N.mul(v27, _))))) : N.Number}
+      %Equal.sym(N.Number, v251, v253, N.mul_swap(v13, v24, v17)) : {v445 == N.add(v560, N.add(v352, N.mul(v26, N.mul(v26, N.mul(v27, N.mul(v24, _)))))) : N.Number}
+      %Equal.sym(N.Number, v585, v587, N.add_assoc(v162, v442, v584)) : {v445 == _ : N.Number}
+      %Equal.sym(N.Number, v586, v589, N.add_assoc(v191, v434, v584)) : {v445 == N.add(v162, _) : N.Number}
+      %Equal.sym(N.Number, v588, v591, N.add_assoc(v385, v433, v584)) : {v445 == N.add(v162, N.add(v191, _)) : N.Number}
+      %Equal.sym(N.Number, v590, v593, N.add_assoc(v402, v432, v584)) : {v445 == N.add(v162, N.add(v191, N.add(v385, _))) : N.Number}
+      %Equal.sym(N.Number, v592, v595, N.add_assoc(v419, v431, v584)) : {v445 == N.add(v162, N.add(v191, N.add(v385, N.add(v402, _)))) : N.Number}
+      %Equal.sym(N.Number, v594, v597, N.add_swap(v431, v352, v370)) : {v445 == N.add(v162, N.add(v191, N.add(v385, N.add(v402, N.add(v419, _))))) : N.Number}
+      %Equal.sym(N.Number, v596, v598, N.add_comm(v431, v370)) : {v445 == N.add(v162, N.add(v191, N.add(v385, N.add(v402, N.add(v419, N.add(v352, _)))))) : N.Number}
+      %Equal.sym(N.Number, v600, v602, N.add_swap(v419, v352, v598)) : {v445 == N.add(v162, N.add(v191, N.add(v385, N.add(v402, _)))) : N.Number}
+      %Equal.sym(N.Number, v601, v603, N.add_swap(v419, v370, v431)) : {v445 == N.add(v162, N.add(v191, N.add(v385, N.add(v402, N.add(v352, _))))) : N.Number}
+      %Equal.sym(N.Number, v605, v607, N.add_swap(v402, v352, v603)) : {v445 == N.add(v162, N.add(v191, N.add(v385, _))) : N.Number}
+      %Equal.sym(N.Number, v606, v608, N.add_swap(v402, v370, v432)) : {v445 == N.add(v162, N.add(v191, N.add(v385, N.add(v352, _)))) : N.Number}
+      %Equal.sym(N.Number, v610, v612, N.add_swap(v385, v352, v608)) : {v445 == N.add(v162, N.add(v191, _)) : N.Number}
+      %Equal.sym(N.Number, v611, v435, N.add_swap(v385, v370, v433)) : {v445 == N.add(v162, N.add(v191, N.add(v352, _))) : N.Number}
+      %Equal.sym(N.Number, v438, v441, N.add_swap(v191, v352, v435)) : {v445 == N.add(v162, _) : N.Number}
+      %Equal.sym(N.Number, v440, v443, N.add_swap(v191, v370, v434)) : {v445 == N.add(v162, N.add(v352, _)) : N.Number}
+      {==}
+      )}
