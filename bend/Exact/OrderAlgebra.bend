@@ -13,11 +13,11 @@ def add_embedding(a, b):
   match a b:
     case Q.Nonnegative{an, ad} Q.Nonnegative{bn, bd}:
       +v0 = B.positive_value(B.positive_mul(ad, bd))
-      +v1 = B.value(B.Zero{})
+      +v1 = B.value(B.Nought{})
       +v2 = N.mul(v1, v0)
       +v3 = B.value(B.add(B.mul(an, B.Pos{bd}), B.mul(bn, B.Pos{ad})))
       +v4 = N.mul(v3, v0)
-      +v5 = B.value(B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(B.Zero{}, B.Pos{ad})))
+      +v5 = B.value(B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(B.Nought{}, B.Pos{ad})))
       +v6 = N.mul(v5, v0)
       +v7 = N.add(v4, v6)
       +v8 = B.value(B.mul(an, B.Pos{bd}))
@@ -38,8 +38,8 @@ def add_embedding(a, b):
       +v23 = N.mul(v21, v22)
       +v24 = N.mul(N.Z{}, v22)
       +v25 = N.add(v23, v24)
-      +v26 = B.value(B.mul(B.Zero{}, B.Pos{bd}))
-      +v27 = B.value(B.mul(B.Zero{}, B.Pos{ad}))
+      +v26 = B.value(B.mul(B.Nought{}, B.Pos{bd}))
+      +v27 = B.value(B.mul(B.Nought{}, B.Pos{ad}))
       +v28 = N.add(v26, v27)
       +v29 = N.mul(v1, v12)
       +v30 = N.mul(N.Z{}, v14)
@@ -87,11 +87,11 @@ def add_embedding(a, b):
       %Equal.sym(N.Number, v9, v18, BP.mul_correct(bn, B.Pos{ad})) : {v25 == N.add(N.mul(N.add(v15, _), v0), v6) : N.Number}
       %Equal.sym(N.Number, v17, v19, {==}) : {v25 == N.add(N.mul(N.add(v15, N.mul(v16, _)), v0), v6) : N.Number}
       %Equal.sym(N.Number, v0, v22, BP.positive_mul_correct(ad, bd)) : {v25 == N.add(N.mul(v21, _), N.mul(v5, _)) : N.Number}
-      %Equal.sym(N.Number, v5, v28, BP.add_correct(B.mul(B.Zero{}, B.Pos{bd}), B.mul(B.Zero{}, B.Pos{ad}))) : {v25 == N.add(v23, N.mul(_, v22)) : N.Number}
-      %Equal.sym(N.Number, v26, v29, BP.mul_correct(B.Zero{}, B.Pos{bd})) : {v25 == N.add(v23, N.mul(N.add(_, v27), v22)) : N.Number}
+      %Equal.sym(N.Number, v5, v28, BP.add_correct(B.mul(B.Nought{}, B.Pos{bd}), B.mul(B.Nought{}, B.Pos{ad}))) : {v25 == N.add(v23, N.mul(_, v22)) : N.Number}
+      %Equal.sym(N.Number, v26, v29, BP.mul_correct(B.Nought{}, B.Pos{bd})) : {v25 == N.add(v23, N.mul(N.add(_, v27), v22)) : N.Number}
       %Equal.sym(N.Number, v1, N.Z{}, {==}) : {v25 == N.add(v23, N.mul(N.add(N.mul(_, v12), v27), v22)) : N.Number}
       %Equal.sym(N.Number, v12, v14, {==}) : {v25 == N.add(v23, N.mul(N.add(N.mul(N.Z{}, _), v27), v22)) : N.Number}
-      %Equal.sym(N.Number, v27, v31, BP.mul_correct(B.Zero{}, B.Pos{ad})) : {v25 == N.add(v23, N.mul(N.add(v30, _), v22)) : N.Number}
+      %Equal.sym(N.Number, v27, v31, BP.mul_correct(B.Nought{}, B.Pos{ad})) : {v25 == N.add(v23, N.mul(N.add(v30, _), v22)) : N.Number}
       %Equal.sym(N.Number, v1, N.Z{}, {==}) : {v25 == N.add(v23, N.mul(N.add(v30, N.mul(_, v17)), v22)) : N.Number}
       %Equal.sym(N.Number, v17, v19, {==}) : {v25 == N.add(v23, N.mul(N.add(v30, N.mul(N.Z{}, _)), v22)) : N.Number}
       %Equal.sym(N.Number, v15, v36, N.mul_comm(v11, v14)) : {N.add(N.mul(N.add(_, v20), v22), v24) == v35 : N.Number}
@@ -134,15 +134,15 @@ def mul_embedding(a, b):
   match a b:
     case Q.Nonnegative{an, ad} Q.Nonnegative{bn, bd}:
       +v0 = B.positive_value(B.positive_mul(ad, bd))
-      +v1 = B.value(B.Zero{})
+      +v1 = B.value(B.Nought{})
       +v2 = N.mul(v1, v0)
       +v3 = B.value(B.mul(an, bn))
       +v4 = N.mul(v3, v0)
-      +v5 = B.value(B.add(B.mul(an, B.Zero{}), B.mul(B.Zero{}, bn)))
+      +v5 = B.value(B.add(B.mul(an, B.Nought{}), B.mul(B.Nought{}, bn)))
       +v6 = N.mul(v5, v0)
       +v7 = N.add(v4, v6)
-      +v8 = B.value(B.add(B.mul(an, bn), B.mul(B.Zero{}, B.Zero{})))
-      +v9 = B.value(B.mul(B.Zero{}, B.Zero{}))
+      +v8 = B.value(B.add(B.mul(an, bn), B.mul(B.Nought{}, B.Nought{})))
+      +v9 = B.value(B.mul(B.Nought{}, B.Nought{}))
       +v10 = N.add(v3, v9)
       +v11 = B.value(an)
       +v12 = B.value(bn)
@@ -157,8 +157,8 @@ def mul_embedding(a, b):
       +v21 = N.mul(N.Z{}, v19)
       +v22 = N.add(v20, v21)
       +v23 = N.mul(v13, v19)
-      +v24 = B.value(B.mul(an, B.Zero{}))
-      +v25 = B.value(B.mul(B.Zero{}, bn))
+      +v24 = B.value(B.mul(an, B.Nought{}))
+      +v25 = B.value(B.mul(B.Nought{}, bn))
       +v26 = N.add(v24, v25)
       +v27 = N.mul(v11, v1)
       +v28 = N.mul(v11, N.Z{})
@@ -182,17 +182,17 @@ def mul_embedding(a, b):
       +v46 = N.add(v45, N.Z{})
       +v47 = N.add(N.Z{}, N.Z{})
       Q.Witness{(
-      %Equal.sym(N.Number, v8, v10, BP.add_correct(B.mul(an, bn), B.mul(B.Zero{}, B.Zero{}))) : {N.add(N.mul(_, v0), v2) == v7 : N.Number}
+      %Equal.sym(N.Number, v8, v10, BP.add_correct(B.mul(an, bn), B.mul(B.Nought{}, B.Nought{}))) : {N.add(N.mul(_, v0), v2) == v7 : N.Number}
       %Equal.sym(N.Number, v3, v13, BP.mul_correct(an, bn)) : {N.add(N.mul(N.add(_, v9), v0), v2) == v7 : N.Number}
-      %Equal.sym(N.Number, v9, v14, BP.mul_correct(B.Zero{}, B.Zero{})) : {N.add(N.mul(N.add(v13, _), v0), v2) == v7 : N.Number}
+      %Equal.sym(N.Number, v9, v14, BP.mul_correct(B.Nought{}, B.Nought{})) : {N.add(N.mul(N.add(v13, _), v0), v2) == v7 : N.Number}
       %Equal.sym(N.Number, v1, N.Z{}, {==}) : {N.add(N.mul(N.add(v13, N.mul(_, _)), v0), N.mul(_, v0)) == v7 : N.Number}
       %Equal.sym(N.Number, v0, v19, BP.positive_mul_correct(ad, bd)) : {N.add(N.mul(v16, _), N.mul(N.Z{}, _)) == v7 : N.Number}
       %Equal.sym(N.Number, v3, v13, BP.mul_correct(an, bn)) : {v22 == N.add(N.mul(_, v0), v6) : N.Number}
       %Equal.sym(N.Number, v0, v19, BP.positive_mul_correct(ad, bd)) : {v22 == N.add(N.mul(v13, _), N.mul(v5, _)) : N.Number}
-      %Equal.sym(N.Number, v5, v26, BP.add_correct(B.mul(an, B.Zero{}), B.mul(B.Zero{}, bn))) : {v22 == N.add(v23, N.mul(_, v19)) : N.Number}
-      %Equal.sym(N.Number, v24, v27, BP.mul_correct(an, B.Zero{})) : {v22 == N.add(v23, N.mul(N.add(_, v25), v19)) : N.Number}
+      %Equal.sym(N.Number, v5, v26, BP.add_correct(B.mul(an, B.Nought{}), B.mul(B.Nought{}, bn))) : {v22 == N.add(v23, N.mul(_, v19)) : N.Number}
+      %Equal.sym(N.Number, v24, v27, BP.mul_correct(an, B.Nought{})) : {v22 == N.add(v23, N.mul(N.add(_, v25), v19)) : N.Number}
       %Equal.sym(N.Number, v1, N.Z{}, {==}) : {v22 == N.add(v23, N.mul(N.add(N.mul(v11, _), v25), v19)) : N.Number}
-      %Equal.sym(N.Number, v25, v29, BP.mul_correct(B.Zero{}, bn)) : {v22 == N.add(v23, N.mul(N.add(v28, _), v19)) : N.Number}
+      %Equal.sym(N.Number, v25, v29, BP.mul_correct(B.Nought{}, bn)) : {v22 == N.add(v23, N.mul(N.add(v28, _), v19)) : N.Number}
       %Equal.sym(N.Number, v1, N.Z{}, {==}) : {v22 == N.add(v23, N.mul(N.add(v28, N.mul(_, v12)), v19)) : N.Number}
       %Equal.sym(N.Number, v15, N.Z{}, {==}) : {N.add(N.mul(N.add(v13, _), v19), v21) == v33 : N.Number}
       %Equal.sym(N.Number, v34, v13, N.add_zero(v13)) : {N.add(N.mul(_, v19), v21) == v33 : N.Number}

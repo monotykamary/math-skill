@@ -65,13 +65,13 @@ s = atom('B.positive_value(B.positive_add(b, B.Bit0{B.positive_mul(p, b)}))')
 branch('B.Bit1{p}', s, (ONE + (x + x)) * b, [(s, b + (m + m), 'positive_add_correct(b, B.Bit0{B.positive_mul(p, b)})'), (m, x * b, 'positive_mul_correct(p, b)')])
 
 law('add_correct', [('a', 'B.Whole'), ('b', 'B.Whole')], '{B.value(B.add(a, b)) == N.add(B.value(a), B.value(b)) : N.Number}', 'a b')
-branch('B.Zero{} b', atom('B.value(b)'), Z + atom('B.value(b)'))
-branch('B.Pos{p} B.Zero{}', x, x + Z)
+branch('B.Nought{} b', atom('B.value(b)'), Z + atom('B.value(b)'))
+branch('B.Pos{p} B.Nought{}', x, x + Z)
 branch('B.Pos{p} B.Pos{q}', addpq, x + y, [(addpq, x + y, 'positive_add_correct(p, q)')])
 
 law('mul_correct', [('a', 'B.Whole'), ('b', 'B.Whole')], '{B.value(B.mul(a, b)) == N.mul(B.value(a), B.value(b)) : N.Number}', 'a b')
-branch('B.Zero{} b', Z, Z * atom('B.value(b)'))
-branch('B.Pos{p} B.Zero{}', Z, x * Z)
+branch('B.Nought{} b', Z, Z * atom('B.value(b)'))
+branch('B.Pos{p} B.Nought{}', Z, x * Z)
 m = atom('B.positive_value(B.positive_mul(p, q))')
 branch('B.Pos{p} B.Pos{q}', m, x * y, [(m, x * y, 'positive_mul_correct(p, q)')])
 

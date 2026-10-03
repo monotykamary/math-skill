@@ -1,13 +1,16 @@
 # Exact Bend sandbox
 
-Bend **2.0.27** is the default first-party verifier. Python **3.10+** runs the gate and tests. Neither Lean nor Mathlib is needed for this sandbox.
+Bend **2.0.35** is the default first-party verifier. Python **3.10+** runs the gate and tests. Neither Lean nor Mathlib is needed for the gate or the tests.
 
 ```sh
 python3 bend/check.py
 python3 -m unittest discover -s bend/tests -v
+python3 bend/check.py --verdict   # optional kernel recheck; needs Lean v4.34.0
 ```
 
-The gate checks 18 public laws across the local proof dependency closure. It rejects changed compiler versions, missing public proofs, unused production modules, unsafe declarations, holes, floating-point/effectful certificate code, external imports, and any checker result other than `All terms check.`. It runs `bend version`, then `bend PROOF.bend --check-only`, so no `main` executes. Bend's exit status alone does not suffice: `@unsafe` definitions can exit zero with a warning.
+The gate checks 18 public laws across the local proof dependency closure. It rejects changed compiler versions, missing public proofs, unused production modules, unsafe declarations, holes, floating-point/effectful certificate code, external imports, and any checker result other than the exact clean banner `ALL PROOFS CHECK`. It runs `bend version`, then `bend PROOF.bend --check-only`, so no `main` executes. Bend's exit status alone does not suffice: a plain `bend file.bend` runs `@unsafe` code and exits zero; only a check rejects it.
+
+`python3 bend/check.py --verdict` applies the same source policy and then runs `bend PROOF.bend --verdict`. Bend checks the file, then rechecks every def outside Base with the BendTT kernel, whose soundness proof is written in Lean. The first run builds that kernel and needs Lean v4.34.0 through elan (`leanprover/lean4:v4.34.0`). A recheck of this sandbox takes about two minutes.
 
 ## What is proved
 
@@ -62,7 +65,7 @@ The rational mixing theorem states, for any finite list of rational p_i and stri
 - `Exact/Inverse.bend` defines a total signed inverse and `div(a, b) = a * inv(b)`. As in Lean, `inv(0) = 0`; `mul_inv_cancel` takes a `Q.Ne(a, Q.zero())` hypothesis.
 - `Exact/Decision.bend` proves the soundness of binary cross-product reflection for concrete equality certificates. It does not accept unchecked host-language equality results.
 
-The Python scripts in `tools/` are **untrusted proof generators**. Every generated step is checked by Bend against induction lemmas. They introduce no axioms and are not run by the certificate gate. Committed certificates can be checked without executing a generator. This still trusts Bend 2.0.27 and its bundled Base/checker. It is not an independent soundness audit or a proof of compiler correctness.
+The Python scripts in `tools/` are **untrusted proof generators**. Every generated step is checked by Bend against induction lemmas. They introduce no axioms and are not run by the certificate gate. Committed certificates can be checked without executing a generator. This still trusts Bend 2.0.35 and its bundled Base/checker. The `--verdict` recheck adds a second kernel with a soundness proof in Lean; Bend's translation into that kernel has no proof. It is not an independent soundness audit or a proof of compiler correctness.
 
 ## Runtime limits
 

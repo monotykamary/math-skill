@@ -15,15 +15,15 @@ type Positive is Data:
   Positive{numerator: B.Positive, denominator: B.Positive}
 
 def zero() -> Number:
-  Fraction{B.Zero{}, B.Zero{}, B.One{}}
+  Fraction{B.Nought{}, B.Nought{}, B.One{}}
 
 def one() -> Number:
-  Fraction{B.Pos{B.One{}}, B.Zero{}, B.One{}}
+  Fraction{B.Pos{B.One{}}, B.Nought{}, B.One{}}
 
 # Literal fractions n/d. Pass Unit{} for each nonzero certificate; a zero
 # denominator (or a zero Positive numerator) does not check.
 def ratio(n: Nat, d: Nat, nd: B.NonZero(d)) -> Number:
-  Fraction{B.from_nat(n), B.Zero{}, B.positive_from_nat(d, nd)}
+  Fraction{B.from_nat(n), B.Nought{}, B.positive_from_nat(d, nd)}
 
 def nonnegative_ratio(n: Nat, d: Nat, nd: B.NonZero(d)) -> Nonnegative:
   Nonnegative{B.from_nat(n), B.positive_from_nat(d, nd)}
@@ -37,12 +37,12 @@ def two() -> Number:
 def of_nonnegative(a: Nonnegative) -> Number:
   match a:
     case Nonnegative{n, d}:
-      Fraction{n, B.Zero{}, d}
+      Fraction{n, B.Nought{}, d}
 
 def of_positive(a: Positive) -> Number:
   match a:
     case Positive{n, d}:
-      Fraction{B.Pos{n}, B.Zero{}, d}
+      Fraction{B.Pos{n}, B.Nought{}, d}
 
 def neg(a: Number) -> Number:
   match a:

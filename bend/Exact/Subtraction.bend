@@ -73,11 +73,11 @@ def positive_compare(a: B.Positive, b: B.Positive) -> Gap:
 
 def compare(a: B.Whole, b: B.Whole) -> Gap:
   match a b:
-    case B.Zero{} B.Zero{}:
+    case B.Nought{} B.Nought{}:
       Same{}
-    case B.Zero{} B.Pos{q}:
+    case B.Nought{} B.Pos{q}:
       Below{q}
-    case B.Pos{p} B.Zero{}:
+    case B.Pos{p} B.Nought{}:
       Above{p}
     case B.Pos{p} B.Pos{q}:
       positive_compare(p, q)
@@ -253,11 +253,11 @@ law compare_correct:
   Holds(B.value(a), B.value(b), compare(a, b))
 def compare_correct(a, b):
   match a b:
-    case B.Zero{} B.Zero{}:
+    case B.Nought{} B.Nought{}:
       {==}
-    case B.Zero{} B.Pos{q}:
+    case B.Nought{} B.Pos{q}:
       {==}
-    case B.Pos{p} B.Zero{}:
+    case B.Pos{p} B.Nought{}:
       {==}
     case B.Pos{p} B.Pos{q}:
       positive_compare_correct(p, q)

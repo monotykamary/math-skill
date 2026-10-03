@@ -18,12 +18,12 @@ def divide_cancel(a, u):
       +v3 = N.mul(v1, v2)
       +v4 = B.value(ap)
       +v5 = N.mul(v4, v2)
-      +v6 = B.value(B.add(B.mul(B.Pos{un}, B.mul(an, B.Pos{ud})), B.mul(B.Zero{}, B.mul(ap, B.Pos{ud}))))
+      +v6 = B.value(B.add(B.mul(B.Pos{un}, B.mul(an, B.Pos{ud})), B.mul(B.Nought{}, B.mul(ap, B.Pos{ud}))))
       +v7 = N.mul(v6, v0)
       +v8 = N.add(v5, v7)
-      +v9 = B.value(B.add(B.mul(B.Pos{un}, B.mul(ap, B.Pos{ud})), B.mul(B.Zero{}, B.mul(an, B.Pos{ud}))))
+      +v9 = B.value(B.add(B.mul(B.Pos{un}, B.mul(ap, B.Pos{ud})), B.mul(B.Nought{}, B.mul(an, B.Pos{ud}))))
       +v10 = B.value(B.mul(B.Pos{un}, B.mul(ap, B.Pos{ud})))
-      +v11 = B.value(B.mul(B.Zero{}, B.mul(an, B.Pos{ud})))
+      +v11 = B.value(B.mul(B.Nought{}, B.mul(an, B.Pos{ud})))
       +v12 = N.add(v10, v11)
       +v13 = B.value(B.Pos{un})
       +v14 = B.value(B.mul(ap, B.Pos{ud}))
@@ -34,7 +34,7 @@ def divide_cancel(a, u):
       +v19 = B.positive_value(ud)
       +v20 = N.mul(v4, v19)
       +v21 = N.mul(v16, v20)
-      +v22 = B.value(B.Zero{})
+      +v22 = B.value(B.Nought{})
       +v23 = B.value(B.mul(an, B.Pos{ud}))
       +v24 = N.mul(v22, v23)
       +v25 = N.mul(v1, v17)
@@ -50,7 +50,7 @@ def divide_cancel(a, u):
       +v35 = N.add(v29, v34)
       +v36 = N.mul(v4, v33)
       +v37 = B.value(B.mul(B.Pos{un}, B.mul(an, B.Pos{ud})))
-      +v38 = B.value(B.mul(B.Zero{}, B.mul(ap, B.Pos{ud})))
+      +v38 = B.value(B.mul(B.Nought{}, B.mul(ap, B.Pos{ud})))
       +v39 = N.add(v37, v38)
       +v40 = N.mul(v13, v23)
       +v41 = N.mul(v16, v26)
@@ -106,12 +106,12 @@ def divide_cancel(a, u):
       +v91 = N.mul(v0, v71)
       +v92 = N.mul(v19, v91)
       Q.Witness{(
-      %Equal.sym(N.Number, v9, v12, BP.add_correct(B.mul(B.Pos{un}, B.mul(ap, B.Pos{ud})), B.mul(B.Zero{}, B.mul(an, B.Pos{ud})))) : {N.add(N.mul(_, v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v9, v12, BP.add_correct(B.mul(B.Pos{un}, B.mul(ap, B.Pos{ud})), B.mul(B.Nought{}, B.mul(an, B.Pos{ud})))) : {N.add(N.mul(_, v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v10, v15, BP.mul_correct(B.Pos{un}, B.mul(ap, B.Pos{ud}))) : {N.add(N.mul(N.add(_, v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v13, v16, {==}) : {N.add(N.mul(N.add(N.mul(_, v14), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v14, v18, BP.mul_correct(ap, B.Pos{ud})) : {N.add(N.mul(N.add(N.mul(v16, _), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v17, v19, {==}) : {N.add(N.mul(N.add(N.mul(v16, N.mul(v4, _)), v11), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v11, v24, BP.mul_correct(B.Zero{}, B.mul(an, B.Pos{ud}))) : {N.add(N.mul(N.add(v21, _), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v11, v24, BP.mul_correct(B.Nought{}, B.mul(an, B.Pos{ud}))) : {N.add(N.mul(N.add(v21, _), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v22, N.Z{}, {==}) : {N.add(N.mul(N.add(v21, N.mul(_, v23)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v23, v25, BP.mul_correct(an, B.Pos{ud})) : {N.add(N.mul(N.add(v21, N.mul(N.Z{}, _)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v17, v19, {==}) : {N.add(N.mul(N.add(v21, N.mul(N.Z{}, N.mul(v1, _))), v0), v3) == v8 : N.Number}
@@ -119,12 +119,12 @@ def divide_cancel(a, u):
       %Equal.sym(N.Number, v30, v32, BP.positive_mul_correct(ad, un)) : {N.add(v29, N.mul(v1, N.mul(v19, _))) == v8 : N.Number}
       %Equal.sym(N.Number, v2, v31, BP.positive_mul_correct(ud, B.positive_mul(ad, un))) : {v35 == N.add(N.mul(v4, _), v7) : N.Number}
       %Equal.sym(N.Number, v30, v32, BP.positive_mul_correct(ad, un)) : {v35 == N.add(N.mul(v4, N.mul(v19, _)), v7) : N.Number}
-      %Equal.sym(N.Number, v6, v39, BP.add_correct(B.mul(B.Pos{un}, B.mul(an, B.Pos{ud})), B.mul(B.Zero{}, B.mul(ap, B.Pos{ud})))) : {v35 == N.add(v36, N.mul(_, v0)) : N.Number}
+      %Equal.sym(N.Number, v6, v39, BP.add_correct(B.mul(B.Pos{un}, B.mul(an, B.Pos{ud})), B.mul(B.Nought{}, B.mul(ap, B.Pos{ud})))) : {v35 == N.add(v36, N.mul(_, v0)) : N.Number}
       %Equal.sym(N.Number, v37, v40, BP.mul_correct(B.Pos{un}, B.mul(an, B.Pos{ud}))) : {v35 == N.add(v36, N.mul(N.add(_, v38), v0)) : N.Number}
       %Equal.sym(N.Number, v13, v16, {==}) : {v35 == N.add(v36, N.mul(N.add(N.mul(_, v23), v38), v0)) : N.Number}
       %Equal.sym(N.Number, v23, v25, BP.mul_correct(an, B.Pos{ud})) : {v35 == N.add(v36, N.mul(N.add(N.mul(v16, _), v38), v0)) : N.Number}
       %Equal.sym(N.Number, v17, v19, {==}) : {v35 == N.add(v36, N.mul(N.add(N.mul(v16, N.mul(v1, _)), v38), v0)) : N.Number}
-      %Equal.sym(N.Number, v38, v42, BP.mul_correct(B.Zero{}, B.mul(ap, B.Pos{ud}))) : {v35 == N.add(v36, N.mul(N.add(v41, _), v0)) : N.Number}
+      %Equal.sym(N.Number, v38, v42, BP.mul_correct(B.Nought{}, B.mul(ap, B.Pos{ud}))) : {v35 == N.add(v36, N.mul(N.add(v41, _), v0)) : N.Number}
       %Equal.sym(N.Number, v22, N.Z{}, {==}) : {v35 == N.add(v36, N.mul(N.add(v41, N.mul(_, v14)), v0)) : N.Number}
       %Equal.sym(N.Number, v14, v18, BP.mul_correct(ap, B.Pos{ud})) : {v35 == N.add(v36, N.mul(N.add(v41, N.mul(N.Z{}, _)), v0)) : N.Number}
       %Equal.sym(N.Number, v17, v19, {==}) : {v35 == N.add(v36, N.mul(N.add(v41, N.mul(N.Z{}, N.mul(v4, _))), v0)) : N.Number}
@@ -174,12 +174,12 @@ def square_divide(a, u):
       +v3 = N.mul(v1, v2)
       +v4 = B.value(B.mul(B.add(B.mul(ap, ap), B.mul(an, an)), B.Pos{ud}))
       +v5 = N.mul(v4, v2)
-      +v6 = B.value(B.add(B.mul(B.Pos{un}, B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(an, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(ap, B.Pos{ud})))), B.mul(B.Zero{}, B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(ap, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(an, B.Pos{ud}))))))
+      +v6 = B.value(B.add(B.mul(B.Pos{un}, B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(an, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(ap, B.Pos{ud})))), B.mul(B.Nought{}, B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(ap, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(an, B.Pos{ud}))))))
       +v7 = N.mul(v6, v0)
       +v8 = N.add(v5, v7)
-      +v9 = B.value(B.add(B.mul(B.Pos{un}, B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(ap, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(an, B.Pos{ud})))), B.mul(B.Zero{}, B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(an, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(ap, B.Pos{ud}))))))
+      +v9 = B.value(B.add(B.mul(B.Pos{un}, B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(ap, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(an, B.Pos{ud})))), B.mul(B.Nought{}, B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(an, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(ap, B.Pos{ud}))))))
       +v10 = B.value(B.mul(B.Pos{un}, B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(ap, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(an, B.Pos{ud})))))
-      +v11 = B.value(B.mul(B.Zero{}, B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(an, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(ap, B.Pos{ud})))))
+      +v11 = B.value(B.mul(B.Nought{}, B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(an, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(ap, B.Pos{ud})))))
       +v12 = N.add(v10, v11)
       +v13 = B.value(B.Pos{un})
       +v14 = B.value(B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(ap, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(an, B.Pos{ud}))))
@@ -204,7 +204,7 @@ def square_divide(a, u):
       +v33 = N.mul(v32, v32)
       +v34 = N.add(v27, v33)
       +v35 = N.mul(v16, v34)
-      +v36 = B.value(B.Zero{})
+      +v36 = B.value(B.Nought{})
       +v37 = B.value(B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(an, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(ap, B.Pos{ud}))))
       +v38 = N.mul(v36, v37)
       +v39 = B.value(B.mul(B.mul(ap, B.Pos{ud}), B.mul(an, B.Pos{ud})))
@@ -252,7 +252,7 @@ def square_divide(a, u):
       +v81 = N.mul(v80, v25)
       +v82 = N.mul(v81, v70)
       +v83 = B.value(B.mul(B.Pos{un}, B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(an, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(ap, B.Pos{ud})))))
-      +v84 = B.value(B.mul(B.Zero{}, B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(ap, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(an, B.Pos{ud})))))
+      +v84 = B.value(B.mul(B.Nought{}, B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(ap, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(an, B.Pos{ud})))))
       +v85 = N.add(v83, v84)
       +v86 = N.mul(v13, v37)
       +v87 = N.mul(v16, v46)
@@ -533,7 +533,7 @@ def square_divide(a, u):
       +v362 = N.mul(v25, v359)
       +v363 = N.mul(v51, v362)
       Q.Witness{(
-      %Equal.sym(N.Number, v9, v12, BP.add_correct(B.mul(B.Pos{un}, B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(ap, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(an, B.Pos{ud})))), B.mul(B.Zero{}, B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(an, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(ap, B.Pos{ud})))))) : {N.add(N.mul(_, v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v9, v12, BP.add_correct(B.mul(B.Pos{un}, B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(ap, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(an, B.Pos{ud})))), B.mul(B.Nought{}, B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(an, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(ap, B.Pos{ud})))))) : {N.add(N.mul(_, v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v10, v15, BP.mul_correct(B.Pos{un}, B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(ap, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(an, B.Pos{ud}))))) : {N.add(N.mul(N.add(_, v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v13, v16, {==}) : {N.add(N.mul(N.add(N.mul(_, v14), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v14, v19, BP.add_correct(B.mul(B.mul(ap, B.Pos{ud}), B.mul(ap, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(an, B.Pos{ud})))) : {N.add(N.mul(N.add(N.mul(v16, _), v11), v0), v3) == v8 : N.Number}
@@ -543,7 +543,7 @@ def square_divide(a, u):
       %Equal.sym(N.Number, v18, v29, BP.mul_correct(B.mul(an, B.Pos{ud}), B.mul(an, B.Pos{ud}))) : {N.add(N.mul(N.add(N.mul(v16, N.add(v27, _)), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v28, v31, BP.mul_correct(an, B.Pos{ud})) : {N.add(N.mul(N.add(N.mul(v16, N.add(v27, N.mul(_, _))), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v23, v25, {==}) : {N.add(N.mul(N.add(N.mul(v16, N.add(v27, N.mul(N.mul(v30, _), N.mul(v30, _)))), v11), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v11, v38, BP.mul_correct(B.Zero{}, B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(an, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(ap, B.Pos{ud}))))) : {N.add(N.mul(N.add(v35, _), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v11, v38, BP.mul_correct(B.Nought{}, B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(an, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(ap, B.Pos{ud}))))) : {N.add(N.mul(N.add(v35, _), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v36, N.Z{}, {==}) : {N.add(N.mul(N.add(v35, N.mul(_, v37)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v37, v41, BP.add_correct(B.mul(B.mul(ap, B.Pos{ud}), B.mul(an, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(ap, B.Pos{ud})))) : {N.add(N.mul(N.add(v35, N.mul(N.Z{}, _)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v39, v42, BP.mul_correct(B.mul(ap, B.Pos{ud}), B.mul(an, B.Pos{ud}))) : {N.add(N.mul(N.add(v35, N.mul(N.Z{}, N.add(_, v40))), v0), v3) == v8 : N.Number}
@@ -574,7 +574,7 @@ def square_divide(a, u):
       %Equal.sym(N.Number, v2, v65, BP.positive_mul_correct(ud, B.positive_mul(B.positive_mul(ad, un), B.positive_mul(ad, un)))) : {v72 == N.add(N.mul(v81, _), v7) : N.Number}
       %Equal.sym(N.Number, v64, v67, BP.positive_mul_correct(B.positive_mul(ad, un), B.positive_mul(ad, un))) : {v72 == N.add(N.mul(v81, N.mul(v25, _)), v7) : N.Number}
       %Equal.sym(N.Number, v66, v68, BP.positive_mul_correct(ad, un)) : {v72 == N.add(N.mul(v81, N.mul(v25, N.mul(_, _))), v7) : N.Number}
-      %Equal.sym(N.Number, v6, v85, BP.add_correct(B.mul(B.Pos{un}, B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(an, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(ap, B.Pos{ud})))), B.mul(B.Zero{}, B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(ap, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(an, B.Pos{ud})))))) : {v72 == N.add(v82, N.mul(_, v0)) : N.Number}
+      %Equal.sym(N.Number, v6, v85, BP.add_correct(B.mul(B.Pos{un}, B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(an, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(ap, B.Pos{ud})))), B.mul(B.Nought{}, B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(ap, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(an, B.Pos{ud})))))) : {v72 == N.add(v82, N.mul(_, v0)) : N.Number}
       %Equal.sym(N.Number, v83, v86, BP.mul_correct(B.Pos{un}, B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(an, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(ap, B.Pos{ud}))))) : {v72 == N.add(v82, N.mul(N.add(_, v84), v0)) : N.Number}
       %Equal.sym(N.Number, v13, v16, {==}) : {v72 == N.add(v82, N.mul(N.add(N.mul(_, v37), v84), v0)) : N.Number}
       %Equal.sym(N.Number, v37, v41, BP.add_correct(B.mul(B.mul(ap, B.Pos{ud}), B.mul(an, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(ap, B.Pos{ud})))) : {v72 == N.add(v82, N.mul(N.add(N.mul(v16, _), v84), v0)) : N.Number}
@@ -588,7 +588,7 @@ def square_divide(a, u):
       %Equal.sym(N.Number, v23, v25, {==}) : {v72 == N.add(v82, N.mul(N.add(N.mul(v16, N.add(v43, N.mul(N.mul(v30, _), v20))), v84), v0)) : N.Number}
       %Equal.sym(N.Number, v20, v24, BP.mul_correct(ap, B.Pos{ud})) : {v72 == N.add(v82, N.mul(N.add(N.mul(v16, N.add(v43, N.mul(v32, _))), v84), v0)) : N.Number}
       %Equal.sym(N.Number, v23, v25, {==}) : {v72 == N.add(v82, N.mul(N.add(N.mul(v16, N.add(v43, N.mul(v32, N.mul(v22, _)))), v84), v0)) : N.Number}
-      %Equal.sym(N.Number, v84, v88, BP.mul_correct(B.Zero{}, B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(ap, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(an, B.Pos{ud}))))) : {v72 == N.add(v82, N.mul(N.add(v87, _), v0)) : N.Number}
+      %Equal.sym(N.Number, v84, v88, BP.mul_correct(B.Nought{}, B.add(B.mul(B.mul(ap, B.Pos{ud}), B.mul(ap, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(an, B.Pos{ud}))))) : {v72 == N.add(v82, N.mul(N.add(v87, _), v0)) : N.Number}
       %Equal.sym(N.Number, v36, N.Z{}, {==}) : {v72 == N.add(v82, N.mul(N.add(v87, N.mul(_, v14)), v0)) : N.Number}
       %Equal.sym(N.Number, v14, v19, BP.add_correct(B.mul(B.mul(ap, B.Pos{ud}), B.mul(ap, B.Pos{ud})), B.mul(B.mul(an, B.Pos{ud}), B.mul(an, B.Pos{ud})))) : {v72 == N.add(v82, N.mul(N.add(v87, N.mul(N.Z{}, _)), v0)) : N.Number}
       %Equal.sym(N.Number, v17, v21, BP.mul_correct(B.mul(ap, B.Pos{ud}), B.mul(ap, B.Pos{ud}))) : {v72 == N.add(v82, N.mul(N.add(v87, N.mul(N.Z{}, N.add(_, v18))), v0)) : N.Number}

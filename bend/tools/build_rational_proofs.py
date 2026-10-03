@@ -37,7 +37,7 @@ class Binary:
         EXPANSIONS[c.val()] = (a.val() * b.val(), f'BP.mul_correct({a.text}, {b.text})')
         return c
 
-BZ, BO = Binary('B.Zero{}'), Binary('B.One{}', True)
+BZ, BO = Binary('B.Nought{}'), Binary('B.One{}', True)
 EXPANSIONS[BZ.val()] = (Z, '{==}')
 EXPANSIONS[BO.val()] = (ONE, '{==}')
 

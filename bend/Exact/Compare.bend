@@ -49,10 +49,10 @@ def decide_from(+a: Q.Number, +b: Q.Number, r: M.SignedMagnitude<Q.sub(b, a)>) -
   match r:
     case M.PositiveCase{+m, e}:
       AtMost{u => Q.Bound{m, settle(a, b, m, e(Unit{}))}}
-    case M.NegativeCase{Q.Nonnegative{B.Zero{}, +d}, e}:
-      AtMost{u => Q.Bound{Q.Nonnegative{B.Zero{}, d}, settle(a, b, Q.Nonnegative{B.Zero{}, d}, e(Unit{}))}}
+    case M.NegativeCase{Q.Nonnegative{B.Nought{}, +d}, e}:
+      AtMost{u => Q.Bound{Q.Nonnegative{B.Nought{}, d}, settle(a, b, Q.Nonnegative{B.Nought{}, d}, e(Unit{}))}}
     case M.NegativeCase{Q.Nonnegative{B.Pos{+k}, +d}, e}:
-      Exceeds{u => Q.StrictBound{Q.Positive{k, d}, overshoot(a, b, Q.Fraction{B.Pos{k}, B.Zero{}, d}, e(Unit{}))}}
+      Exceeds{u => Q.StrictBound{Q.Positive{k, d}, overshoot(a, b, Q.Fraction{B.Pos{k}, B.Nought{}, d}, e(Unit{}))}}
 
 def decide(+a: Q.Number, +b: Q.Number) -> Decision<a, b>:
   decide_from(a, b, M.decompose(Q.sub(b, a)))
@@ -71,7 +71,7 @@ def lt_le(a, b, h):
 law positive_nonzero:
   for +q: B.Positive
   for +d: B.Positive
-  for e: Q.Eq(Q.Fraction{B.Pos{q}, B.Zero{}, d}, Q.zero())
+  for e: Q.Eq(Q.Fraction{B.Pos{q}, B.Nought{}, d}, Q.zero())
   Empty
 def positive_nonzero(q, d, e):
   match e:
@@ -92,7 +92,7 @@ law slack_nonzero:
   Empty
 def slack_nonzero(s, t, e):
   match s t:
-    case Q.Nonnegative{B.Zero{}, sd} Q.Positive{tn, +td}:
+    case Q.Nonnegative{B.Nought{}, sd} Q.Positive{tn, +td}:
       positive_nonzero(B.positive_mul(tn, sd), B.positive_mul(sd, td), e)
     case Q.Nonnegative{B.Pos{sn}, +sd} Q.Positive{tn, +td}:
       positive_nonzero(B.positive_add(B.positive_mul(sn, td), B.positive_mul(tn, sd)), B.positive_mul(sd, td), e)
@@ -138,7 +138,7 @@ def pick_left(a, b, d):
     case AtMost{h}:
       h(Unit{})
     case Exceeds{g}:
-      Q.Bound{Q.Nonnegative{B.Zero{}, B.One{}}, R.add_zero(a)}
+      Q.Bound{Q.Nonnegative{B.Nought{}, B.One{}}, R.add_zero(a)}
 
 law pick_right:
   for +a: Q.Number
@@ -148,7 +148,7 @@ law pick_right:
 def pick_right(a, b, d):
   match d:
     case AtMost{h}:
-      Q.Bound{Q.Nonnegative{B.Zero{}, B.One{}}, R.add_zero(b)}
+      Q.Bound{Q.Nonnegative{B.Nought{}, B.One{}}, R.add_zero(b)}
     case Exceeds{g}:
       lt_le(b, a, g(Unit{}))
 

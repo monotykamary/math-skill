@@ -26,7 +26,7 @@ def positive(n: int) -> str:
 
 def whole(n: int) -> str:
     assert n >= 0
-    return 'B.Zero{}' if n == 0 else 'B.Pos{' + positive(n) + '}'
+    return 'B.Nought{}' if n == 0 else 'B.Pos{' + positive(n) + '}'
 
 
 def rational(value: Fraction) -> str:
@@ -58,9 +58,17 @@ class ProofGate(unittest.TestCase):
                     path.write_text('import Base\n' + body)
                     with self.assertRaises(check.VerificationError):
                         check.run_checker(path)
-            result = subprocess.run(['bend', str(Path(tmp) / 'unsafe.bend')], capture_output=True, text=True)
-            self.assertEqual(result.returncode, 0, 'Exercise the warning-with-success-exit regression.')
-            self.assertIn('unsafe', result.stdout)
+            result = subprocess.run(['bend', str(Path(tmp) / 'unsafe.bend'), '--check-only'], capture_output=True, text=True)
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn('unsafe', result.stderr)
+            # Running an unsafe program still exits zero with no warning: only a check is a certificate.
+            runs = Path(tmp) / 'runs.bend'
+            runs.write_text('import Base\n@unsafe def spin(n: Nat) -> Nat:\n  n\n'
+                            'def main() -> IO(Unit):\n  do IO<Unit>:\n    IO.print(Nat.show(spin(3n)))\n')
+            result = subprocess.run(['bend', str(runs)], capture_output=True, text=True)
+            self.assertEqual((result.returncode, result.stdout.strip(), result.stderr), (0, '3', ''))
+            with self.assertRaises(check.VerificationError):
+                check.run_checker(runs)
 
     def test_large_reflected_equality_and_invalid_rationals(self):
         a = Fraction(2**80 + 7, 31)
@@ -73,7 +81,7 @@ class ProofGate(unittest.TestCase):
             source.write_text(prelude + f'def large() -> Q.Eq({lhs}, {rhs}):\n  D.eq({lhs}, {rhs}, {{==}})\n')
             check.run_checker(source)
             for body in [
-                'def bad() -> Q.Number:\n  Q.Fraction{B.Zero{}, B.Zero{}, B.Zero{}}\n',
+                'def bad() -> Q.Number:\n  Q.Fraction{B.Nought{}, B.Nought{}, B.Nought{}}\n',
                 'def bad() -> Q.Number:\n  Q.ratio(1n, 0n, Unit{})\n',
                 'def bad() -> Q.Positive:\n  Q.positive_ratio(0n, 1n, Unit{}, Unit{})\n',
                 'def bad() -> Q.Eq(Q.zero(), Q.one()):\n  D.eq(Q.zero(), Q.one(), {==})\n',
@@ -115,10 +123,18 @@ class ProofGate(unittest.TestCase):
             self.assertEqual(len(check.inspect_sources(entry, root)), 1)
 
     def test_gate_rejects_warning_noise_and_wrong_version(self):
-        for output in ['All terms check.\n1 term annotated as unsafe.\n', '', 'All terms check.\nextra\n']:
+        clean = check.CLEAN['--check-only'] + '\n'
+        for output in [clean + '1 def relies on unsafe or foreign code:\n', '', 'ALL PROOFS CHECK\n', 'All terms check.\n', clean + 'extra\n']:
             with self.subTest(output=output), patch('check.subprocess.run', return_value=subprocess.CompletedProcess([], 0, output, '')):
                 with self.assertRaises(check.VerificationError):
                     check.run_checker(ROOT / 'PROOF.bend')
+        with patch('check.subprocess.run', return_value=subprocess.CompletedProcess([], 0, clean, '')):
+            check.run_checker(ROOT / 'PROOF.bend')
+            with self.assertRaises(check.VerificationError):
+                check.run_checker(ROOT / 'PROOF.bend', mode='--verdict')
+        with patch('check.subprocess.run', return_value=subprocess.CompletedProcess([], 0, clean, 'warning\n')):
+            with self.assertRaises(check.VerificationError):
+                check.run_checker(ROOT / 'PROOF.bend')
         with patch('check.subprocess.run', return_value=subprocess.CompletedProcess([], 0, 'bend 0.0.0\n', '')):
             with self.assertRaises(check.VerificationError):
                 check.verify()

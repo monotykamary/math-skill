@@ -9,7 +9,7 @@ type Positive is Data:
   Bit1{tail: Positive}
 
 type Whole is Data:
-  Zero{}
+  Nought{}
   Pos{bits: Positive}
 
 def inc(a: Positive) -> Positive:
@@ -49,19 +49,19 @@ def positive_mul(a: Positive, +b: Positive) -> Positive:
 
 def add(a: Whole, b: Whole) -> Whole:
   match a b:
-    case Zero{} b:
+    case Nought{} b:
       b
-    case Pos{p} Zero{}:
+    case Pos{p} Nought{}:
       Pos{p}
     case Pos{p} Pos{q}:
       Pos{positive_add(p, q)}
 
 def mul(a: Whole, b: Whole) -> Whole:
   match a b:
-    case Zero{} b:
-      Zero{}
-    case Pos{p} Zero{}:
-      Zero{}
+    case Nought{} b:
+      Nought{}
+    case Pos{p} Nought{}:
+      Nought{}
     case Pos{p} Pos{q}:
       Pos{positive_mul(p, q)}
 
@@ -76,14 +76,14 @@ def positive_value(a: Positive) -> N.Number:
 
 def value(a: Whole) -> N.Number:
   match a:
-    case Zero{}:
+    case Nought{}:
       N.Z{}
     case Pos{p}:
       positive_value(p)
 
 def successor(a: Whole) -> Whole:
   match a:
-    case Zero{}:
+    case Nought{}:
       Pos{One{}}
     case Pos{p}:
       Pos{inc(p)}
@@ -93,7 +93,7 @@ def successor(a: Whole) -> Whole:
 def from_nat(n: Nat) -> Whole:
   match n:
     case 0n:
-      Zero{}
+      Nought{}
     case 1n+p:
       successor(from_nat(p))
 
@@ -131,7 +131,7 @@ def positive_show(a: Positive) -> String:
 
 def show(a: Whole) -> String:
   match a:
-    case Zero{}:
+    case Nought{}:
       "0"
     case Pos{p}:
       positive_show(p)

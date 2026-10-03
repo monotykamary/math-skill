@@ -17,7 +17,7 @@ law positive_case:
   for +d: B.Positive
   for +g: B.Whole
   for e: {B.value(p) == N.add(B.value(n), B.value(g)) : N.Number}
-  Q.Eq(Q.Fraction{p, n, d}, Q.Fraction{g, B.Zero{}, d})
+  Q.Eq(Q.Fraction{p, n, d}, Q.Fraction{g, B.Nought{}, d})
 def positive_case(p, n, d, g, e):
   Q.Witness{(
     +pv = B.value(p)
@@ -37,7 +37,7 @@ law negative_case:
   for +d: B.Positive
   for +g: B.Whole
   for e: {B.value(n) == N.add(B.value(p), B.value(g)) : N.Number}
-  Q.Eq(Q.Fraction{p, n, d}, Q.Fraction{B.Zero{}, g, d})
+  Q.Eq(Q.Fraction{p, n, d}, Q.Fraction{B.Nought{}, g, d})
 def negative_case(p, n, d, g, e):
   Q.Witness{(
     +pv = B.value(p)
@@ -52,7 +52,7 @@ def negative_case(p, n, d, g, e):
 def from_gap(+p: B.Whole, +n: B.Whole, +d: B.Positive, r: S.Gap, h: Unit -> S.Holds(B.value(p), B.value(n), r)) -> SignedMagnitude<Q.Fraction{p, n, d}>:
   match r:
     case S.Same{}:
-      PositiveCase{Q.Nonnegative{B.Zero{}, d}, u => positive_case(p, n, d, B.Zero{},
+      PositiveCase{Q.Nonnegative{B.Nought{}, d}, u => positive_case(p, n, d, B.Nought{},
         Equal.trans(N.Number, B.value(p), B.value(n), N.add(B.value(n), N.Z{}), h(Unit{}),
           Equal.sym(N.Number, N.add(B.value(n), N.Z{}), B.value(n), N.add_zero(B.value(n)))))}
     case S.Above{+g}:

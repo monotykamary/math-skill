@@ -43,18 +43,18 @@ def add_zero(a):
       +v3 = N.mul(v1, v2)
       +v4 = B.value(ap)
       +v5 = N.mul(v4, v2)
-      +v6 = B.value(B.add(B.mul(an, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{ad})))
+      +v6 = B.value(B.add(B.mul(an, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{ad})))
       +v7 = N.mul(v6, v0)
       +v8 = N.add(v5, v7)
-      +v9 = B.value(B.add(B.mul(ap, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{ad})))
+      +v9 = B.value(B.add(B.mul(ap, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{ad})))
       +v10 = B.value(B.mul(ap, B.Pos{B.One{}}))
-      +v11 = B.value(B.mul(B.Zero{}, B.Pos{ad}))
+      +v11 = B.value(B.mul(B.Nought{}, B.Pos{ad}))
       +v12 = N.add(v10, v11)
       +v13 = B.value(B.Pos{B.One{}})
       +v14 = N.mul(v4, v13)
       +v15 = B.positive_value(B.One{})
       +v16 = N.mul(v4, N.S{N.Z{}})
-      +v17 = B.value(B.Zero{})
+      +v17 = B.value(B.Nought{})
       +v18 = B.value(B.Pos{ad})
       +v19 = N.mul(v17, v18)
       +v20 = N.mul(N.Z{}, v0)
@@ -81,22 +81,22 @@ def add_zero(a):
       +v41 = N.add(v39, v37)
       +v42 = N.add(v1, N.Z{})
       Q.Witness{(
-      %Equal.sym(N.Number, v9, v12, BP.add_correct(B.mul(ap, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{ad}))) : {N.add(N.mul(_, v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v9, v12, BP.add_correct(B.mul(ap, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{ad}))) : {N.add(N.mul(_, v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v10, v14, BP.mul_correct(ap, B.Pos{B.One{}})) : {N.add(N.mul(N.add(_, v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v13, v15, {==}) : {N.add(N.mul(N.add(N.mul(v4, _), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v15, N.S{N.Z{}}, {==}) : {N.add(N.mul(N.add(N.mul(v4, _), v11), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v11, v19, BP.mul_correct(B.Zero{}, B.Pos{ad})) : {N.add(N.mul(N.add(v16, _), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v11, v19, BP.mul_correct(B.Nought{}, B.Pos{ad})) : {N.add(N.mul(N.add(v16, _), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v17, N.Z{}, {==}) : {N.add(N.mul(N.add(v16, N.mul(_, v18)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v18, v0, {==}) : {N.add(N.mul(N.add(v16, N.mul(N.Z{}, _)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v2, v23, BP.positive_mul_correct(ad, B.One{})) : {N.add(v22, N.mul(v1, _)) == v8 : N.Number}
       %Equal.sym(N.Number, v15, N.S{N.Z{}}, {==}) : {N.add(v22, N.mul(v1, N.mul(v0, _))) == v8 : N.Number}
       %Equal.sym(N.Number, v2, v23, BP.positive_mul_correct(ad, B.One{})) : {v26 == N.add(N.mul(v4, _), v7) : N.Number}
       %Equal.sym(N.Number, v15, N.S{N.Z{}}, {==}) : {v26 == N.add(N.mul(v4, N.mul(v0, _)), v7) : N.Number}
-      %Equal.sym(N.Number, v6, v29, BP.add_correct(B.mul(an, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{ad}))) : {v26 == N.add(v27, N.mul(_, v0)) : N.Number}
+      %Equal.sym(N.Number, v6, v29, BP.add_correct(B.mul(an, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{ad}))) : {v26 == N.add(v27, N.mul(_, v0)) : N.Number}
       %Equal.sym(N.Number, v28, v30, BP.mul_correct(an, B.Pos{B.One{}})) : {v26 == N.add(v27, N.mul(N.add(_, v11), v0)) : N.Number}
       %Equal.sym(N.Number, v13, v15, {==}) : {v26 == N.add(v27, N.mul(N.add(N.mul(v1, _), v11), v0)) : N.Number}
       %Equal.sym(N.Number, v15, N.S{N.Z{}}, {==}) : {v26 == N.add(v27, N.mul(N.add(N.mul(v1, _), v11), v0)) : N.Number}
-      %Equal.sym(N.Number, v11, v19, BP.mul_correct(B.Zero{}, B.Pos{ad})) : {v26 == N.add(v27, N.mul(N.add(v31, _), v0)) : N.Number}
+      %Equal.sym(N.Number, v11, v19, BP.mul_correct(B.Nought{}, B.Pos{ad})) : {v26 == N.add(v27, N.mul(N.add(v31, _), v0)) : N.Number}
       %Equal.sym(N.Number, v17, N.Z{}, {==}) : {v26 == N.add(v27, N.mul(N.add(v31, N.mul(_, v18)), v0)) : N.Number}
       %Equal.sym(N.Number, v18, v0, {==}) : {v26 == N.add(v27, N.mul(N.add(v31, N.mul(N.Z{}, _)), v0)) : N.Number}
       %Equal.sym(N.Number, v16, v4, N.mul_one(v4)) : {N.add(N.mul(N.add(_, v20), v0), v25) == v34 : N.Number}
@@ -882,7 +882,7 @@ law neg_zero:
   Q.Eq(Q.neg(Q.zero()), Q.zero())
 def neg_zero():
       +v0 = B.positive_value(B.One{})
-      +v1 = B.value(B.Zero{})
+      +v1 = B.value(B.Nought{})
       +v2 = N.mul(v1, v0)
       +v3 = N.add(v2, v2)
       +v4 = N.mul(N.Z{}, N.S{N.Z{}})
@@ -1804,7 +1804,7 @@ def add_neg(a):
   match a:
     case Q.Fraction{ap, an, ad}:
       +v0 = B.positive_value(B.One{})
-      +v1 = B.value(B.Zero{})
+      +v1 = B.value(B.Nought{})
       +v2 = B.positive_value(B.positive_mul(ad, ad))
       +v3 = N.mul(v1, v2)
       +v4 = B.value(B.add(B.mul(an, B.Pos{ad}), B.mul(ap, B.Pos{ad})))
@@ -1876,14 +1876,14 @@ def mul_zero(a):
   match a:
     case Q.Fraction{ap, an, ad}:
       +v0 = B.positive_value(B.One{})
-      +v1 = B.value(B.Zero{})
+      +v1 = B.value(B.Nought{})
       +v2 = B.positive_value(B.positive_mul(ad, B.One{}))
       +v3 = N.mul(v1, v2)
-      +v4 = B.value(B.add(B.mul(ap, B.Zero{}), B.mul(an, B.Zero{})))
+      +v4 = B.value(B.add(B.mul(ap, B.Nought{}), B.mul(an, B.Nought{})))
       +v5 = N.mul(v4, v0)
       +v6 = N.add(v3, v5)
-      +v7 = B.value(B.mul(ap, B.Zero{}))
-      +v8 = B.value(B.mul(an, B.Zero{}))
+      +v7 = B.value(B.mul(ap, B.Nought{}))
+      +v8 = B.value(B.mul(an, B.Nought{}))
       +v9 = N.add(v7, v8)
       +v10 = B.value(ap)
       +v11 = N.mul(v10, v1)
@@ -1904,10 +1904,10 @@ def mul_zero(a):
       +v26 = N.mul(N.Z{}, N.S{N.Z{}})
       +v27 = N.mul(N.Z{}, v19)
       Q.Witness{(
-      %Equal.sym(N.Number, v4, v9, BP.add_correct(B.mul(ap, B.Zero{}), B.mul(an, B.Zero{}))) : {N.add(N.mul(_, v0), v3) == v6 : N.Number}
-      %Equal.sym(N.Number, v7, v11, BP.mul_correct(ap, B.Zero{})) : {N.add(N.mul(N.add(_, v8), v0), v3) == v6 : N.Number}
+      %Equal.sym(N.Number, v4, v9, BP.add_correct(B.mul(ap, B.Nought{}), B.mul(an, B.Nought{}))) : {N.add(N.mul(_, v0), v3) == v6 : N.Number}
+      %Equal.sym(N.Number, v7, v11, BP.mul_correct(ap, B.Nought{})) : {N.add(N.mul(N.add(_, v8), v0), v3) == v6 : N.Number}
       %Equal.sym(N.Number, v1, N.Z{}, {==}) : {N.add(N.mul(N.add(N.mul(v10, _), v8), v0), N.mul(_, v2)) == v6 : N.Number}
-      %Equal.sym(N.Number, v8, v15, BP.mul_correct(an, B.Zero{})) : {N.add(N.mul(N.add(v12, _), v0), v13) == v6 : N.Number}
+      %Equal.sym(N.Number, v8, v15, BP.mul_correct(an, B.Nought{})) : {N.add(N.mul(N.add(v12, _), v0), v13) == v6 : N.Number}
       %Equal.sym(N.Number, v1, N.Z{}, {==}) : {N.add(N.mul(N.add(v12, N.mul(v14, _)), v0), v13) == v6 : N.Number}
       %Equal.sym(N.Number, v0, N.S{N.Z{}}, {==}) : {N.add(N.mul(v17, _), v13) == v6 : N.Number}
       %Equal.sym(N.Number, v2, v20, BP.positive_mul_correct(ad, B.One{})) : {N.add(v18, N.mul(N.Z{}, _)) == v6 : N.Number}
@@ -1915,10 +1915,10 @@ def mul_zero(a):
       %Equal.sym(N.Number, v1, N.Z{}, {==}) : {v23 == N.add(N.mul(_, v2), v5) : N.Number}
       %Equal.sym(N.Number, v2, v20, BP.positive_mul_correct(ad, B.One{})) : {v23 == N.add(N.mul(N.Z{}, _), v5) : N.Number}
       %Equal.sym(N.Number, v0, N.S{N.Z{}}, {==}) : {v23 == N.add(N.mul(N.Z{}, N.mul(v19, _)), N.mul(v4, _)) : N.Number}
-      %Equal.sym(N.Number, v4, v9, BP.add_correct(B.mul(ap, B.Zero{}), B.mul(an, B.Zero{}))) : {v23 == N.add(v22, N.mul(_, N.S{N.Z{}})) : N.Number}
-      %Equal.sym(N.Number, v7, v11, BP.mul_correct(ap, B.Zero{})) : {v23 == N.add(v22, N.mul(N.add(_, v8), N.S{N.Z{}})) : N.Number}
+      %Equal.sym(N.Number, v4, v9, BP.add_correct(B.mul(ap, B.Nought{}), B.mul(an, B.Nought{}))) : {v23 == N.add(v22, N.mul(_, N.S{N.Z{}})) : N.Number}
+      %Equal.sym(N.Number, v7, v11, BP.mul_correct(ap, B.Nought{})) : {v23 == N.add(v22, N.mul(N.add(_, v8), N.S{N.Z{}})) : N.Number}
       %Equal.sym(N.Number, v1, N.Z{}, {==}) : {v23 == N.add(v22, N.mul(N.add(N.mul(v10, _), v8), N.S{N.Z{}})) : N.Number}
-      %Equal.sym(N.Number, v8, v15, BP.mul_correct(an, B.Zero{})) : {v23 == N.add(v22, N.mul(N.add(v12, _), N.S{N.Z{}})) : N.Number}
+      %Equal.sym(N.Number, v8, v15, BP.mul_correct(an, B.Nought{})) : {v23 == N.add(v22, N.mul(N.add(v12, _), N.S{N.Z{}})) : N.Number}
       %Equal.sym(N.Number, v1, N.Z{}, {==}) : {v23 == N.add(v22, N.mul(N.add(v12, N.mul(v14, _)), N.S{N.Z{}})) : N.Number}
       %Equal.sym(N.Number, v12, N.Z{}, N.mul_zero(v10)) : {N.add(N.mul(N.add(_, v16), N.S{N.Z{}}), v22) == v24 : N.Number}
       %Equal.sym(N.Number, v16, N.Z{}, N.mul_zero(v14)) : {N.add(N.mul(N.add(N.Z{}, _), N.S{N.Z{}}), v22) == v24 : N.Number}
@@ -1949,18 +1949,18 @@ def mul_one(a):
       +v3 = N.mul(v1, v2)
       +v4 = B.value(ap)
       +v5 = N.mul(v4, v2)
-      +v6 = B.value(B.add(B.mul(ap, B.Zero{}), B.mul(an, B.Pos{B.One{}})))
+      +v6 = B.value(B.add(B.mul(ap, B.Nought{}), B.mul(an, B.Pos{B.One{}})))
       +v7 = N.mul(v6, v0)
       +v8 = N.add(v5, v7)
-      +v9 = B.value(B.add(B.mul(ap, B.Pos{B.One{}}), B.mul(an, B.Zero{})))
+      +v9 = B.value(B.add(B.mul(ap, B.Pos{B.One{}}), B.mul(an, B.Nought{})))
       +v10 = B.value(B.mul(ap, B.Pos{B.One{}}))
-      +v11 = B.value(B.mul(an, B.Zero{}))
+      +v11 = B.value(B.mul(an, B.Nought{}))
       +v12 = N.add(v10, v11)
       +v13 = B.value(B.Pos{B.One{}})
       +v14 = N.mul(v4, v13)
       +v15 = B.positive_value(B.One{})
       +v16 = N.mul(v4, N.S{N.Z{}})
-      +v17 = B.value(B.Zero{})
+      +v17 = B.value(B.Nought{})
       +v18 = N.mul(v1, v17)
       +v19 = N.mul(v1, N.Z{})
       +v20 = N.add(v16, v19)
@@ -1970,7 +1970,7 @@ def mul_one(a):
       +v24 = N.mul(v1, v23)
       +v25 = N.add(v21, v24)
       +v26 = N.mul(v4, v23)
-      +v27 = B.value(B.mul(ap, B.Zero{}))
+      +v27 = B.value(B.mul(ap, B.Nought{}))
       +v28 = B.value(B.mul(an, B.Pos{B.One{}}))
       +v29 = N.add(v27, v28)
       +v30 = N.mul(v4, v17)
@@ -1989,18 +1989,18 @@ def mul_one(a):
       +v43 = N.add(v41, v39)
       +v44 = N.add(N.Z{}, v1)
       Q.Witness{(
-      %Equal.sym(N.Number, v9, v12, BP.add_correct(B.mul(ap, B.Pos{B.One{}}), B.mul(an, B.Zero{}))) : {N.add(N.mul(_, v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v9, v12, BP.add_correct(B.mul(ap, B.Pos{B.One{}}), B.mul(an, B.Nought{}))) : {N.add(N.mul(_, v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v10, v14, BP.mul_correct(ap, B.Pos{B.One{}})) : {N.add(N.mul(N.add(_, v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v13, v15, {==}) : {N.add(N.mul(N.add(N.mul(v4, _), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v15, N.S{N.Z{}}, {==}) : {N.add(N.mul(N.add(N.mul(v4, _), v11), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v11, v18, BP.mul_correct(an, B.Zero{})) : {N.add(N.mul(N.add(v16, _), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v11, v18, BP.mul_correct(an, B.Nought{})) : {N.add(N.mul(N.add(v16, _), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v17, N.Z{}, {==}) : {N.add(N.mul(N.add(v16, N.mul(v1, _)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v2, v22, BP.positive_mul_correct(ad, B.One{})) : {N.add(v21, N.mul(v1, _)) == v8 : N.Number}
       %Equal.sym(N.Number, v15, N.S{N.Z{}}, {==}) : {N.add(v21, N.mul(v1, N.mul(v0, _))) == v8 : N.Number}
       %Equal.sym(N.Number, v2, v22, BP.positive_mul_correct(ad, B.One{})) : {v25 == N.add(N.mul(v4, _), v7) : N.Number}
       %Equal.sym(N.Number, v15, N.S{N.Z{}}, {==}) : {v25 == N.add(N.mul(v4, N.mul(v0, _)), v7) : N.Number}
-      %Equal.sym(N.Number, v6, v29, BP.add_correct(B.mul(ap, B.Zero{}), B.mul(an, B.Pos{B.One{}}))) : {v25 == N.add(v26, N.mul(_, v0)) : N.Number}
-      %Equal.sym(N.Number, v27, v30, BP.mul_correct(ap, B.Zero{})) : {v25 == N.add(v26, N.mul(N.add(_, v28), v0)) : N.Number}
+      %Equal.sym(N.Number, v6, v29, BP.add_correct(B.mul(ap, B.Nought{}), B.mul(an, B.Pos{B.One{}}))) : {v25 == N.add(v26, N.mul(_, v0)) : N.Number}
+      %Equal.sym(N.Number, v27, v30, BP.mul_correct(ap, B.Nought{})) : {v25 == N.add(v26, N.mul(N.add(_, v28), v0)) : N.Number}
       %Equal.sym(N.Number, v17, N.Z{}, {==}) : {v25 == N.add(v26, N.mul(N.add(N.mul(v4, _), v28), v0)) : N.Number}
       %Equal.sym(N.Number, v28, v32, BP.mul_correct(an, B.Pos{B.One{}})) : {v25 == N.add(v26, N.mul(N.add(v31, _), v0)) : N.Number}
       %Equal.sym(N.Number, v13, v15, {==}) : {v25 == N.add(v26, N.mul(N.add(v31, N.mul(v1, _)), v0)) : N.Number}
@@ -5795,23 +5795,23 @@ def chebyshev_two(a):
   match a:
     case Q.Fraction{ap, an, ad}:
       +v0 = B.positive_value(B.positive_mul(B.positive_mul(B.positive_mul(B.positive_mul(B.One{}, B.One{}), ad), ad), B.One{}))
-      +v1 = B.value(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), an)), an), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), ap)), ap)), B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(B.positive_mul(B.positive_mul(B.One{}, B.One{}), ad), ad)})))
+      +v1 = B.value(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), an)), an), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), ap)), ap)), B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(B.positive_mul(B.positive_mul(B.One{}, B.One{}), ad), ad)})))
       +v2 = B.positive_value(B.positive_mul(B.positive_mul(B.positive_mul(B.One{}, B.One{}), B.positive_mul(ad, ad)), B.One{}))
       +v3 = N.mul(v1, v2)
-      +v4 = B.value(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), an)), ap), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), ap)), an)), B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.positive_mul(B.positive_mul(B.positive_mul(B.One{}, B.One{}), ad), ad)})))
+      +v4 = B.value(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), an)), ap), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), ap)), an)), B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.positive_mul(B.positive_mul(B.positive_mul(B.One{}, B.One{}), ad), ad)})))
       +v5 = N.mul(v4, v2)
-      +v6 = B.value(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap))), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an)))), B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(B.positive_mul(B.One{}, B.One{}), B.positive_mul(ad, ad))})))
+      +v6 = B.value(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap))), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an)))), B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(B.positive_mul(B.One{}, B.One{}), B.positive_mul(ad, ad))})))
       +v7 = N.mul(v6, v0)
       +v8 = N.add(v5, v7)
-      +v9 = B.value(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an))), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap)))), B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.positive_mul(B.positive_mul(B.One{}, B.One{}), B.positive_mul(ad, ad))})))
-      +v10 = B.value(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an))), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap)))), B.Pos{B.One{}}))
-      +v11 = B.value(B.mul(B.Zero{}, B.Pos{B.positive_mul(B.positive_mul(B.One{}, B.One{}), B.positive_mul(ad, ad))}))
+      +v9 = B.value(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an))), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap)))), B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.positive_mul(B.positive_mul(B.One{}, B.One{}), B.positive_mul(ad, ad))})))
+      +v10 = B.value(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an))), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap)))), B.Pos{B.One{}}))
+      +v11 = B.value(B.mul(B.Nought{}, B.Pos{B.positive_mul(B.positive_mul(B.One{}, B.One{}), B.positive_mul(ad, ad))}))
       +v12 = N.add(v10, v11)
-      +v13 = B.value(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an))), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap)))))
+      +v13 = B.value(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an))), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap)))))
       +v14 = B.value(B.Pos{B.One{}})
       +v15 = N.mul(v13, v14)
       +v16 = B.value(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an))))
-      +v17 = B.value(B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap))))
+      +v17 = B.value(B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap))))
       +v18 = N.add(v16, v17)
       +v19 = B.value(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})))
       +v20 = B.value(B.add(B.mul(ap, ap), B.mul(an, an)))
@@ -5831,12 +5831,12 @@ def chebyshev_two(a):
       +v34 = N.mul(v33, v33)
       +v35 = N.add(v32, v34)
       +v36 = N.mul(v27, v35)
-      +v37 = B.value(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})))
+      +v37 = B.value(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})))
       +v38 = B.value(B.add(B.mul(ap, an), B.mul(an, ap)))
       +v39 = N.mul(v37, v38)
-      +v40 = B.value(B.mul(B.Zero{}, B.Pos{B.One{}}))
+      +v40 = B.value(B.mul(B.Nought{}, B.Pos{B.One{}}))
       +v41 = N.add(v40, v40)
-      +v42 = B.value(B.Zero{})
+      +v42 = B.value(B.Nought{})
       +v43 = N.mul(v42, v14)
       +v44 = N.mul(N.Z{}, N.S{N.Z{}})
       +v45 = N.add(v44, v44)
@@ -5870,18 +5870,18 @@ def chebyshev_two(a):
       +v73 = N.mul(v72, v62)
       +v74 = N.mul(v73, N.S{N.Z{}})
       +v75 = N.mul(v66, v74)
-      +v76 = B.value(B.mul(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), an)), an), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), ap)), ap)), B.Pos{B.One{}}))
+      +v76 = B.value(B.mul(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), an)), an), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), ap)), ap)), B.Pos{B.One{}}))
       +v77 = B.value(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(B.positive_mul(B.positive_mul(B.One{}, B.One{}), ad), ad)}))
       +v78 = N.add(v76, v77)
-      +v79 = B.value(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), an)), an), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), ap)), ap)))
+      +v79 = B.value(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), an)), an), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), ap)), ap)))
       +v80 = N.mul(v79, v14)
-      +v81 = B.value(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), an)), an))
-      +v82 = B.value(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), ap)), ap))
+      +v81 = B.value(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), an)), an))
+      +v82 = B.value(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), ap)), ap))
       +v83 = N.add(v81, v82)
-      +v84 = B.value(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), an)))
+      +v84 = B.value(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), an)))
       +v85 = N.mul(v84, v33)
       +v86 = B.value(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap))
-      +v87 = B.value(B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), an))
+      +v87 = B.value(B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), an))
       +v88 = N.add(v86, v87)
       +v89 = N.mul(v19, v31)
       +v90 = N.mul(v27, v31)
@@ -5889,10 +5889,10 @@ def chebyshev_two(a):
       +v92 = N.mul(v45, v33)
       +v93 = N.add(v90, v92)
       +v94 = N.mul(v93, v33)
-      +v95 = B.value(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), ap)))
+      +v95 = B.value(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), ap)))
       +v96 = N.mul(v95, v31)
       +v97 = B.value(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an))
-      +v98 = B.value(B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), ap))
+      +v98 = B.value(B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), ap))
       +v99 = N.add(v97, v98)
       +v100 = N.mul(v19, v33)
       +v101 = N.mul(v27, v33)
@@ -5910,13 +5910,13 @@ def chebyshev_two(a):
       +v113 = N.mul(v64, N.S{N.Z{}})
       +v114 = N.mul(v111, v113)
       +v115 = N.add(v75, v114)
-      +v116 = B.value(B.mul(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), an)), ap), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), ap)), an)), B.Pos{B.One{}}))
-      +v117 = B.value(B.mul(B.Zero{}, B.Pos{B.positive_mul(B.positive_mul(B.positive_mul(B.One{}, B.One{}), ad), ad)}))
+      +v116 = B.value(B.mul(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), an)), ap), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), ap)), an)), B.Pos{B.One{}}))
+      +v117 = B.value(B.mul(B.Nought{}, B.Pos{B.positive_mul(B.positive_mul(B.positive_mul(B.One{}, B.One{}), ad), ad)}))
       +v118 = N.add(v116, v117)
-      +v119 = B.value(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), an)), ap), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), ap)), an)))
+      +v119 = B.value(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), an)), ap), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), ap)), an)))
       +v120 = N.mul(v119, v14)
-      +v121 = B.value(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), an)), ap))
-      +v122 = B.value(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), ap)), an))
+      +v121 = B.value(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), an)), ap))
+      +v122 = B.value(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), ap)), an))
       +v123 = N.add(v121, v122)
       +v124 = N.mul(v84, v31)
       +v125 = N.mul(v93, v31)
@@ -5928,13 +5928,13 @@ def chebyshev_two(a):
       +v131 = N.mul(N.Z{}, v73)
       +v132 = N.add(v129, v131)
       +v133 = N.mul(v132, v113)
-      +v134 = B.value(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap))), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an)))), B.Pos{B.One{}}))
+      +v134 = B.value(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap))), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an)))), B.Pos{B.One{}}))
       +v135 = B.value(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(B.positive_mul(B.One{}, B.One{}), B.positive_mul(ad, ad))}))
       +v136 = N.add(v134, v135)
-      +v137 = B.value(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap))), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an)))))
+      +v137 = B.value(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap))), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an)))))
       +v138 = N.mul(v137, v14)
       +v139 = B.value(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap))))
-      +v140 = B.value(B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an))))
+      +v140 = B.value(B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an))))
       +v141 = N.add(v139, v140)
       +v142 = N.mul(v19, v38)
       +v143 = N.mul(v27, v51)
@@ -6110,9 +6110,9 @@ def chebyshev_two(a):
       +v313 = N.mul(N.Z{}, v154)
       +v314 = N.add(v223, N.Z{})
       Q.Witness{(
-      %Equal.sym(N.Number, v9, v12, BP.add_correct(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an))), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap)))), B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.positive_mul(B.positive_mul(B.One{}, B.One{}), B.positive_mul(ad, ad))}))) : {N.add(N.mul(_, v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v10, v15, BP.mul_correct(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an))), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap)))), B.Pos{B.One{}})) : {N.add(N.mul(N.add(_, v11), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v13, v18, BP.add_correct(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an))), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap))))) : {N.add(N.mul(N.add(N.mul(_, v14), v11), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v9, v12, BP.add_correct(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an))), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap)))), B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.positive_mul(B.positive_mul(B.One{}, B.One{}), B.positive_mul(ad, ad))}))) : {N.add(N.mul(_, v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v10, v15, BP.mul_correct(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an))), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap)))), B.Pos{B.One{}})) : {N.add(N.mul(N.add(_, v11), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v13, v18, BP.add_correct(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an))), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap))))) : {N.add(N.mul(N.add(N.mul(_, v14), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v16, v21, BP.mul_correct(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an)))) : {N.add(N.mul(N.add(N.mul(N.add(_, v17), v14), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v19, v23, BP.add_correct(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}))) : {N.add(N.mul(N.add(N.mul(N.add(N.mul(_, v20), v17), v14), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v22, v24, BP.mul_correct(B.Pos{B.One{}}, B.Pos{B.One{}})) : {N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(_, _), v20), v17), v14), v11), v0), v3) == v8 : N.Number}
@@ -6121,16 +6121,16 @@ def chebyshev_two(a):
       %Equal.sym(N.Number, v20, v30, BP.add_correct(B.mul(ap, ap), B.mul(an, an))) : {N.add(N.mul(N.add(N.mul(N.add(N.mul(v27, _), v17), N.S{N.Z{}}), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v28, v32, BP.mul_correct(ap, ap)) : {N.add(N.mul(N.add(N.mul(N.add(N.mul(v27, N.add(_, v29)), v17), N.S{N.Z{}}), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v29, v34, BP.mul_correct(an, an)) : {N.add(N.mul(N.add(N.mul(N.add(N.mul(v27, N.add(v32, _)), v17), N.S{N.Z{}}), v11), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v17, v39, BP.mul_correct(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap)))) : {N.add(N.mul(N.add(N.mul(N.add(v36, _), N.S{N.Z{}}), v11), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v37, v41, BP.add_correct(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}}))) : {N.add(N.mul(N.add(N.mul(N.add(v36, N.mul(_, v38)), N.S{N.Z{}}), v11), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v40, v43, BP.mul_correct(B.Zero{}, B.Pos{B.One{}})) : {N.add(N.mul(N.add(N.mul(N.add(v36, N.mul(N.add(_, _), v38)), N.S{N.Z{}}), v11), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v17, v39, BP.mul_correct(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap)))) : {N.add(N.mul(N.add(N.mul(N.add(v36, _), N.S{N.Z{}}), v11), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v37, v41, BP.add_correct(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}}))) : {N.add(N.mul(N.add(N.mul(N.add(v36, N.mul(_, v38)), N.S{N.Z{}}), v11), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v40, v43, BP.mul_correct(B.Nought{}, B.Pos{B.One{}})) : {N.add(N.mul(N.add(N.mul(N.add(v36, N.mul(N.add(_, _), v38)), N.S{N.Z{}}), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v42, N.Z{}, {==}) : {N.add(N.mul(N.add(N.mul(N.add(v36, N.mul(N.add(N.mul(_, v14), N.mul(_, v14)), v38)), N.S{N.Z{}}), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v14, v25, {==}) : {N.add(N.mul(N.add(N.mul(N.add(v36, N.mul(N.add(N.mul(N.Z{}, _), N.mul(N.Z{}, _)), v38)), N.S{N.Z{}}), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v25, N.S{N.Z{}}, {==}) : {N.add(N.mul(N.add(N.mul(N.add(v36, N.mul(N.add(N.mul(N.Z{}, _), N.mul(N.Z{}, _)), v38)), N.S{N.Z{}}), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v38, v48, BP.add_correct(B.mul(ap, an), B.mul(an, ap))) : {N.add(N.mul(N.add(N.mul(N.add(v36, N.mul(v45, _)), N.S{N.Z{}}), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v46, v49, BP.mul_correct(ap, an)) : {N.add(N.mul(N.add(N.mul(N.add(v36, N.mul(v45, N.add(_, v47))), N.S{N.Z{}}), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v47, v50, BP.mul_correct(an, ap)) : {N.add(N.mul(N.add(N.mul(N.add(v36, N.mul(v45, N.add(v49, _))), N.S{N.Z{}}), v11), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v11, v56, BP.mul_correct(B.Zero{}, B.Pos{B.positive_mul(B.positive_mul(B.One{}, B.One{}), B.positive_mul(ad, ad))})) : {N.add(N.mul(N.add(v54, _), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v11, v56, BP.mul_correct(B.Nought{}, B.Pos{B.positive_mul(B.positive_mul(B.One{}, B.One{}), B.positive_mul(ad, ad))})) : {N.add(N.mul(N.add(v54, _), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v42, N.Z{}, {==}) : {N.add(N.mul(N.add(v54, N.mul(_, v55)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v55, v57, {==}) : {N.add(N.mul(N.add(v54, N.mul(N.Z{}, _)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v57, v60, BP.positive_mul_correct(B.positive_mul(B.One{}, B.One{}), B.positive_mul(ad, ad))) : {N.add(N.mul(N.add(v54, N.mul(N.Z{}, _)), v0), v3) == v8 : N.Number}
@@ -6142,32 +6142,32 @@ def chebyshev_two(a):
       %Equal.sym(N.Number, v69, v71, BP.positive_mul_correct(B.positive_mul(B.One{}, B.One{}), ad)) : {N.add(N.mul(v66, N.mul(N.mul(_, v62), v25)), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v58, v61, BP.positive_mul_correct(B.One{}, B.One{})) : {N.add(N.mul(v66, N.mul(N.mul(N.mul(_, v62), v62), v25)), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v25, N.S{N.Z{}}, {==}) : {N.add(N.mul(v66, N.mul(N.mul(N.mul(N.mul(_, _), v62), v62), _)), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v1, v78, BP.add_correct(B.mul(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), an)), an), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), ap)), ap)), B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(B.positive_mul(B.positive_mul(B.One{}, B.One{}), ad), ad)}))) : {N.add(v75, N.mul(_, v2)) == v8 : N.Number}
-      %Equal.sym(N.Number, v76, v80, BP.mul_correct(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), an)), an), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), ap)), ap)), B.Pos{B.One{}})) : {N.add(v75, N.mul(N.add(_, v77), v2)) == v8 : N.Number}
-      %Equal.sym(N.Number, v79, v83, BP.add_correct(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), an)), an), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), ap)), ap))) : {N.add(v75, N.mul(N.add(N.mul(_, v14), v77), v2)) == v8 : N.Number}
-      %Equal.sym(N.Number, v81, v85, BP.mul_correct(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), an)), an)) : {N.add(v75, N.mul(N.add(N.mul(N.add(_, v82), v14), v77), v2)) == v8 : N.Number}
-      %Equal.sym(N.Number, v84, v88, BP.add_correct(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), an))) : {N.add(v75, N.mul(N.add(N.mul(N.add(N.mul(_, v33), v82), v14), v77), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v1, v78, BP.add_correct(B.mul(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), an)), an), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), ap)), ap)), B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(B.positive_mul(B.positive_mul(B.One{}, B.One{}), ad), ad)}))) : {N.add(v75, N.mul(_, v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v76, v80, BP.mul_correct(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), an)), an), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), ap)), ap)), B.Pos{B.One{}})) : {N.add(v75, N.mul(N.add(_, v77), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v79, v83, BP.add_correct(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), an)), an), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), ap)), ap))) : {N.add(v75, N.mul(N.add(N.mul(_, v14), v77), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v81, v85, BP.mul_correct(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), an)), an)) : {N.add(v75, N.mul(N.add(N.mul(N.add(_, v82), v14), v77), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v84, v88, BP.add_correct(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), an))) : {N.add(v75, N.mul(N.add(N.mul(N.add(N.mul(_, v33), v82), v14), v77), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v86, v89, BP.mul_correct(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap)) : {N.add(v75, N.mul(N.add(N.mul(N.add(N.mul(N.add(_, v87), v33), v82), v14), v77), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v19, v23, BP.add_correct(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}))) : {N.add(v75, N.mul(N.add(N.mul(N.add(N.mul(N.add(N.mul(_, v31), v87), v33), v82), v14), v77), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v22, v24, BP.mul_correct(B.Pos{B.One{}}, B.Pos{B.One{}})) : {N.add(v75, N.mul(N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(_, _), v31), v87), v33), v82), v14), v77), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v14, v25, {==}) : {N.add(v75, N.mul(N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(N.mul(_, _), N.mul(_, _)), v31), v87), v33), v82), _), v77), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v25, N.S{N.Z{}}, {==}) : {N.add(v75, N.mul(N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(N.mul(_, _), N.mul(_, _)), v31), v87), v33), v82), _), v77), v2)) == v8 : N.Number}
-      %Equal.sym(N.Number, v87, v91, BP.mul_correct(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), an)) : {N.add(v75, N.mul(N.add(N.mul(N.add(N.mul(N.add(v90, _), v33), v82), N.S{N.Z{}}), v77), v2)) == v8 : N.Number}
-      %Equal.sym(N.Number, v37, v41, BP.add_correct(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}}))) : {N.add(v75, N.mul(N.add(N.mul(N.add(N.mul(N.add(v90, N.mul(_, v33)), v33), v82), N.S{N.Z{}}), v77), v2)) == v8 : N.Number}
-      %Equal.sym(N.Number, v40, v43, BP.mul_correct(B.Zero{}, B.Pos{B.One{}})) : {N.add(v75, N.mul(N.add(N.mul(N.add(N.mul(N.add(v90, N.mul(N.add(_, _), v33)), v33), v82), N.S{N.Z{}}), v77), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v87, v91, BP.mul_correct(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), an)) : {N.add(v75, N.mul(N.add(N.mul(N.add(N.mul(N.add(v90, _), v33), v82), N.S{N.Z{}}), v77), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v37, v41, BP.add_correct(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}}))) : {N.add(v75, N.mul(N.add(N.mul(N.add(N.mul(N.add(v90, N.mul(_, v33)), v33), v82), N.S{N.Z{}}), v77), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v40, v43, BP.mul_correct(B.Nought{}, B.Pos{B.One{}})) : {N.add(v75, N.mul(N.add(N.mul(N.add(N.mul(N.add(v90, N.mul(N.add(_, _), v33)), v33), v82), N.S{N.Z{}}), v77), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v42, N.Z{}, {==}) : {N.add(v75, N.mul(N.add(N.mul(N.add(N.mul(N.add(v90, N.mul(N.add(N.mul(_, v14), N.mul(_, v14)), v33)), v33), v82), N.S{N.Z{}}), v77), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v14, v25, {==}) : {N.add(v75, N.mul(N.add(N.mul(N.add(N.mul(N.add(v90, N.mul(N.add(N.mul(N.Z{}, _), N.mul(N.Z{}, _)), v33)), v33), v82), N.S{N.Z{}}), v77), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v25, N.S{N.Z{}}, {==}) : {N.add(v75, N.mul(N.add(N.mul(N.add(N.mul(N.add(v90, N.mul(N.add(N.mul(N.Z{}, _), N.mul(N.Z{}, _)), v33)), v33), v82), N.S{N.Z{}}), v77), v2)) == v8 : N.Number}
-      %Equal.sym(N.Number, v82, v96, BP.mul_correct(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), ap)), ap)) : {N.add(v75, N.mul(N.add(N.mul(N.add(v94, _), N.S{N.Z{}}), v77), v2)) == v8 : N.Number}
-      %Equal.sym(N.Number, v95, v99, BP.add_correct(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), ap))) : {N.add(v75, N.mul(N.add(N.mul(N.add(v94, N.mul(_, v31)), N.S{N.Z{}}), v77), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v82, v96, BP.mul_correct(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), ap)), ap)) : {N.add(v75, N.mul(N.add(N.mul(N.add(v94, _), N.S{N.Z{}}), v77), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v95, v99, BP.add_correct(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), ap))) : {N.add(v75, N.mul(N.add(N.mul(N.add(v94, N.mul(_, v31)), N.S{N.Z{}}), v77), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v97, v100, BP.mul_correct(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an)) : {N.add(v75, N.mul(N.add(N.mul(N.add(v94, N.mul(N.add(_, v98), v31)), N.S{N.Z{}}), v77), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v19, v23, BP.add_correct(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}))) : {N.add(v75, N.mul(N.add(N.mul(N.add(v94, N.mul(N.add(N.mul(_, v33), v98), v31)), N.S{N.Z{}}), v77), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v22, v24, BP.mul_correct(B.Pos{B.One{}}, B.Pos{B.One{}})) : {N.add(v75, N.mul(N.add(N.mul(N.add(v94, N.mul(N.add(N.mul(N.add(_, _), v33), v98), v31)), N.S{N.Z{}}), v77), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v14, v25, {==}) : {N.add(v75, N.mul(N.add(N.mul(N.add(v94, N.mul(N.add(N.mul(N.add(N.mul(_, _), N.mul(_, _)), v33), v98), v31)), N.S{N.Z{}}), v77), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v25, N.S{N.Z{}}, {==}) : {N.add(v75, N.mul(N.add(N.mul(N.add(v94, N.mul(N.add(N.mul(N.add(N.mul(_, _), N.mul(_, _)), v33), v98), v31)), N.S{N.Z{}}), v77), v2)) == v8 : N.Number}
-      %Equal.sym(N.Number, v98, v102, BP.mul_correct(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), ap)) : {N.add(v75, N.mul(N.add(N.mul(N.add(v94, N.mul(N.add(v101, _), v31)), N.S{N.Z{}}), v77), v2)) == v8 : N.Number}
-      %Equal.sym(N.Number, v37, v41, BP.add_correct(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}}))) : {N.add(v75, N.mul(N.add(N.mul(N.add(v94, N.mul(N.add(v101, N.mul(_, v31)), v31)), N.S{N.Z{}}), v77), v2)) == v8 : N.Number}
-      %Equal.sym(N.Number, v40, v43, BP.mul_correct(B.Zero{}, B.Pos{B.One{}})) : {N.add(v75, N.mul(N.add(N.mul(N.add(v94, N.mul(N.add(v101, N.mul(N.add(_, _), v31)), v31)), N.S{N.Z{}}), v77), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v98, v102, BP.mul_correct(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), ap)) : {N.add(v75, N.mul(N.add(N.mul(N.add(v94, N.mul(N.add(v101, _), v31)), N.S{N.Z{}}), v77), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v37, v41, BP.add_correct(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}}))) : {N.add(v75, N.mul(N.add(N.mul(N.add(v94, N.mul(N.add(v101, N.mul(_, v31)), v31)), N.S{N.Z{}}), v77), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v40, v43, BP.mul_correct(B.Nought{}, B.Pos{B.One{}})) : {N.add(v75, N.mul(N.add(N.mul(N.add(v94, N.mul(N.add(v101, N.mul(N.add(_, _), v31)), v31)), N.S{N.Z{}}), v77), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v42, N.Z{}, {==}) : {N.add(v75, N.mul(N.add(N.mul(N.add(v94, N.mul(N.add(v101, N.mul(N.add(N.mul(_, v14), N.mul(_, v14)), v31)), v31)), N.S{N.Z{}}), v77), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v14, v25, {==}) : {N.add(v75, N.mul(N.add(N.mul(N.add(v94, N.mul(N.add(v101, N.mul(N.add(N.mul(N.Z{}, _), N.mul(N.Z{}, _)), v31)), v31)), N.S{N.Z{}}), v77), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v25, N.S{N.Z{}}, {==}) : {N.add(v75, N.mul(N.add(N.mul(N.add(v94, N.mul(N.add(v101, N.mul(N.add(N.mul(N.Z{}, _), N.mul(N.Z{}, _)), v31)), v31)), N.S{N.Z{}}), v77), v2)) == v8 : N.Number}
@@ -6184,36 +6184,36 @@ def chebyshev_two(a):
       %Equal.sym(N.Number, v58, v61, BP.positive_mul_correct(B.One{}, B.One{})) : {N.add(v75, N.mul(v111, N.mul(N.mul(_, v59), v25))) == v8 : N.Number}
       %Equal.sym(N.Number, v25, N.S{N.Z{}}, {==}) : {N.add(v75, N.mul(v111, N.mul(N.mul(N.mul(_, _), v59), _))) == v8 : N.Number}
       %Equal.sym(N.Number, v59, v63, BP.positive_mul_correct(ad, ad)) : {N.add(v75, N.mul(v111, N.mul(N.mul(v26, _), N.S{N.Z{}}))) == v8 : N.Number}
-      %Equal.sym(N.Number, v4, v118, BP.add_correct(B.mul(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), an)), ap), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), ap)), an)), B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.positive_mul(B.positive_mul(B.positive_mul(B.One{}, B.One{}), ad), ad)}))) : {v115 == N.add(N.mul(_, v2), v7) : N.Number}
-      %Equal.sym(N.Number, v116, v120, BP.mul_correct(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), an)), ap), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), ap)), an)), B.Pos{B.One{}})) : {v115 == N.add(N.mul(N.add(_, v117), v2), v7) : N.Number}
-      %Equal.sym(N.Number, v119, v123, BP.add_correct(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), an)), ap), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), ap)), an))) : {v115 == N.add(N.mul(N.add(N.mul(_, v14), v117), v2), v7) : N.Number}
-      %Equal.sym(N.Number, v121, v124, BP.mul_correct(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), an)), ap)) : {v115 == N.add(N.mul(N.add(N.mul(N.add(_, v122), v14), v117), v2), v7) : N.Number}
-      %Equal.sym(N.Number, v84, v88, BP.add_correct(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), an))) : {v115 == N.add(N.mul(N.add(N.mul(N.add(N.mul(_, v31), v122), v14), v117), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v4, v118, BP.add_correct(B.mul(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), an)), ap), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), ap)), an)), B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.positive_mul(B.positive_mul(B.positive_mul(B.One{}, B.One{}), ad), ad)}))) : {v115 == N.add(N.mul(_, v2), v7) : N.Number}
+      %Equal.sym(N.Number, v116, v120, BP.mul_correct(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), an)), ap), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), ap)), an)), B.Pos{B.One{}})) : {v115 == N.add(N.mul(N.add(_, v117), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v119, v123, BP.add_correct(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), an)), ap), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), ap)), an))) : {v115 == N.add(N.mul(N.add(N.mul(_, v14), v117), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v121, v124, BP.mul_correct(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), an)), ap)) : {v115 == N.add(N.mul(N.add(N.mul(N.add(_, v122), v14), v117), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v84, v88, BP.add_correct(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), an))) : {v115 == N.add(N.mul(N.add(N.mul(N.add(N.mul(_, v31), v122), v14), v117), v2), v7) : N.Number}
       %Equal.sym(N.Number, v86, v89, BP.mul_correct(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), ap)) : {v115 == N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(_, v87), v31), v122), v14), v117), v2), v7) : N.Number}
       %Equal.sym(N.Number, v19, v23, BP.add_correct(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}))) : {v115 == N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(N.mul(_, v31), v87), v31), v122), v14), v117), v2), v7) : N.Number}
       %Equal.sym(N.Number, v22, v24, BP.mul_correct(B.Pos{B.One{}}, B.Pos{B.One{}})) : {v115 == N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(_, _), v31), v87), v31), v122), v14), v117), v2), v7) : N.Number}
       %Equal.sym(N.Number, v14, v25, {==}) : {v115 == N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(N.mul(_, _), N.mul(_, _)), v31), v87), v31), v122), _), v117), v2), v7) : N.Number}
       %Equal.sym(N.Number, v25, N.S{N.Z{}}, {==}) : {v115 == N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(N.mul(_, _), N.mul(_, _)), v31), v87), v31), v122), _), v117), v2), v7) : N.Number}
-      %Equal.sym(N.Number, v87, v91, BP.mul_correct(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), an)) : {v115 == N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(v90, _), v31), v122), N.S{N.Z{}}), v117), v2), v7) : N.Number}
-      %Equal.sym(N.Number, v37, v41, BP.add_correct(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}}))) : {v115 == N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(v90, N.mul(_, v33)), v31), v122), N.S{N.Z{}}), v117), v2), v7) : N.Number}
-      %Equal.sym(N.Number, v40, v43, BP.mul_correct(B.Zero{}, B.Pos{B.One{}})) : {v115 == N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(v90, N.mul(N.add(_, _), v33)), v31), v122), N.S{N.Z{}}), v117), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v87, v91, BP.mul_correct(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), an)) : {v115 == N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(v90, _), v31), v122), N.S{N.Z{}}), v117), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v37, v41, BP.add_correct(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}}))) : {v115 == N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(v90, N.mul(_, v33)), v31), v122), N.S{N.Z{}}), v117), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v40, v43, BP.mul_correct(B.Nought{}, B.Pos{B.One{}})) : {v115 == N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(v90, N.mul(N.add(_, _), v33)), v31), v122), N.S{N.Z{}}), v117), v2), v7) : N.Number}
       %Equal.sym(N.Number, v42, N.Z{}, {==}) : {v115 == N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(v90, N.mul(N.add(N.mul(_, v14), N.mul(_, v14)), v33)), v31), v122), N.S{N.Z{}}), v117), v2), v7) : N.Number}
       %Equal.sym(N.Number, v14, v25, {==}) : {v115 == N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(v90, N.mul(N.add(N.mul(N.Z{}, _), N.mul(N.Z{}, _)), v33)), v31), v122), N.S{N.Z{}}), v117), v2), v7) : N.Number}
       %Equal.sym(N.Number, v25, N.S{N.Z{}}, {==}) : {v115 == N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(v90, N.mul(N.add(N.mul(N.Z{}, _), N.mul(N.Z{}, _)), v33)), v31), v122), N.S{N.Z{}}), v117), v2), v7) : N.Number}
-      %Equal.sym(N.Number, v122, v126, BP.mul_correct(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), ap)), an)) : {v115 == N.add(N.mul(N.add(N.mul(N.add(v125, _), N.S{N.Z{}}), v117), v2), v7) : N.Number}
-      %Equal.sym(N.Number, v95, v99, BP.add_correct(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), ap))) : {v115 == N.add(N.mul(N.add(N.mul(N.add(v125, N.mul(_, v33)), N.S{N.Z{}}), v117), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v122, v126, BP.mul_correct(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), ap)), an)) : {v115 == N.add(N.mul(N.add(N.mul(N.add(v125, _), N.S{N.Z{}}), v117), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v95, v99, BP.add_correct(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), ap))) : {v115 == N.add(N.mul(N.add(N.mul(N.add(v125, N.mul(_, v33)), N.S{N.Z{}}), v117), v2), v7) : N.Number}
       %Equal.sym(N.Number, v97, v100, BP.mul_correct(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), an)) : {v115 == N.add(N.mul(N.add(N.mul(N.add(v125, N.mul(N.add(_, v98), v33)), N.S{N.Z{}}), v117), v2), v7) : N.Number}
       %Equal.sym(N.Number, v19, v23, BP.add_correct(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}))) : {v115 == N.add(N.mul(N.add(N.mul(N.add(v125, N.mul(N.add(N.mul(_, v33), v98), v33)), N.S{N.Z{}}), v117), v2), v7) : N.Number}
       %Equal.sym(N.Number, v22, v24, BP.mul_correct(B.Pos{B.One{}}, B.Pos{B.One{}})) : {v115 == N.add(N.mul(N.add(N.mul(N.add(v125, N.mul(N.add(N.mul(N.add(_, _), v33), v98), v33)), N.S{N.Z{}}), v117), v2), v7) : N.Number}
       %Equal.sym(N.Number, v14, v25, {==}) : {v115 == N.add(N.mul(N.add(N.mul(N.add(v125, N.mul(N.add(N.mul(N.add(N.mul(_, _), N.mul(_, _)), v33), v98), v33)), N.S{N.Z{}}), v117), v2), v7) : N.Number}
       %Equal.sym(N.Number, v25, N.S{N.Z{}}, {==}) : {v115 == N.add(N.mul(N.add(N.mul(N.add(v125, N.mul(N.add(N.mul(N.add(N.mul(_, _), N.mul(_, _)), v33), v98), v33)), N.S{N.Z{}}), v117), v2), v7) : N.Number}
-      %Equal.sym(N.Number, v98, v102, BP.mul_correct(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), ap)) : {v115 == N.add(N.mul(N.add(N.mul(N.add(v125, N.mul(N.add(v101, _), v33)), N.S{N.Z{}}), v117), v2), v7) : N.Number}
-      %Equal.sym(N.Number, v37, v41, BP.add_correct(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}}))) : {v115 == N.add(N.mul(N.add(N.mul(N.add(v125, N.mul(N.add(v101, N.mul(_, v31)), v33)), N.S{N.Z{}}), v117), v2), v7) : N.Number}
-      %Equal.sym(N.Number, v40, v43, BP.mul_correct(B.Zero{}, B.Pos{B.One{}})) : {v115 == N.add(N.mul(N.add(N.mul(N.add(v125, N.mul(N.add(v101, N.mul(N.add(_, _), v31)), v33)), N.S{N.Z{}}), v117), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v98, v102, BP.mul_correct(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), ap)) : {v115 == N.add(N.mul(N.add(N.mul(N.add(v125, N.mul(N.add(v101, _), v33)), N.S{N.Z{}}), v117), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v37, v41, BP.add_correct(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}}))) : {v115 == N.add(N.mul(N.add(N.mul(N.add(v125, N.mul(N.add(v101, N.mul(_, v31)), v33)), N.S{N.Z{}}), v117), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v40, v43, BP.mul_correct(B.Nought{}, B.Pos{B.One{}})) : {v115 == N.add(N.mul(N.add(N.mul(N.add(v125, N.mul(N.add(v101, N.mul(N.add(_, _), v31)), v33)), N.S{N.Z{}}), v117), v2), v7) : N.Number}
       %Equal.sym(N.Number, v42, N.Z{}, {==}) : {v115 == N.add(N.mul(N.add(N.mul(N.add(v125, N.mul(N.add(v101, N.mul(N.add(N.mul(_, v14), N.mul(_, v14)), v31)), v33)), N.S{N.Z{}}), v117), v2), v7) : N.Number}
       %Equal.sym(N.Number, v14, v25, {==}) : {v115 == N.add(N.mul(N.add(N.mul(N.add(v125, N.mul(N.add(v101, N.mul(N.add(N.mul(N.Z{}, _), N.mul(N.Z{}, _)), v31)), v33)), N.S{N.Z{}}), v117), v2), v7) : N.Number}
       %Equal.sym(N.Number, v25, N.S{N.Z{}}, {==}) : {v115 == N.add(N.mul(N.add(N.mul(N.add(v125, N.mul(N.add(v101, N.mul(N.add(N.mul(N.Z{}, _), N.mul(N.Z{}, _)), v31)), v33)), N.S{N.Z{}}), v117), v2), v7) : N.Number}
-      %Equal.sym(N.Number, v117, v130, BP.mul_correct(B.Zero{}, B.Pos{B.positive_mul(B.positive_mul(B.positive_mul(B.One{}, B.One{}), ad), ad)})) : {v115 == N.add(N.mul(N.add(v129, _), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v117, v130, BP.mul_correct(B.Nought{}, B.Pos{B.positive_mul(B.positive_mul(B.positive_mul(B.One{}, B.One{}), ad), ad)})) : {v115 == N.add(N.mul(N.add(v129, _), v2), v7) : N.Number}
       %Equal.sym(N.Number, v42, N.Z{}, {==}) : {v115 == N.add(N.mul(N.add(v129, N.mul(_, v108)), v2), v7) : N.Number}
       %Equal.sym(N.Number, v108, v67, {==}) : {v115 == N.add(N.mul(N.add(v129, N.mul(N.Z{}, _)), v2), v7) : N.Number}
       %Equal.sym(N.Number, v67, v70, BP.positive_mul_correct(B.positive_mul(B.positive_mul(B.One{}, B.One{}), ad), ad)) : {v115 == N.add(N.mul(N.add(v129, N.mul(N.Z{}, _)), v2), v7) : N.Number}
@@ -6225,9 +6225,9 @@ def chebyshev_two(a):
       %Equal.sym(N.Number, v58, v61, BP.positive_mul_correct(B.One{}, B.One{})) : {v115 == N.add(N.mul(v132, N.mul(N.mul(_, v59), v25)), v7) : N.Number}
       %Equal.sym(N.Number, v25, N.S{N.Z{}}, {==}) : {v115 == N.add(N.mul(v132, N.mul(N.mul(N.mul(_, _), v59), _)), v7) : N.Number}
       %Equal.sym(N.Number, v59, v63, BP.positive_mul_correct(ad, ad)) : {v115 == N.add(N.mul(v132, N.mul(N.mul(v26, _), N.S{N.Z{}})), v7) : N.Number}
-      %Equal.sym(N.Number, v6, v136, BP.add_correct(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap))), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an)))), B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(B.positive_mul(B.One{}, B.One{}), B.positive_mul(ad, ad))}))) : {v115 == N.add(v133, N.mul(_, v0)) : N.Number}
-      %Equal.sym(N.Number, v134, v138, BP.mul_correct(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap))), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an)))), B.Pos{B.One{}})) : {v115 == N.add(v133, N.mul(N.add(_, v135), v0)) : N.Number}
-      %Equal.sym(N.Number, v137, v141, BP.add_correct(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap))), B.mul(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an))))) : {v115 == N.add(v133, N.mul(N.add(N.mul(_, v14), v135), v0)) : N.Number}
+      %Equal.sym(N.Number, v6, v136, BP.add_correct(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap))), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an)))), B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(B.positive_mul(B.One{}, B.One{}), B.positive_mul(ad, ad))}))) : {v115 == N.add(v133, N.mul(_, v0)) : N.Number}
+      %Equal.sym(N.Number, v134, v138, BP.mul_correct(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap))), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an)))), B.Pos{B.One{}})) : {v115 == N.add(v133, N.mul(N.add(_, v135), v0)) : N.Number}
+      %Equal.sym(N.Number, v137, v141, BP.add_correct(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap))), B.mul(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an))))) : {v115 == N.add(v133, N.mul(N.add(N.mul(_, v14), v135), v0)) : N.Number}
       %Equal.sym(N.Number, v139, v142, BP.mul_correct(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}})), B.add(B.mul(ap, an), B.mul(an, ap)))) : {v115 == N.add(v133, N.mul(N.add(N.mul(N.add(_, v140), v14), v135), v0)) : N.Number}
       %Equal.sym(N.Number, v19, v23, BP.add_correct(B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}), B.mul(B.Pos{B.One{}}, B.Pos{B.One{}}))) : {v115 == N.add(v133, N.mul(N.add(N.mul(N.add(N.mul(_, v38), v140), v14), v135), v0)) : N.Number}
       %Equal.sym(N.Number, v22, v24, BP.mul_correct(B.Pos{B.One{}}, B.Pos{B.One{}})) : {v115 == N.add(v133, N.mul(N.add(N.mul(N.add(N.mul(N.add(_, _), v38), v140), v14), v135), v0)) : N.Number}
@@ -6236,9 +6236,9 @@ def chebyshev_two(a):
       %Equal.sym(N.Number, v38, v48, BP.add_correct(B.mul(ap, an), B.mul(an, ap))) : {v115 == N.add(v133, N.mul(N.add(N.mul(N.add(N.mul(v27, _), v140), N.S{N.Z{}}), v135), v0)) : N.Number}
       %Equal.sym(N.Number, v46, v49, BP.mul_correct(ap, an)) : {v115 == N.add(v133, N.mul(N.add(N.mul(N.add(N.mul(v27, N.add(_, v47)), v140), N.S{N.Z{}}), v135), v0)) : N.Number}
       %Equal.sym(N.Number, v47, v50, BP.mul_correct(an, ap)) : {v115 == N.add(v133, N.mul(N.add(N.mul(N.add(N.mul(v27, N.add(v49, _)), v140), N.S{N.Z{}}), v135), v0)) : N.Number}
-      %Equal.sym(N.Number, v140, v144, BP.mul_correct(B.add(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an)))) : {v115 == N.add(v133, N.mul(N.add(N.mul(N.add(v143, _), N.S{N.Z{}}), v135), v0)) : N.Number}
-      %Equal.sym(N.Number, v37, v41, BP.add_correct(B.mul(B.Zero{}, B.Pos{B.One{}}), B.mul(B.Zero{}, B.Pos{B.One{}}))) : {v115 == N.add(v133, N.mul(N.add(N.mul(N.add(v143, N.mul(_, v20)), N.S{N.Z{}}), v135), v0)) : N.Number}
-      %Equal.sym(N.Number, v40, v43, BP.mul_correct(B.Zero{}, B.Pos{B.One{}})) : {v115 == N.add(v133, N.mul(N.add(N.mul(N.add(v143, N.mul(N.add(_, _), v20)), N.S{N.Z{}}), v135), v0)) : N.Number}
+      %Equal.sym(N.Number, v140, v144, BP.mul_correct(B.add(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}})), B.add(B.mul(ap, ap), B.mul(an, an)))) : {v115 == N.add(v133, N.mul(N.add(N.mul(N.add(v143, _), N.S{N.Z{}}), v135), v0)) : N.Number}
+      %Equal.sym(N.Number, v37, v41, BP.add_correct(B.mul(B.Nought{}, B.Pos{B.One{}}), B.mul(B.Nought{}, B.Pos{B.One{}}))) : {v115 == N.add(v133, N.mul(N.add(N.mul(N.add(v143, N.mul(_, v20)), N.S{N.Z{}}), v135), v0)) : N.Number}
+      %Equal.sym(N.Number, v40, v43, BP.mul_correct(B.Nought{}, B.Pos{B.One{}})) : {v115 == N.add(v133, N.mul(N.add(N.mul(N.add(v143, N.mul(N.add(_, _), v20)), N.S{N.Z{}}), v135), v0)) : N.Number}
       %Equal.sym(N.Number, v42, N.Z{}, {==}) : {v115 == N.add(v133, N.mul(N.add(N.mul(N.add(v143, N.mul(N.add(N.mul(_, v14), N.mul(_, v14)), v20)), N.S{N.Z{}}), v135), v0)) : N.Number}
       %Equal.sym(N.Number, v14, v25, {==}) : {v115 == N.add(v133, N.mul(N.add(N.mul(N.add(v143, N.mul(N.add(N.mul(N.Z{}, _), N.mul(N.Z{}, _)), v20)), N.S{N.Z{}}), v135), v0)) : N.Number}
       %Equal.sym(N.Number, v25, N.S{N.Z{}}, {==}) : {v115 == N.add(v133, N.mul(N.add(N.mul(N.add(v143, N.mul(N.add(N.mul(N.Z{}, _), N.mul(N.Z{}, _)), v20)), N.S{N.Z{}}), v135), v0)) : N.Number}
@@ -6519,23 +6519,23 @@ def heat_step_algebra(a, b, c):
   match a b c:
     case Q.Fraction{ap, an, ad} Q.Fraction{bp, bn, bd} Q.Fraction{cp, cn, cd}:
       +v0 = B.positive_value(B.positive_mul(ad, B.positive_mul(B.One{}, B.positive_mul(bd, cd))))
-      +v1 = B.value(B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}})))))
+      +v1 = B.value(B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}})))))
       +v2 = B.positive_value(B.positive_mul(B.positive_mul(B.positive_mul(B.One{}, bd), ad), B.positive_mul(bd, B.positive_mul(ad, B.positive_mul(B.One{}, cd)))))
       +v3 = N.mul(v1, v2)
-      +v4 = B.value(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}})))))
+      +v4 = B.value(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}})))))
       +v5 = N.mul(v4, v2)
-      +v6 = B.value(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), ap)), B.Pos{B.positive_mul(bd, B.positive_mul(ad, B.positive_mul(B.One{}, cd)))}), B.mul(B.add(B.mul(bp, B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))))), B.mul(bn, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))))), B.Pos{B.positive_mul(B.positive_mul(B.One{}, bd), ad)})))
+      +v6 = B.value(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), ap)), B.Pos{B.positive_mul(bd, B.positive_mul(ad, B.positive_mul(B.One{}, cd)))}), B.mul(B.add(B.mul(bp, B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))))), B.mul(bn, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))))), B.Pos{B.positive_mul(B.positive_mul(B.One{}, bd), ad)})))
       +v7 = N.mul(v6, v0)
       +v8 = N.add(v5, v7)
-      +v9 = B.value(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), an)), B.Pos{B.positive_mul(bd, B.positive_mul(ad, B.positive_mul(B.One{}, cd)))}), B.mul(B.add(B.mul(bp, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))), B.mul(bn, B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))))), B.Pos{B.positive_mul(B.positive_mul(B.One{}, bd), ad)})))
-      +v10 = B.value(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), an)), B.Pos{B.positive_mul(bd, B.positive_mul(ad, B.positive_mul(B.One{}, cd)))}))
-      +v11 = B.value(B.mul(B.add(B.mul(bp, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))), B.mul(bn, B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))))), B.Pos{B.positive_mul(B.positive_mul(B.One{}, bd), ad)}))
+      +v9 = B.value(B.add(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), an)), B.Pos{B.positive_mul(bd, B.positive_mul(ad, B.positive_mul(B.One{}, cd)))}), B.mul(B.add(B.mul(bp, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))), B.mul(bn, B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))))), B.Pos{B.positive_mul(B.positive_mul(B.One{}, bd), ad)})))
+      +v10 = B.value(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), an)), B.Pos{B.positive_mul(bd, B.positive_mul(ad, B.positive_mul(B.One{}, cd)))}))
+      +v11 = B.value(B.mul(B.add(B.mul(bp, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))), B.mul(bn, B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))))), B.Pos{B.positive_mul(B.positive_mul(B.One{}, bd), ad)}))
       +v12 = N.add(v10, v11)
-      +v13 = B.value(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), an)))
+      +v13 = B.value(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), an)))
       +v14 = B.value(B.Pos{B.positive_mul(bd, B.positive_mul(ad, B.positive_mul(B.One{}, cd)))})
       +v15 = N.mul(v13, v14)
       +v16 = B.value(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), ap))
-      +v17 = B.value(B.mul(B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), an))
+      +v17 = B.value(B.mul(B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), an))
       +v18 = N.add(v16, v17)
       +v19 = B.value(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})))
       +v20 = B.value(ap)
@@ -6554,13 +6554,13 @@ def heat_step_algebra(a, b, c):
       +v33 = N.mul(v31, N.S{N.Z{}})
       +v34 = N.add(v30, v33)
       +v35 = N.mul(v34, v20)
-      +v36 = B.value(B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))
+      +v36 = B.value(B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))
       +v37 = B.value(an)
       +v38 = N.mul(v36, v37)
-      +v39 = B.value(B.mul(B.Zero{}, B.Pos{bd}))
+      +v39 = B.value(B.mul(B.Nought{}, B.Pos{bd}))
       +v40 = B.value(B.mul(bp, B.Pos{B.One{}}))
       +v41 = N.add(v39, v40)
-      +v42 = B.value(B.Zero{})
+      +v42 = B.value(B.Nought{})
       +v43 = N.mul(v42, v26)
       +v44 = N.mul(N.Z{}, v29)
       +v45 = B.value(bp)
@@ -6581,16 +6581,16 @@ def heat_step_algebra(a, b, c):
       +v60 = N.mul(v54, v59)
       +v61 = N.mul(v29, v60)
       +v62 = N.mul(v50, v61)
-      +v63 = B.value(B.add(B.mul(bp, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))), B.mul(bn, B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))))))
+      +v63 = B.value(B.add(B.mul(bp, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))), B.mul(bn, B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))))))
       +v64 = B.value(B.Pos{B.positive_mul(B.positive_mul(B.One{}, bd), ad)})
       +v65 = N.mul(v63, v64)
-      +v66 = B.value(B.mul(bp, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))))
-      +v67 = B.value(B.mul(bn, B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))))))
+      +v66 = B.value(B.mul(bp, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))))
+      +v67 = B.value(B.mul(bn, B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))))))
       +v68 = N.add(v66, v67)
-      +v69 = B.value(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))))
+      +v69 = B.value(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))))
       +v70 = N.mul(v45, v69)
       +v71 = B.value(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))))
-      +v72 = B.value(B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))
+      +v72 = B.value(B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))
       +v73 = N.add(v71, v72)
       +v74 = B.value(B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))
       +v75 = N.mul(v20, v74)
@@ -6604,9 +6604,9 @@ def heat_step_algebra(a, b, c):
       +v83 = N.mul(v81, N.S{N.Z{}})
       +v84 = N.add(v59, v83)
       +v85 = N.mul(v20, v84)
-      +v86 = B.value(B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))
+      +v86 = B.value(B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))
       +v87 = N.mul(v37, v86)
-      +v88 = B.value(B.mul(B.Zero{}, B.Pos{cd}))
+      +v88 = B.value(B.mul(B.Nought{}, B.Pos{cd}))
       +v89 = B.value(B.mul(cp, B.Pos{B.One{}}))
       +v90 = N.add(v88, v89)
       +v91 = N.mul(v42, v79)
@@ -6618,9 +6618,9 @@ def heat_step_algebra(a, b, c):
       +v97 = N.mul(v37, v96)
       +v98 = N.add(v85, v97)
       +v99 = N.mul(v45, v98)
-      +v100 = B.value(B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))))
+      +v100 = B.value(B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))))
       +v101 = N.mul(v31, v100)
-      +v102 = B.value(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))
+      +v102 = B.value(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))
       +v103 = B.value(B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))))
       +v104 = N.add(v102, v103)
       +v105 = N.mul(v20, v86)
@@ -6645,12 +6645,12 @@ def heat_step_algebra(a, b, c):
       +v124 = N.mul(N.S{N.Z{}}, v123)
       +v125 = N.mul(v54, v124)
       +v126 = N.mul(v118, v125)
-      +v127 = B.value(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))))
+      +v127 = B.value(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))))
       +v128 = B.value(B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}}))))
       +v129 = N.add(v127, v128)
-      +v130 = B.value(B.add(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}})))
+      +v130 = B.value(B.add(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}})))
       +v131 = N.mul(v20, v130)
-      +v132 = B.value(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}))
+      +v132 = B.value(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}))
       +v133 = B.value(B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))
       +v134 = N.add(v132, v133)
       +v135 = B.value(B.Pos{B.positive_mul(bd, cd)})
@@ -6690,7 +6690,7 @@ def heat_step_algebra(a, b, c):
       +v169 = N.mul(v166, v168)
       +v170 = N.add(v126, v169)
       +v171 = B.value(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}}))))
-      +v172 = B.value(B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))))
+      +v172 = B.value(B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))))
       +v173 = N.add(v171, v172)
       +v174 = N.mul(v20, v149)
       +v175 = N.mul(v20, v164)
@@ -6698,13 +6698,13 @@ def heat_step_algebra(a, b, c):
       +v177 = N.mul(v37, v147)
       +v178 = N.add(v175, v177)
       +v179 = N.mul(v178, v168)
-      +v180 = B.value(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), ap)), B.Pos{B.positive_mul(bd, B.positive_mul(ad, B.positive_mul(B.One{}, cd)))}))
-      +v181 = B.value(B.mul(B.add(B.mul(bp, B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))))), B.mul(bn, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))))), B.Pos{B.positive_mul(B.positive_mul(B.One{}, bd), ad)}))
+      +v180 = B.value(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), ap)), B.Pos{B.positive_mul(bd, B.positive_mul(ad, B.positive_mul(B.One{}, cd)))}))
+      +v181 = B.value(B.mul(B.add(B.mul(bp, B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))))), B.mul(bn, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))))), B.Pos{B.positive_mul(B.positive_mul(B.One{}, bd), ad)}))
       +v182 = N.add(v180, v181)
-      +v183 = B.value(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), ap)))
+      +v183 = B.value(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), ap)))
       +v184 = N.mul(v183, v14)
       +v185 = B.value(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), an))
-      +v186 = B.value(B.mul(B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), ap))
+      +v186 = B.value(B.mul(B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), ap))
       +v187 = N.add(v185, v186)
       +v188 = N.mul(v19, v37)
       +v189 = N.mul(v34, v37)
@@ -6712,10 +6712,10 @@ def heat_step_algebra(a, b, c):
       +v191 = N.mul(v48, v20)
       +v192 = N.add(v189, v191)
       +v193 = N.mul(v192, v61)
-      +v194 = B.value(B.add(B.mul(bp, B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))))), B.mul(bn, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))))))
+      +v194 = B.value(B.add(B.mul(bp, B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))))), B.mul(bn, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))))))
       +v195 = N.mul(v194, v64)
-      +v196 = B.value(B.mul(bp, B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))))))
-      +v197 = B.value(B.mul(bn, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))))
+      +v196 = B.value(B.mul(bp, B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))))))
+      +v197 = B.value(B.mul(bn, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))))
       +v198 = N.add(v196, v197)
       +v199 = N.mul(v45, v100)
       +v200 = N.mul(v45, v109)
@@ -7885,9 +7885,9 @@ def heat_step_algebra(a, b, c):
       +v1364 = N.add(v635, v1352)
       +v1365 = N.add(v572, v1364)
       Q.Witness{(
-      %Equal.sym(N.Number, v9, v12, BP.add_correct(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), an)), B.Pos{B.positive_mul(bd, B.positive_mul(ad, B.positive_mul(B.One{}, cd)))}), B.mul(B.add(B.mul(bp, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))), B.mul(bn, B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))))), B.Pos{B.positive_mul(B.positive_mul(B.One{}, bd), ad)}))) : {N.add(N.mul(_, v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v10, v15, BP.mul_correct(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), an)), B.Pos{B.positive_mul(bd, B.positive_mul(ad, B.positive_mul(B.One{}, cd)))})) : {N.add(N.mul(N.add(_, v11), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v13, v18, BP.add_correct(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), an))) : {N.add(N.mul(N.add(N.mul(_, v14), v11), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v9, v12, BP.add_correct(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), an)), B.Pos{B.positive_mul(bd, B.positive_mul(ad, B.positive_mul(B.One{}, cd)))}), B.mul(B.add(B.mul(bp, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))), B.mul(bn, B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))))), B.Pos{B.positive_mul(B.positive_mul(B.One{}, bd), ad)}))) : {N.add(N.mul(_, v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v10, v15, BP.mul_correct(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), an)), B.Pos{B.positive_mul(bd, B.positive_mul(ad, B.positive_mul(B.One{}, cd)))})) : {N.add(N.mul(N.add(_, v11), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v13, v18, BP.add_correct(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), ap), B.mul(B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), an))) : {N.add(N.mul(N.add(N.mul(_, v14), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v16, v21, BP.mul_correct(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), ap)) : {N.add(N.mul(N.add(N.mul(N.add(_, v17), v14), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v19, v24, BP.add_correct(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))) : {N.add(N.mul(N.add(N.mul(N.add(N.mul(_, v20), v17), v14), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v22, v27, BP.mul_correct(B.Pos{B.One{}}, B.Pos{bd})) : {N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(_, v23), v20), v17), v14), v11), v0), v3) == v8 : N.Number}
@@ -7897,9 +7897,9 @@ def heat_step_algebra(a, b, c):
       %Equal.sym(N.Number, v23, v32, BP.mul_correct(bn, B.Pos{B.One{}})) : {N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(v30, _), v20), v17), v14), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v25, v28, {==}) : {N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(v30, N.mul(v31, _)), v20), v17), v14), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v28, N.S{N.Z{}}, {==}) : {N.add(N.mul(N.add(N.mul(N.add(N.mul(N.add(v30, N.mul(v31, _)), v20), v17), v14), v11), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v17, v38, BP.mul_correct(B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), an)) : {N.add(N.mul(N.add(N.mul(N.add(v35, _), v14), v11), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v36, v41, BP.add_correct(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))) : {N.add(N.mul(N.add(N.mul(N.add(v35, N.mul(_, v37)), v14), v11), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v39, v43, BP.mul_correct(B.Zero{}, B.Pos{bd})) : {N.add(N.mul(N.add(N.mul(N.add(v35, N.mul(N.add(_, v40), v37)), v14), v11), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v17, v38, BP.mul_correct(B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), an)) : {N.add(N.mul(N.add(N.mul(N.add(v35, _), v14), v11), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v36, v41, BP.add_correct(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))) : {N.add(N.mul(N.add(N.mul(N.add(v35, N.mul(_, v37)), v14), v11), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v39, v43, BP.mul_correct(B.Nought{}, B.Pos{bd})) : {N.add(N.mul(N.add(N.mul(N.add(v35, N.mul(N.add(_, v40), v37)), v14), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v42, N.Z{}, {==}) : {N.add(N.mul(N.add(N.mul(N.add(v35, N.mul(N.add(N.mul(_, v26), v40), v37)), v14), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v26, v29, {==}) : {N.add(N.mul(N.add(N.mul(N.add(v35, N.mul(N.add(N.mul(N.Z{}, _), v40), v37)), v14), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v40, v46, BP.mul_correct(bp, B.Pos{B.One{}})) : {N.add(N.mul(N.add(N.mul(N.add(v35, N.mul(N.add(v44, _), v37)), v14), v11), v0), v3) == v8 : N.Number}
@@ -7910,10 +7910,10 @@ def heat_step_algebra(a, b, c):
       %Equal.sym(N.Number, v52, v56, BP.positive_mul_correct(ad, B.positive_mul(B.One{}, cd))) : {N.add(N.mul(N.add(N.mul(v50, N.mul(v29, _)), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v55, v58, BP.positive_mul_correct(B.One{}, cd)) : {N.add(N.mul(N.add(N.mul(v50, N.mul(v29, N.mul(v54, _))), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v28, N.S{N.Z{}}, {==}) : {N.add(N.mul(N.add(N.mul(v50, N.mul(v29, N.mul(v54, N.mul(_, v57)))), v11), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v11, v65, BP.mul_correct(B.add(B.mul(bp, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))), B.mul(bn, B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))))), B.Pos{B.positive_mul(B.positive_mul(B.One{}, bd), ad)})) : {N.add(N.mul(N.add(v62, _), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v63, v68, BP.add_correct(B.mul(bp, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))), B.mul(bn, B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))))))) : {N.add(N.mul(N.add(v62, N.mul(_, v64)), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v66, v70, BP.mul_correct(bp, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))))) : {N.add(N.mul(N.add(v62, N.mul(N.add(_, v67), v64)), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v69, v73, BP.add_correct(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))) : {N.add(N.mul(N.add(v62, N.mul(N.add(N.mul(v45, _), v67), v64)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v11, v65, BP.mul_correct(B.add(B.mul(bp, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))), B.mul(bn, B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))))), B.Pos{B.positive_mul(B.positive_mul(B.One{}, bd), ad)})) : {N.add(N.mul(N.add(v62, _), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v63, v68, BP.add_correct(B.mul(bp, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))), B.mul(bn, B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))))))) : {N.add(N.mul(N.add(v62, N.mul(_, v64)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v66, v70, BP.mul_correct(bp, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))))) : {N.add(N.mul(N.add(v62, N.mul(N.add(_, v67), v64)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v69, v73, BP.add_correct(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))) : {N.add(N.mul(N.add(v62, N.mul(N.add(N.mul(v45, _), v67), v64)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v71, v75, BP.mul_correct(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))) : {N.add(N.mul(N.add(v62, N.mul(N.add(N.mul(v45, N.add(_, v72)), v67), v64)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v74, v78, BP.add_correct(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))) : {N.add(N.mul(N.add(v62, N.mul(N.add(N.mul(v45, N.add(N.mul(v20, _), v72)), v67), v64)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v76, v80, BP.mul_correct(B.Pos{B.One{}}, B.Pos{cd})) : {N.add(N.mul(N.add(v62, N.mul(N.add(N.mul(v45, N.add(N.mul(v20, N.add(_, v77)), v72)), v67), v64)), v0), v3) == v8 : N.Number}
@@ -7923,19 +7923,19 @@ def heat_step_algebra(a, b, c):
       %Equal.sym(N.Number, v77, v82, BP.mul_correct(cn, B.Pos{B.One{}})) : {N.add(N.mul(N.add(v62, N.mul(N.add(N.mul(v45, N.add(N.mul(v20, N.add(v59, _)), v72)), v67), v64)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v25, v28, {==}) : {N.add(N.mul(N.add(v62, N.mul(N.add(N.mul(v45, N.add(N.mul(v20, N.add(v59, N.mul(v81, _))), v72)), v67), v64)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v28, N.S{N.Z{}}, {==}) : {N.add(N.mul(N.add(v62, N.mul(N.add(N.mul(v45, N.add(N.mul(v20, N.add(v59, N.mul(v81, _))), v72)), v67), v64)), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v72, v87, BP.mul_correct(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))) : {N.add(N.mul(N.add(v62, N.mul(N.add(N.mul(v45, N.add(v85, _)), v67), v64)), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v86, v90, BP.add_correct(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))) : {N.add(N.mul(N.add(v62, N.mul(N.add(N.mul(v45, N.add(v85, N.mul(v37, _))), v67), v64)), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v88, v91, BP.mul_correct(B.Zero{}, B.Pos{cd})) : {N.add(N.mul(N.add(v62, N.mul(N.add(N.mul(v45, N.add(v85, N.mul(v37, N.add(_, v89)))), v67), v64)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v72, v87, BP.mul_correct(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))) : {N.add(N.mul(N.add(v62, N.mul(N.add(N.mul(v45, N.add(v85, _)), v67), v64)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v86, v90, BP.add_correct(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))) : {N.add(N.mul(N.add(v62, N.mul(N.add(N.mul(v45, N.add(v85, N.mul(v37, _))), v67), v64)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v88, v91, BP.mul_correct(B.Nought{}, B.Pos{cd})) : {N.add(N.mul(N.add(v62, N.mul(N.add(N.mul(v45, N.add(v85, N.mul(v37, N.add(_, v89)))), v67), v64)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v42, N.Z{}, {==}) : {N.add(N.mul(N.add(v62, N.mul(N.add(N.mul(v45, N.add(v85, N.mul(v37, N.add(N.mul(_, v79), v89)))), v67), v64)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v79, v57, {==}) : {N.add(N.mul(N.add(v62, N.mul(N.add(N.mul(v45, N.add(v85, N.mul(v37, N.add(N.mul(N.Z{}, _), v89)))), v67), v64)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v89, v94, BP.mul_correct(cp, B.Pos{B.One{}})) : {N.add(N.mul(N.add(v62, N.mul(N.add(N.mul(v45, N.add(v85, N.mul(v37, N.add(v92, _)))), v67), v64)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v25, v28, {==}) : {N.add(N.mul(N.add(v62, N.mul(N.add(N.mul(v45, N.add(v85, N.mul(v37, N.add(v92, N.mul(v93, _))))), v67), v64)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v28, N.S{N.Z{}}, {==}) : {N.add(N.mul(N.add(v62, N.mul(N.add(N.mul(v45, N.add(v85, N.mul(v37, N.add(v92, N.mul(v93, _))))), v67), v64)), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v67, v101, BP.mul_correct(bn, B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))))) : {N.add(N.mul(N.add(v62, N.mul(N.add(v99, _), v64)), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v100, v104, BP.add_correct(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))))) : {N.add(N.mul(N.add(v62, N.mul(N.add(v99, N.mul(v31, _)), v64)), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v102, v105, BP.mul_correct(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))) : {N.add(N.mul(N.add(v62, N.mul(N.add(v99, N.mul(v31, N.add(_, v103))), v64)), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v86, v90, BP.add_correct(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))) : {N.add(N.mul(N.add(v62, N.mul(N.add(v99, N.mul(v31, N.add(N.mul(v20, _), v103))), v64)), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v88, v91, BP.mul_correct(B.Zero{}, B.Pos{cd})) : {N.add(N.mul(N.add(v62, N.mul(N.add(v99, N.mul(v31, N.add(N.mul(v20, N.add(_, v89)), v103))), v64)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v67, v101, BP.mul_correct(bn, B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))))) : {N.add(N.mul(N.add(v62, N.mul(N.add(v99, _), v64)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v100, v104, BP.add_correct(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))))) : {N.add(N.mul(N.add(v62, N.mul(N.add(v99, N.mul(v31, _)), v64)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v102, v105, BP.mul_correct(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))) : {N.add(N.mul(N.add(v62, N.mul(N.add(v99, N.mul(v31, N.add(_, v103))), v64)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v86, v90, BP.add_correct(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))) : {N.add(N.mul(N.add(v62, N.mul(N.add(v99, N.mul(v31, N.add(N.mul(v20, _), v103))), v64)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v88, v91, BP.mul_correct(B.Nought{}, B.Pos{cd})) : {N.add(N.mul(N.add(v62, N.mul(N.add(v99, N.mul(v31, N.add(N.mul(v20, N.add(_, v89)), v103))), v64)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v42, N.Z{}, {==}) : {N.add(N.mul(N.add(v62, N.mul(N.add(v99, N.mul(v31, N.add(N.mul(v20, N.add(N.mul(_, v79), v89)), v103))), v64)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v79, v57, {==}) : {N.add(N.mul(N.add(v62, N.mul(N.add(v99, N.mul(v31, N.add(N.mul(v20, N.add(N.mul(N.Z{}, _), v89)), v103))), v64)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v89, v94, BP.mul_correct(cp, B.Pos{B.One{}})) : {N.add(N.mul(N.add(v62, N.mul(N.add(v99, N.mul(v31, N.add(N.mul(v20, N.add(v92, _)), v103))), v64)), v0), v3) == v8 : N.Number}
@@ -7958,10 +7958,10 @@ def heat_step_algebra(a, b, c):
       %Equal.sym(N.Number, v119, v122, BP.positive_mul_correct(B.One{}, B.positive_mul(bd, cd))) : {N.add(N.mul(v118, N.mul(v54, _)), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v28, N.S{N.Z{}}, {==}) : {N.add(N.mul(v118, N.mul(v54, N.mul(_, v121))), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v121, v123, BP.positive_mul_correct(bd, cd)) : {N.add(N.mul(v118, N.mul(v54, N.mul(N.S{N.Z{}}, _))), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v1, v129, BP.add_correct(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}}))))) : {N.add(v126, N.mul(_, v2)) == v8 : N.Number}
-      %Equal.sym(N.Number, v127, v131, BP.mul_correct(ap, B.add(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}})))) : {N.add(v126, N.mul(N.add(_, v128), v2)) == v8 : N.Number}
-      %Equal.sym(N.Number, v130, v134, BP.add_correct(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))) : {N.add(v126, N.mul(N.add(N.mul(v20, _), v128), v2)) == v8 : N.Number}
-      %Equal.sym(N.Number, v132, v136, BP.mul_correct(B.Zero{}, B.Pos{B.positive_mul(bd, cd)})) : {N.add(v126, N.mul(N.add(N.mul(v20, N.add(_, v133)), v128), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v1, v129, BP.add_correct(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}}))))) : {N.add(v126, N.mul(_, v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v127, v131, BP.mul_correct(ap, B.add(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}})))) : {N.add(v126, N.mul(N.add(_, v128), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v130, v134, BP.add_correct(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))) : {N.add(v126, N.mul(N.add(N.mul(v20, _), v128), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v132, v136, BP.mul_correct(B.Nought{}, B.Pos{B.positive_mul(bd, cd)})) : {N.add(v126, N.mul(N.add(N.mul(v20, N.add(_, v133)), v128), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v42, N.Z{}, {==}) : {N.add(v126, N.mul(N.add(N.mul(v20, N.add(N.mul(_, v135), v133)), v128), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v135, v121, {==}) : {N.add(v126, N.mul(N.add(N.mul(v20, N.add(N.mul(N.Z{}, _), v133)), v128), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v121, v123, BP.positive_mul_correct(bd, cd)) : {N.add(v126, N.mul(N.add(N.mul(v20, N.add(N.mul(N.Z{}, _), v133)), v128), v2)) == v8 : N.Number}
@@ -7992,7 +7992,7 @@ def heat_step_algebra(a, b, c):
       %Equal.sym(N.Number, v52, v56, BP.positive_mul_correct(ad, B.positive_mul(B.One{}, cd))) : {N.add(v126, N.mul(v166, N.mul(v116, N.mul(v29, _)))) == v8 : N.Number}
       %Equal.sym(N.Number, v55, v58, BP.positive_mul_correct(B.One{}, cd)) : {N.add(v126, N.mul(v166, N.mul(v116, N.mul(v29, N.mul(v54, _))))) == v8 : N.Number}
       %Equal.sym(N.Number, v28, N.S{N.Z{}}, {==}) : {N.add(v126, N.mul(v166, N.mul(v116, N.mul(v29, N.mul(v54, N.mul(_, v57)))))) == v8 : N.Number}
-      %Equal.sym(N.Number, v4, v173, BP.add_correct(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))))) : {v170 == N.add(N.mul(_, v2), v7) : N.Number}
+      %Equal.sym(N.Number, v4, v173, BP.add_correct(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))))) : {v170 == N.add(N.mul(_, v2), v7) : N.Number}
       %Equal.sym(N.Number, v171, v174, BP.mul_correct(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}})))) : {v170 == N.add(N.mul(N.add(_, v172), v2), v7) : N.Number}
       %Equal.sym(N.Number, v149, v153, BP.add_correct(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}}))) : {v170 == N.add(N.mul(N.add(N.mul(v20, _), v172), v2), v7) : N.Number}
       %Equal.sym(N.Number, v151, v154, BP.mul_correct(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)})) : {v170 == N.add(N.mul(N.add(N.mul(v20, N.add(_, v152)), v172), v2), v7) : N.Number}
@@ -8006,9 +8006,9 @@ def heat_step_algebra(a, b, c):
       %Equal.sym(N.Number, v158, v161, BP.mul_correct(bn, cp)) : {v170 == N.add(N.mul(N.add(N.mul(v20, N.add(v124, N.mul(N.add(v160, _), v25))), v172), v2), v7) : N.Number}
       %Equal.sym(N.Number, v25, v28, {==}) : {v170 == N.add(N.mul(N.add(N.mul(v20, N.add(v124, N.mul(v162, _))), v172), v2), v7) : N.Number}
       %Equal.sym(N.Number, v28, N.S{N.Z{}}, {==}) : {v170 == N.add(N.mul(N.add(N.mul(v20, N.add(v124, N.mul(v162, _))), v172), v2), v7) : N.Number}
-      %Equal.sym(N.Number, v172, v176, BP.mul_correct(an, B.add(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}})))) : {v170 == N.add(N.mul(N.add(v175, _), v2), v7) : N.Number}
-      %Equal.sym(N.Number, v130, v134, BP.add_correct(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))) : {v170 == N.add(N.mul(N.add(v175, N.mul(v37, _)), v2), v7) : N.Number}
-      %Equal.sym(N.Number, v132, v136, BP.mul_correct(B.Zero{}, B.Pos{B.positive_mul(bd, cd)})) : {v170 == N.add(N.mul(N.add(v175, N.mul(v37, N.add(_, v133))), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v172, v176, BP.mul_correct(an, B.add(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}})))) : {v170 == N.add(N.mul(N.add(v175, _), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v130, v134, BP.add_correct(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))) : {v170 == N.add(N.mul(N.add(v175, N.mul(v37, _)), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v132, v136, BP.mul_correct(B.Nought{}, B.Pos{B.positive_mul(bd, cd)})) : {v170 == N.add(N.mul(N.add(v175, N.mul(v37, N.add(_, v133))), v2), v7) : N.Number}
       %Equal.sym(N.Number, v42, N.Z{}, {==}) : {v170 == N.add(N.mul(N.add(v175, N.mul(v37, N.add(N.mul(_, v135), v133))), v2), v7) : N.Number}
       %Equal.sym(N.Number, v135, v121, {==}) : {v170 == N.add(N.mul(N.add(v175, N.mul(v37, N.add(N.mul(N.Z{}, _), v133))), v2), v7) : N.Number}
       %Equal.sym(N.Number, v121, v123, BP.positive_mul_correct(bd, cd)) : {v170 == N.add(N.mul(N.add(v175, N.mul(v37, N.add(N.mul(N.Z{}, _), v133))), v2), v7) : N.Number}
@@ -8026,9 +8026,9 @@ def heat_step_algebra(a, b, c):
       %Equal.sym(N.Number, v52, v56, BP.positive_mul_correct(ad, B.positive_mul(B.One{}, cd))) : {v170 == N.add(N.mul(v178, N.mul(v116, N.mul(v29, _))), v7) : N.Number}
       %Equal.sym(N.Number, v55, v58, BP.positive_mul_correct(B.One{}, cd)) : {v170 == N.add(N.mul(v178, N.mul(v116, N.mul(v29, N.mul(v54, _)))), v7) : N.Number}
       %Equal.sym(N.Number, v28, N.S{N.Z{}}, {==}) : {v170 == N.add(N.mul(v178, N.mul(v116, N.mul(v29, N.mul(v54, N.mul(_, v57))))), v7) : N.Number}
-      %Equal.sym(N.Number, v6, v182, BP.add_correct(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), ap)), B.Pos{B.positive_mul(bd, B.positive_mul(ad, B.positive_mul(B.One{}, cd)))}), B.mul(B.add(B.mul(bp, B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))))), B.mul(bn, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))))), B.Pos{B.positive_mul(B.positive_mul(B.One{}, bd), ad)}))) : {v170 == N.add(v179, N.mul(_, v0)) : N.Number}
-      %Equal.sym(N.Number, v180, v184, BP.mul_correct(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), ap)), B.Pos{B.positive_mul(bd, B.positive_mul(ad, B.positive_mul(B.One{}, cd)))})) : {v170 == N.add(v179, N.mul(N.add(_, v181), v0)) : N.Number}
-      %Equal.sym(N.Number, v183, v187, BP.add_correct(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), ap))) : {v170 == N.add(v179, N.mul(N.add(N.mul(_, v14), v181), v0)) : N.Number}
+      %Equal.sym(N.Number, v6, v182, BP.add_correct(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), ap)), B.Pos{B.positive_mul(bd, B.positive_mul(ad, B.positive_mul(B.One{}, cd)))}), B.mul(B.add(B.mul(bp, B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))))), B.mul(bn, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))))), B.Pos{B.positive_mul(B.positive_mul(B.One{}, bd), ad)}))) : {v170 == N.add(v179, N.mul(_, v0)) : N.Number}
+      %Equal.sym(N.Number, v180, v184, BP.mul_correct(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), ap)), B.Pos{B.positive_mul(bd, B.positive_mul(ad, B.positive_mul(B.One{}, cd)))})) : {v170 == N.add(v179, N.mul(N.add(_, v181), v0)) : N.Number}
+      %Equal.sym(N.Number, v183, v187, BP.add_correct(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), an), B.mul(B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), ap))) : {v170 == N.add(v179, N.mul(N.add(N.mul(_, v14), v181), v0)) : N.Number}
       %Equal.sym(N.Number, v185, v188, BP.mul_correct(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), an)) : {v170 == N.add(v179, N.mul(N.add(N.mul(N.add(_, v186), v14), v181), v0)) : N.Number}
       %Equal.sym(N.Number, v19, v24, BP.add_correct(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))) : {v170 == N.add(v179, N.mul(N.add(N.mul(N.add(N.mul(_, v37), v186), v14), v181), v0)) : N.Number}
       %Equal.sym(N.Number, v22, v27, BP.mul_correct(B.Pos{B.One{}}, B.Pos{bd})) : {v170 == N.add(v179, N.mul(N.add(N.mul(N.add(N.mul(N.add(_, v23), v37), v186), v14), v181), v0)) : N.Number}
@@ -8038,9 +8038,9 @@ def heat_step_algebra(a, b, c):
       %Equal.sym(N.Number, v23, v32, BP.mul_correct(bn, B.Pos{B.One{}})) : {v170 == N.add(v179, N.mul(N.add(N.mul(N.add(N.mul(N.add(v30, _), v37), v186), v14), v181), v0)) : N.Number}
       %Equal.sym(N.Number, v25, v28, {==}) : {v170 == N.add(v179, N.mul(N.add(N.mul(N.add(N.mul(N.add(v30, N.mul(v31, _)), v37), v186), v14), v181), v0)) : N.Number}
       %Equal.sym(N.Number, v28, N.S{N.Z{}}, {==}) : {v170 == N.add(v179, N.mul(N.add(N.mul(N.add(N.mul(N.add(v30, N.mul(v31, _)), v37), v186), v14), v181), v0)) : N.Number}
-      %Equal.sym(N.Number, v186, v190, BP.mul_correct(B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), ap)) : {v170 == N.add(v179, N.mul(N.add(N.mul(N.add(v189, _), v14), v181), v0)) : N.Number}
-      %Equal.sym(N.Number, v36, v41, BP.add_correct(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))) : {v170 == N.add(v179, N.mul(N.add(N.mul(N.add(v189, N.mul(_, v20)), v14), v181), v0)) : N.Number}
-      %Equal.sym(N.Number, v39, v43, BP.mul_correct(B.Zero{}, B.Pos{bd})) : {v170 == N.add(v179, N.mul(N.add(N.mul(N.add(v189, N.mul(N.add(_, v40), v20)), v14), v181), v0)) : N.Number}
+      %Equal.sym(N.Number, v186, v190, BP.mul_correct(B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), ap)) : {v170 == N.add(v179, N.mul(N.add(N.mul(N.add(v189, _), v14), v181), v0)) : N.Number}
+      %Equal.sym(N.Number, v36, v41, BP.add_correct(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))) : {v170 == N.add(v179, N.mul(N.add(N.mul(N.add(v189, N.mul(_, v20)), v14), v181), v0)) : N.Number}
+      %Equal.sym(N.Number, v39, v43, BP.mul_correct(B.Nought{}, B.Pos{bd})) : {v170 == N.add(v179, N.mul(N.add(N.mul(N.add(v189, N.mul(N.add(_, v40), v20)), v14), v181), v0)) : N.Number}
       %Equal.sym(N.Number, v42, N.Z{}, {==}) : {v170 == N.add(v179, N.mul(N.add(N.mul(N.add(v189, N.mul(N.add(N.mul(_, v26), v40), v20)), v14), v181), v0)) : N.Number}
       %Equal.sym(N.Number, v26, v29, {==}) : {v170 == N.add(v179, N.mul(N.add(N.mul(N.add(v189, N.mul(N.add(N.mul(N.Z{}, _), v40), v20)), v14), v181), v0)) : N.Number}
       %Equal.sym(N.Number, v40, v46, BP.mul_correct(bp, B.Pos{B.One{}})) : {v170 == N.add(v179, N.mul(N.add(N.mul(N.add(v189, N.mul(N.add(v44, _), v20)), v14), v181), v0)) : N.Number}
@@ -8051,13 +8051,13 @@ def heat_step_algebra(a, b, c):
       %Equal.sym(N.Number, v52, v56, BP.positive_mul_correct(ad, B.positive_mul(B.One{}, cd))) : {v170 == N.add(v179, N.mul(N.add(N.mul(v192, N.mul(v29, _)), v181), v0)) : N.Number}
       %Equal.sym(N.Number, v55, v58, BP.positive_mul_correct(B.One{}, cd)) : {v170 == N.add(v179, N.mul(N.add(N.mul(v192, N.mul(v29, N.mul(v54, _))), v181), v0)) : N.Number}
       %Equal.sym(N.Number, v28, N.S{N.Z{}}, {==}) : {v170 == N.add(v179, N.mul(N.add(N.mul(v192, N.mul(v29, N.mul(v54, N.mul(_, v57)))), v181), v0)) : N.Number}
-      %Equal.sym(N.Number, v181, v195, BP.mul_correct(B.add(B.mul(bp, B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))))), B.mul(bn, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))))), B.Pos{B.positive_mul(B.positive_mul(B.One{}, bd), ad)})) : {v170 == N.add(v179, N.mul(N.add(v193, _), v0)) : N.Number}
-      %Equal.sym(N.Number, v194, v198, BP.add_correct(B.mul(bp, B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))))), B.mul(bn, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))))) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(_, v64)), v0)) : N.Number}
-      %Equal.sym(N.Number, v196, v199, BP.mul_correct(bp, B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))))) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(_, v197), v64)), v0)) : N.Number}
-      %Equal.sym(N.Number, v100, v104, BP.add_correct(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))))) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(N.mul(v45, _), v197), v64)), v0)) : N.Number}
-      %Equal.sym(N.Number, v102, v105, BP.mul_correct(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(N.mul(v45, N.add(_, v103)), v197), v64)), v0)) : N.Number}
-      %Equal.sym(N.Number, v86, v90, BP.add_correct(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(N.mul(v45, N.add(N.mul(v20, _), v103)), v197), v64)), v0)) : N.Number}
-      %Equal.sym(N.Number, v88, v91, BP.mul_correct(B.Zero{}, B.Pos{cd})) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(N.mul(v45, N.add(N.mul(v20, N.add(_, v89)), v103)), v197), v64)), v0)) : N.Number}
+      %Equal.sym(N.Number, v181, v195, BP.mul_correct(B.add(B.mul(bp, B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))))), B.mul(bn, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))))), B.Pos{B.positive_mul(B.positive_mul(B.One{}, bd), ad)})) : {v170 == N.add(v179, N.mul(N.add(v193, _), v0)) : N.Number}
+      %Equal.sym(N.Number, v194, v198, BP.add_correct(B.mul(bp, B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))))), B.mul(bn, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))))) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(_, v64)), v0)) : N.Number}
+      %Equal.sym(N.Number, v196, v199, BP.mul_correct(bp, B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))))) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(_, v197), v64)), v0)) : N.Number}
+      %Equal.sym(N.Number, v100, v104, BP.add_correct(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))))) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(N.mul(v45, _), v197), v64)), v0)) : N.Number}
+      %Equal.sym(N.Number, v102, v105, BP.mul_correct(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(N.mul(v45, N.add(_, v103)), v197), v64)), v0)) : N.Number}
+      %Equal.sym(N.Number, v86, v90, BP.add_correct(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(N.mul(v45, N.add(N.mul(v20, _), v103)), v197), v64)), v0)) : N.Number}
+      %Equal.sym(N.Number, v88, v91, BP.mul_correct(B.Nought{}, B.Pos{cd})) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(N.mul(v45, N.add(N.mul(v20, N.add(_, v89)), v103)), v197), v64)), v0)) : N.Number}
       %Equal.sym(N.Number, v42, N.Z{}, {==}) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(N.mul(v45, N.add(N.mul(v20, N.add(N.mul(_, v79), v89)), v103)), v197), v64)), v0)) : N.Number}
       %Equal.sym(N.Number, v79, v57, {==}) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(N.mul(v45, N.add(N.mul(v20, N.add(N.mul(N.Z{}, _), v89)), v103)), v197), v64)), v0)) : N.Number}
       %Equal.sym(N.Number, v89, v94, BP.mul_correct(cp, B.Pos{B.One{}})) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(N.mul(v45, N.add(N.mul(v20, N.add(v92, _)), v103)), v197), v64)), v0)) : N.Number}
@@ -8072,8 +8072,8 @@ def heat_step_algebra(a, b, c):
       %Equal.sym(N.Number, v77, v82, BP.mul_correct(cn, B.Pos{B.One{}})) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(N.mul(v45, N.add(v106, N.mul(v37, N.add(v59, _)))), v197), v64)), v0)) : N.Number}
       %Equal.sym(N.Number, v25, v28, {==}) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(N.mul(v45, N.add(v106, N.mul(v37, N.add(v59, N.mul(v81, _))))), v197), v64)), v0)) : N.Number}
       %Equal.sym(N.Number, v28, N.S{N.Z{}}, {==}) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(N.mul(v45, N.add(v106, N.mul(v37, N.add(v59, N.mul(v81, _))))), v197), v64)), v0)) : N.Number}
-      %Equal.sym(N.Number, v197, v201, BP.mul_correct(bn, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))))) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(v200, _), v64)), v0)) : N.Number}
-      %Equal.sym(N.Number, v69, v73, BP.add_correct(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(v200, N.mul(v31, _)), v64)), v0)) : N.Number}
+      %Equal.sym(N.Number, v197, v201, BP.mul_correct(bn, B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))))) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(v200, _), v64)), v0)) : N.Number}
+      %Equal.sym(N.Number, v69, v73, BP.add_correct(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(v200, N.mul(v31, _)), v64)), v0)) : N.Number}
       %Equal.sym(N.Number, v71, v75, BP.mul_correct(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(v200, N.mul(v31, N.add(_, v72))), v64)), v0)) : N.Number}
       %Equal.sym(N.Number, v74, v78, BP.add_correct(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(v200, N.mul(v31, N.add(N.mul(v20, _), v72))), v64)), v0)) : N.Number}
       %Equal.sym(N.Number, v76, v80, BP.mul_correct(B.Pos{B.One{}}, B.Pos{cd})) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(v200, N.mul(v31, N.add(N.mul(v20, N.add(_, v77)), v72))), v64)), v0)) : N.Number}
@@ -8083,9 +8083,9 @@ def heat_step_algebra(a, b, c):
       %Equal.sym(N.Number, v77, v82, BP.mul_correct(cn, B.Pos{B.One{}})) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(v200, N.mul(v31, N.add(N.mul(v20, N.add(v59, _)), v72))), v64)), v0)) : N.Number}
       %Equal.sym(N.Number, v25, v28, {==}) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(v200, N.mul(v31, N.add(N.mul(v20, N.add(v59, N.mul(v81, _))), v72))), v64)), v0)) : N.Number}
       %Equal.sym(N.Number, v28, N.S{N.Z{}}, {==}) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(v200, N.mul(v31, N.add(N.mul(v20, N.add(v59, N.mul(v81, _))), v72))), v64)), v0)) : N.Number}
-      %Equal.sym(N.Number, v72, v87, BP.mul_correct(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(v200, N.mul(v31, N.add(v85, _))), v64)), v0)) : N.Number}
-      %Equal.sym(N.Number, v86, v90, BP.add_correct(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(v200, N.mul(v31, N.add(v85, N.mul(v37, _)))), v64)), v0)) : N.Number}
-      %Equal.sym(N.Number, v88, v91, BP.mul_correct(B.Zero{}, B.Pos{cd})) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(v200, N.mul(v31, N.add(v85, N.mul(v37, N.add(_, v89))))), v64)), v0)) : N.Number}
+      %Equal.sym(N.Number, v72, v87, BP.mul_correct(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(v200, N.mul(v31, N.add(v85, _))), v64)), v0)) : N.Number}
+      %Equal.sym(N.Number, v86, v90, BP.add_correct(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(v200, N.mul(v31, N.add(v85, N.mul(v37, _)))), v64)), v0)) : N.Number}
+      %Equal.sym(N.Number, v88, v91, BP.mul_correct(B.Nought{}, B.Pos{cd})) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(v200, N.mul(v31, N.add(v85, N.mul(v37, N.add(_, v89))))), v64)), v0)) : N.Number}
       %Equal.sym(N.Number, v42, N.Z{}, {==}) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(v200, N.mul(v31, N.add(v85, N.mul(v37, N.add(N.mul(_, v79), v89))))), v64)), v0)) : N.Number}
       %Equal.sym(N.Number, v79, v57, {==}) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(v200, N.mul(v31, N.add(v85, N.mul(v37, N.add(N.mul(N.Z{}, _), v89))))), v64)), v0)) : N.Number}
       %Equal.sym(N.Number, v89, v94, BP.mul_correct(cp, B.Pos{B.One{}})) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(v200, N.mul(v31, N.add(v85, N.mul(v37, N.add(v92, _))))), v64)), v0)) : N.Number}
@@ -8901,17 +8901,17 @@ def geom_step_algebra(a, b):
   match a b:
     case Q.Fraction{ap, an, ad} Q.Fraction{bp, bn, bd}:
       +v0 = B.positive_value(B.positive_mul(B.One{}, B.positive_mul(ad, bd)))
-      +v1 = B.value(B.add(B.mul(B.Zero{}, B.Pos{B.positive_mul(ad, bd)}), B.mul(B.add(B.mul(ap, bp), B.mul(an, bn)), B.Pos{B.One{}})))
+      +v1 = B.value(B.add(B.mul(B.Nought{}, B.Pos{B.positive_mul(ad, bd)}), B.mul(B.add(B.mul(ap, bp), B.mul(an, bn)), B.Pos{B.One{}})))
       +v2 = B.positive_value(B.positive_mul(B.positive_mul(B.One{}, bd), B.positive_mul(B.positive_mul(B.One{}, ad), bd)))
       +v3 = N.mul(v1, v2)
       +v4 = B.value(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(ad, bd)}), B.mul(B.add(B.mul(ap, bn), B.mul(an, bp)), B.Pos{B.One{}})))
       +v5 = N.mul(v4, v2)
-      +v6 = B.value(B.add(B.mul(B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), B.Pos{B.positive_mul(B.positive_mul(B.One{}, ad), bd)}), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})), bn), B.mul(B.add(B.mul(B.Zero{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bp)), B.Pos{B.positive_mul(B.One{}, bd)})))
+      +v6 = B.value(B.add(B.mul(B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), B.Pos{B.positive_mul(B.positive_mul(B.One{}, ad), bd)}), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})), bn), B.mul(B.add(B.mul(B.Nought{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bp)), B.Pos{B.positive_mul(B.One{}, bd)})))
       +v7 = N.mul(v6, v0)
       +v8 = N.add(v5, v7)
-      +v9 = B.value(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), B.Pos{B.positive_mul(B.positive_mul(B.One{}, ad), bd)}), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})), bp), B.mul(B.add(B.mul(B.Zero{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bn)), B.Pos{B.positive_mul(B.One{}, bd)})))
+      +v9 = B.value(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), B.Pos{B.positive_mul(B.positive_mul(B.One{}, ad), bd)}), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})), bp), B.mul(B.add(B.mul(B.Nought{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bn)), B.Pos{B.positive_mul(B.One{}, bd)})))
       +v10 = B.value(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), B.Pos{B.positive_mul(B.positive_mul(B.One{}, ad), bd)}))
-      +v11 = B.value(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})), bp), B.mul(B.add(B.mul(B.Zero{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bn)), B.Pos{B.positive_mul(B.One{}, bd)}))
+      +v11 = B.value(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})), bp), B.mul(B.add(B.mul(B.Nought{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bn)), B.Pos{B.positive_mul(B.One{}, bd)}))
       +v12 = N.add(v10, v11)
       +v13 = B.value(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})))
       +v14 = B.value(B.Pos{B.positive_mul(B.positive_mul(B.One{}, ad), bd)})
@@ -8937,11 +8937,11 @@ def geom_step_algebra(a, b):
       +v34 = N.mul(N.S{N.Z{}}, v32)
       +v35 = N.mul(v34, v23)
       +v36 = N.mul(v28, v35)
-      +v37 = B.value(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})), bp), B.mul(B.add(B.mul(B.Zero{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bn)))
+      +v37 = B.value(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})), bp), B.mul(B.add(B.mul(B.Nought{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bn)))
       +v38 = B.value(B.Pos{B.positive_mul(B.One{}, bd)})
       +v39 = N.mul(v37, v38)
       +v40 = B.value(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})), bp))
-      +v41 = B.value(B.mul(B.add(B.mul(B.Zero{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bn))
+      +v41 = B.value(B.mul(B.add(B.mul(B.Nought{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bn))
       +v42 = N.add(v40, v41)
       +v43 = B.value(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})))
       +v44 = B.value(bp)
@@ -8956,12 +8956,12 @@ def geom_step_algebra(a, b):
       +v53 = N.mul(v51, N.S{N.Z{}})
       +v54 = N.add(v34, v53)
       +v55 = N.mul(v54, v44)
-      +v56 = B.value(B.add(B.mul(B.Zero{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})))
+      +v56 = B.value(B.add(B.mul(B.Nought{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})))
       +v57 = N.mul(v56, v25)
-      +v58 = B.value(B.mul(B.Zero{}, B.Pos{ad}))
+      +v58 = B.value(B.mul(B.Nought{}, B.Pos{ad}))
       +v59 = B.value(B.mul(ap, B.Pos{B.One{}}))
       +v60 = N.add(v58, v59)
-      +v61 = B.value(B.Zero{})
+      +v61 = B.value(B.Nought{})
       +v62 = N.mul(v61, v49)
       +v63 = N.mul(N.Z{}, v32)
       +v64 = B.value(ap)
@@ -8979,7 +8979,7 @@ def geom_step_algebra(a, b):
       +v76 = N.mul(v32, v23)
       +v77 = N.mul(N.S{N.Z{}}, v76)
       +v78 = N.mul(v73, v77)
-      +v79 = B.value(B.mul(B.Zero{}, B.Pos{B.positive_mul(ad, bd)}))
+      +v79 = B.value(B.mul(B.Nought{}, B.Pos{B.positive_mul(ad, bd)}))
       +v80 = B.value(B.mul(B.add(B.mul(ap, bp), B.mul(an, bn)), B.Pos{B.One{}}))
       +v81 = N.add(v79, v80)
       +v82 = B.value(B.Pos{B.positive_mul(ad, bd)})
@@ -9014,12 +9014,12 @@ def geom_step_algebra(a, b):
       +v111 = N.mul(v110, N.S{N.Z{}})
       +v112 = N.add(v77, v111)
       +v113 = N.mul(v112, v96)
-      +v114 = B.value(B.mul(B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), B.Pos{B.positive_mul(B.positive_mul(B.One{}, ad), bd)}))
-      +v115 = B.value(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})), bn), B.mul(B.add(B.mul(B.Zero{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bp)), B.Pos{B.positive_mul(B.One{}, bd)}))
+      +v114 = B.value(B.mul(B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), B.Pos{B.positive_mul(B.positive_mul(B.One{}, ad), bd)}))
+      +v115 = B.value(B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})), bn), B.mul(B.add(B.mul(B.Nought{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bp)), B.Pos{B.positive_mul(B.One{}, bd)}))
       +v116 = N.add(v114, v115)
-      +v117 = B.value(B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))
+      +v117 = B.value(B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))
       +v118 = N.mul(v117, v14)
-      +v119 = B.value(B.mul(B.Zero{}, B.Pos{bd}))
+      +v119 = B.value(B.mul(B.Nought{}, B.Pos{bd}))
       +v120 = B.value(B.mul(bp, B.Pos{B.One{}}))
       +v121 = N.add(v119, v120)
       +v122 = N.mul(v61, v20)
@@ -9028,10 +9028,10 @@ def geom_step_algebra(a, b):
       +v125 = N.mul(v44, N.S{N.Z{}})
       +v126 = N.add(v123, v125)
       +v127 = N.mul(v126, v35)
-      +v128 = B.value(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})), bn), B.mul(B.add(B.mul(B.Zero{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bp)))
+      +v128 = B.value(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})), bn), B.mul(B.add(B.mul(B.Nought{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bp)))
       +v129 = N.mul(v128, v38)
       +v130 = B.value(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})), bn))
-      +v131 = B.value(B.mul(B.add(B.mul(B.Zero{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bp))
+      +v131 = B.value(B.mul(B.add(B.mul(B.Nought{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bp))
       +v132 = N.add(v130, v131)
       +v133 = N.mul(v43, v25)
       +v134 = N.mul(v54, v25)
@@ -9272,7 +9272,7 @@ def geom_step_algebra(a, b):
       +v369 = N.add(v204, v368)
       +v370 = N.add(v215, v286)
       Q.Witness{(
-      %Equal.sym(N.Number, v9, v12, BP.add_correct(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), B.Pos{B.positive_mul(B.positive_mul(B.One{}, ad), bd)}), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})), bp), B.mul(B.add(B.mul(B.Zero{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bn)), B.Pos{B.positive_mul(B.One{}, bd)}))) : {N.add(N.mul(_, v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v9, v12, BP.add_correct(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), B.Pos{B.positive_mul(B.positive_mul(B.One{}, ad), bd)}), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})), bp), B.mul(B.add(B.mul(B.Nought{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bn)), B.Pos{B.positive_mul(B.One{}, bd)}))) : {N.add(N.mul(_, v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v10, v15, BP.mul_correct(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})), B.Pos{B.positive_mul(B.positive_mul(B.One{}, ad), bd)})) : {N.add(N.mul(N.add(_, v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v13, v18, BP.add_correct(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))) : {N.add(N.mul(N.add(N.mul(_, v14), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v16, v21, BP.mul_correct(B.Pos{B.One{}}, B.Pos{bd})) : {N.add(N.mul(N.add(N.mul(N.add(_, v17), v14), v11), v0), v3) == v8 : N.Number}
@@ -9286,8 +9286,8 @@ def geom_step_algebra(a, b):
       %Equal.sym(N.Number, v29, v31, BP.positive_mul_correct(B.positive_mul(B.One{}, ad), bd)) : {N.add(N.mul(N.add(N.mul(v28, _), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v30, v33, BP.positive_mul_correct(B.One{}, ad)) : {N.add(N.mul(N.add(N.mul(v28, N.mul(_, v23)), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v22, N.S{N.Z{}}, {==}) : {N.add(N.mul(N.add(N.mul(v28, N.mul(N.mul(_, v32), v23)), v11), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v11, v39, BP.mul_correct(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})), bp), B.mul(B.add(B.mul(B.Zero{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bn)), B.Pos{B.positive_mul(B.One{}, bd)})) : {N.add(N.mul(N.add(v36, _), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v37, v42, BP.add_correct(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})), bp), B.mul(B.add(B.mul(B.Zero{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bn))) : {N.add(N.mul(N.add(v36, N.mul(_, v38)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v11, v39, BP.mul_correct(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})), bp), B.mul(B.add(B.mul(B.Nought{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bn)), B.Pos{B.positive_mul(B.One{}, bd)})) : {N.add(N.mul(N.add(v36, _), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v37, v42, BP.add_correct(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})), bp), B.mul(B.add(B.mul(B.Nought{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bn))) : {N.add(N.mul(N.add(v36, N.mul(_, v38)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v40, v45, BP.mul_correct(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})), bp)) : {N.add(N.mul(N.add(v36, N.mul(N.add(_, v41), v38)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v43, v48, BP.add_correct(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}}))) : {N.add(N.mul(N.add(v36, N.mul(N.add(N.mul(_, v44), v41), v38)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v46, v50, BP.mul_correct(B.Pos{B.One{}}, B.Pos{ad})) : {N.add(N.mul(N.add(v36, N.mul(N.add(N.mul(N.add(_, v47), v44), v41), v38)), v0), v3) == v8 : N.Number}
@@ -9297,9 +9297,9 @@ def geom_step_algebra(a, b):
       %Equal.sym(N.Number, v47, v52, BP.mul_correct(an, B.Pos{B.One{}})) : {N.add(N.mul(N.add(v36, N.mul(N.add(N.mul(N.add(v34, _), v44), v41), v38)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v19, v22, {==}) : {N.add(N.mul(N.add(v36, N.mul(N.add(N.mul(N.add(v34, N.mul(v51, _)), v44), v41), v38)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v22, N.S{N.Z{}}, {==}) : {N.add(N.mul(N.add(v36, N.mul(N.add(N.mul(N.add(v34, N.mul(v51, _)), v44), v41), v38)), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v41, v57, BP.mul_correct(B.add(B.mul(B.Zero{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bn)) : {N.add(N.mul(N.add(v36, N.mul(N.add(v55, _), v38)), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v56, v60, BP.add_correct(B.mul(B.Zero{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}}))) : {N.add(N.mul(N.add(v36, N.mul(N.add(v55, N.mul(_, v25)), v38)), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v58, v62, BP.mul_correct(B.Zero{}, B.Pos{ad})) : {N.add(N.mul(N.add(v36, N.mul(N.add(v55, N.mul(N.add(_, v59), v25)), v38)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v41, v57, BP.mul_correct(B.add(B.mul(B.Nought{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bn)) : {N.add(N.mul(N.add(v36, N.mul(N.add(v55, _), v38)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v56, v60, BP.add_correct(B.mul(B.Nought{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}}))) : {N.add(N.mul(N.add(v36, N.mul(N.add(v55, N.mul(_, v25)), v38)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v58, v62, BP.mul_correct(B.Nought{}, B.Pos{ad})) : {N.add(N.mul(N.add(v36, N.mul(N.add(v55, N.mul(N.add(_, v59), v25)), v38)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v61, N.Z{}, {==}) : {N.add(N.mul(N.add(v36, N.mul(N.add(v55, N.mul(N.add(N.mul(_, v49), v59), v25)), v38)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v49, v32, {==}) : {N.add(N.mul(N.add(v36, N.mul(N.add(v55, N.mul(N.add(N.mul(N.Z{}, _), v59), v25)), v38)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v59, v65, BP.mul_correct(ap, B.Pos{B.One{}})) : {N.add(N.mul(N.add(v36, N.mul(N.add(v55, N.mul(N.add(v63, _), v25)), v38)), v0), v3) == v8 : N.Number}
@@ -9311,8 +9311,8 @@ def geom_step_algebra(a, b):
       %Equal.sym(N.Number, v0, v75, BP.positive_mul_correct(B.One{}, B.positive_mul(ad, bd))) : {N.add(N.mul(v73, _), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v22, N.S{N.Z{}}, {==}) : {N.add(N.mul(v73, N.mul(_, v74)), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v74, v76, BP.positive_mul_correct(ad, bd)) : {N.add(N.mul(v73, N.mul(N.S{N.Z{}}, _)), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v1, v81, BP.add_correct(B.mul(B.Zero{}, B.Pos{B.positive_mul(ad, bd)}), B.mul(B.add(B.mul(ap, bp), B.mul(an, bn)), B.Pos{B.One{}}))) : {N.add(v78, N.mul(_, v2)) == v8 : N.Number}
-      %Equal.sym(N.Number, v79, v83, BP.mul_correct(B.Zero{}, B.Pos{B.positive_mul(ad, bd)})) : {N.add(v78, N.mul(N.add(_, v80), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v1, v81, BP.add_correct(B.mul(B.Nought{}, B.Pos{B.positive_mul(ad, bd)}), B.mul(B.add(B.mul(ap, bp), B.mul(an, bn)), B.Pos{B.One{}}))) : {N.add(v78, N.mul(_, v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v79, v83, BP.mul_correct(B.Nought{}, B.Pos{B.positive_mul(ad, bd)})) : {N.add(v78, N.mul(N.add(_, v80), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v61, N.Z{}, {==}) : {N.add(v78, N.mul(N.add(N.mul(_, v82), v80), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v82, v74, {==}) : {N.add(v78, N.mul(N.add(N.mul(N.Z{}, _), v80), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v74, v76, BP.positive_mul_correct(ad, bd)) : {N.add(v78, N.mul(N.add(N.mul(N.Z{}, _), v80), v2)) == v8 : N.Number}
@@ -9346,10 +9346,10 @@ def geom_step_algebra(a, b):
       %Equal.sym(N.Number, v29, v31, BP.positive_mul_correct(B.positive_mul(B.One{}, ad), bd)) : {v98 == N.add(N.mul(v112, N.mul(v24, _)), v7) : N.Number}
       %Equal.sym(N.Number, v30, v33, BP.positive_mul_correct(B.One{}, ad)) : {v98 == N.add(N.mul(v112, N.mul(v24, N.mul(_, v23))), v7) : N.Number}
       %Equal.sym(N.Number, v22, N.S{N.Z{}}, {==}) : {v98 == N.add(N.mul(v112, N.mul(v24, N.mul(N.mul(_, v32), v23))), v7) : N.Number}
-      %Equal.sym(N.Number, v6, v116, BP.add_correct(B.mul(B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), B.Pos{B.positive_mul(B.positive_mul(B.One{}, ad), bd)}), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})), bn), B.mul(B.add(B.mul(B.Zero{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bp)), B.Pos{B.positive_mul(B.One{}, bd)}))) : {v98 == N.add(v113, N.mul(_, v0)) : N.Number}
-      %Equal.sym(N.Number, v114, v118, BP.mul_correct(B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), B.Pos{B.positive_mul(B.positive_mul(B.One{}, ad), bd)})) : {v98 == N.add(v113, N.mul(N.add(_, v115), v0)) : N.Number}
-      %Equal.sym(N.Number, v117, v121, BP.add_correct(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))) : {v98 == N.add(v113, N.mul(N.add(N.mul(_, v14), v115), v0)) : N.Number}
-      %Equal.sym(N.Number, v119, v122, BP.mul_correct(B.Zero{}, B.Pos{bd})) : {v98 == N.add(v113, N.mul(N.add(N.mul(N.add(_, v120), v14), v115), v0)) : N.Number}
+      %Equal.sym(N.Number, v6, v116, BP.add_correct(B.mul(B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), B.Pos{B.positive_mul(B.positive_mul(B.One{}, ad), bd)}), B.mul(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})), bn), B.mul(B.add(B.mul(B.Nought{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bp)), B.Pos{B.positive_mul(B.One{}, bd)}))) : {v98 == N.add(v113, N.mul(_, v0)) : N.Number}
+      %Equal.sym(N.Number, v114, v118, BP.mul_correct(B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})), B.Pos{B.positive_mul(B.positive_mul(B.One{}, ad), bd)})) : {v98 == N.add(v113, N.mul(N.add(_, v115), v0)) : N.Number}
+      %Equal.sym(N.Number, v117, v121, BP.add_correct(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))) : {v98 == N.add(v113, N.mul(N.add(N.mul(_, v14), v115), v0)) : N.Number}
+      %Equal.sym(N.Number, v119, v122, BP.mul_correct(B.Nought{}, B.Pos{bd})) : {v98 == N.add(v113, N.mul(N.add(N.mul(N.add(_, v120), v14), v115), v0)) : N.Number}
       %Equal.sym(N.Number, v61, N.Z{}, {==}) : {v98 == N.add(v113, N.mul(N.add(N.mul(N.add(N.mul(_, v20), v120), v14), v115), v0)) : N.Number}
       %Equal.sym(N.Number, v20, v23, {==}) : {v98 == N.add(v113, N.mul(N.add(N.mul(N.add(N.mul(N.Z{}, _), v120), v14), v115), v0)) : N.Number}
       %Equal.sym(N.Number, v120, v124, BP.mul_correct(bp, B.Pos{B.One{}})) : {v98 == N.add(v113, N.mul(N.add(N.mul(N.add(v123, _), v14), v115), v0)) : N.Number}
@@ -9359,8 +9359,8 @@ def geom_step_algebra(a, b):
       %Equal.sym(N.Number, v29, v31, BP.positive_mul_correct(B.positive_mul(B.One{}, ad), bd)) : {v98 == N.add(v113, N.mul(N.add(N.mul(v126, _), v115), v0)) : N.Number}
       %Equal.sym(N.Number, v30, v33, BP.positive_mul_correct(B.One{}, ad)) : {v98 == N.add(v113, N.mul(N.add(N.mul(v126, N.mul(_, v23)), v115), v0)) : N.Number}
       %Equal.sym(N.Number, v22, N.S{N.Z{}}, {==}) : {v98 == N.add(v113, N.mul(N.add(N.mul(v126, N.mul(N.mul(_, v32), v23)), v115), v0)) : N.Number}
-      %Equal.sym(N.Number, v115, v129, BP.mul_correct(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})), bn), B.mul(B.add(B.mul(B.Zero{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bp)), B.Pos{B.positive_mul(B.One{}, bd)})) : {v98 == N.add(v113, N.mul(N.add(v127, _), v0)) : N.Number}
-      %Equal.sym(N.Number, v128, v132, BP.add_correct(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})), bn), B.mul(B.add(B.mul(B.Zero{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bp))) : {v98 == N.add(v113, N.mul(N.add(v127, N.mul(_, v38)), v0)) : N.Number}
+      %Equal.sym(N.Number, v115, v129, BP.mul_correct(B.add(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})), bn), B.mul(B.add(B.mul(B.Nought{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bp)), B.Pos{B.positive_mul(B.One{}, bd)})) : {v98 == N.add(v113, N.mul(N.add(v127, _), v0)) : N.Number}
+      %Equal.sym(N.Number, v128, v132, BP.add_correct(B.mul(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})), bn), B.mul(B.add(B.mul(B.Nought{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bp))) : {v98 == N.add(v113, N.mul(N.add(v127, N.mul(_, v38)), v0)) : N.Number}
       %Equal.sym(N.Number, v130, v133, BP.mul_correct(B.add(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}})), bn)) : {v98 == N.add(v113, N.mul(N.add(v127, N.mul(N.add(_, v131), v38)), v0)) : N.Number}
       %Equal.sym(N.Number, v43, v48, BP.add_correct(B.mul(B.Pos{B.One{}}, B.Pos{ad}), B.mul(an, B.Pos{B.One{}}))) : {v98 == N.add(v113, N.mul(N.add(v127, N.mul(N.add(N.mul(_, v25), v131), v38)), v0)) : N.Number}
       %Equal.sym(N.Number, v46, v50, BP.mul_correct(B.Pos{B.One{}}, B.Pos{ad})) : {v98 == N.add(v113, N.mul(N.add(v127, N.mul(N.add(N.mul(N.add(_, v47), v25), v131), v38)), v0)) : N.Number}
@@ -9370,9 +9370,9 @@ def geom_step_algebra(a, b):
       %Equal.sym(N.Number, v47, v52, BP.mul_correct(an, B.Pos{B.One{}})) : {v98 == N.add(v113, N.mul(N.add(v127, N.mul(N.add(N.mul(N.add(v34, _), v25), v131), v38)), v0)) : N.Number}
       %Equal.sym(N.Number, v19, v22, {==}) : {v98 == N.add(v113, N.mul(N.add(v127, N.mul(N.add(N.mul(N.add(v34, N.mul(v51, _)), v25), v131), v38)), v0)) : N.Number}
       %Equal.sym(N.Number, v22, N.S{N.Z{}}, {==}) : {v98 == N.add(v113, N.mul(N.add(v127, N.mul(N.add(N.mul(N.add(v34, N.mul(v51, _)), v25), v131), v38)), v0)) : N.Number}
-      %Equal.sym(N.Number, v131, v135, BP.mul_correct(B.add(B.mul(B.Zero{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bp)) : {v98 == N.add(v113, N.mul(N.add(v127, N.mul(N.add(v134, _), v38)), v0)) : N.Number}
-      %Equal.sym(N.Number, v56, v60, BP.add_correct(B.mul(B.Zero{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}}))) : {v98 == N.add(v113, N.mul(N.add(v127, N.mul(N.add(v134, N.mul(_, v44)), v38)), v0)) : N.Number}
-      %Equal.sym(N.Number, v58, v62, BP.mul_correct(B.Zero{}, B.Pos{ad})) : {v98 == N.add(v113, N.mul(N.add(v127, N.mul(N.add(v134, N.mul(N.add(_, v59), v44)), v38)), v0)) : N.Number}
+      %Equal.sym(N.Number, v131, v135, BP.mul_correct(B.add(B.mul(B.Nought{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}})), bp)) : {v98 == N.add(v113, N.mul(N.add(v127, N.mul(N.add(v134, _), v38)), v0)) : N.Number}
+      %Equal.sym(N.Number, v56, v60, BP.add_correct(B.mul(B.Nought{}, B.Pos{ad}), B.mul(ap, B.Pos{B.One{}}))) : {v98 == N.add(v113, N.mul(N.add(v127, N.mul(N.add(v134, N.mul(_, v44)), v38)), v0)) : N.Number}
+      %Equal.sym(N.Number, v58, v62, BP.mul_correct(B.Nought{}, B.Pos{ad})) : {v98 == N.add(v113, N.mul(N.add(v127, N.mul(N.add(v134, N.mul(N.add(_, v59), v44)), v38)), v0)) : N.Number}
       %Equal.sym(N.Number, v61, N.Z{}, {==}) : {v98 == N.add(v113, N.mul(N.add(v127, N.mul(N.add(v134, N.mul(N.add(N.mul(_, v49), v59), v44)), v38)), v0)) : N.Number}
       %Equal.sym(N.Number, v49, v32, {==}) : {v98 == N.add(v113, N.mul(N.add(v127, N.mul(N.add(v134, N.mul(N.add(N.mul(N.Z{}, _), v59), v44)), v38)), v0)) : N.Number}
       %Equal.sym(N.Number, v59, v65, BP.mul_correct(ap, B.Pos{B.One{}})) : {v98 == N.add(v113, N.mul(N.add(v127, N.mul(N.add(v134, N.mul(N.add(v63, _), v44)), v38)), v0)) : N.Number}
@@ -12356,23 +12356,23 @@ def heat_increment_algebra(a, b, c):
   match a b c:
     case Q.Fraction{ap, an, ad} Q.Fraction{bp, bn, bd} Q.Fraction{cp, cn, cd}:
       +v0 = B.positive_value(B.positive_mul(B.positive_mul(ad, B.positive_mul(B.One{}, bd)), cd))
-      +v1 = B.value(B.add(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))), cn), B.mul(B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})))), cp)))
+      +v1 = B.value(B.add(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))), cn), B.mul(B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})))), cp)))
       +v2 = B.positive_value(B.positive_mul(B.positive_mul(ad, B.positive_mul(B.One{}, B.positive_mul(bd, cd))), B.positive_mul(ad, B.positive_mul(B.One{}, cd))))
       +v3 = N.mul(v1, v2)
-      +v4 = B.value(B.add(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))), cp), B.mul(B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})))), cn)))
+      +v4 = B.value(B.add(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))), cp), B.mul(B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})))), cn)))
       +v5 = N.mul(v4, v2)
-      +v6 = B.value(B.add(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, cd))}), B.mul(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, B.positive_mul(bd, cd)))})))
+      +v6 = B.value(B.add(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, cd))}), B.mul(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, B.positive_mul(bd, cd)))})))
       +v7 = N.mul(v6, v0)
       +v8 = N.add(v5, v7)
-      +v9 = B.value(B.add(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, cd))}), B.mul(B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, B.positive_mul(bd, cd)))})))
-      +v10 = B.value(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, cd))}))
-      +v11 = B.value(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, B.positive_mul(bd, cd)))}))
+      +v9 = B.value(B.add(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, cd))}), B.mul(B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, B.positive_mul(bd, cd)))})))
+      +v10 = B.value(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, cd))}))
+      +v11 = B.value(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, B.positive_mul(bd, cd)))}))
       +v12 = N.add(v10, v11)
-      +v13 = B.value(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}})))))
+      +v13 = B.value(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}})))))
       +v14 = B.value(B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, cd))})
       +v15 = N.mul(v13, v14)
       +v16 = B.value(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}}))))
-      +v17 = B.value(B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))))
+      +v17 = B.value(B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))))
       +v18 = N.add(v16, v17)
       +v19 = B.value(ap)
       +v20 = B.value(B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}})))
@@ -12405,12 +12405,12 @@ def heat_increment_algebra(a, b, c):
       +v47 = N.add(v33, v46)
       +v48 = N.mul(v19, v47)
       +v49 = B.value(an)
-      +v50 = B.value(B.add(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}})))
+      +v50 = B.value(B.add(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}})))
       +v51 = N.mul(v49, v50)
-      +v52 = B.value(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}))
+      +v52 = B.value(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}))
       +v53 = B.value(B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))
       +v54 = N.add(v52, v53)
-      +v55 = B.value(B.Zero{})
+      +v55 = B.value(B.Nought{})
       +v56 = N.mul(v55, v26)
       +v57 = N.mul(N.Z{}, v32)
       +v58 = B.value(B.add(B.mul(bp, cp), B.mul(bn, cn)))
@@ -12433,15 +12433,15 @@ def heat_increment_algebra(a, b, c):
       +v75 = N.mul(N.S{N.Z{}}, v31)
       +v76 = N.mul(v71, v75)
       +v77 = N.mul(v69, v76)
-      +v78 = B.value(B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))))
+      +v78 = B.value(B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))))
       +v79 = B.value(B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, B.positive_mul(bd, cd)))})
       +v80 = N.mul(v78, v79)
-      +v81 = B.value(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))
+      +v81 = B.value(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))
       +v82 = B.value(B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))))
       +v83 = N.add(v81, v82)
-      +v84 = B.value(B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))
+      +v84 = B.value(B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))
       +v85 = N.mul(v19, v84)
-      +v86 = B.value(B.mul(B.Zero{}, B.Pos{cd}))
+      +v86 = B.value(B.mul(B.Nought{}, B.Pos{cd}))
       +v87 = B.value(B.mul(cp, B.Pos{B.One{}}))
       +v88 = N.add(v86, v87)
       +v89 = B.value(B.Pos{cd})
@@ -12478,13 +12478,13 @@ def heat_increment_algebra(a, b, c):
       +v120 = N.mul(v71, v119)
       +v121 = N.mul(v120, v31)
       +v122 = N.mul(v113, v121)
-      +v123 = B.value(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))), cn))
-      +v124 = B.value(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})))), cp))
+      +v123 = B.value(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))), cn))
+      +v124 = B.value(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})))), cp))
       +v125 = N.add(v123, v124)
-      +v126 = B.value(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))))
+      +v126 = B.value(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))))
       +v127 = N.mul(v126, v40)
       +v128 = B.value(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))))
-      +v129 = B.value(B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))))
+      +v129 = B.value(B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))))
       +v130 = N.add(v128, v129)
       +v131 = B.value(B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})))
       +v132 = N.mul(v19, v131)
@@ -12497,9 +12497,9 @@ def heat_increment_algebra(a, b, c):
       +v139 = N.mul(v42, N.S{N.Z{}})
       +v140 = N.add(v119, v139)
       +v141 = N.mul(v19, v140)
-      +v142 = B.value(B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))
+      +v142 = B.value(B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))
       +v143 = N.mul(v49, v142)
-      +v144 = B.value(B.mul(B.Zero{}, B.Pos{bd}))
+      +v144 = B.value(B.mul(B.Nought{}, B.Pos{bd}))
       +v145 = B.value(B.mul(bp, B.Pos{B.One{}}))
       +v146 = N.add(v144, v145)
       +v147 = N.mul(v55, v136)
@@ -12510,9 +12510,9 @@ def heat_increment_algebra(a, b, c):
       +v152 = N.mul(v49, v151)
       +v153 = N.add(v141, v152)
       +v154 = N.mul(v153, v40)
-      +v155 = B.value(B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})))))
+      +v155 = B.value(B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})))))
       +v156 = N.mul(v155, v43)
-      +v157 = B.value(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))))
+      +v157 = B.value(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))))
       +v158 = B.value(B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))))
       +v159 = N.add(v157, v158)
       +v160 = N.mul(v19, v142)
@@ -12526,8 +12526,8 @@ def heat_increment_algebra(a, b, c):
       +v168 = N.mul(v111, v76)
       +v169 = N.mul(v166, v168)
       +v170 = N.add(v122, v169)
-      +v171 = B.value(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))), cp))
-      +v172 = B.value(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})))), cn))
+      +v171 = B.value(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))), cp))
+      +v172 = B.value(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})))), cn))
       +v173 = N.add(v171, v172)
       +v174 = N.mul(v126, v43)
       +v175 = N.mul(v153, v43)
@@ -12535,12 +12535,12 @@ def heat_increment_algebra(a, b, c):
       +v177 = N.mul(v164, v40)
       +v178 = N.add(v175, v177)
       +v179 = N.mul(v178, v168)
-      +v180 = B.value(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, cd))}))
-      +v181 = B.value(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, B.positive_mul(bd, cd)))}))
+      +v180 = B.value(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, cd))}))
+      +v181 = B.value(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, B.positive_mul(bd, cd)))}))
       +v182 = N.add(v180, v181)
-      +v183 = B.value(B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}})))))
+      +v183 = B.value(B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}})))))
       +v184 = N.mul(v183, v14)
-      +v185 = B.value(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))))
+      +v185 = B.value(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))))
       +v186 = B.value(B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}}))))
       +v187 = N.add(v185, v186)
       +v188 = N.mul(v19, v50)
@@ -12549,10 +12549,10 @@ def heat_increment_algebra(a, b, c):
       +v191 = N.mul(v49, v47)
       +v192 = N.add(v189, v191)
       +v193 = N.mul(v192, v76)
-      +v194 = B.value(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))))
+      +v194 = B.value(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))))
       +v195 = N.mul(v194, v79)
       +v196 = B.value(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))))
-      +v197 = B.value(B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))
+      +v197 = B.value(B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))
       +v198 = N.add(v196, v197)
       +v199 = N.mul(v19, v96)
       +v200 = N.mul(v19, v104)
@@ -13754,9 +13754,9 @@ def heat_increment_algebra(a, b, c):
       +v1396 = N.add(v511, v1393)
       +v1397 = N.add(v467, v1396)
       Q.Witness{(
-      %Equal.sym(N.Number, v9, v12, BP.add_correct(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, cd))}), B.mul(B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, B.positive_mul(bd, cd)))}))) : {N.add(N.mul(_, v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v10, v15, BP.mul_correct(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, cd))})) : {N.add(N.mul(N.add(_, v11), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v13, v18, BP.add_correct(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))))) : {N.add(N.mul(N.add(N.mul(_, v14), v11), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v9, v12, BP.add_correct(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, cd))}), B.mul(B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, B.positive_mul(bd, cd)))}))) : {N.add(N.mul(_, v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v10, v15, BP.mul_correct(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, cd))})) : {N.add(N.mul(N.add(_, v11), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v13, v18, BP.add_correct(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))))) : {N.add(N.mul(N.add(N.mul(_, v14), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v16, v21, BP.mul_correct(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}})))) : {N.add(N.mul(N.add(N.mul(N.add(_, v17), v14), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v20, v24, BP.add_correct(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}}))) : {N.add(N.mul(N.add(N.mul(N.add(N.mul(v19, _), v17), v14), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v22, v27, BP.mul_correct(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)})) : {N.add(N.mul(N.add(N.mul(N.add(N.mul(v19, N.add(_, v23)), v17), v14), v11), v0), v3) == v8 : N.Number}
@@ -13770,9 +13770,9 @@ def heat_increment_algebra(a, b, c):
       %Equal.sym(N.Number, v37, v44, BP.mul_correct(bn, cp)) : {N.add(N.mul(N.add(N.mul(N.add(N.mul(v19, N.add(v33, N.mul(N.add(v41, _), v25))), v17), v14), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v25, v28, {==}) : {N.add(N.mul(N.add(N.mul(N.add(N.mul(v19, N.add(v33, N.mul(v45, _))), v17), v14), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v28, N.S{N.Z{}}, {==}) : {N.add(N.mul(N.add(N.mul(N.add(N.mul(v19, N.add(v33, N.mul(v45, _))), v17), v14), v11), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v17, v51, BP.mul_correct(an, B.add(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}})))) : {N.add(N.mul(N.add(N.mul(N.add(v48, _), v14), v11), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v50, v54, BP.add_correct(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))) : {N.add(N.mul(N.add(N.mul(N.add(v48, N.mul(v49, _)), v14), v11), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v52, v56, BP.mul_correct(B.Zero{}, B.Pos{B.positive_mul(bd, cd)})) : {N.add(N.mul(N.add(N.mul(N.add(v48, N.mul(v49, N.add(_, v53))), v14), v11), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v17, v51, BP.mul_correct(an, B.add(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}})))) : {N.add(N.mul(N.add(N.mul(N.add(v48, _), v14), v11), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v50, v54, BP.add_correct(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))) : {N.add(N.mul(N.add(N.mul(N.add(v48, N.mul(v49, _)), v14), v11), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v52, v56, BP.mul_correct(B.Nought{}, B.Pos{B.positive_mul(bd, cd)})) : {N.add(N.mul(N.add(N.mul(N.add(v48, N.mul(v49, N.add(_, v53))), v14), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v55, N.Z{}, {==}) : {N.add(N.mul(N.add(N.mul(N.add(v48, N.mul(v49, N.add(N.mul(_, v26), v53))), v14), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v26, v29, {==}) : {N.add(N.mul(N.add(N.mul(N.add(v48, N.mul(v49, N.add(N.mul(N.Z{}, _), v53))), v14), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v29, v32, BP.positive_mul_correct(bd, cd)) : {N.add(N.mul(N.add(N.mul(N.add(v48, N.mul(v49, N.add(N.mul(N.Z{}, _), v53))), v14), v11), v0), v3) == v8 : N.Number}
@@ -13786,11 +13786,11 @@ def heat_increment_algebra(a, b, c):
       %Equal.sym(N.Number, v70, v73, BP.positive_mul_correct(ad, B.positive_mul(B.One{}, cd))) : {N.add(N.mul(N.add(N.mul(v69, _), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v72, v74, BP.positive_mul_correct(B.One{}, cd)) : {N.add(N.mul(N.add(N.mul(v69, N.mul(v71, _)), v11), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v28, N.S{N.Z{}}, {==}) : {N.add(N.mul(N.add(N.mul(v69, N.mul(v71, N.mul(_, v31))), v11), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v11, v80, BP.mul_correct(B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, B.positive_mul(bd, cd)))})) : {N.add(N.mul(N.add(v77, _), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v78, v83, BP.add_correct(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))))) : {N.add(N.mul(N.add(v77, N.mul(_, v79)), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v81, v85, BP.mul_correct(ap, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))) : {N.add(N.mul(N.add(v77, N.mul(N.add(_, v82), v79)), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v84, v88, BP.add_correct(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))) : {N.add(N.mul(N.add(v77, N.mul(N.add(N.mul(v19, _), v82), v79)), v0), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v86, v90, BP.mul_correct(B.Zero{}, B.Pos{cd})) : {N.add(N.mul(N.add(v77, N.mul(N.add(N.mul(v19, N.add(_, v87)), v82), v79)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v11, v80, BP.mul_correct(B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, B.positive_mul(bd, cd)))})) : {N.add(N.mul(N.add(v77, _), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v78, v83, BP.add_correct(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))))) : {N.add(N.mul(N.add(v77, N.mul(_, v79)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v81, v85, BP.mul_correct(ap, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))) : {N.add(N.mul(N.add(v77, N.mul(N.add(_, v82), v79)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v84, v88, BP.add_correct(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))) : {N.add(N.mul(N.add(v77, N.mul(N.add(N.mul(v19, _), v82), v79)), v0), v3) == v8 : N.Number}
+      %Equal.sym(N.Number, v86, v90, BP.mul_correct(B.Nought{}, B.Pos{cd})) : {N.add(N.mul(N.add(v77, N.mul(N.add(N.mul(v19, N.add(_, v87)), v82), v79)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v55, N.Z{}, {==}) : {N.add(N.mul(N.add(v77, N.mul(N.add(N.mul(v19, N.add(N.mul(_, v89), v87)), v82), v79)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v89, v31, {==}) : {N.add(N.mul(N.add(v77, N.mul(N.add(N.mul(v19, N.add(N.mul(N.Z{}, _), v87)), v82), v79)), v0), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v87, v92, BP.mul_correct(cp, B.Pos{B.One{}})) : {N.add(N.mul(N.add(v77, N.mul(N.add(N.mul(v19, N.add(v91, _)), v82), v79)), v0), v3) == v8 : N.Number}
@@ -13814,9 +13814,9 @@ def heat_increment_algebra(a, b, c):
       %Equal.sym(N.Number, v114, v117, BP.positive_mul_correct(ad, B.positive_mul(B.One{}, bd))) : {N.add(N.mul(v113, N.mul(_, v31)), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v116, v118, BP.positive_mul_correct(B.One{}, bd)) : {N.add(N.mul(v113, N.mul(N.mul(v71, _), v31)), v3) == v8 : N.Number}
       %Equal.sym(N.Number, v28, N.S{N.Z{}}, {==}) : {N.add(N.mul(v113, N.mul(N.mul(v71, N.mul(_, v30)), v31)), v3) == v8 : N.Number}
-      %Equal.sym(N.Number, v1, v125, BP.add_correct(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))), cn), B.mul(B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})))), cp))) : {N.add(v122, N.mul(_, v2)) == v8 : N.Number}
-      %Equal.sym(N.Number, v123, v127, BP.mul_correct(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))), cn)) : {N.add(v122, N.mul(N.add(_, v124), v2)) == v8 : N.Number}
-      %Equal.sym(N.Number, v126, v130, BP.add_correct(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))))) : {N.add(v122, N.mul(N.add(N.mul(_, v40), v124), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v1, v125, BP.add_correct(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))), cn), B.mul(B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})))), cp))) : {N.add(v122, N.mul(_, v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v123, v127, BP.mul_correct(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))), cn)) : {N.add(v122, N.mul(N.add(_, v124), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v126, v130, BP.add_correct(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))))) : {N.add(v122, N.mul(N.add(N.mul(_, v40), v124), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v128, v132, BP.mul_correct(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})))) : {N.add(v122, N.mul(N.add(N.mul(N.add(_, v129), v40), v124), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v131, v135, BP.add_correct(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))) : {N.add(v122, N.mul(N.add(N.mul(N.add(N.mul(v19, _), v129), v40), v124), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v133, v137, BP.mul_correct(B.Pos{B.One{}}, B.Pos{bd})) : {N.add(v122, N.mul(N.add(N.mul(N.add(N.mul(v19, N.add(_, v134)), v129), v40), v124), v2)) == v8 : N.Number}
@@ -13826,19 +13826,19 @@ def heat_increment_algebra(a, b, c):
       %Equal.sym(N.Number, v134, v138, BP.mul_correct(bn, B.Pos{B.One{}})) : {N.add(v122, N.mul(N.add(N.mul(N.add(N.mul(v19, N.add(v119, _)), v129), v40), v124), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v25, v28, {==}) : {N.add(v122, N.mul(N.add(N.mul(N.add(N.mul(v19, N.add(v119, N.mul(v42, _))), v129), v40), v124), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v28, N.S{N.Z{}}, {==}) : {N.add(v122, N.mul(N.add(N.mul(N.add(N.mul(v19, N.add(v119, N.mul(v42, _))), v129), v40), v124), v2)) == v8 : N.Number}
-      %Equal.sym(N.Number, v129, v143, BP.mul_correct(an, B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))) : {N.add(v122, N.mul(N.add(N.mul(N.add(v141, _), v40), v124), v2)) == v8 : N.Number}
-      %Equal.sym(N.Number, v142, v146, BP.add_correct(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))) : {N.add(v122, N.mul(N.add(N.mul(N.add(v141, N.mul(v49, _)), v40), v124), v2)) == v8 : N.Number}
-      %Equal.sym(N.Number, v144, v147, BP.mul_correct(B.Zero{}, B.Pos{bd})) : {N.add(v122, N.mul(N.add(N.mul(N.add(v141, N.mul(v49, N.add(_, v145))), v40), v124), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v129, v143, BP.mul_correct(an, B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))) : {N.add(v122, N.mul(N.add(N.mul(N.add(v141, _), v40), v124), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v142, v146, BP.add_correct(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))) : {N.add(v122, N.mul(N.add(N.mul(N.add(v141, N.mul(v49, _)), v40), v124), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v144, v147, BP.mul_correct(B.Nought{}, B.Pos{bd})) : {N.add(v122, N.mul(N.add(N.mul(N.add(v141, N.mul(v49, N.add(_, v145))), v40), v124), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v55, N.Z{}, {==}) : {N.add(v122, N.mul(N.add(N.mul(N.add(v141, N.mul(v49, N.add(N.mul(_, v136), v145))), v40), v124), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v136, v30, {==}) : {N.add(v122, N.mul(N.add(N.mul(N.add(v141, N.mul(v49, N.add(N.mul(N.Z{}, _), v145))), v40), v124), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v145, v149, BP.mul_correct(bp, B.Pos{B.One{}})) : {N.add(v122, N.mul(N.add(N.mul(N.add(v141, N.mul(v49, N.add(v148, _))), v40), v124), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v25, v28, {==}) : {N.add(v122, N.mul(N.add(N.mul(N.add(v141, N.mul(v49, N.add(v148, N.mul(v39, _)))), v40), v124), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v28, N.S{N.Z{}}, {==}) : {N.add(v122, N.mul(N.add(N.mul(N.add(v141, N.mul(v49, N.add(v148, N.mul(v39, _)))), v40), v124), v2)) == v8 : N.Number}
-      %Equal.sym(N.Number, v124, v156, BP.mul_correct(B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})))), cp)) : {N.add(v122, N.mul(N.add(v154, _), v2)) == v8 : N.Number}
-      %Equal.sym(N.Number, v155, v159, BP.add_correct(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))))) : {N.add(v122, N.mul(N.add(v154, N.mul(_, v43)), v2)) == v8 : N.Number}
-      %Equal.sym(N.Number, v157, v160, BP.mul_correct(ap, B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))) : {N.add(v122, N.mul(N.add(v154, N.mul(N.add(_, v158), v43)), v2)) == v8 : N.Number}
-      %Equal.sym(N.Number, v142, v146, BP.add_correct(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))) : {N.add(v122, N.mul(N.add(v154, N.mul(N.add(N.mul(v19, _), v158), v43)), v2)) == v8 : N.Number}
-      %Equal.sym(N.Number, v144, v147, BP.mul_correct(B.Zero{}, B.Pos{bd})) : {N.add(v122, N.mul(N.add(v154, N.mul(N.add(N.mul(v19, N.add(_, v145)), v158), v43)), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v124, v156, BP.mul_correct(B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})))), cp)) : {N.add(v122, N.mul(N.add(v154, _), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v155, v159, BP.add_correct(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))))) : {N.add(v122, N.mul(N.add(v154, N.mul(_, v43)), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v157, v160, BP.mul_correct(ap, B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))) : {N.add(v122, N.mul(N.add(v154, N.mul(N.add(_, v158), v43)), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v142, v146, BP.add_correct(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))) : {N.add(v122, N.mul(N.add(v154, N.mul(N.add(N.mul(v19, _), v158), v43)), v2)) == v8 : N.Number}
+      %Equal.sym(N.Number, v144, v147, BP.mul_correct(B.Nought{}, B.Pos{bd})) : {N.add(v122, N.mul(N.add(v154, N.mul(N.add(N.mul(v19, N.add(_, v145)), v158), v43)), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v55, N.Z{}, {==}) : {N.add(v122, N.mul(N.add(v154, N.mul(N.add(N.mul(v19, N.add(N.mul(_, v136), v145)), v158), v43)), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v136, v30, {==}) : {N.add(v122, N.mul(N.add(v154, N.mul(N.add(N.mul(v19, N.add(N.mul(N.Z{}, _), v145)), v158), v43)), v2)) == v8 : N.Number}
       %Equal.sym(N.Number, v145, v149, BP.mul_correct(bp, B.Pos{B.One{}})) : {N.add(v122, N.mul(N.add(v154, N.mul(N.add(N.mul(v19, N.add(v148, _)), v158), v43)), v2)) == v8 : N.Number}
@@ -13861,9 +13861,9 @@ def heat_increment_algebra(a, b, c):
       %Equal.sym(N.Number, v70, v73, BP.positive_mul_correct(ad, B.positive_mul(B.One{}, cd))) : {N.add(v122, N.mul(v166, N.mul(v111, _))) == v8 : N.Number}
       %Equal.sym(N.Number, v72, v74, BP.positive_mul_correct(B.One{}, cd)) : {N.add(v122, N.mul(v166, N.mul(v111, N.mul(v71, _)))) == v8 : N.Number}
       %Equal.sym(N.Number, v28, N.S{N.Z{}}, {==}) : {N.add(v122, N.mul(v166, N.mul(v111, N.mul(v71, N.mul(_, v31))))) == v8 : N.Number}
-      %Equal.sym(N.Number, v4, v173, BP.add_correct(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))), cp), B.mul(B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})))), cn))) : {v170 == N.add(N.mul(_, v2), v7) : N.Number}
-      %Equal.sym(N.Number, v171, v174, BP.mul_correct(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))), cp)) : {v170 == N.add(N.mul(N.add(_, v172), v2), v7) : N.Number}
-      %Equal.sym(N.Number, v126, v130, BP.add_correct(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))))) : {v170 == N.add(N.mul(N.add(N.mul(_, v43), v172), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v4, v173, BP.add_correct(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))), cp), B.mul(B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})))), cn))) : {v170 == N.add(N.mul(_, v2), v7) : N.Number}
+      %Equal.sym(N.Number, v171, v174, BP.mul_correct(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))), cp)) : {v170 == N.add(N.mul(N.add(_, v172), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v126, v130, BP.add_correct(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))))) : {v170 == N.add(N.mul(N.add(N.mul(_, v43), v172), v2), v7) : N.Number}
       %Equal.sym(N.Number, v128, v132, BP.mul_correct(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})))) : {v170 == N.add(N.mul(N.add(N.mul(N.add(_, v129), v43), v172), v2), v7) : N.Number}
       %Equal.sym(N.Number, v131, v135, BP.add_correct(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))) : {v170 == N.add(N.mul(N.add(N.mul(N.add(N.mul(v19, _), v129), v43), v172), v2), v7) : N.Number}
       %Equal.sym(N.Number, v133, v137, BP.mul_correct(B.Pos{B.One{}}, B.Pos{bd})) : {v170 == N.add(N.mul(N.add(N.mul(N.add(N.mul(v19, N.add(_, v134)), v129), v43), v172), v2), v7) : N.Number}
@@ -13873,19 +13873,19 @@ def heat_increment_algebra(a, b, c):
       %Equal.sym(N.Number, v134, v138, BP.mul_correct(bn, B.Pos{B.One{}})) : {v170 == N.add(N.mul(N.add(N.mul(N.add(N.mul(v19, N.add(v119, _)), v129), v43), v172), v2), v7) : N.Number}
       %Equal.sym(N.Number, v25, v28, {==}) : {v170 == N.add(N.mul(N.add(N.mul(N.add(N.mul(v19, N.add(v119, N.mul(v42, _))), v129), v43), v172), v2), v7) : N.Number}
       %Equal.sym(N.Number, v28, N.S{N.Z{}}, {==}) : {v170 == N.add(N.mul(N.add(N.mul(N.add(N.mul(v19, N.add(v119, N.mul(v42, _))), v129), v43), v172), v2), v7) : N.Number}
-      %Equal.sym(N.Number, v129, v143, BP.mul_correct(an, B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))) : {v170 == N.add(N.mul(N.add(N.mul(N.add(v141, _), v43), v172), v2), v7) : N.Number}
-      %Equal.sym(N.Number, v142, v146, BP.add_correct(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))) : {v170 == N.add(N.mul(N.add(N.mul(N.add(v141, N.mul(v49, _)), v43), v172), v2), v7) : N.Number}
-      %Equal.sym(N.Number, v144, v147, BP.mul_correct(B.Zero{}, B.Pos{bd})) : {v170 == N.add(N.mul(N.add(N.mul(N.add(v141, N.mul(v49, N.add(_, v145))), v43), v172), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v129, v143, BP.mul_correct(an, B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))) : {v170 == N.add(N.mul(N.add(N.mul(N.add(v141, _), v43), v172), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v142, v146, BP.add_correct(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))) : {v170 == N.add(N.mul(N.add(N.mul(N.add(v141, N.mul(v49, _)), v43), v172), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v144, v147, BP.mul_correct(B.Nought{}, B.Pos{bd})) : {v170 == N.add(N.mul(N.add(N.mul(N.add(v141, N.mul(v49, N.add(_, v145))), v43), v172), v2), v7) : N.Number}
       %Equal.sym(N.Number, v55, N.Z{}, {==}) : {v170 == N.add(N.mul(N.add(N.mul(N.add(v141, N.mul(v49, N.add(N.mul(_, v136), v145))), v43), v172), v2), v7) : N.Number}
       %Equal.sym(N.Number, v136, v30, {==}) : {v170 == N.add(N.mul(N.add(N.mul(N.add(v141, N.mul(v49, N.add(N.mul(N.Z{}, _), v145))), v43), v172), v2), v7) : N.Number}
       %Equal.sym(N.Number, v145, v149, BP.mul_correct(bp, B.Pos{B.One{}})) : {v170 == N.add(N.mul(N.add(N.mul(N.add(v141, N.mul(v49, N.add(v148, _))), v43), v172), v2), v7) : N.Number}
       %Equal.sym(N.Number, v25, v28, {==}) : {v170 == N.add(N.mul(N.add(N.mul(N.add(v141, N.mul(v49, N.add(v148, N.mul(v39, _)))), v43), v172), v2), v7) : N.Number}
       %Equal.sym(N.Number, v28, N.S{N.Z{}}, {==}) : {v170 == N.add(N.mul(N.add(N.mul(N.add(v141, N.mul(v49, N.add(v148, N.mul(v39, _)))), v43), v172), v2), v7) : N.Number}
-      %Equal.sym(N.Number, v172, v176, BP.mul_correct(B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})))), cn)) : {v170 == N.add(N.mul(N.add(v175, _), v2), v7) : N.Number}
-      %Equal.sym(N.Number, v155, v159, BP.add_correct(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))))) : {v170 == N.add(N.mul(N.add(v175, N.mul(_, v40)), v2), v7) : N.Number}
-      %Equal.sym(N.Number, v157, v160, BP.mul_correct(ap, B.add(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))) : {v170 == N.add(N.mul(N.add(v175, N.mul(N.add(_, v158), v40)), v2), v7) : N.Number}
-      %Equal.sym(N.Number, v142, v146, BP.add_correct(B.mul(B.Zero{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))) : {v170 == N.add(N.mul(N.add(v175, N.mul(N.add(N.mul(v19, _), v158), v40)), v2), v7) : N.Number}
-      %Equal.sym(N.Number, v144, v147, BP.mul_correct(B.Zero{}, B.Pos{bd})) : {v170 == N.add(N.mul(N.add(v175, N.mul(N.add(N.mul(v19, N.add(_, v145)), v158), v40)), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v172, v176, BP.mul_correct(B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}})))), cn)) : {v170 == N.add(N.mul(N.add(v175, _), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v155, v159, BP.add_correct(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{bd}), B.mul(bn, B.Pos{B.One{}}))))) : {v170 == N.add(N.mul(N.add(v175, N.mul(_, v40)), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v157, v160, BP.mul_correct(ap, B.add(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}})))) : {v170 == N.add(N.mul(N.add(v175, N.mul(N.add(_, v158), v40)), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v142, v146, BP.add_correct(B.mul(B.Nought{}, B.Pos{bd}), B.mul(bp, B.Pos{B.One{}}))) : {v170 == N.add(N.mul(N.add(v175, N.mul(N.add(N.mul(v19, _), v158), v40)), v2), v7) : N.Number}
+      %Equal.sym(N.Number, v144, v147, BP.mul_correct(B.Nought{}, B.Pos{bd})) : {v170 == N.add(N.mul(N.add(v175, N.mul(N.add(N.mul(v19, N.add(_, v145)), v158), v40)), v2), v7) : N.Number}
       %Equal.sym(N.Number, v55, N.Z{}, {==}) : {v170 == N.add(N.mul(N.add(v175, N.mul(N.add(N.mul(v19, N.add(N.mul(_, v136), v145)), v158), v40)), v2), v7) : N.Number}
       %Equal.sym(N.Number, v136, v30, {==}) : {v170 == N.add(N.mul(N.add(v175, N.mul(N.add(N.mul(v19, N.add(N.mul(N.Z{}, _), v145)), v158), v40)), v2), v7) : N.Number}
       %Equal.sym(N.Number, v145, v149, BP.mul_correct(bp, B.Pos{B.One{}})) : {v170 == N.add(N.mul(N.add(v175, N.mul(N.add(N.mul(v19, N.add(v148, _)), v158), v40)), v2), v7) : N.Number}
@@ -13908,12 +13908,12 @@ def heat_increment_algebra(a, b, c):
       %Equal.sym(N.Number, v70, v73, BP.positive_mul_correct(ad, B.positive_mul(B.One{}, cd))) : {v170 == N.add(N.mul(v178, N.mul(v111, _)), v7) : N.Number}
       %Equal.sym(N.Number, v72, v74, BP.positive_mul_correct(B.One{}, cd)) : {v170 == N.add(N.mul(v178, N.mul(v111, N.mul(v71, _))), v7) : N.Number}
       %Equal.sym(N.Number, v28, N.S{N.Z{}}, {==}) : {v170 == N.add(N.mul(v178, N.mul(v111, N.mul(v71, N.mul(_, v31)))), v7) : N.Number}
-      %Equal.sym(N.Number, v6, v182, BP.add_correct(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, cd))}), B.mul(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, B.positive_mul(bd, cd)))}))) : {v170 == N.add(v179, N.mul(_, v0)) : N.Number}
-      %Equal.sym(N.Number, v180, v184, BP.mul_correct(B.add(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, cd))})) : {v170 == N.add(v179, N.mul(N.add(_, v181), v0)) : N.Number}
-      %Equal.sym(N.Number, v183, v187, BP.add_correct(B.mul(ap, B.add(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}}))))) : {v170 == N.add(v179, N.mul(N.add(N.mul(_, v14), v181), v0)) : N.Number}
-      %Equal.sym(N.Number, v185, v188, BP.mul_correct(ap, B.add(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}})))) : {v170 == N.add(v179, N.mul(N.add(N.mul(N.add(_, v186), v14), v181), v0)) : N.Number}
-      %Equal.sym(N.Number, v50, v54, BP.add_correct(B.mul(B.Zero{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))) : {v170 == N.add(v179, N.mul(N.add(N.mul(N.add(N.mul(v19, _), v186), v14), v181), v0)) : N.Number}
-      %Equal.sym(N.Number, v52, v56, BP.mul_correct(B.Zero{}, B.Pos{B.positive_mul(bd, cd)})) : {v170 == N.add(v179, N.mul(N.add(N.mul(N.add(N.mul(v19, N.add(_, v53)), v186), v14), v181), v0)) : N.Number}
+      %Equal.sym(N.Number, v6, v182, BP.add_correct(B.mul(B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, cd))}), B.mul(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, B.positive_mul(bd, cd)))}))) : {v170 == N.add(v179, N.mul(_, v0)) : N.Number}
+      %Equal.sym(N.Number, v180, v184, BP.mul_correct(B.add(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, cd))})) : {v170 == N.add(v179, N.mul(N.add(_, v181), v0)) : N.Number}
+      %Equal.sym(N.Number, v183, v187, BP.add_correct(B.mul(ap, B.add(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Pos{B.One{}}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cn), B.mul(bn, cp)), B.Pos{B.One{}}))))) : {v170 == N.add(v179, N.mul(N.add(N.mul(_, v14), v181), v0)) : N.Number}
+      %Equal.sym(N.Number, v185, v188, BP.mul_correct(ap, B.add(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}})))) : {v170 == N.add(v179, N.mul(N.add(N.mul(N.add(_, v186), v14), v181), v0)) : N.Number}
+      %Equal.sym(N.Number, v50, v54, BP.add_correct(B.mul(B.Nought{}, B.Pos{B.positive_mul(bd, cd)}), B.mul(B.add(B.mul(bp, cp), B.mul(bn, cn)), B.Pos{B.One{}}))) : {v170 == N.add(v179, N.mul(N.add(N.mul(N.add(N.mul(v19, _), v186), v14), v181), v0)) : N.Number}
+      %Equal.sym(N.Number, v52, v56, BP.mul_correct(B.Nought{}, B.Pos{B.positive_mul(bd, cd)})) : {v170 == N.add(v179, N.mul(N.add(N.mul(N.add(N.mul(v19, N.add(_, v53)), v186), v14), v181), v0)) : N.Number}
       %Equal.sym(N.Number, v55, N.Z{}, {==}) : {v170 == N.add(v179, N.mul(N.add(N.mul(N.add(N.mul(v19, N.add(N.mul(_, v26), v53)), v186), v14), v181), v0)) : N.Number}
       %Equal.sym(N.Number, v26, v29, {==}) : {v170 == N.add(v179, N.mul(N.add(N.mul(N.add(N.mul(v19, N.add(N.mul(N.Z{}, _), v53)), v186), v14), v181), v0)) : N.Number}
       %Equal.sym(N.Number, v29, v32, BP.positive_mul_correct(bd, cd)) : {v170 == N.add(v179, N.mul(N.add(N.mul(N.add(N.mul(v19, N.add(N.mul(N.Z{}, _), v53)), v186), v14), v181), v0)) : N.Number}
@@ -13940,8 +13940,8 @@ def heat_increment_algebra(a, b, c):
       %Equal.sym(N.Number, v70, v73, BP.positive_mul_correct(ad, B.positive_mul(B.One{}, cd))) : {v170 == N.add(v179, N.mul(N.add(N.mul(v192, _), v181), v0)) : N.Number}
       %Equal.sym(N.Number, v72, v74, BP.positive_mul_correct(B.One{}, cd)) : {v170 == N.add(v179, N.mul(N.add(N.mul(v192, N.mul(v71, _)), v181), v0)) : N.Number}
       %Equal.sym(N.Number, v28, N.S{N.Z{}}, {==}) : {v170 == N.add(v179, N.mul(N.add(N.mul(v192, N.mul(v71, N.mul(_, v31))), v181), v0)) : N.Number}
-      %Equal.sym(N.Number, v181, v195, BP.mul_correct(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, B.positive_mul(bd, cd)))})) : {v170 == N.add(v179, N.mul(N.add(v193, _), v0)) : N.Number}
-      %Equal.sym(N.Number, v194, v198, BP.add_correct(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(_, v79)), v0)) : N.Number}
+      %Equal.sym(N.Number, v181, v195, BP.mul_correct(B.add(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))), B.Pos{B.positive_mul(ad, B.positive_mul(B.One{}, B.positive_mul(bd, cd)))})) : {v170 == N.add(v179, N.mul(N.add(v193, _), v0)) : N.Number}
+      %Equal.sym(N.Number, v194, v198, BP.add_correct(B.mul(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))), B.mul(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))))) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(_, v79)), v0)) : N.Number}
       %Equal.sym(N.Number, v196, v199, BP.mul_correct(ap, B.add(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}})))) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(_, v197), v79)), v0)) : N.Number}
       %Equal.sym(N.Number, v96, v100, BP.add_correct(B.mul(B.Pos{B.One{}}, B.Pos{cd}), B.mul(cn, B.Pos{B.One{}}))) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(N.mul(v19, _), v197), v79)), v0)) : N.Number}
       %Equal.sym(N.Number, v98, v101, BP.mul_correct(B.Pos{B.One{}}, B.Pos{cd})) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(N.mul(v19, N.add(_, v99)), v197), v79)), v0)) : N.Number}
@@ -13951,9 +13951,9 @@ def heat_increment_algebra(a, b, c):
       %Equal.sym(N.Number, v99, v102, BP.mul_correct(cn, B.Pos{B.One{}})) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(N.mul(v19, N.add(v75, _)), v197), v79)), v0)) : N.Number}
       %Equal.sym(N.Number, v25, v28, {==}) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(N.mul(v19, N.add(v75, N.mul(v40, _))), v197), v79)), v0)) : N.Number}
       %Equal.sym(N.Number, v28, N.S{N.Z{}}, {==}) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(N.mul(v19, N.add(v75, N.mul(v40, _))), v197), v79)), v0)) : N.Number}
-      %Equal.sym(N.Number, v197, v201, BP.mul_correct(an, B.add(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(v200, _), v79)), v0)) : N.Number}
-      %Equal.sym(N.Number, v84, v88, BP.add_correct(B.mul(B.Zero{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(v200, N.mul(v49, _)), v79)), v0)) : N.Number}
-      %Equal.sym(N.Number, v86, v90, BP.mul_correct(B.Zero{}, B.Pos{cd})) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(v200, N.mul(v49, N.add(_, v87))), v79)), v0)) : N.Number}
+      %Equal.sym(N.Number, v197, v201, BP.mul_correct(an, B.add(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}})))) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(v200, _), v79)), v0)) : N.Number}
+      %Equal.sym(N.Number, v84, v88, BP.add_correct(B.mul(B.Nought{}, B.Pos{cd}), B.mul(cp, B.Pos{B.One{}}))) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(v200, N.mul(v49, _)), v79)), v0)) : N.Number}
+      %Equal.sym(N.Number, v86, v90, BP.mul_correct(B.Nought{}, B.Pos{cd})) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(v200, N.mul(v49, N.add(_, v87))), v79)), v0)) : N.Number}
       %Equal.sym(N.Number, v55, N.Z{}, {==}) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(v200, N.mul(v49, N.add(N.mul(_, v89), v87))), v79)), v0)) : N.Number}
       %Equal.sym(N.Number, v89, v31, {==}) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(v200, N.mul(v49, N.add(N.mul(N.Z{}, _), v87))), v79)), v0)) : N.Number}
       %Equal.sym(N.Number, v87, v92, BP.mul_correct(cp, B.Pos{B.One{}})) : {v170 == N.add(v179, N.mul(N.add(v193, N.mul(N.add(v200, N.mul(v49, N.add(v91, _))), v79)), v0)) : N.Number}
@@ -15041,7 +15041,7 @@ def neg_add_self(a):
   match a:
     case Q.Fraction{ap, an, ad}:
       +v0 = B.positive_value(B.One{})
-      +v1 = B.value(B.Zero{})
+      +v1 = B.value(B.Nought{})
       +v2 = B.positive_value(B.positive_mul(ad, ad))
       +v3 = N.mul(v1, v2)
       +v4 = B.value(B.add(B.mul(ap, B.Pos{ad}), B.mul(an, B.Pos{ad})))

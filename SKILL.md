@@ -126,12 +126,12 @@ Rules: COMMITTED requires a complete proof or a clean `python3 bend/check.py` ce
 
 ## The Bend loop
 
-Bend 2.0.27 is the default verifier for the finite rational sandbox. Use it to seal results. The thinking stays with him. Setup, theorem mappings, and limits live in `bend/README.md`.
+Bend 2.0.35 is the default verifier for the finite rational sandbox. Use it to seal results. The thinking stays with him. Setup, theorem mappings, and limits live in `bend/README.md`.
 
 1. **State the law first.** Write the exact domain, quantifiers, and hypotheses in `bend/LAWS.bend`. Get agreement before changing a statement. Preserve the statement during proof work. Put paired definitions in `bend/PROOF.bend`.
 2. **Use exact arithmetic.** `bend/Exact/` supplies unbounded binary integers and signed rationals with positive denominators. Use `Q.Eq` for rational equality; representation equality is a different claim. Use `Q.Le` and `Q.Lt` for checked order certificates. Floating-point fixtures remain SUPPORTED evidence.
 3. **Keep debt explicit.** Track unfinished laws in `bend/OPEN.md`. A certificate contains no holes, open claims, unsafe definitions, or added assumptions disguised as axioms. The public law inventory in `bend/check.py` must change only with an explicit contract review.
-4. **Run the strict gate.** `python3 bend/check.py` pins the compiler version, checks the complete local import closure, and requires the exact clean checker result. A successful Bend exit code alone is insufficient: unsafe programs can exit zero. Run the behavioral tests when arithmetic or tooling changes.
+4. **Run the strict gate.** `python3 bend/check.py` pins the compiler version, checks the complete local import closure, and requires the exact clean checker result. A successful Bend exit code alone is insufficient: a plain run of an unsafe program exits zero. `python3 bend/check.py --verdict` rechecks the same proofs with the BendTT kernel; it needs Lean v4.34.0 and about two minutes. Run the behavioral tests when arithmetic or tooling changes.
 5. **Terms before automation.** He states the goal before and after a match, recursive induction call, or equality rewrite. Generated algebra certificates in `bend/Exact/` are checked proof terms. Their Python generators have no trusted mathematical authority.
 
 ```bash

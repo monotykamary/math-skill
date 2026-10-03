@@ -7,7 +7,7 @@ import ./Reasoning.bend as C
 import ./OrderAlgebra.bend as A
 
 def zero() -> Q.Nonnegative:
-  Q.Nonnegative{B.Zero{}, B.One{}}
+  Q.Nonnegative{B.Nought{}, B.One{}}
 
 law zero_add:
   for +a: Q.Number

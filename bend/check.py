@@ -17,6 +17,12 @@ PUBLIC_LAWS = frozenset({
     'convex_avg_le_maximum', 'maximum_member', 'gain_complement',
     'chi_tv_transfer_sqrt',
 })
+# The exact clean result of each checker mode. --verdict rechecks with the BendTT kernel.
+CLEAN = {
+    '--check-only': 'ALL PROOFS CHECK\nUse --verdict for mathematical validity.',
+    '--verdict': 'ALL PROOFS CHECK',
+}
+TIMEOUT = {'--check-only': 120, '--verdict': 900}
 IMPORT = re.compile(r'import (\./[A-Za-z0-9_./-]+\.bend) as ([A-Za-z][A-Za-z0-9_]*)')
 TOKENS = re.compile(r'"(?:\\.|[^"\\])*"|#[^\n]*')
 
@@ -59,17 +65,17 @@ def inspect_sources(entry: Path, root: Path = ROOT) -> dict[Path, str]:
             pending.append(path.parent / match[1])
     return found
 
-def run_checker(entry: Path, executable: str = 'bend') -> None:
+def run_checker(entry: Path, executable: str = 'bend', mode: str = '--check-only') -> None:
     try:
-        result = subprocess.run([executable, str(entry), '--check-only'], capture_output=True, text=True, timeout=120)
+        result = subprocess.run([executable, str(entry), mode], capture_output=True, text=True, timeout=TIMEOUT[mode])
     except (OSError, subprocess.TimeoutExpired) as exc:
         raise VerificationError(f'Cannot run Bend: {exc}') from exc
-    # Bend exits zero for @unsafe code. Exit status alone is NOT a certificate.
-    if result.returncode != 0 or result.stdout.strip() != 'All terms check.' or result.stderr.strip():
+    # Exit status alone is NOT a certificate. Any warning or extra output fails closed.
+    if result.returncode != 0 or result.stdout.strip() != CLEAN[mode] or result.stderr.strip():
         output = (result.stdout + result.stderr).strip()
         raise VerificationError(f'Bend did not issue a clean certificate (exit {result.returncode}):\n{output}')
 
-def verify(root: Path = ROOT, executable: str = 'bend') -> tuple[int, int]:
+def verify(root: Path = ROOT, executable: str = 'bend', mode: str = '--check-only') -> tuple[int, int]:
     root = root.resolve()
     expected = (root / 'bend-version').read_text().strip()
     try:
@@ -90,16 +96,21 @@ def verify(root: Path = ROOT, executable: str = 'bend') -> tuple[int, int]:
     if production - sources.keys():
         missing = ', '.join(str(p.relative_to(root)) for p in sorted(production - sources.keys()))
         raise VerificationError(f'Production modules outside the certificate closure: {missing}')
-    run_checker(root / 'PROOF.bend', executable)
+    run_checker(root / 'PROOF.bend', executable, mode)
     return len(declared), len(sources)
 
-def main() -> int:
+def main(argv: list[str] = sys.argv[1:]) -> int:
+    if argv not in ([], ['--verdict']):
+        print('usage: check.py [--verdict]', file=sys.stderr)
+        return 2
+    mode = '--verdict' if argv else '--check-only'
     try:
-        laws, modules = verify()
+        laws, modules = verify(mode=mode)
     except (VerificationError, OSError) as exc:
         print(f'FAIL: {exc}', file=sys.stderr)
         return 1
-    print(f'Verified {laws} public laws across {modules} Bend modules. No open or unsafe certificates.')
+    kernel = ' Rechecked by the BendTT kernel.' if argv else ''
+    print(f'Verified {laws} public laws across {modules} Bend modules. No open or unsafe certificates.{kernel}')
     return 0
 
 if __name__ == '__main__':

@@ -10,11 +10,11 @@ import ./DivisionAlgebra.bend as D
 # cancels takes a Q.Ne(a, Q.zero()) hypothesis.
 def inverse_from(-a: Q.Number, r: M.SignedMagnitude<a>) -> Q.Number:
   match r:
-    case M.PositiveCase{Q.Nonnegative{B.Zero{}, d}, e}:
+    case M.PositiveCase{Q.Nonnegative{B.Nought{}, d}, e}:
       Q.zero()
     case M.PositiveCase{Q.Nonnegative{B.Pos{k}, d}, e}:
       Q.div_positive(Q.one(), Q.Positive{k, d})
-    case M.NegativeCase{Q.Nonnegative{B.Zero{}, d}, e}:
+    case M.NegativeCase{Q.Nonnegative{B.Nought{}, d}, e}:
       Q.zero()
     case M.NegativeCase{Q.Nonnegative{B.Pos{k}, d}, e}:
       Q.neg(Q.div_positive(Q.one(), Q.Positive{k, d}))
@@ -32,17 +32,17 @@ law cancel_from:
   Q.Eq(Q.mul(a, inverse_from(a, r)), Q.one())
 def cancel_from(a, h, r):
   match r:
-    case M.PositiveCase{Q.Nonnegative{B.Zero{}, +d}, e}:
+    case M.PositiveCase{Q.Nonnegative{B.Nought{}, +d}, e}:
       Empty.absurd(Q.Eq(Q.mul(a, Q.zero()), Q.one()),
-        h(E.trans(a, Q.Fraction{B.Zero{}, B.Zero{}, d}, Q.zero(), e(Unit{}), Q.Witness{{==}})))
+        h(E.trans(a, Q.Fraction{B.Nought{}, B.Nought{}, d}, Q.zero(), e(Unit{}), Q.Witness{{==}})))
     case M.PositiveCase{Q.Nonnegative{B.Pos{+k}, +d}, e}:
       +u = {Q.Positive{k, d} : Q.Positive}
       +i = Q.div_positive(Q.one(), u)
       E.trans(Q.mul(a, i), Q.mul(Q.of_positive(u), i), Q.one(),
         E.mul_congr(a, Q.of_positive(u), i, e(Unit{})), D.divide_cancel(Q.one(), u))
-    case M.NegativeCase{Q.Nonnegative{B.Zero{}, +d}, e}:
+    case M.NegativeCase{Q.Nonnegative{B.Nought{}, +d}, e}:
       Empty.absurd(Q.Eq(Q.mul(a, Q.zero()), Q.one()),
-        h(E.trans(a, Q.Fraction{B.Zero{}, B.Zero{}, d}, Q.zero(), e(Unit{}), Q.Witness{{==}})))
+        h(E.trans(a, Q.Fraction{B.Nought{}, B.Nought{}, d}, Q.zero(), e(Unit{}), Q.Witness{{==}})))
     case M.NegativeCase{Q.Nonnegative{B.Pos{+k}, +d}, e}:
       +u = {Q.Positive{k, d} : Q.Positive}
       +i = Q.neg(Q.div_positive(Q.one(), u))

@@ -149,10 +149,10 @@ law add_correct:
   {B.value(B.add(a, b)) == N.add(B.value(a), B.value(b)) : N.Number}
 def add_correct(a, b):
   match a b:
-    case B.Zero{} b:
+    case B.Nought{} b:
       %Equal.sym(N.Number, N.add(N.Z{}, B.value(b)), B.value(b), {==}) : {B.value(b) == _ : N.Number}
       {==}
-    case B.Pos{p} B.Zero{}:
+    case B.Pos{p} B.Nought{}:
       %Equal.sym(N.Number, N.add(B.positive_value(p), N.Z{}), B.positive_value(p), N.add_zero(B.positive_value(p))) : {B.positive_value(p) == _ : N.Number}
       {==}
     case B.Pos{p} B.Pos{q}:
@@ -165,10 +165,10 @@ law mul_correct:
   {B.value(B.mul(a, b)) == N.mul(B.value(a), B.value(b)) : N.Number}
 def mul_correct(a, b):
   match a b:
-    case B.Zero{} b:
+    case B.Nought{} b:
       %Equal.sym(N.Number, N.mul(N.Z{}, B.value(b)), N.Z{}, {==}) : {N.Z{} == _ : N.Number}
       {==}
-    case B.Pos{p} B.Zero{}:
+    case B.Pos{p} B.Nought{}:
       %Equal.sym(N.Number, N.mul(B.positive_value(p), N.Z{}), N.Z{}, N.mul_zero(B.positive_value(p))) : {N.Z{} == _ : N.Number}
       {==}
     case B.Pos{p} B.Pos{q}:
